@@ -40,7 +40,7 @@ export default function BlogPage() {
         <SectionHeader
           eyebrow="The Record"
           title="Institutional Scholarship & Analysis"
-          description="Original scholarship from the faculties, centres, and institutes of FTHTrading University — advancing the discourse on institutional governance, competitive strategy, and technological sovereignty."
+          description="Original scholarship from the faculties, centres, and institutes of Fitzherbert University — advancing the discourse on institutional governance, competitive strategy, and technological sovereignty."
         />
 
         <div className="flex flex-wrap justify-center gap-3 mt-8 mb-12">

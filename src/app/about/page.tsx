@@ -6,7 +6,7 @@ import { Timeline } from "@/components/Timeline";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "The founding history, charter, institutional philosophy, and governance of FTHTrading University — established 1783.",
+    "The founding history, charter, institutional philosophy, and governance of Fitzherbert University — established 1783.",
 };
 
 const timelineEvents = [
@@ -14,7 +14,7 @@ const timelineEvents = [
     year: "1783",
     title: "Charter of Foundation",
     description:
-      "The colonial legislature grants a royal charter establishing FTHTrading University as an institution of higher learning, with an initial endowment of twelve hundred acres and a mandate for the cultivation of civic virtue.",
+      "The colonial legislature grants a royal charter establishing Fitzherbert University as an institution of higher learning, with an initial endowment of twelve hundred acres and a mandate for the cultivation of civic virtue.",
     detail: "Sir Henry FitzHerbert, the Reverend Jonathan Ashworth, and Lady Margaret Pemberton signed the founding charter in the presence of the Governor-General. The original parchment is held in the University Archives in Heritage Hall.",
     latin: "In nomine veritatis et disciplinae, hanc universitatem fundamus.",
   },
@@ -95,7 +95,7 @@ export default function AboutPage() {
         />
         <div className="max-w-3xl mx-auto space-y-6">
           <p className="text-lg leading-relaxed text-stone drop-cap">
-            FTHTrading University was established by charter in 1783, during a period of
+            Fitzherbert University was established by charter in 1783, during a period of
             extraordinary intellectual ferment. Its founders — scholars, clergy, and
             statesmen — envisioned an institution devoted not merely to the transmission
             of knowledge, but to the formation of character and the pursuit of truth
@@ -108,7 +108,7 @@ export default function AboutPage() {
             address the full breadth of human endeavour.
           </p>
           <p className="text-lg leading-relaxed text-stone">
-            Today, FTHTrading University remains faithful to its founding vision while
+            Today, Fitzherbert University remains faithful to its founding vision while
             embracing the challenges of a rapidly changing world. Its stone quadrangles
             and ivy-covered halls house cutting-edge research laboratories and global
             centres of excellence, demonstrating that tradition and innovation are not

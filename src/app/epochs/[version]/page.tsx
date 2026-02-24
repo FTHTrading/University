@@ -20,10 +20,10 @@ export async function generateMetadata({
   if (!epoch) return {};
 
   return {
-    title: `Epoch ${epoch.version} — FTHTrading University`,
+    title: `Epoch ${epoch.version} — Fitzherbert University`,
     description: epoch.description,
     openGraph: {
-      title: `Epoch ${epoch.version} — FTHTrading University`,
+      title: `Epoch ${epoch.version} — Fitzherbert University`,
       description: epoch.description,
       type: "website",
     },
@@ -49,14 +49,14 @@ export default async function EpochVersionPage({
   const datasetJsonLd = {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    name: `FTHTrading University — Epoch ${epoch.version}`,
+    name: `Fitzherbert University — Epoch ${epoch.version}`,
     description: epoch.description,
     datePublished: epoch.timestamp,
     version: epoch.version,
     publisher: {
       "@type": "CollegeOrUniversity",
-      name: "FTHTrading University",
-      url: "https://fthtrading.university",
+      name: "Fitzherbert University",
+      url: "https://fitzherbert.university",
     },
     identifier: [
       {
@@ -72,7 +72,7 @@ export default async function EpochVersionPage({
     ],
     distribution: {
       "@type": "DataDownload",
-      contentUrl: "https://fthtrading.university/canonical-registry.json",
+      contentUrl: "https://fitzherbert.university/canonical-registry.json",
       encodingFormat: "application/json",
     },
   };
@@ -86,19 +86,19 @@ export default async function EpochVersionPage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://fthtrading.university",
+        item: "https://fitzherbert.university",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Epoch History",
-        item: "https://fthtrading.university/epochs",
+        item: "https://fitzherbert.university/epochs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: `Epoch ${epoch.version}`,
-        item: `https://fthtrading.university/epochs/${epoch.version}`,
+        item: `https://fitzherbert.university/epochs/${epoch.version}`,
       },
     ],
   };

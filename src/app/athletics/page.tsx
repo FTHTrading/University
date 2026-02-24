@@ -5,7 +5,7 @@ import { Section, SectionHeader } from "@/components/Section";
 export const metadata: Metadata = {
   title: "Athletics",
   description:
-    "Varsity athletics, esports division, facilities, and competitive excellence at FTHTrading University.",
+    "Varsity athletics, esports division, facilities, and competitive excellence at Fitzherbert University.",
 };
 
 const varsityTeams = [
@@ -83,7 +83,7 @@ export default function AthleticsPage() {
         <SectionHeader
           eyebrow="Facilities"
           title="World-Class Venues"
-          description="Facilities designed to support athletic excellence, scientific training, and the competitive spirit that defines FTHTrading athletics."
+          description="Facilities designed to support athletic excellence, scientific training, and the competitive spirit that defines Fitzherbert athletics."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {facilities.map((f) => (

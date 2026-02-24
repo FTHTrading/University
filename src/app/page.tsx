@@ -63,7 +63,7 @@ const news = [
   },
   {
     date: "December 2025",
-    title: "FTHTrading University Ascends in Global Research Rankings",
+    title: "Fitzherbert University Ascends in Global Research Rankings",
     excerpt:
       "The University achieved its highest-ever placement in the World Institutional Research Index, reflecting sustained investment in foundational scholarship.",
   },
@@ -113,7 +113,7 @@ export default function HomePage() {
         />
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-lg leading-relaxed text-stone mb-6 drop-cap">
-            Founded in the Age of Enlightenment, FTHTrading University stands as a
+            Founded in the Age of Enlightenment, Fitzherbert University stands as a
             steward of disciplined inquiry, moral courage, and institutional continuity.
             For more than two centuries, we have cultivated scholars, statesmen, and
             pioneers whose contributions have shaped the course of human understanding.
@@ -238,7 +238,7 @@ export default function HomePage() {
           </h2>
           <div className="gold-divider-center" />
           <p className="text-stone-light text-lg leading-relaxed mt-6 mb-10">
-            FTHTrading University seeks students of exceptional intellect, moral
+            Fitzherbert University seeks students of exceptional intellect, moral
             seriousness, and scholarly ambition. Our admissions process is both
             selective and holistic, reflecting the institution&apos;s commitment to
             cultivating future stewards of knowledge and governance.

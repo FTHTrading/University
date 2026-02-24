@@ -14,7 +14,7 @@ interface HeroProps {
 }
 
 export function Hero({
-  title = "FTHTrading University",
+  title = "Fitzherbert University",
   motto = "Veritas per Disciplina",
   subtitle = "A Tradition of Intellectual Sovereignty Since 1783",
   founding = "Founded 1783",

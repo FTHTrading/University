@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Admissions",
   description:
-    "Undergraduate, graduate, and international admissions at FTHTrading University. Scholarships, financial aid, and the application process.",
+    "Undergraduate, graduate, and international admissions at Fitzherbert University. Scholarships, financial aid, and the application process.",
 };
 
 const admissionsStats = [
@@ -48,7 +48,7 @@ export default function AdmissionsPage() {
     <>
       <Hero
         title="Admissions"
-        subtitle="FTHTrading University seeks students of exceptional intellect, moral seriousness, and scholarly ambition."
+        subtitle="Fitzherbert University seeks students of exceptional intellect, moral seriousness, and scholarly ambition."
       />
 
       {/* ── Overview ──────────────────────────────── */}
@@ -59,7 +59,7 @@ export default function AdmissionsPage() {
         />
         <div className="max-w-3xl mx-auto space-y-6">
           <p className="text-lg leading-relaxed text-stone drop-cap">
-            Admission to FTHTrading University is both selective and holistic. We evaluate
+            Admission to Fitzherbert University is both selective and holistic. We evaluate
             each applicant as a whole person — considering academic achievement,
             intellectual curiosity, strength of character, contributions to community,
             and the potential to thrive within our tradition of rigorous scholarship.
@@ -165,7 +165,7 @@ export default function AdmissionsPage() {
         />
         <div className="max-w-3xl mx-auto space-y-6">
           <p className="text-lg leading-relaxed text-stone">
-            Undergraduate students at FTHTrading University receive an education that
+            Undergraduate students at Fitzherbert University receive an education that
             is simultaneously broad and deep. The core curriculum — spanning literature,
             philosophy, mathematics, natural science, and history — ensures that every
             graduate possesses the foundations of a well-ordered mind, while the major

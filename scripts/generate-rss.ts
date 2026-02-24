@@ -19,7 +19,7 @@ const articles = [
   {
     slug: "constitutional-precedent-digital-governance",
     title: "Constitutional Precedent in Digital Governance",
-    excerpt: "The principles embedded in FTHTrading University's 1783 Charter — separation of powers, transparency mandates, and procedural due process — provide a surprisingly robust framework for governing digital systems.",
+    excerpt: "The principles embedded in Fitzherbert University's 1783 Charter — separation of powers, transparency mandates, and procedural due process — provide a surprisingly robust framework for governing digital systems.",
     datePublished: "2026-02-14",
     author: "Professor Victoria Langford",
     category: "Governance & AI Infrastructure",
@@ -67,7 +67,7 @@ const articles = [
   {
     slug: "endowment-stewardship-age-of-volatility",
     title: "Endowment Stewardship in the Age of Volatility",
-    excerpt: "With $14.2 billion under stewardship, FTHTrading University's endowment represents a covenant between generations. This article examines how institutional investors maintain disciplined strategies across centuries of market uncertainty.",
+    excerpt: "With $14.2 billion under stewardship, Fitzherbert University's endowment represents a covenant between generations. This article examines how institutional investors maintain disciplined strategies across centuries of market uncertainty.",
     datePublished: "2026-01-15",
     author: "The Editorial Board",
     category: "Institutional Thought Leadership",
@@ -140,7 +140,7 @@ function escapeXml(str: string): string {
 }
 
 function generateRSS(): string {
-  const baseUrl = "https://fthtrading.university";
+  const baseUrl = "https://fitzherbert.university";
   const now = new Date().toUTCString();
 
   const items = articles
@@ -161,18 +161,18 @@ function generateRSS(): string {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>University Record — FTHTrading University</title>
+    <title>University Record — Fitzherbert University</title>
     <link>${baseUrl}/blog</link>
-    <description>Original scholarship from the faculties, centres, and institutes of FTHTrading University — advancing the discourse on institutional governance, competitive strategy, and technological sovereignty.</description>
+    <description>Original scholarship from the faculties, centres, and institutes of Fitzherbert University — advancing the discourse on institutional governance, competitive strategy, and technological sovereignty.</description>
     <language>en-us</language>
     <lastBuildDate>${now}</lastBuildDate>
-    <managingEditor>chancellor@fthtrading.university (Office of the Chancellor)</managingEditor>
-    <webMaster>webmaster@fthtrading.university (University Web Services)</webMaster>
-    <copyright>© 2026 FTHTrading University. Established 1783. All rights reserved.</copyright>
+    <managingEditor>chancellor@fitzherbert.university (Office of the Chancellor)</managingEditor>
+    <webMaster>webmaster@fitzherbert.university (University Web Services)</webMaster>
+    <copyright>© 2026 Fitzherbert University. Established 1783. All rights reserved.</copyright>
     <atom:link href="${baseUrl}/blog/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>${baseUrl}/crest.svg</url>
-      <title>FTHTrading University</title>
+      <title>Fitzherbert University</title>
       <link>${baseUrl}</link>
     </image>
 ${items}

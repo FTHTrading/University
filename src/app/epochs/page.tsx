@@ -4,7 +4,7 @@ import { EpochsPage } from "./EpochsPage";
 
 // ── Metadata ─────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "Epoch History — FTHTrading University",
+  title: "Epoch History — Fitzherbert University",
   description:
     "Complete historical record of canonical publishing epochs. Each epoch represents an immutable point-in-time snapshot of the institutional corpus, verified by Merkle root.",
   keywords: [
@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     "institutional history",
     "SHA-256",
     "version control",
-    "FTHTrading University",
+    "Fitzherbert University",
   ],
   openGraph: {
-    title: "Epoch History — FTHTrading University",
+    title: "Epoch History — Fitzherbert University",
     description:
       "Historical record of canonical publishing epochs with Merkle root verification.",
     type: "website",
@@ -44,7 +44,7 @@ export default function EpochsRoute() {
   const epochsJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "FTHTrading University — Epoch History",
+    name: "Fitzherbert University — Epoch History",
     description:
       "Chronological record of canonical publishing epochs for the institutional corpus.",
     numberOfItems: epochSummaries.length,
@@ -75,13 +75,13 @@ export default function EpochsRoute() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://fthtrading.university",
+        item: "https://fitzherbert.university",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Epoch History",
-        item: "https://fthtrading.university/epochs",
+        item: "https://fitzherbert.university/epochs",
       },
     ],
   };

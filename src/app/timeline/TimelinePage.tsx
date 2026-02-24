@@ -28,7 +28,7 @@ const events: TimelineEvent[] = [
     era: "enlightenment",
     title: "Charter of Foundation",
     description:
-      "The colonial legislature grants a royal charter establishing FTHTrading University as an institution of higher learning, with an initial endowment of twelve hundred acres and a mandate for the cultivation of civic virtue.",
+      "The colonial legislature grants a royal charter establishing Fitzherbert University as an institution of higher learning, with an initial endowment of twelve hundred acres and a mandate for the cultivation of civic virtue.",
     detail:
       "Sir Henry FitzHerbert, the Reverend Jonathan Ashworth, and Lady Margaret Pemberton signed the founding charter in the presence of the Governor-General. The original parchment is held in the University Archives in Heritage Hall.",
     latin: "In nomine veritatis et disciplinae, hanc universitatem fundamus.",
@@ -94,7 +94,7 @@ const events: TimelineEvent[] = [
     era: "expansion",
     title: "First Nobel Laureate",
     description:
-      "Professor Edmund Hartley of the Department of Chemistry receives the Nobel Prize, establishing FTHTrading University's reputation for world-class scientific research.",
+      "Professor Edmund Hartley of the Department of Chemistry receives the Nobel Prize, establishing Fitzherbert University's reputation for world-class scientific research.",
     detail:
       "Hartley's work on catalytic processes in organic synthesis earned recognition from the Swedish Academy. He dedicated his lecture to 'the eternal partnership between patience and rigour.'",
   },
@@ -112,7 +112,7 @@ const events: TimelineEvent[] = [
     era: "expansion",
     title: "University Press Founded",
     description:
-      "FTHTrading University Press begins publishing scholarly monographs, journals, and institutional texts — becoming a cornerstone of the University's intellectual output.",
+      "Fitzherbert University Press begins publishing scholarly monographs, journals, and institutional texts — becoming a cornerstone of the University's intellectual output.",
     detail:
       "The Press's first publication was 'Principles of Constitutional Governance' by Professor Arthur Pemberton III. It remains in print.",
   },
@@ -166,7 +166,7 @@ const events: TimelineEvent[] = [
     era: "digital",
     title: "Transparency Mandate — Charter Amendment IV",
     description:
-      "A landmark amendment requires all governance decisions, financial reports, and policy changes to be published openly, establishing FTHTrading University as a model of institutional transparency.",
+      "A landmark amendment requires all governance decisions, financial reports, and policy changes to be published openly, establishing Fitzherbert University as a model of institutional transparency.",
     detail:
       "The Transparency Mandate was driven by student advocacy and faculty Senate resolution. All documents since 2003 are available in the public governance archive.",
   },
@@ -195,7 +195,7 @@ const events: TimelineEvent[] = [
     description:
       "The constitutional framework for AI governance systems is ratified, establishing validation gates, bias auditing requirements, and human oversight mandates for all institutional AI deployments.",
     detail:
-      "The amendment was drafted by the Centre for AI & Ethics and ratified by a 94% supermajority of the Faculty Senate, making FTHTrading University the first institution with constitutional AI governance.",
+      "The amendment was drafted by the Centre for AI & Ethics and ratified by a 94% supermajority of the Faculty Senate, making Fitzherbert University the first institution with constitutional AI governance.",
     latin: "Machina serviat homini, non dominetur.",
   },
   {
@@ -203,7 +203,7 @@ const events: TimelineEvent[] = [
     era: "digital",
     title: "University Record Launched",
     description:
-      "The institutional blog and scholarly publication platform goes live, establishing FTHTrading University's direct voice in the discourse on governance, strategy, and AI — with full Article JSON-LD schema for AI discoverability.",
+      "The institutional blog and scholarly publication platform goes live, establishing Fitzherbert University's direct voice in the discourse on governance, strategy, and AI — with full Article JSON-LD schema for AI discoverability.",
     detail:
       "The University Record publishes across three editorial streams: Institutional Thought Leadership, Athletics Intelligence, and Governance & AI Infrastructure. All articles carry ScholarlyArticle JSON-LD.",
   },

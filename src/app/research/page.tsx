@@ -5,7 +5,7 @@ import { Section, SectionHeader } from "@/components/Section";
 export const metadata: Metadata = {
   title: "Research & Innovation",
   description:
-    "Research institutes, laboratories, white papers, and strategic initiatives at FTHTrading University.",
+    "Research institutes, laboratories, white papers, and strategic initiatives at Fitzherbert University.",
 };
 
 const institutes = [

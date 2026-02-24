@@ -3,9 +3,9 @@ import { GlossaryPage } from "./GlossaryPage";
 
 /* ── SEO Metadata ─────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Institutional Glossary — FTHTrading University",
+  title: "Institutional Glossary — Fitzherbert University",
   description:
-    "A comprehensive glossary of terms used across FTHTrading University's academic programmes, governance framework, endowment operations, and research infrastructure. Authoritative definitions for institutional discourse.",
+    "A comprehensive glossary of terms used across Fitzherbert University's academic programmes, governance framework, endowment operations, and research infrastructure. Authoritative definitions for institutional discourse.",
   keywords: [
     "glossary",
     "institutional terminology",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     "higher education terminology",
   ],
   openGraph: {
-    title: "Institutional Glossary — FTHTrading University",
+    title: "Institutional Glossary — Fitzherbert University",
     description:
-      "Authoritative definitions for the terms, concepts, and frameworks that define institutional discourse at FTHTrading University.",
+      "Authoritative definitions for the terms, concepts, and frameworks that define institutional discourse at Fitzherbert University.",
     type: "website",
   },
 };
@@ -34,7 +34,7 @@ export interface GlossaryTerm {
 
 const glossaryTerms: GlossaryTerm[] = [
   // ── Governance & Charter ──
-  { term: "Charter", definition: "The founding constitutional document of FTHTrading University, ratified in 1783, establishing the institution's structure, authority, and mission. The Charter has been formally amended five times (1801, 1921, 1967, 2003, 2024) and reaffirmed once (1867).", category: "Governance & Charter", relatedTerms: ["Amendment", "Board of Governors", "Faculty Senate"] },
+  { term: "Charter", definition: "The founding constitutional document of Fitzherbert University, ratified in 1783, establishing the institution's structure, authority, and mission. The Charter has been formally amended five times (1801, 1921, 1967, 2003, 2024) and reaffirmed once (1867).", category: "Governance & Charter", relatedTerms: ["Amendment", "Board of Governors", "Faculty Senate"] },
   { term: "Amendment", definition: "A formal modification to the University Charter, requiring Faculty Senate supermajority approval, Board of Governors concurrence, and a one-year deliberation period. Seven amendments have been ratified since the founding.", category: "Governance & Charter", relatedTerms: ["Charter", "Faculty Senate"] },
   { term: "Board of Governors", definition: "The supreme fiduciary body of the University, responsible for financial oversight, endowment stewardship, and presidential appointment. Exercises authority complementary to but separate from the Faculty Senate.", category: "Governance & Charter", relatedTerms: ["Faculty Senate", "Charter", "Separation of Powers"] },
   { term: "Faculty Senate", definition: "The principal academic governing body, holding authority over curriculum, degree requirements, research policy, and academic appointments. Composed of elected faculty representatives from all colleges.", category: "Governance & Charter", relatedTerms: ["Board of Governors", "Charter"] },
@@ -55,7 +55,7 @@ const glossaryTerms: GlossaryTerm[] = [
   { term: "Collegiate System", definition: "The academic structure organising the University into semi-autonomous colleges — Arts & Sciences, Divinity, Law, Medicine, Engineering, and Commerce — each with distinct curricula, faculty governance, and intellectual traditions.", category: "Academic & Research", relatedTerms: ["Faculty Senate"] },
   { term: "Endowed Professorship", definition: "A distinguished faculty appointment funded by the income from a named endowment. Holders are typically senior scholars who have made significant contributions to their disciplines.", category: "Academic & Research", relatedTerms: ["Endowed Chair", "Endowment"] },
   { term: "White Paper", definition: "An authoritative institutional publication presenting research findings, policy analysis, or strategic recommendations. Published through the University Record and subject to peer review within the relevant faculty.", category: "Academic & Research", relatedTerms: ["University Record"] },
-  { term: "University Record", definition: "The official scholarly publication of FTHTrading University, featuring original research, institutional analysis, and thought leadership from across the faculties, centres, and institutes.", category: "Academic & Research", relatedTerms: ["White Paper"] },
+  { term: "University Record", definition: "The official scholarly publication of Fitzherbert University, featuring original research, institutional analysis, and thought leadership from across the faculties, centres, and institutes.", category: "Academic & Research", relatedTerms: ["White Paper"] },
   { term: "Institute for Advanced Study", definition: "The University's premier interdisciplinary research centre (established 1963), hosting visiting scholars, postdoctoral fellows, and collaborative research programmes that transcend departmental boundaries.", category: "Academic & Research" },
 
   // ── AI & Technology ──
@@ -80,15 +80,15 @@ const glossaryTerms: GlossaryTerm[] = [
 const glossaryJsonLd = {
   "@context": "https://schema.org",
   "@type": "DefinedTermSet",
-  "@id": "https://fthtrading.university/glossary",
-  name: "FTHTrading University Institutional Glossary",
+  "@id": "https://fitzherbert.university/glossary",
+  name: "Fitzherbert University Institutional Glossary",
   description:
-    "Authoritative definitions for the terms, concepts, and frameworks that define institutional discourse at FTHTrading University.",
+    "Authoritative definitions for the terms, concepts, and frameworks that define institutional discourse at Fitzherbert University.",
   inDefinedTermSet: glossaryTerms.map((t) => ({
     "@type": "DefinedTerm",
     name: t.term,
     description: t.definition,
-    inDefinedTermSet: "https://fthtrading.university/glossary",
+    inDefinedTermSet: "https://fitzherbert.university/glossary",
   })),
 };
 
@@ -96,8 +96,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://fthtrading.university" },
-    { "@type": "ListItem", position: 2, name: "Glossary", item: "https://fthtrading.university/glossary" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://fitzherbert.university" },
+    { "@type": "ListItem", position: 2, name: "Glossary", item: "https://fitzherbert.university/glossary" },
   ],
 };
 

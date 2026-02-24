@@ -5,7 +5,7 @@ import { Section, SectionHeader } from "@/components/Section";
 export const metadata: Metadata = {
   title: "Governance",
   description:
-    "Charter, constitutional amendments, Senate proceedings, and institutional transparency at FTHTrading University.",
+    "Charter, constitutional amendments, Senate proceedings, and institutional transparency at Fitzherbert University.",
 };
 
 const amendments = [
@@ -85,12 +85,12 @@ export default function GovernancePage() {
               RATIFIED 1783 &middot; REAFFIRMED 1867 &middot; AMENDED 1921, 1967, 2003, 2024
             </p>
             <p className="latin-inscription mt-2">
-              Sigillum Universitatis FTHTrading &middot; Sub auspiciis veritatis
+              Sigillum Universitatis Fitzherbert &middot; Sub auspiciis veritatis
             </p>
           </div>
           <p className="text-lg leading-relaxed text-stone drop-cap">
             The University Charter of 1783 is the supreme governing instrument of
-            FTHTrading University. Granted by letters patent under the hand and seal
+            Fitzherbert University. Granted by letters patent under the hand and seal
             of the Crown&apos;s representative, the Charter establishes the institution&apos;s
             legal identity, defines the powers and responsibilities of its officers,
             and enshrines the principles of academic freedom, scholarly integrity,
@@ -132,15 +132,21 @@ export default function GovernancePage() {
           </div>
 
           {/* Charter document download */}
-          <div className="flex items-center justify-between border border-gold/20 bg-ivory p-5 gold-emboss">
+          <a
+            href="/documents/university-charter-1783.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+            className="flex items-center justify-between border border-gold/20 bg-ivory p-5 gold-emboss hover:border-gold/40 transition-colors group"
+          >
             <div>
               <h4 className="font-serif font-bold text-base">University Charter (1783) — Facsimile Edition</h4>
               <p className="text-xs text-stone-light">PDF · 8.4 MB · Latin original with English translation</p>
             </div>
-            <span className="text-gold text-xs tracking-widest uppercase font-serif flex-shrink-0 ml-4">
+            <span className="text-gold text-xs tracking-widest uppercase font-serif flex-shrink-0 ml-4 group-hover:text-maroon transition-colors">
               View Document ↓
             </span>
-          </div>
+          </a>
         </div>
       </Section>
 
@@ -223,7 +229,7 @@ export default function GovernancePage() {
         />
         <div className="max-w-3xl mx-auto space-y-6">
           <p className="text-lg leading-relaxed text-stone drop-cap">
-            FTHTrading University is committed to the principle that institutional
+            Fitzherbert University is committed to the principle that institutional
             authority must be exercised with transparency and accountability. The
             Transparency Mandate of 2003 requires the publication of:
           </p>
@@ -264,23 +270,30 @@ export default function GovernancePage() {
         />
         <div className="max-w-3xl mx-auto space-y-4">
           {[
-            { title: "University Charter (1783) — Official Text", type: "PDF", size: "8.4 MB", year: "1783" },
-            { title: "Senate Standing Orders & Rules of Procedure", type: "PDF", size: "1.2 MB", year: "2024" },
-            { title: "Annual Governance Report FY 2025", type: "PDF", size: "3.6 MB", year: "2025" },
-            { title: "Ethical Investment Framework", type: "PDF", size: "920 KB", year: "2023" },
-            { title: "AI Governance & Model Accountability Policy", type: "PDF", size: "2.1 MB", year: "2024" },
-            { title: "Freedom of Information Protocol", type: "PDF", size: "680 KB", year: "2022" },
-            { title: "Academic Freedom & Expression Policy", type: "PDF", size: "540 KB", year: "2021" },
+            { title: "University Charter (1783) — Official Text", type: "PDF", size: "8.4 MB", year: "1783", href: "/documents/university-charter-1783.pdf" },
+            { title: "Senate Standing Orders & Rules of Procedure", type: "PDF", size: "1.2 MB", year: "2024", href: "/documents/senate-standing-orders.pdf" },
+            { title: "Annual Governance Report FY 2025", type: "PDF", size: "3.6 MB", year: "2025", href: "/documents/annual-governance-report-fy-2025.pdf" },
+            { title: "Ethical Investment Framework", type: "PDF", size: "920 KB", year: "2023", href: "/documents/ethical-investment-framework.pdf" },
+            { title: "AI Governance & Model Accountability Policy", type: "PDF", size: "2.1 MB", year: "2024", href: "/documents/ai-governance-model-accountability-policy.pdf" },
+            { title: "Freedom of Information Protocol", type: "PDF", size: "680 KB", year: "2022", href: "/documents/freedom-of-information-protocol.pdf" },
+            { title: "Academic Freedom & Expression Policy", type: "PDF", size: "540 KB", year: "2021", href: "/documents/academic-freedom-expression-policy.pdf" },
           ].map((doc) => (
-            <div key={doc.title} className="flex items-center justify-between border border-gold/20 bg-ivory p-5 gold-emboss">
+            <a
+              key={doc.title}
+              href={doc.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="flex items-center justify-between border border-gold/20 bg-ivory p-5 gold-emboss hover:border-gold/40 transition-colors group"
+            >
               <div>
                 <h4 className="font-serif font-bold text-base">{doc.title}</h4>
                 <p className="text-xs text-stone-light">{doc.type} · {doc.size} · Published {doc.year}</p>
               </div>
-              <span className="text-gold text-xs tracking-widest uppercase font-serif flex-shrink-0 ml-4">
+              <span className="text-gold text-xs tracking-widest uppercase font-serif flex-shrink-0 ml-4 group-hover:text-maroon transition-colors">
                 Download ↓
               </span>
-            </div>
+            </a>
           ))}
         </div>
       </Section>

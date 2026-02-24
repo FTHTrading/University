@@ -1,7 +1,7 @@
 {
-  "institution": "FTHTrading University",
+  "institution": "Fitzherbert University",
   "protocol": "IPFS Canonical Publishing v1.0",
-  "generatedAt": "2026-02-24T07:57:23.206Z",
+  "generatedAt": "2026-02-24T08:38:07.197Z",
   "articles": [
     {
       "slug": "constitutional-precedent-digital-governance",
@@ -11,8 +11,8 @@
       "publishedAt": "2026-02-14",
       "modifiedAt": "2026-02-14",
       "version": "1.0.0",
-      "contentHash": "3c89789cbdd78a7e218933a78619175f12b237af34fe50aac9470b12d87e9f0d",
-      "cid": "bafkreib4rf4jzpoxrj7cdcjtu6dbsf27ckzdplzu7zikvskhbmjnq7u7bu"
+      "contentHash": "912f209376018b0b8bea1c1a04dcea922af24d0c5b5219023f7692fd88e88f0c",
+      "cid": "bafkreierf4qjg5qbrmfyx2q4dicnz2usflze2dc3kimqep3wsl6yr2epbq"
     },
     {
       "slug": "future-of-ai-governed-institutions",
@@ -22,8 +22,8 @@
       "publishedAt": "2026-02-10",
       "modifiedAt": "2026-02-10",
       "version": "1.0.0",
-      "contentHash": "a2abfa31091d2a88dd3d8f3fa610fa6a9d49386cc8e916fe3e6e44c852531df3",
-      "cid": "bafkreifcvp5dcci5fken2pmph6tbb6tktvetq3gi5elp4ptoitefeuy56m"
+      "contentHash": "bf5406e91728f59a78db54331a4f06bf80ad721884221ccf98c189f1acc53db5",
+      "cid": "bafkreif7kqdosfzi6wnhrw2ugmne6bv7qcwxegeeeiom7ggbrhy2zrj5wu"
     },
     {
       "slug": "fiduciary-duty-in-perpetuity",
@@ -33,8 +33,8 @@
       "publishedAt": "2026-02-07",
       "modifiedAt": "2026-02-07",
       "version": "1.0.0",
-      "contentHash": "159cd5344a624250b6afee11fde8b21734234b63b73091c7cf92863b22cd8c49",
-      "cid": "bafkreiavttktistcijilnl7och66rmqxgqruwy5xgci4pt4sqy5sftmmje"
+      "contentHash": "8a37707c58c97c46a4e3286bcdb87195b3d4d909f7cf2296b55cb531568b6ba8",
+      "cid": "bafkreiekg5yhywgjprdkjyzinpg3q4mvwpknscpxz4rjnnk4wuyvnc3lva"
     },
     {
       "slug": "agentic-rag-institutional-memory",
@@ -44,8 +44,8 @@
       "publishedAt": "2026-02-03",
       "modifiedAt": "2026-02-03",
       "version": "1.0.0",
-      "contentHash": "ab6189b35e3f4a904193970457561c776cc473de8bbe050c789a480231454fc6",
-      "cid": "bafkreiflmge3gxr7jkiede4xarlvmhdxntchhxulxycqy6e2jabdcrkpyy"
+      "contentHash": "1373a1cf5dceacada6146dfcdb301e7e509ef45f97da0bf6ad6b107a75941dc1",
+      "cid": "bafkreiatooq46xoovsw2mfdn7tntaht6kcppix4x3if7nlllcb5hlfa5ye"
     },
     {
       "slug": "game-theory-competitive-strategy-collegiate-systems",
@@ -55,8 +55,8 @@
       "publishedAt": "2026-01-28",
       "modifiedAt": "2026-01-28",
       "version": "1.0.0",
-      "contentHash": "9269bec1949eca271ad92760461d3249962d9af639ae7ccfdac0b44269266ded",
-      "cid": "bafkreiesng7mdfe6zitrvwjhmbdb2msjsywzv5rzvz6m7wwawrbgsjtn5u"
+      "contentHash": "326cbf4901d94965968bfce94b297e414fe783b477c646eb7e1d311282ed00b8",
+      "cid": "bafkreibsns7usaozjfsznc745ffss7sbj7tyhndxyzdow7q5gejif3iaxa"
     },
     {
       "slug": "simulation-driven-recruitment-strategy",
@@ -66,8 +66,8 @@
       "publishedAt": "2026-01-25",
       "modifiedAt": "2026-01-25",
       "version": "1.0.0",
-      "contentHash": "dd668ed8933ac66cd596105fcd7183620176fc9e72e2733c8126fa57049d9a1f",
-      "cid": "bafkreig5m2hnrez2yzwnlfqql7gxda3caf3pzhts4jztzajg7jlqjhm2d4"
+      "contentHash": "4d44371b4ce244d43af0f8a02f51281a84c0bcb524877312b91003b8860c6f08",
+      "cid": "bafkreicniq3rwthcitkdv4hyuaxvcka2qtalznjeq5zrfoiqao4imddpba"
     },
     {
       "slug": "opponent-modeling-modern-esports",
@@ -77,8 +77,8 @@
       "publishedAt": "2026-01-20",
       "modifiedAt": "2026-01-20",
       "version": "1.0.0",
-      "contentHash": "66617f12e8713833cb5091e3d657a06fe652da868d54d3749b6918e7a54d5450",
-      "cid": "bafkreidgmf7rf2drhaz4wuer4plfpidp4zjnvbunktjxjg3jddt2ktkuka"
+      "contentHash": "60426b01d22d6b57840750f2a7d9dc20196921b6e4f9f39528c3e2ec00314bbe",
+      "cid": "bafkreidaijvqdurnnnlyib2q6kt5txbadfusdnxe7hzzkkgd4lwaamklxy"
     },
     {
       "slug": "endowment-stewardship-age-of-volatility",
@@ -88,8 +88,8 @@
       "publishedAt": "2026-01-15",
       "modifiedAt": "2026-01-15",
       "version": "1.0.0",
-      "contentHash": "16046087165e90c8e4d2604bf35c17739da5427b684a9488fa8916d5ae3b4c64",
-      "cid": "bafkreiawarqiofs6sdeojutajpzvyf3ttwsue63ijkkir6ujc3k24o2mmq"
+      "contentHash": "48764908f297ff7113a3cdbd113948fd2c0bdb84ee972ac876e88bb7c39cd497",
+      "cid": "bafkreiciozeqr4ux75yrhi6nxuitssh5fqf5xbhos4vmq5xiro34hhgus4"
     },
     {
       "slug": "knowledge-graphs-institutional-intelligence",
@@ -99,8 +99,8 @@
       "publishedAt": "2025-12-20",
       "modifiedAt": "2025-12-20",
       "version": "1.0.0",
-      "contentHash": "50d4c27ebb004c359d064ace1c663ee3f7fdbc7972dd6ba4baa39c5830dbb8be",
-      "cid": "bafkreicq2tbh5oyajq2z2bskzyogmpxd6763y6ls3vv2jovdtrmdbw5yxy"
+      "contentHash": "e5361ffc524067ac895352a96e700f96fcb93f116173d20717956a1cd8559d2a",
+      "cid": "bafkreihfgyp7yusam6wisu2svfxhad4w7s4t6elbopjaof4vnionqvm5fi"
     },
     {
       "slug": "ethics-of-predictive-analytics-admissions",
@@ -110,8 +110,8 @@
       "publishedAt": "2025-12-15",
       "modifiedAt": "2025-12-15",
       "version": "1.0.0",
-      "contentHash": "33a7680b7ba36098f1eb93eb5593ba21a6f869d66edbc15ff9f4c19bf732f9f2",
-      "cid": "bafkreibtu5uaw65dmcmpd24t5nkzhorbu34gtvto3pav76puygn7omxz6i"
+      "contentHash": "096e162a7693635ebd4bef9f9ca0bb075720ecc4807ab2a18afa0eb381c84049",
+      "cid": "bafkreiajnylcu5utmnpl2s7pt6okboyhk4qozreapkzkdcx2b2zydscaje"
     },
     {
       "slug": "biomechanical-modelling-injury-prevention",
@@ -121,8 +121,8 @@
       "publishedAt": "2025-12-10",
       "modifiedAt": "2025-12-10",
       "version": "1.0.0",
-      "contentHash": "07165e49c9f9a101e15b64c19343de7fd08df044f4399d883535af920d2a1f92",
-      "cid": "bafkreiahczpetspzuea6cw3eygjuhxt72cg7arhuhgoyqnjvv6ja2kq7si"
+      "contentHash": "cfe01593f9768f27e8341632656047cdce921e294bb5703088d5a26aebbb3ae0",
+      "cid": "bafkreigp4akzh6lwr4t6qnawgjswar6nz2jb4kklwvydbcgvujvoxoz24a"
     },
     {
       "slug": "academic-freedom-age-of-algorithms",
@@ -132,8 +132,8 @@
       "publishedAt": "2025-12-05",
       "modifiedAt": "2025-12-05",
       "version": "1.0.0",
-      "contentHash": "69bf4d81b422fff4f532faed887bcf2916ac497191e7e4b67014ddda5c3ee5c8",
-      "cid": "bafkreidjx5gydnbc772pkmx25wehxtzjc2wes4mr47slm4au3xnfypxfza"
+      "contentHash": "ff8ca93c2aa9b7c2261d39867b09749d3d10884c1c95fa5c16e5a345048cdb28",
+      "cid": "bafkreih7rsutykvjw7bcmhjzqz5qs5e5huiiqta4sx5fyfxfuncqjdg3fa"
     },
     {
       "slug": "transfer-portal-economics",
@@ -143,8 +143,8 @@
       "publishedAt": "2025-11-28",
       "modifiedAt": "2025-11-28",
       "version": "1.0.0",
-      "contentHash": "8de7b37127e31376dd07be362adebee2c37ca77e227248c56e2dbf0940c36be1",
-      "cid": "bafkreien46zxcj7dcn3n2b56gyvn5pxcyn6ko7rcojemk3rnx4eubq3l4e"
+      "contentHash": "0f844e679f13acc7d82d14719a894ba2da34ff9c05b3544036a530daa4ec26b0",
+      "cid": "bafkreiapqrhgphytvtd5qliuogniss5c3i2p7hafwnkeanvfgdnkj3bgwa"
     },
     {
       "slug": "vector-databases-institutional-memory",
@@ -154,8 +154,8 @@
       "publishedAt": "2025-11-20",
       "modifiedAt": "2025-11-20",
       "version": "1.0.0",
-      "contentHash": "8aadec4dbcec3bfc66cc31965a09d49e3d9a2b2835e6ef40425f3f3b73a92039",
-      "cid": "bafkreiekvxwe3phmhp6gntbrsznatve6hwncwkbv43xuaqs7h45xhkjahe"
+      "contentHash": "33c2594cf01c0a6f0ff2e4d6c2f7f8da11ce47e5c7035e9285d675a0b7496356",
+      "cid": "bafkreibtyjmuz4a4bjxq74xe23bpp6g2chhepzohanpjfbowowqlosldky"
     },
     {
       "slug": "institutional-resilience-through-governance-design",
@@ -165,13 +165,13 @@
       "publishedAt": "2025-11-15",
       "modifiedAt": "2025-11-15",
       "version": "1.0.0",
-      "contentHash": "7436e540ff050881e46f06eb7ff4c00aecba4aabde9bf805f3e6da8089c6e8c8",
-      "cid": "bafkreidug3sub7yfbca6i3yg5n77jqak5s5evk66tp4al47g3kaitrxiza"
+      "contentHash": "fa723aec1f173a3fa9bfa5d04b1e4a98748c460ed22f0d0dfa336d8f3cc7d5f3",
+      "cid": "bafkreih2oi5oyhyxhi72tp5f2bfr4suyosgemdwsf4gq36rtnwhtzr6v6m"
     }
   ],
   "epoch": {
-    "root": "89c8ca023fd5bf4c45d299eac8833f78ea607bebff3a8ee65e47e44fbf95daa2",
-    "timestamp": "2026-02-24T07:57:23.206Z",
+    "root": "005038dd4c320d2b63814753319b8faa817a05c189ff5f7c8f985da2e65d3173",
+    "timestamp": "2026-02-24T08:38:07.197Z",
     "articleCount": 15,
     "hashAlgorithm": "SHA-256",
     "treeType": "Binary Merkle Tree"

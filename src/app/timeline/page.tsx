@@ -4,9 +4,9 @@ import { TimelinePage } from "./TimelinePage";
 export const metadata: Metadata = {
   title: "Institutional Timeline — 1783 to Present",
   description:
-    "A comprehensive chronicle of FTHTrading University's institutional milestones, from the 1783 Charter of Foundation through two centuries of academic evolution to the AI governance era.",
+    "A comprehensive chronicle of Fitzherbert University's institutional milestones, from the 1783 Charter of Foundation through two centuries of academic evolution to the AI governance era.",
   keywords: [
-    "FTHTrading University history",
+    "Fitzherbert University history",
     "university timeline",
     "institutional milestones",
     "founded 1783",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "charter of foundation",
   ],
   openGraph: {
-    title: "Institutional Timeline — FTHTrading University",
+    title: "Institutional Timeline — Fitzherbert University",
     description:
       "243 years of institutional continuity, from the Enlightenment charter to AI-governed academic systems.",
     type: "website",
@@ -26,9 +26,9 @@ export default function Page() {
   const timelineJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "FTHTrading University Institutional Timeline",
+    name: "Fitzherbert University Institutional Timeline",
     description:
-      "Key milestones in the 243-year history of FTHTrading University.",
+      "Key milestones in the 243-year history of Fitzherbert University.",
     numberOfItems: 20,
     itemListElement: timelineEventsForSchema.map((e, i) => ({
       "@type": "ListItem",
@@ -40,7 +40,7 @@ export default function Page() {
         startDate: e.year,
         location: {
           "@type": "Place",
-          name: "FTHTrading University",
+          name: "Fitzherbert University",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Cambridge",
@@ -50,7 +50,7 @@ export default function Page() {
         },
         organizer: {
           "@type": "CollegeOrUniversity",
-          name: "FTHTrading University",
+          name: "Fitzherbert University",
         },
       },
     })),
@@ -69,7 +69,7 @@ export default function Page() {
 
 // Minimal schema data — full rich data lives in TimelinePage
 const timelineEventsForSchema = [
-  { year: "1783", title: "Charter of Foundation", description: "Colonial legislature grants a royal charter establishing FTHTrading University." },
+  { year: "1783", title: "Charter of Foundation", description: "Colonial legislature grants a royal charter establishing Fitzherbert University." },
   { year: "1789", title: "School of Divinity Founded", description: "The School of Divinity & Moral Philosophy opens as the second college." },
   { year: "1801", title: "School of Law Established", description: "Constitutional scholars and advocates begin training." },
   { year: "1832", title: "School of Medicine Founded", description: "The Whitfield bequest establishes the School of Medicine." },
@@ -78,7 +78,7 @@ const timelineEventsForSchema = [
   { year: "1891", title: "Graduate School of Commerce", description: "The sixth college opens to study market theory and strategic enterprise." },
   { year: "1903", title: "First Nobel Laureate", description: "Professor Edmund Hartley receives the Nobel Prize in Chemistry." },
   { year: "1921", title: "Women Admitted", description: "Full co-education achieved by charter amendment." },
-  { year: "1934", title: "University Press Founded", description: "FTHTrading University Press begins academic publishing." },
+  { year: "1934", title: "University Press Founded", description: "Fitzherbert University Press begins academic publishing." },
   { year: "1947", title: "Pemberton Endowment", description: "Transformative $50 million bequest doubles the endowment." },
   { year: "1963", title: "Institute for Advanced Study", description: "The Institute opens for interdisciplinary post-doctoral research." },
   { year: "1967", title: "Charter Amendment III", description: "Modernization of governance structures and faculty senate empowerment." },

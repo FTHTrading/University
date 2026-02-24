@@ -1,4 +1,4 @@
-# 📘 FTHTrading University
+# 📘 Fitzherbert University
 
 ### *Veritas per Disciplina*
 
@@ -12,7 +12,7 @@
 
 ## 🎓 Senior-Level Repository Mandate
 
-This repository contains the full digital infrastructure of **FTHTrading University** — a heritage Ivy League–style academic institution built using modern web architecture with timeless aesthetic principles.
+This repository contains the full digital infrastructure of **Fitzherbert University** — a heritage Ivy League–style academic institution built using modern web architecture with timeless aesthetic principles.
 
 This is not a startup template.
 This is not a marketing site.
@@ -41,7 +41,7 @@ This is a digitally expressed institution.
 
 ## 🟦 I. Institutional Overview
 
-**FTHTrading University** is designed to reflect:
+**Fitzherbert University** is designed to reflect:
 
 - 300+ years of academic permanence
 - Endowed institutional gravitas
@@ -440,7 +440,7 @@ This repository represents institutional identity. All changes must preserve:
 
 ## 📜 Licence
 
-© 2026 FTHTrading University. All rights reserved.
+© 2026 Fitzherbert University. All rights reserved.
 
 *Established 1783. Veritas · Disciplina · Hereditas.*
 

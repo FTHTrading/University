@@ -6,7 +6,7 @@ import { CollegeCard } from "@/components/CollegeCard";
 export const metadata: Metadata = {
   title: "Academics",
   description:
-    "Explore the colleges, programmes, research centres, faculty, notable alumni, and academic calendar of FTHTrading University.",
+    "Explore the colleges, programmes, research centres, faculty, notable alumni, and academic calendar of Fitzherbert University.",
 };
 
 const colleges = [
@@ -193,7 +193,7 @@ export default function AcademicsPage() {
         <div className="max-w-3xl mx-auto space-y-6">
           <p className="text-lg leading-relaxed text-stone">
             With over three hundred active research grants, twelve dedicated institutes,
-            and partnerships spanning four continents, FTHTrading University produces
+            and partnerships spanning four continents, Fitzherbert University produces
             scholarship that advances both theoretical understanding and practical
             application. Our faculty publish in the most rigorous peer-reviewed venues
             and serve as advisors to governments, international organisations, and
@@ -434,7 +434,7 @@ export default function AcademicsPage() {
         <div className="max-w-3xl mx-auto space-y-6">
           {[
             {
-              title: "The FTHTrading Review of Constitutional Studies",
+              title: "The Fitzherbert Review of Constitutional Studies",
               desc: "A bi-annual peer-reviewed journal examining questions of governance, sovereignty, and institutional design. Published since 1912.",
             },
             {

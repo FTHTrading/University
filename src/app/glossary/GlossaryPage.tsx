@@ -57,7 +57,7 @@ export function GlossaryPage({ terms }: { terms: GlossaryTerm[] }) {
           </h1>
           <p className="max-w-2xl mx-auto text-parchment/70 text-lg leading-relaxed">
             Authoritative definitions for the terms, concepts, and frameworks
-            that define institutional discourse at FTHTrading University.
+            that define institutional discourse at Fitzherbert University.
           </p>
           <p className="text-gold/50 text-sm mt-6 italic font-serif">
             {terms.length} defined terms across {categories.length - 1} domains

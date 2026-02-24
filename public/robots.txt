@@ -1,4 +1,4 @@
-# FTHTrading University — robots.txt
+# Fitzherbert University — robots.txt
 User-agent: *
 Allow: /
 

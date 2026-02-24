@@ -184,7 +184,7 @@ export function EpochsPage({ epochs, currentVersion }: EpochsPageProps) {
             independently detectable.
           </p>
           <p className="text-sm text-parchment/60 leading-relaxed">
-            FTHTrading University commits to the principle of archival
+            Fitzherbert University commits to the principle of archival
             immutability: sealed epochs represent the permanent historical
             record of institutional scholarship. New content or corrections are
             expressed through subsequent epochs, preserving the full audit trail

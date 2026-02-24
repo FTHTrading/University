@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Endowment & Legacy",
   description:
-    "The Founders Circle, historical benefactors, stewardship philosophy, and the enduring legacy of FTHTrading University.",
+    "The Founders Circle, historical benefactors, stewardship philosophy, and the enduring legacy of Fitzherbert University.",
 };
 
 const founders = [
@@ -112,7 +112,7 @@ export default function EndowmentPage() {
         <SectionHeader
           eyebrow="The Founders Circle"
           title="Those Who Built This Institution"
-          description="The men and women whose vision, resources, and courage brought FTHTrading University into being."
+          description="The men and women whose vision, resources, and courage brought Fitzherbert University into being."
         />
         <div className="space-y-8 max-w-3xl mx-auto">
           {founders.map((f) => (
@@ -285,20 +285,27 @@ export default function EndowmentPage() {
         <div className="max-w-3xl mx-auto">
           <div className="space-y-4">
             {[
-              { title: "Annual Stewardship Report FY 2025", type: "PDF", size: "4.2 MB" },
-              { title: "Investment Policy Statement", type: "PDF", size: "1.8 MB" },
-              { title: "Ethical Investment Framework", type: "PDF", size: "920 KB" },
-              { title: "Endowment Ten-Year Performance Review", type: "PDF", size: "3.1 MB" },
+              { title: "Annual Stewardship Report FY 2025", type: "PDF", size: "4.2 MB", href: "/documents/annual-stewardship-report-fy-2025.pdf" },
+              { title: "Investment Policy Statement", type: "PDF", size: "1.8 MB", href: "/documents/investment-policy-statement.pdf" },
+              { title: "Ethical Investment Framework", type: "PDF", size: "920 KB", href: "/documents/ethical-investment-framework.pdf" },
+              { title: "Endowment Ten-Year Performance Review", type: "PDF", size: "3.1 MB", href: "/documents/endowment-ten-year-performance-review.pdf" },
             ].map((doc) => (
-              <div key={doc.title} className="flex items-center justify-between border border-gold/20 bg-ivory p-5 gold-emboss">
+              <a
+                key={doc.title}
+                href={doc.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+                className="flex items-center justify-between border border-gold/20 bg-ivory p-5 gold-emboss hover:border-gold/40 transition-colors group"
+              >
                 <div>
                   <h4 className="font-serif font-bold text-base">{doc.title}</h4>
                   <p className="text-xs text-stone-light">{doc.type} · {doc.size}</p>
                 </div>
-                <span className="text-gold text-xs tracking-widest uppercase font-serif flex-shrink-0 ml-4">
+                <span className="text-gold text-xs tracking-widest uppercase font-serif flex-shrink-0 ml-4 group-hover:text-maroon transition-colors">
                   Download ↓
                 </span>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -365,7 +372,7 @@ export default function EndowmentPage() {
           </h2>
           <div className="gold-divider-center" />
           <p className="text-stone-light text-lg leading-relaxed mt-6 mb-10">
-            Every gift to FTHTrading University — whether a major endowment or an annual
+            Every gift to Fitzherbert University — whether a major endowment or an annual
             contribution — strengthens the foundation upon which future generations of
             scholars will build. Join the centuries-long tradition of those who invest
             in the advancement of knowledge.

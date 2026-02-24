@@ -4,9 +4,9 @@ import { getAllArticles, getAuthor } from "@/lib/articles";
 
 /* ── SEO Metadata ─────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Citation Index — FTHTrading University",
+  title: "Citation Index — Fitzherbert University",
   description:
-    "Aggregated citation index from all University Record publications. A comprehensive reference of scholarly sources, institutional reports, and primary documents cited across FTHTrading University's published research.",
+    "Aggregated citation index from all University Record publications. A comprehensive reference of scholarly sources, institutional reports, and primary documents cited across Fitzherbert University's published research.",
   keywords: [
     "citation index",
     "bibliography",
@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     "academic sources",
     "university publications",
     "institutional research",
-    "FTHTrading University citations",
+    "Fitzherbert University citations",
   ],
   openGraph: {
-    title: "Citation Index — FTHTrading University",
+    title: "Citation Index — Fitzherbert University",
     description:
       "Aggregated citation index from all University Record publications.",
     type: "website",
@@ -61,8 +61,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://fthtrading.university" },
-    { "@type": "ListItem", position: 2, name: "Citation Index", item: "https://fthtrading.university/citations" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://fitzherbert.university" },
+    { "@type": "ListItem", position: 2, name: "Citation Index", item: "https://fitzherbert.university/citations" },
   ],
 };
 
@@ -72,15 +72,15 @@ export default function CitationsPageRoute() {
   const collectionJsonLd = {
     "@context": "https://schema.org",
     "@type": "Collection",
-    "@id": "https://fthtrading.university/citations",
-    name: "FTHTrading University Citation Index",
+    "@id": "https://fitzherbert.university/citations",
+    name: "Fitzherbert University Citation Index",
     description:
       "Aggregated citation index from all University Record publications.",
     numberOfItems: citations.length,
     provider: {
       "@type": "CollegeOrUniversity",
-      name: "FTHTrading University",
-      url: "https://fthtrading.university",
+      name: "Fitzherbert University",
+      url: "https://fitzherbert.university",
     },
   };
 

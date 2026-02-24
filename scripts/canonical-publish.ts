@@ -69,7 +69,7 @@ function main() {
   const now = new Date().toISOString();
 
   const registry: CanonicalRegistry = {
-    institution: "FTHTrading University",
+    institution: "Fitzherbert University",
     protocol: "IPFS Canonical Publishing v1.0",
     generatedAt: now,
     articles: records,

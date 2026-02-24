@@ -19,15 +19,15 @@ const baskerville = Libre_Baskerville({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fthtrading.university"),
+  metadataBase: new URL("https://fitzherbert.university"),
   title: {
-    default: "FTHTrading University — Established 1783",
-    template: "%s | FTHTrading University",
+    default: "Fitzherbert University — Established 1783",
+    template: "%s | Fitzherbert University",
   },
   description:
-    "Founded in the Age of Enlightenment, FTHTrading University stands as a steward of disciplined inquiry, moral courage, and institutional continuity.",
+    "Founded in the Age of Enlightenment, Fitzherbert University stands as a steward of disciplined inquiry, moral courage, and institutional continuity.",
   keywords: [
-    "FTHTrading University",
+    "Fitzherbert University",
     "university",
     "higher education",
     "research university",
@@ -49,18 +49,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "FTHTrading University",
-    title: "FTHTrading University — Established 1783",
+    siteName: "Fitzherbert University",
+    title: "Fitzherbert University — Established 1783",
     description:
       "A tradition of intellectual sovereignty since 1783. Excellence in scholarship, research, and institutional governance.",
-    url: "https://fthtrading.university",
+    url: "https://fitzherbert.university",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FTHTrading University — Established 1783",
+    title: "Fitzherbert University — Established 1783",
     description:
       "A tradition of intellectual sovereignty since 1783. Excellence in scholarship, research, and institutional governance.",
-    site: "@FTHTradingUniv",
+    site: "@FitzherbertUniv",
   },
   robots: {
     index: true,
@@ -93,37 +93,37 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": ["CollegeOrUniversity", "EducationalOrganization"],
-              "@id": "https://fthtrading.university/#organization",
-              name: "FTHTrading University",
-              alternateName: ["FTHU", "FTH Trading University"],
-              legalName: "The President and Fellows of FTHTrading University",
+              "@id": "https://fitzherbert.university/#organization",
+              name: "Fitzherbert University",
+              alternateName: ["FTHU", "Fitzherbert University"],
+              legalName: "The President and Fellows of Fitzherbert University",
               foundingDate: "1783",
               description:
-                "Founded in the Age of Enlightenment, FTHTrading University stands as a steward of disciplined inquiry, moral courage, and institutional continuity. A research-intensive institution with 8,200 students, 847 faculty, and a $14.2 billion endowment.",
-              url: "https://fthtrading.university",
+                "Founded in the Age of Enlightenment, Fitzherbert University stands as a steward of disciplined inquiry, moral courage, and institutional continuity. A research-intensive institution with 8,200 students, 847 faculty, and a $14.2 billion endowment.",
+              url: "https://fitzherbert.university",
               motto: "Veritas per Disciplina",
               logo: {
                 "@type": "ImageObject",
-                url: "https://fthtrading.university/crest.svg",
+                url: "https://fitzherbert.university/crest.svg",
                 width: 512,
                 height: 512,
               },
-              image: "https://fthtrading.university/crest.svg",
+              image: "https://fitzherbert.university/crest.svg",
               telephone: "+1-800-555-1783",
-              email: "chancellor@fthtrading.university",
+              email: "chancellor@fitzherbert.university",
               contactPoint: [
                 {
                   "@type": "ContactPoint",
                   contactType: "Admissions",
                   telephone: "+1-800-555-1784",
-                  email: "admissions@fthtrading.university",
+                  email: "admissions@fitzherbert.university",
                   availableLanguage: ["English"],
                 },
                 {
                   "@type": "ContactPoint",
                   contactType: "Office of the Chancellor",
                   telephone: "+1-800-555-1783",
-                  email: "chancellor@fthtrading.university",
+                  email: "chancellor@fitzherbert.university",
                   availableLanguage: ["English"],
                 },
               ],
@@ -219,9 +219,9 @@ export default function RootLayout({
                 },
               ],
               sameAs: [
-                "https://twitter.com/FTHTradingUniv",
-                "https://www.linkedin.com/school/fthtrading-university",
-                "https://www.facebook.com/FTHTradingUniversity",
+                "https://twitter.com/FitzherbertUniv",
+                "https://www.linkedin.com/school/fitzherbert-university",
+                "https://www.facebook.com/FitzherbertUniversity",
               ],
             }),
           }}

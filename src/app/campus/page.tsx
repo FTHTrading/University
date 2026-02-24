@@ -5,7 +5,7 @@ import { Section, SectionHeader } from "@/components/Section";
 export const metadata: Metadata = {
   title: "Campus",
   description:
-    "Explore the historic campus of FTHTrading University — named halls, residential colleges, libraries, and centuries of tradition.",
+    "Explore the historic campus of Fitzherbert University — named halls, residential colleges, libraries, and centuries of tradition.",
 };
 
 /* ── Named Halls & Landmark Buildings ──────────────── */
@@ -167,7 +167,7 @@ export default function CampusPage() {
         />
         <div className="max-w-3xl mx-auto space-y-6">
           <p className="text-lg leading-relaxed text-stone drop-cap">
-            The campus of FTHTrading University extends across 340 acres of
+            The campus of Fitzherbert University extends across 340 acres of
             landscaped grounds, courtyards, and formal gardens. From the Georgian
             symmetry of Heritage Hall to the sustainable timber-and-glass forms
             of the Blackwell Centre, every generation of scholars has left its

@@ -5,7 +5,7 @@ import { ArchivePage } from "./ArchivePage";
 
 // ── Metadata ─────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "Canonical Archive — FTHTrading University",
+  title: "Canonical Archive — Fitzherbert University",
   description:
     "Cryptographically attested publication archive. Every article in the University Record is content-addressed via SHA-256 hashing and assigned an IPFS-compatible CIDv1 identifier. Verified by Merkle epoch root.",
   keywords: [
@@ -15,10 +15,10 @@ export const metadata: Metadata = {
     "content addressing",
     "Merkle tree",
     "academic integrity",
-    "FTHTrading University",
+    "Fitzherbert University",
   ],
   openGraph: {
-    title: "Canonical Archive — FTHTrading University",
+    title: "Canonical Archive — Fitzherbert University",
     description:
       "Cryptographically attested publication archive with SHA-256 hashing, IPFS CIDv1 identifiers, and Merkle epoch root verification.",
     type: "website",
@@ -64,13 +64,13 @@ export default function ArchiveRoute() {
   const collectionJsonLd = {
     "@context": "https://schema.org",
     "@type": "Collection",
-    name: "FTHTrading University — Canonical Archive",
+    name: "Fitzherbert University — Canonical Archive",
     description:
       "Cryptographically attested publication archive. Each article is content-addressed via SHA-256 and assigned an IPFS-compatible CIDv1 identifier.",
     publisher: {
       "@type": "CollegeOrUniversity",
-      name: "FTHTrading University",
-      url: "https://fthtrading.university",
+      name: "Fitzherbert University",
+      url: "https://fitzherbert.university",
     },
     numberOfItems: records.length,
     mainEntity: {
@@ -82,7 +82,7 @@ export default function ArchiveRoute() {
         item: {
           "@type": "ScholarlyArticle",
           name: r.title,
-          url: `https://fthtrading.university/blog/${r.slug}`,
+          url: `https://fitzherbert.university/blog/${r.slug}`,
           identifier: [
             { "@type": "PropertyValue", name: "SHA-256", value: r.contentHash },
             { "@type": "PropertyValue", name: "IPFS CID", value: r.cid },
@@ -103,13 +103,13 @@ export default function ArchiveRoute() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://fthtrading.university",
+        item: "https://fitzherbert.university",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Canonical Archive",
-        item: "https://fthtrading.university/archive",
+        item: "https://fitzherbert.university/archive",
       },
     ],
   };

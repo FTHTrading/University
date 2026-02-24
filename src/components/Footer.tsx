@@ -104,7 +104,7 @@ export function Footer() {
         {/* ── Contact + Legal ─────────────────────── */}
         <div className="border-t border-gold/20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-parchment/50 text-center md:text-left">
-            <p>FTHTrading University &middot; Office of the Chancellor</p>
+            <p>Fitzherbert University &middot; Office of the Chancellor</p>
             <p>One University Way, Heritage Hall &middot; Est. 1783</p>
           </div>
           <div className="flex gap-6 text-sm text-parchment/50">
@@ -122,7 +122,7 @@ export function Footer() {
 
         {/* ── Copyright ───────────────────────────── */}
         <p className="text-center text-xs text-parchment/30 mt-8">
-          &copy; 2026 FTHTrading University. Established 1783. All rights reserved.
+          &copy; 2026 Fitzherbert University. Established 1783. All rights reserved.
         </p>
       </div>
     </footer>

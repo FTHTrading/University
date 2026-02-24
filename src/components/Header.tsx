@@ -56,7 +56,7 @@ export function Header() {
           <Crest className="h-10 w-10" />
           <div className="leading-tight">
             <span className="block font-serif text-lg font-bold tracking-wide text-parchment group-hover:text-gold transition-colors">
-              FTHTrading University
+              Fitzherbert University
             </span>
           </div>
         </Link>

@@ -67,13 +67,13 @@ export default async function BlogArticlePage({
     url: author.url,
     affiliation: {
       "@type": "CollegeOrUniversity",
-      name: "FTHTrading University",
-      url: "https://fthtrading.university",
+      name: "Fitzherbert University",
+      url: "https://fitzherbert.university",
       foundingDate: "1783",
     },
     worksFor: {
       "@type": "CollegeOrUniversity",
-      name: "FTHTrading University",
+      name: "Fitzherbert University",
     },
     sameAs: [],
   } : null;
@@ -93,22 +93,22 @@ export default async function BlogArticlePage({
       jobTitle: author.title,
       affiliation: {
         "@type": "CollegeOrUniversity",
-        name: "FTHTrading University",
+        name: "Fitzherbert University",
       },
       url: author.url,
     },
     publisher: {
       "@type": "CollegeOrUniversity",
-      name: "FTHTrading University",
-      url: "https://fthtrading.university",
+      name: "Fitzherbert University",
+      url: "https://fitzherbert.university",
       logo: {
         "@type": "ImageObject",
-        url: "https://fthtrading.university/crest.svg",
+        url: "https://fitzherbert.university/crest.svg",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://fthtrading.university/blog/${article.slug}`,
+      "@id": `https://fitzherbert.university/blog/${article.slug}`,
     },
     articleSection: article.category,
     keywords: article.keywords.join(", "),
@@ -145,19 +145,19 @@ export default async function BlogArticlePage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://fthtrading.university",
+        item: "https://fitzherbert.university",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "University Record",
-        item: "https://fthtrading.university/blog",
+        item: "https://fitzherbert.university/blog",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: article.title,
-        item: `https://fthtrading.university/blog/${article.slug}`,
+        item: `https://fitzherbert.university/blog/${article.slug}`,
       },
     ],
   };

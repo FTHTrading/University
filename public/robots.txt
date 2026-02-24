@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.fthtrading.edu/sitemap.xml
+Sitemap: https://fthtrading.github.io/sitemap.xml

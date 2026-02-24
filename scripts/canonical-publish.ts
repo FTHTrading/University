@@ -74,7 +74,7 @@ function main() {
     generatedAt: now,
     articles: records,
     epoch: {
-      root: computeMerkleRoot(hashes),
+      merkleRoot: computeMerkleRoot(hashes),
       timestamp: now,
       articleCount: articles.length,
       hashAlgorithm: "SHA-256",
@@ -90,7 +90,7 @@ function main() {
   console.log("─────────────────────────────────────────────");
   console.log(`  ✓ ${records.length} articles hashed (SHA-256)`);
   console.log(`  ✓ ${records.length} CIDv1 identifiers generated`);
-  console.log(`  ✓ Merkle epoch root: ${registry.epoch.root.slice(0, 16)}…`);
+  console.log(`  ✓ Merkle epoch root: ${registry.epoch.merkleRoot.slice(0, 16)}…`);
   console.log(`  ✓ Registry → public/canonical-registry.json`);
   console.log("─────────────────────────────────────────────");
 }

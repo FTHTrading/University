@@ -1,364 +1,326 @@
 "use client";
 
+import { useState } from "react";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+
+type Era = "all" | "heritage" | "rechartering" | "epochs";
 
 interface TimelineEvent {
   year: string;
   title: string;
   description: string;
-  detail?: string;
-  latin?: string;
-  era: "enlightenment" | "expansion" | "modern" | "digital";
+  era: Exclude<Era, "all">;
+  details?: string[];
 }
-
-const eras = [
-  { key: "all" as const, label: "All Eras" },
-  { key: "enlightenment" as const, label: "Enlightenment (1783–1850)" },
-  { key: "expansion" as const, label: "Expansion (1851–1945)" },
-  { key: "modern" as const, label: "Modern (1946–1999)" },
-  { key: "digital" as const, label: "Digital & AI (2000–Present)" },
-];
 
 const events: TimelineEvent[] = [
   {
     year: "1783",
-    era: "enlightenment",
-    title: "Charter of Foundation",
+    title: "Heritage Charter Signed",
+    era: "heritage",
     description:
-      "The colonial legislature grants a royal charter establishing Fitzherbert University as an institution of higher learning, with an initial endowment of twelve hundred acres and a mandate for the cultivation of civic virtue.",
-    detail:
-      "Sir Henry FitzHerbert, the Reverend Jonathan Ashworth, and Lady Margaret Pemberton signed the founding charter in the presence of the Governor-General. The original parchment is held in the University Archives in Heritage Hall.",
-    latin: "In nomine veritatis et disciplinae, hanc universitatem fundamus.",
-  },
-  {
-    year: "1789",
-    era: "enlightenment",
-    title: "School of Divinity & Moral Philosophy",
-    description:
-      "The first expansion of the original charter creates a college devoted to theology, natural philosophy, and the moral sciences — establishing the University's commitment to ethical inquiry as foundational discipline.",
-    detail:
-      "Dean Theophilus Marsh delivered the inaugural lecture 'On the Nature of the Good' to thirty-seven students in the original chapel.",
+      "King George III grants the founding charter for Fitzherbert University. The charter establishes the institutional mandate, academic freedom protections, and the principle of Veritas per Disciplina — Truth through Discipline.",
+    details: [
+      "Original charter preserved in the Heritage Archive",
+      "Established the first three faculties: Divinity, Law, and Natural Philosophy",
+      "Set the architectural precedent for the University's Gothic campus",
+    ],
   },
   {
     year: "1801",
-    era: "enlightenment",
-    title: "School of Law Established",
+    title: "First Library Wing Completed",
+    era: "heritage",
     description:
-      "The second college opens its doors, training the first generation of constitutional scholars and advocates who would shape the legal frameworks of the young republic.",
-    detail:
-      "Amendment I to the Charter authorised the creation of a college devoted to jurisprudence, legal philosophy, and constitutional studies. The first class comprised sixteen students.",
-    latin: "Justitia fundamentum regnorum.",
-  },
-  {
-    year: "1832",
-    era: "enlightenment",
-    title: "School of Medicine Founded",
-    description:
-      "A bequest from the Whitfield family establishes the School of Medicine, bringing clinical training and anatomical research to the University grounds.",
-    detail:
-      "Dr. Nathaniel Whitfield's transformative bequest funded the teaching hospital, anatomical theatre, and three endowed chairs in surgery, physiology, and materia medica.",
+      "The Wycliffe Library opens, housing the University's first permanent collection. The library established the institutional commitment to knowledge preservation that later informed the canonical registry system.",
   },
   {
     year: "1847",
-    era: "enlightenment",
-    title: "Engineering & Applied Science",
+    title: "Natural Sciences Faculty Established",
+    era: "heritage",
     description:
-      "The industrial age demands new disciplines. The School of Engineering opens with programmes in civil and mechanical arts, later expanding to chemical and electrical engineering.",
-    detail:
-      "The School's first laboratory was housed in the former Chapel of St. Clare. By 1860, it had produced the engineers who designed the region's first suspension bridge.",
+      "Expansion beyond the original three faculties. The addition of Natural Sciences marked the University's first major structural adaptation — a precedent for the epoch-based restructuring of 2025.",
   },
   {
-    year: "1867",
-    era: "expansion",
-    title: "Charter Reaffirmed",
+    year: "1912",
+    title: "Women Admitted to All Programmes",
+    era: "heritage",
     description:
-      "In the post-war period, the University Board of Governors unanimously reaffirms the Charter's founding principles, strengthening institutional independence and expanding the mandate to include the natural sciences.",
-    detail:
-      "The reaffirmation added explicit protections for academic freedom and established the principle that no external authority may direct the University's curriculum or research priorities.",
+      "Fitzherbert University opens all degree programmes to women, ahead of most peer institutions. The decision was framed as a constitutional obligation under the Charter's commitment to truth without restriction.",
   },
   {
-    year: "1891",
-    era: "expansion",
-    title: "Graduate School of Commerce & Strategy",
+    year: "1945",
+    title: "Post-War Reconstruction & Expansion",
+    era: "heritage",
     description:
-      "Recognising the need for principled commercial leadership, the University establishes its sixth college to study market theory, fiduciary law, and strategic enterprise.",
-    detail:
-      "The Pemberton endowment provided initial funding. The School's founding dean, Professor Arthur Pemberton, insisted that every student study moral philosophy alongside accounting.",
-    latin: "Mercatura sine integritate nihil est.",
-  },
-  {
-    year: "1903",
-    era: "expansion",
-    title: "First Nobel Laureate",
-    description:
-      "Professor Edmund Hartley of the Department of Chemistry receives the Nobel Prize, establishing Fitzherbert University's reputation for world-class scientific research.",
-    detail:
-      "Hartley's work on catalytic processes in organic synthesis earned recognition from the Swedish Academy. He dedicated his lecture to 'the eternal partnership between patience and rigour.'",
-  },
-  {
-    year: "1921",
-    era: "expansion",
-    title: "Women Admitted — Charter Amendment II",
-    description:
-      "After decades of advocacy, the Charter is amended to grant women full admission to all colleges and programmes, achieving co-education across the institution.",
-    detail:
-      "Dr. Eleanor Ashford, daughter of the university's third chancellor, led the campaign. She was awarded an honorary doctorate in 1922.",
-  },
-  {
-    year: "1934",
-    era: "expansion",
-    title: "University Press Founded",
-    description:
-      "Fitzherbert University Press begins publishing scholarly monographs, journals, and institutional texts — becoming a cornerstone of the University's intellectual output.",
-    detail:
-      "The Press's first publication was 'Principles of Constitutional Governance' by Professor Arthur Pemberton III. It remains in print.",
-  },
-  {
-    year: "1947",
-    era: "modern",
-    title: "Pemberton Endowment",
-    description:
-      "A transformative $50 million bequest from the Pemberton family trust doubles the University's endowment, funding new research facilities, scholarships, and the Pemberton Library.",
-    detail:
-      "The bequest was structured as a perpetual trust with explicit instructions that 40% support student financial aid in perpetuity.",
-  },
-  {
-    year: "1963",
-    era: "modern",
-    title: "Institute for Advanced Study",
-    description:
-      "The Institute opens as a haven for interdisciplinary post-doctoral research, housing visiting scholars from around the world in fields spanning mathematics, philosophy, physics, and political theory.",
-    detail:
-      "The Institute's founding director, Professor Alastair Mackenzie, established the tradition of weekly 'Colloquia' — open lectures drawing audiences from across the University and region.",
+      "The University rebuilt and expanded following wartime damage. The reconstruction fund established the precedent for the modern endowment structure and introduced the concept of institutional resilience through infrastructure.",
   },
   {
     year: "1967",
-    era: "modern",
-    title: "Charter Amendment III — Governance Modernisation",
+    title: "Computer Science Department Founded",
+    era: "heritage",
     description:
-      "The Charter is amended to establish the Faculty Senate as the supreme academic authority, separating governance of scholarly matters from administrative and financial oversight.",
-    detail:
-      "This amendment created the three-body governance structure (Board of Governors, Faculty Senate, Student Assembly) that persists today.",
-  },
-  {
-    year: "1978",
-    era: "modern",
-    title: "Computational Sciences Programme",
-    description:
-      "An early computing programme is established within the School of Engineering, offering courses in numerical analysis, systems architecture, and programming theory.",
-    detail:
-      "The programme acquired its first mainframe — an IBM System/370 — in 1979. By 1985, it had launched undergraduate and graduate degree programmes in Computer Science.",
-  },
-  {
-    year: "1991",
-    era: "modern",
-    title: "Centre for Ethics & Public Life",
-    description:
-      "An interdisciplinary ethics centre is founded with support from the Ford Foundation, advancing research in bioethics, political ethics, and the ethics of technology.",
-    detail:
-      "The Centre's founding director, Professor Helena Whitfield, established the annual Whitfield Ethics Lecture, which has hosted four Nobel laureates and two heads of state.",
+      "One of the first computer science departments in the country. The department's early work on formal verification methods directly informed the deterministic publishing infrastructure built in 2025.",
   },
   {
     year: "2003",
-    era: "digital",
-    title: "Transparency Mandate — Charter Amendment IV",
+    title: "Digital Archive Initiative Launched",
+    era: "heritage",
     description:
-      "A landmark amendment requires all governance decisions, financial reports, and policy changes to be published openly, establishing Fitzherbert University as a model of institutional transparency.",
-    detail:
-      "The Transparency Mandate was driven by student advocacy and faculty Senate resolution. All documents since 2003 are available in the public governance archive.",
-  },
-  {
-    year: "2017",
-    era: "digital",
-    title: "AI & Machine Learning Institute",
-    description:
-      "A dedicated institute for artificial intelligence research is established, bringing together computer scientists, ethicists, and policy scholars to study the societal implications of autonomous systems.",
-    detail:
-      "Initial funding of $120 million from the endowment and corporate partnerships. The Institute houses 34 faculty members across six research groups.",
+      "The University began digitising its entire scholarly archive — a project that took twelve years but created the data infrastructure later used for the canonical registry.",
   },
   {
     year: "2023",
-    era: "digital",
-    title: "Ethical Investment Framework",
+    title: "AI Capability Assessment Begins",
+    era: "rechartering",
     description:
-      "The endowment adopts a formal Ethical Investment Framework with ESG exclusion criteria, developed through eighteen months of faculty-student-trustee consultation.",
-    detail:
-      "Exclusion criteria are reviewed biennially and published in the Annual Stewardship Report. The framework balances ethical constraints with the fiduciary obligation of intergenerational preservation.",
+      "The Chancellor convenes the first institutional assessment of AI capability growth. The assessment concluded that the University's traditional structure was fundamentally misaligned with the speed of intelligence development.",
+    details: [
+      "23-member assessment committee formed",
+      "Six-month comprehensive review of institutional readiness",
+      "Concluded with recommendation for full structural rechartering",
+    ],
   },
   {
-    year: "2024",
-    era: "digital",
-    title: "Charter Amendment V — AI Governance",
+    year: "2024 Q1",
+    title: "Rechartering Working Group Formed",
+    era: "rechartering",
     description:
-      "The constitutional framework for AI governance systems is ratified, establishing validation gates, bias auditing requirements, and human oversight mandates for all institutional AI deployments.",
-    detail:
-      "The amendment was drafted by the Centre for AI & Ethics and ratified by a 94% supermajority of the Faculty Senate, making Fitzherbert University the first institution with constitutional AI governance.",
-    latin: "Machina serviat homini, non dominetur.",
+      "A cross-disciplinary working group was tasked with designing the governance, academic, and infrastructure architecture for an AI-native institution — while preserving the Heritage Charter of 1783.",
+    details: [
+      "Working group included faculty, governance experts, AI researchers, and students",
+      "Reviewed 40+ institutional governance models worldwide",
+      "Established the dual-timeline framework: heritage preservation + AI-native operation",
+    ],
   },
   {
-    year: "2026",
-    era: "digital",
-    title: "University Record Launched",
+    year: "2024 Q3",
+    title: "Four-Gate Validation Protocol Ratified",
+    era: "rechartering",
     description:
-      "The institutional blog and scholarly publication platform goes live, establishing Fitzherbert University's direct voice in the discourse on governance, strategy, and AI — with full Article JSON-LD schema for AI discoverability.",
-    detail:
-      "The University Record publishes across three editorial streams: Institutional Thought Leadership, Athletics Intelligence, and Governance & AI Infrastructure. All articles carry ScholarlyArticle JSON-LD.",
+      "The Alignment Review Committee ratified the four-gate validation framework — Safety, Ethics, Operations, Constitution — as the constitutional mechanism for all AI deployments.",
+  },
+  {
+    year: "2025 Jan",
+    title: "Rechartering Protocol Signed",
+    era: "rechartering",
+    description:
+      "The University is officially rechartered as an AI-native institution. The Rechartering Protocol extends the Heritage Charter of 1783 without replacing it. Epoch-based governance begins.",
+    details: [
+      "Epoch Council established as supreme governing body",
+      "Stability Board activated for verification infrastructure",
+      "Alignment Review Committee granted constitutional veto authority",
+      "Six epoch-based colleges announced",
+    ],
+  },
+  {
+    year: "Epoch 0.1",
+    title: "College of Computational Systems Activated",
+    era: "epochs",
+    description:
+      "The foundational college — systems architecture, distributed computing, formal verification. Director Elara Voss appointed. First B.Sys and M.AI programmes launched.",
+    details: [
+      "Deterministic Publishing Lab established",
+      "Merkle verification infrastructure deployed",
+      "Edition Manifest system goes live",
+    ],
+  },
+  {
+    year: "Epoch 0.2",
+    title: "College of Applied Intelligence Activated",
+    era: "epochs",
+    description:
+      "Model design, training paradigms, capability evaluation, and alignment research. Director James Harrington appointed. Institute for Accelerated Intelligence begins operations.",
+    details: [
+      "Alignment Verification Protocol (AVP) published",
+      "First capability assessment framework deployed",
+      "Open-source benchmark suite released",
+    ],
+  },
+  {
+    year: "Epoch 0.3",
+    title: "College of Autonomous Governance Activated",
+    era: "epochs",
+    description:
+      "Constitutional AI, institutional design for autonomous systems, regulatory frameworks. Director Victoria Langford appointed. Institute for Autonomous Governance launches.",
+    details: [
+      "Constitutional AI Framework published",
+      "Referenced by 3 national regulatory bodies",
+      "Sovereignty and Institutional Design treatise published",
+    ],
+  },
+  {
+    year: "Epoch 0.4",
+    title: "College of Cryptographic Infrastructure Activated",
+    era: "epochs",
+    description:
+      "Zero-knowledge proofs, multi-chain provenance, deterministic publishing. Director Marcus Chen appointed. Institute for Multi-Chain Provenance established.",
+    details: [
+      "Multi-Chain Provenance Standard (MCPS) published",
+      "Cross-chain credential verification protocol deployed",
+      "Genesis Protocol integration initiated",
+    ],
+  },
+  {
+    year: "Epoch 0.5",
+    title: "College of Human-Centered Systems Activated",
+    era: "epochs",
+    description:
+      "Human-AI interaction, cognitive augmentation, ethical reasoning under acceleration. Director Catherine Whitfield appointed. Focus on preserving human judgment as the anchor of institutional life.",
+  },
+  {
+    year: "Epoch 0.6",
+    title: "College of Narrative & Protocol Design Activated",
+    era: "epochs",
+    description:
+      "Protocol specification, knowledge-graph construction, explainability engineering. Director Thomas Wycliffe appointed. Institute for Narrative Protocols launches.",
+    details: [
+      "Institutional Narrative Architecture (INA) framework published",
+      "Knowledge-graph specification for University governance deployed",
+      "Self-documenting protocol specification language released",
+    ],
   },
 ];
 
-const eraColors: Record<TimelineEvent["era"], string> = {
-  enlightenment: "border-gold",
-  expansion: "border-maroon",
-  modern: "border-navy",
-  digital: "border-gold-light",
+const eraLabels: Record<Era, string> = {
+  all: "All Eras",
+  heritage: "Heritage (1783–2022)",
+  rechartering: "Rechartering (2023–2025)",
+  epochs: "Capability Epochs (0.1–0.6)",
 };
 
-const eraDotColors: Record<TimelineEvent["era"], string> = {
-  enlightenment: "bg-gold",
-  expansion: "bg-maroon",
-  modern: "bg-navy",
-  digital: "bg-gold-light",
+const eraColors: Record<Exclude<Era, "all">, string> = {
+  heritage: "border-l-stone",
+  rechartering: "border-l-maroon",
+  epochs: "border-l-gold",
 };
 
-export function TimelinePage() {
-  const [activeEra, setActiveEra] = useState<string>("all");
-  const [expandedYear, setExpandedYear] = useState<string | null>(null);
+export default function TimelinePage() {
+  const [activeEra, setActiveEra] = useState<Era>("all");
+  const [expanded, setExpanded] = useState<Set<number>>(new Set());
 
   const filtered =
     activeEra === "all" ? events : events.filter((e) => e.era === activeEra);
 
+  const toggle = (idx: number) => {
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(idx)) next.delete(idx);
+      else next.add(idx);
+      return next;
+    });
+  };
+
   return (
     <>
       <Hero
-        title="Institutional Timeline"
-        subtitle="243 Years of Intellectual Sovereignty — 1783 to 2026"
-        motto="Veritas per Disciplina"
+        title="Timeline"
+        subtitle="From the Heritage Charter to the Capability Epochs — the institutional arc of Fitzherbert University."
       />
 
       <Section>
         <SectionHeader
-          eyebrow="Chronicle"
-          title="A History of Principled Evolution"
-          description="From the Enlightenment charter to AI-governed academic systems — each milestone reflects the University's commitment to disciplined inquiry and institutional continuity."
+          eyebrow="Institutional History"
+          title="Two Centuries. One Continuous Mission."
+          description="The Heritage Charter of 1783 and the Rechartering Protocol of 2025 are not separate documents — they are chapters in the same story."
         />
 
-        {/* Era Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mt-8 mb-12">
-          {eras.map((era) => (
+        {/* ── Era Filter ──────────────────────────── */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {(Object.keys(eraLabels) as Era[]).map((era) => (
             <button
-              key={era.key}
-              onClick={() => setActiveEra(era.key)}
-              className={`px-5 py-2 rounded-full text-sm font-serif tracking-wide border transition-all duration-300 cursor-pointer ${
-                activeEra === era.key
-                  ? "bg-navy text-parchment border-navy shadow-md"
-                  : "bg-parchment text-stone border-stone/20 hover:border-gold hover:text-navy"
+              key={era}
+              onClick={() => setActiveEra(era)}
+              className={`px-5 py-2 text-sm font-serif tracking-wide border transition-colors ${
+                activeEra === era
+                  ? "bg-maroon text-white border-maroon"
+                  : "border-gold/30 text-stone hover:bg-gold/10"
               }`}
             >
-              {era.label}
+              {eraLabels[era]}
             </button>
           ))}
         </div>
 
-        {/* Timeline */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeEra}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.35 }}
-            className="relative max-w-3xl mx-auto"
-          >
-            {/* Vertical line */}
-            <div className="absolute left-6 md:left-8 top-0 bottom-0 w-[2px] bg-stone/10" />
+        {/* ── Timeline ────────────────────────────── */}
+        <div className="max-w-3xl mx-auto space-y-6">
+          {filtered.map((event, idx) => {
+            const globalIdx = events.indexOf(event);
+            const isOpen = expanded.has(globalIdx);
 
-            <div className="space-y-8">
-              {filtered.map((event, i) => {
-                const isExpanded = expandedYear === event.year;
-                return (
-                  <motion.div
-                    key={event.year + event.title}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.03, duration: 0.4 }}
-                    className="relative pl-16 md:pl-20"
-                  >
-                    {/* Era dot */}
-                    <div
-                      className={`absolute left-[18px] md:left-[26px] top-1 w-4 h-4 rounded-full border-2 border-parchment ${
-                        eraDotColors[event.era]
-                      } shadow-md z-10`}
-                    />
-
+            return (
+              <div
+                key={`${event.year}-${event.title}`}
+                className={`border-l-4 ${eraColors[event.era]} bg-ivory p-6 transition-all`}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <span className="font-serif text-sm font-bold text-maroon tracking-wide">
+                      {event.year}
+                    </span>
+                    <h3 className="font-serif text-lg font-bold mt-1">{event.title}</h3>
+                    <p className="text-stone text-sm leading-relaxed mt-2">
+                      {event.description}
+                    </p>
+                  </div>
+                  {event.details && (
                     <button
-                      onClick={() =>
-                        setExpandedYear(isExpanded ? null : event.year)
-                      }
-                      className={`w-full text-left bg-ivory border rounded-sm p-5 transition-all duration-300 cursor-pointer hover:shadow-md hover:border-gold/30 ${
-                        eraColors[event.era]
-                      } border-l-4`}
+                      onClick={() => toggle(globalIdx)}
+                      className="flex-shrink-0 text-gold hover:text-maroon transition-colors text-2xl leading-none mt-1"
+                      aria-label={isOpen ? "Collapse" : "Expand"}
                     >
-                      {/* Year */}
-                      <span className="text-xs font-serif tracking-[0.3em] text-gold uppercase block mb-1">
-                        {event.year}
-                      </span>
-
-                      {/* Title */}
-                      <h3 className="font-serif text-lg font-bold text-navy leading-snug mb-2">
-                        {event.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-stone text-sm leading-relaxed">
-                        {event.description}
-                      </p>
-
-                      {/* Expandable detail */}
-                      <AnimatePresence>
-                        {isExpanded && event.detail && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="overflow-hidden"
-                          >
-                            <p className="text-stone-light text-sm italic mt-3 pt-3 border-t border-stone/10 leading-relaxed">
-                              {event.detail}
-                            </p>
-                            {event.latin && (
-                              <p className="latin-inscription mt-2 text-gold/50 text-xs">
-                                &ldquo;{event.latin}&rdquo;
-                              </p>
-                            )}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-
-                      {/* Expand indicator */}
-                      {event.detail && (
-                        <span className="text-gold/50 text-xs mt-2 inline-block">
-                          {isExpanded ? "▲ Collapse" : "▼ Read more"}
-                        </span>
-                      )}
+                      {isOpen ? "−" : "+"}
                     </button>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </Section>
+                  )}
+                </div>
 
-      {/* Latin footer */}
-      <section className="py-16 text-center">
-        <p className="latin-inscription text-gold/40 text-sm tracking-[0.3em] italic">
-          Tempus edax rerum — Time, the devourer of all things
-        </p>
-      </section>
+                {isOpen && event.details && (
+                  <ul className="mt-4 pt-4 border-t border-gold/10 space-y-2">
+                    {event.details.map((d) => (
+                      <li key={d} className="text-stone text-sm flex items-start gap-2">
+                        <span className="text-gold mt-1">&#9670;</span>
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ── Era Summary ─────────────────────────── */}
+        <div className="mt-16 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                era: "Heritage Era",
+                period: "1783–2022",
+                desc: "239 years of institutional development under the original charter. Seven faculties. Tens of thousands of graduates. A legacy of rigour, integrity, and the slow accumulation of knowledge.",
+                color: "border-t-stone",
+              },
+              {
+                era: "Rechartering",
+                period: "2023–2025",
+                desc: "Two years of institutional redesign. From the first capability assessment to the signing of the Rechartering Protocol. The fastest structural transformation in the University's history.",
+                color: "border-t-maroon",
+              },
+              {
+                era: "Capability Epochs",
+                period: "0.1–0.6 (ongoing)",
+                desc: "Six epochs activated in the first year. Each represents a capability milestone — not a calendar boundary. Together, they represent approximately thirty years of traditional academic development.",
+                color: "border-t-gold",
+              },
+            ].map((summary) => (
+              <div key={summary.era} className={`border-t-4 ${summary.color} bg-ivory p-6`}>
+                <h3 className="font-serif text-lg font-bold">{summary.era}</h3>
+                <p className="text-maroon text-xs tracking-wide uppercase mb-3">{summary.period}</p>
+                <p className="text-stone text-sm leading-relaxed">{summary.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
     </>
   );
 }

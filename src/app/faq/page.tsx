@@ -1,252 +1,182 @@
 import type { Metadata } from "next";
-import { FAQPage } from "./FAQPage";
+import { Hero } from "@/components/Hero";
+import { Section, SectionHeader } from "@/components/Section";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions — Institutional Knowledge",
+  title: "FAQ",
   description:
-    "Comprehensive answers to questions about Fitzherbert University — admissions, academics, governance, endowment, research, campus life, athletics, and AI infrastructure.",
-  keywords: [
-    "Fitzherbert University FAQ",
-    "university admissions FAQ",
-    "endowment FAQ",
-    "governance FAQ",
-    "AI governance university",
-    "institutional FAQ",
-  ],
-  openGraph: {
-    title: "Frequently Asked Questions — Fitzherbert University",
-    description:
-      "Comprehensive institutional knowledge across admissions, academics, governance, endowment, research, and AI infrastructure.",
-    type: "website",
-  },
+    "Frequently asked questions about Fitzherbert University, the 2025 rechartering, epoch-based governance, AI-native degrees, and how 1783 heritage coexists with intelligence-doubling timelines.",
 };
 
-const faqSections: {
-  category: string;
-  faqs: { question: string; answer: string }[];
-}[] = [
+const faqs = [
   {
-    category: "Institution & History",
-    faqs: [
+    category: "Identity & Heritage",
+    questions: [
       {
-        question: "When was Fitzherbert University founded?",
-        answer:
-          "Fitzherbert University was founded in 1783 by royal charter of the colonial legislature. Sir Henry FitzHerbert, the Reverend Jonathan Ashworth, and Lady Margaret Pemberton signed the founding charter. The original parchment is held in the University Archives in Heritage Hall.",
+        q: "Is Fitzherbert University a new institution?",
+        a: "No. Fitzherbert University was chartered in 1783 and has operated continuously for over 240 years. In 2025, the University was rechartered as an AI-native institution — extending its original charter without replacing it. The Heritage Charter of 1783 remains the foundational document of the University.",
       },
       {
-        question: "What is Fitzherbert University's motto?",
-        answer:
-          "The University's motto is 'Veritas per Disciplina' — Truth through Discipline. It appears on the institutional crest and reflects the founding conviction that knowledge is achieved through rigorous, systematic inquiry.",
+        q: "What does 'Chartered 1783 · Rechartered 2025' mean?",
+        a: "It means the University holds two constitutional instruments. The Heritage Charter (1783) established the institution, its values, and its academic freedom protections. The Rechartering Protocol (2025) extended that framework to accommodate intelligence-doubling timelines, epoch-based governance, and AI-native operations.",
       },
       {
-        question: "How many students attend Fitzherbert University?",
-        answer:
-          "Fitzherbert University enrols approximately 8,200 students: 4,800 undergraduates and 3,400 graduate and professional students, across six colleges and numerous interdisciplinary programmes.",
+        q: "What does 'AI-native' mean in a university context?",
+        a: "An AI-native institution is one whose academic structure, governance, research infrastructure, and administrative operations are designed from the ground up for a world where artificial intelligence is a foundational part of intellectual life. It does not mean 'using AI tools' — it means the institution's architecture was built to operate at the speed of intelligence development.",
       },
       {
-        question: "Where is Fitzherbert University located?",
-        answer:
-          "Fitzherbert University occupies a 1,200-acre campus in Cambridge, Massachusetts, with additional research facilities and properties worldwide. The main campus includes Heritage Hall, the Pemberton Library, and 47 named buildings.",
+        q: "What is 'Veritas per Disciplina'?",
+        a: "Latin for 'Truth through Discipline.' It has been the University's motto since 1783. In the rechartered institution, it carries additional weight: truth now demands not just intellectual rigour but verification infrastructure, reproducibility guarantees, and governance frameworks that can keep pace with accelerating intelligence.",
+      },
+    ],
+  },
+  {
+    category: "Epoch-Based Governance",
+    questions: [
+      {
+        q: "What is an epoch?",
+        a: "An epoch is a capability milestone — not a calendar boundary. The University measures institutional progress in epochs rather than academic years because the pace of intelligence development makes calendar time an unreliable metric. Six epochs were activated in the first twelve months of operation.",
       },
       {
-        question: "What is the governance structure of Fitzherbert University?",
-        answer:
-          "The University is governed by a three-body system: the Board of Governors (fiduciary and strategic oversight), the Faculty Senate (supreme academic authority since the 1967 Charter Amendment), and the Student Assembly (student representation). The Charter has been amended five times: 1801, 1867, 1921, 1967, 2003, and 2024.",
+        q: "What is the Epoch Council?",
+        a: "The supreme governing body of the rechartered University. The Epoch Council sets institutional direction, approves capability epoch transitions, and holds ultimate authority over the University's strategic posture. Membership includes the Chancellor, College Directors, external advisors, student representatives, and a Heritage Steward.",
+      },
+      {
+        q: "What is the Four-Gate Validation Protocol?",
+        a: "A constitutional mechanism requiring every AI deployment, research output, and governance decision to pass four sequential reviews: Safety, Ethics, Operations, and Constitution. A single gate failure halts the deployment. There are no overrides or exceptions.",
+      },
+      {
+        q: "Who has the final say on AI deployments?",
+        a: "Human beings. Article V of the Charter framework establishes that human judgment is the final authority in all governance, academic, and ethical decisions. AI systems advise, augment, and accelerate — but they do not govern.",
+      },
+    ],
+  },
+  {
+    category: "Academic Programmes",
+    questions: [
+      {
+        q: "What are the six colleges?",
+        a: "Computational Systems (Epoch 0.1), Applied Intelligence (Epoch 0.2), Autonomous Governance (Epoch 0.3), Cryptographic Infrastructure (Epoch 0.4), Human-Centered Systems (Epoch 0.5), and Narrative & Protocol Design (Epoch 0.6). Each college represents a capability milestone, not a calendar date.",
+      },
+      {
+        q: "What degrees does the University offer?",
+        a: "Undergraduate: B.Intel (Intelligence Engineering), B.Sys (Systems Architecture), B.Prov (Provenance & Audit Systems), B.Gov (Autonomous Governance). Graduate: M.AI (Applied Intelligence), M.Proto (Protocol Architecture), M.Gov (Governance Engineering), M.Crypto (Cryptographic Infrastructure). Doctoral: D.Intel (Intelligence Systems), D.Eng (Sovereign Systems Engineering), D.Prov (Deterministic Publishing & Provenance).",
+      },
+      {
+        q: "Are traditional subjects still taught?",
+        a: "Yes — but in an integrated context. Philosophy, law, economics, history, and the natural sciences are woven into the AI-native curriculum because they are essential to understanding how intelligence systems operate in human societies. No discipline stands alone when intelligence is infrastructure.",
+      },
+      {
+        q: "How long are degree programmes?",
+        a: "Undergraduate programmes span 6–8 epoch cycles (approximately 3 years). Graduate programmes span 4–6 epoch cycles (approximately 2 years). Doctoral programmes are epoch-completion based — students advance when capability milestones are met, not when a calendar target is reached.",
       },
     ],
   },
   {
     category: "Admissions",
-    faqs: [
+    questions: [
       {
-        question: "What is the acceptance rate at Fitzherbert University?",
-        answer:
-          "Fitzherbert University maintains a highly selective admissions process with an acceptance rate of approximately 6.2%. The Admissions Committee employs holistic review, evaluating academic achievement, intellectual curiosity, character, and potential contribution to the University community.",
+        q: "How do I apply?",
+        a: "The application process has three stages: (1) a Statement of Intent explaining how you understand the relationship between intelligence acceleration and your intended discipline, (2) a Systems Assessment evaluating interdisciplinary reasoning and AI literacy, and (3) an Alignment Interview with faculty from your chosen college.",
       },
       {
-        question: "Does Fitzherbert University offer financial aid?",
-        answer:
-          "Yes. Fitzherbert University meets 100% of demonstrated financial need for all admitted students. Approximately 54% of undergraduates receive need-based financial aid, with an average award of $62,400 per year. The University operates a need-blind admissions policy for domestic applicants.",
+        q: "Are standardised test scores required?",
+        a: "No. The University replaced standardised test scores with the Systems Assessment — a structured evaluation of interdisciplinary reasoning, ethical judgment, and AI literacy. The University assesses how applicants think, not what they have memorised.",
       },
       {
-        question: "What standardised tests does Fitzherbert University accept?",
-        answer:
-          "The University's admissions process is test-flexible. Applicants may submit SAT, ACT, or equivalent international qualification scores. The Admissions Committee also accepts Advanced Placement, International Baccalaureate, and A-Level results as supplementary evidence of academic preparation.",
-      },
-      {
-        question: "How do I apply to Fitzherbert University?",
-        answer:
-          "Applications are submitted through the University's admissions portal. The application includes academic transcripts, two faculty recommendations, a personal statement, and an optional interview. Early Decision applications are due 1 November; Regular Decision applications are due 2 January.",
+        q: "When are applications due?",
+        a: "Applications follow the epoch cycle calendar. For Epoch Cycle α (September–November 2025), the priority deadline is 15 September and the standard deadline is 31 October. Applications are reviewed on a rolling basis, and transfer applications are considered continuously.",
       },
     ],
   },
   {
-    category: "Academics",
-    faqs: [
+    category: "Research & Publishing",
+    questions: [
       {
-        question: "How many colleges does Fitzherbert University have?",
-        answer:
-          "Fitzherbert University comprises six colleges: the College of Arts & Sciences (founded 1783), School of Divinity & Moral Philosophy (1789), School of Law & Constitutional Studies (1801), School of Medicine & Public Health (1832), School of Engineering & Applied Science (1847), and Graduate School of Commerce & Strategy (1891).",
+        q: "What is deterministic publishing?",
+        a: "A system where every scholarly artifact is rendered identically regardless of when, where, or by whom it is rendered. The University's deterministic publishing infrastructure ensures that every research output is reproducible, auditable, and cryptographically verified via Merkle proof.",
       },
       {
-        question: "What is the student-to-faculty ratio?",
-        answer:
-          "The University maintains a student-to-faculty ratio of approximately 5:1, with 847 faculty members across 78 departments and programmes. This ratio enables close mentorship and seminar-style instruction characteristic of the University's pedagogical tradition.",
+        q: "What is the canonical registry?",
+        a: "The University's authoritative record of all published scholarly artifacts. Every document in the registry carries a cryptographic hash, an Edition Manifest, and IPFS provenance. The registry replaces trust-based verification with proof-based verification.",
       },
       {
-        question: "Does Fitzherbert University offer online programmes?",
-        answer:
-          "The University does not currently offer fully online degree programmes, consistent with its commitment to residential education and in-person intellectual community. Select continuing education and executive programmes incorporate hybrid delivery.",
-      },
-      {
-        question: "What research institutes does the University operate?",
-        answer:
-          "The University operates 12 research institutes including the Institute for Advanced Study (1963), the Centre for Ethics & Public Life (1991), the AI & Machine Learning Institute (2017), and the Centre for Artificial Intelligence & Ethics. Combined annual research expenditure exceeds $890 million.",
+        q: "What are the five research institutes?",
+        a: "Accelerated Intelligence, Autonomous Governance, Deterministic Publishing, Multi-Chain Provenance, and Narrative Protocols. Each operates at a frontier that did not exist five years ago.",
       },
     ],
   },
   {
-    category: "Endowment & Finance",
-    faqs: [
+    category: "Infrastructure & Operations",
+    questions: [
       {
-        question: "How large is Fitzherbert University's endowment?",
-        answer:
-          "Fitzherbert University's endowment stands at $14.2 billion as of FY 2025, accumulated over 243 years of stewardship. The endowment generated a rolling 10-year CAGR of 8.7% and a 20-year annualised return of 9.4% net of fees.",
+        q: "What does 'intelligence-doubling timelines' mean?",
+        a: "It refers to the observable trend of AI capability growth — foundation models, autonomous agents, and infrastructure intelligence are roughly doubling in capability every 3–6 months. The University structures its operations to match this pace rather than the traditional academic calendar.",
       },
       {
-        question: "How is the endowment invested?",
-        answer:
-          "The endowment is allocated across six asset classes: 28% public equities, 23% private equity and venture capital, 18% real assets (including the original 1,200-acre land grant), 14% fixed income, 10% hedge funds, and 7% cash and equivalents. Allocation is reviewed annually by the Finance & Endowment Committee.",
+        q: "How does the University handle AI safety?",
+        a: "Through the Four-Gate Validation Protocol, continuous alignment audits, and the constitutional primacy of human judgment. The Alignment Review Committee has the authority to halt any deployment that fails verification. Safety is not a policy — it is a constitutional obligation.",
       },
       {
-        question: "What is the endowment's distribution rate?",
-        answer:
-          "The University distributes approximately 5.1% of the endowment's trailing twelve-quarter average market value annually, balancing current operational needs with intergenerational preservation. This distribution funds scholarships, faculty positions, research, and campus maintenance.",
-      },
-      {
-        question: "Does the endowment have ethical investment constraints?",
-        answer:
-          "Since 2023, the Ethical Investment Framework excludes industries incompatible with the University's values. Exclusion criteria were developed through eighteen months of faculty-student-trustee consultation and are reviewed biennially. The framework is published in the Annual Stewardship Report.",
-      },
-    ],
-  },
-  {
-    category: "Research & Innovation",
-    faqs: [
-      {
-        question: "What is Fitzherbert University's annual research expenditure?",
-        answer:
-          "The University's combined annual research expenditure exceeds $890 million across 12 institutes, 78 departments, and numerous interdisciplinary programmes. Funding sources include federal grants, foundation support, endowment income, and industry partnerships.",
-      },
-      {
-        question: "How many Nobel laureates are affiliated with Fitzherbert University?",
-        answer:
-          "Fitzherbert University claims 14 Nobel laureates among its faculty, alumni, and long-term research associates, spanning Chemistry, Physics, Economics, Medicine, and Literature. The first Nobel laureate, Professor Edmund Hartley, received the Prize in Chemistry in 1903.",
-      },
-      {
-        question:
-          "What is the University's approach to AI research ethics?",
-        answer:
-          "All AI research at Fitzherbert University operates under the Charter Amendment V (2024) framework, which requires four-gate validation: technical benchmarking, quantitative bias auditing, qualitative ethical review by faculty, and formal sign-off by the Ethics & Institutional Integrity Committee. The Centre for AI & Ethics publishes annual governance reports.",
-      },
-    ],
-  },
-  {
-    category: "Campus & Student Life",
-    faqs: [
-      {
-        question: "How large is the Fitzherbert University campus?",
-        answer:
-          "The main campus occupies 1,200 acres — the original land grant from the 1783 Charter. It includes 47 named buildings, 5 residential colleges, the Pemberton Library (3.2 million volumes), the Heritage Athletic Complex, and 200 acres of gardens, courtyards, and woodlands.",
-      },
-      {
-        question: "Does Fitzherbert University have residential colleges?",
-        answer:
-          "Yes. All undergraduates live in one of five residential colleges: Ashworth College, Pemberton College, Hartley College, Whitfield College, and Moreau College. Each college has its own dining hall, common rooms, and academic advisors, fostering close-knit intellectual communities.",
-      },
-      {
-        question: "What athletic programmes does the University offer?",
-        answer:
-          "Fitzherbert University fields 31 varsity teams across NCAA Division I athletics. The Athletics Intelligence Division applies game-theoretic analysis and Bayesian opponent modelling to competitive strategy. The University also supports club sports, intramural leagues, and a competitive esports programme.",
-      },
-    ],
-  },
-  {
-    category: "AI Governance & Technology",
-    faqs: [
-      {
-        question: "What is institutional AI governance?",
-        answer:
-          "Institutional AI governance is the discipline of managing artificial intelligence systems within organisations using constitutional frameworks, validation gates, bias auditing, and human oversight. Fitzherbert University's Charter Amendment V (2024) established the first constitutional AI governance framework at a major university.",
-      },
-      {
-        question: "What is a model registry?",
-        answer:
-          "A model registry is a governed catalogue of all AI/ML models deployed within an institution. Each entry records the model's scope, authority, validation status, bias audit results, and responsible parties. Fitzherbert University's registry currently tracks 47 models across admissions analytics, research allocation, and campus operations.",
-      },
-      {
-        question: "What is Retrieval-Augmented Generation (RAG)?",
-        answer:
-          "RAG is an AI architecture that combines information retrieval from a knowledge base with language model generation. Fitzherbert University is developing an agentic RAG system to create a queryable knowledge layer over the institution's documentary corpus, enabling governed institutional memory.",
-      },
-      {
-        question: "How does Fitzherbert University audit AI models for bias?",
-        answer:
-          "The University employs a four-gate validation architecture: technical benchmarking against held-out datasets, quantitative bias auditing (disparate impact analysis, calibration testing, counterfactual fairness), qualitative ethical review by faculty ethicists, and formal sign-off by the Ethics & Institutional Integrity Committee.",
+        q: "Is the University connected to other organisations?",
+        a: "The University operates as part of a broader ecosystem including the Genesis Protocol and FTH Trading sovereign systems. Research in multi-chain provenance and sovereign intelligence integrates with this ecosystem while maintaining full academic independence.",
       },
     ],
   },
 ];
 
-export default function Page() {
-  // Build JSON-LD for FAQPage
-  const allFaqs = faqSections.flatMap((s) => s.faqs);
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    name: "Fitzherbert University — Frequently Asked Questions",
-    description:
-      "Comprehensive answers to questions about Fitzherbert University across admissions, academics, governance, endowment, research, and AI infrastructure.",
-    mainEntity: allFaqs.map((f) => ({
-      "@type": "Question",
-      name: f.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: f.answer,
-      },
-    })),
-  };
-
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://fitzherbert.university",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Frequently Asked Questions",
-        item: "https://fitzherbert.university/faq",
-      },
-    ],
-  };
+export default function FAQPage() {
+  const allFaqs = faqs.flatMap((cat) =>
+    cat.questions.map((q) => ({ ...q, category: cat.category }))
+  );
 
   return (
     <>
+      <Hero
+        title="Frequently Asked Questions"
+        subtitle="What the University is, how it works, and why it was built this way."
+      />
+
+      {/* ── FAQ Content ───────────────────────────── */}
+      <Section>
+        <div className="max-w-3xl mx-auto space-y-16">
+          {faqs.map((category) => (
+            <div key={category.category}>
+              <h2 className="font-serif text-2xl font-bold mb-8 text-center">
+                {category.category}
+              </h2>
+              <div className="ornamental-divider mb-8">
+                <span className="ornament">&#10041;</span>
+              </div>
+              <div className="space-y-8">
+                {category.questions.map((faq) => (
+                  <div key={faq.q} className="border-l-2 border-gold pl-6">
+                    <h3 className="font-serif text-lg font-bold mb-3">{faq.q}</h3>
+                    <p className="text-stone text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── JSON-LD ───────────────────────────────── */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: allFaqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }),
+        }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <FAQPage sections={faqSections} />
     </>
   );
 }

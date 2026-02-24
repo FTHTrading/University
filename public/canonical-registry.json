@@ -1,7 +1,7 @@
 {
   "institution": "Fitzherbert University",
   "protocol": "IPFS Canonical Publishing v1.0",
-  "generatedAt": "2026-02-24T08:38:07.197Z",
+  "generatedAt": "2026-02-24T09:13:42.763Z",
   "articles": [
     {
       "slug": "constitutional-precedent-digital-governance",
@@ -11,8 +11,8 @@
       "publishedAt": "2026-02-14",
       "modifiedAt": "2026-02-14",
       "version": "1.0.0",
-      "contentHash": "912f209376018b0b8bea1c1a04dcea922af24d0c5b5219023f7692fd88e88f0c",
-      "cid": "bafkreierf4qjg5qbrmfyx2q4dicnz2usflze2dc3kimqep3wsl6yr2epbq"
+      "contentHash": "1243073e17d742a1101be8b685abf27868698d84c7f635fcd87617f53dd7a9a0",
+      "cid": "bafkreiasimdt4f6xikqrag7iw2c2x4tynbuy3bgh6y27zwdwc72t3v5jua"
     },
     {
       "slug": "future-of-ai-governed-institutions",
@@ -22,8 +22,8 @@
       "publishedAt": "2026-02-10",
       "modifiedAt": "2026-02-10",
       "version": "1.0.0",
-      "contentHash": "bf5406e91728f59a78db54331a4f06bf80ad721884221ccf98c189f1acc53db5",
-      "cid": "bafkreif7kqdosfzi6wnhrw2ugmne6bv7qcwxegeeeiom7ggbrhy2zrj5wu"
+      "contentHash": "fc302ee79542724df0159882f936fe50fa79572ef222c3c7a0ccab8f062e5ee0",
+      "cid": "bafkreih4gaxopfkcojg7afmyql4tn7sq7j4volxselb4pigmvohqmls64a"
     },
     {
       "slug": "fiduciary-duty-in-perpetuity",
@@ -33,8 +33,8 @@
       "publishedAt": "2026-02-07",
       "modifiedAt": "2026-02-07",
       "version": "1.0.0",
-      "contentHash": "8a37707c58c97c46a4e3286bcdb87195b3d4d909f7cf2296b55cb531568b6ba8",
-      "cid": "bafkreiekg5yhywgjprdkjyzinpg3q4mvwpknscpxz4rjnnk4wuyvnc3lva"
+      "contentHash": "820a320ef693cfa6d083942896f31b6088b2352ecb1dd605a8e5e8622e4f0e41",
+      "cid": "bafkreiecbiza55utz6tnba4ufclpgg3arczdklwldxlalkhf5brc4tyoie"
     },
     {
       "slug": "agentic-rag-institutional-memory",
@@ -44,8 +44,8 @@
       "publishedAt": "2026-02-03",
       "modifiedAt": "2026-02-03",
       "version": "1.0.0",
-      "contentHash": "1373a1cf5dceacada6146dfcdb301e7e509ef45f97da0bf6ad6b107a75941dc1",
-      "cid": "bafkreiatooq46xoovsw2mfdn7tntaht6kcppix4x3if7nlllcb5hlfa5ye"
+      "contentHash": "a9df4e4efdb2fb89016e46fd50699f330634a5c37bf014f15e3953055607eda9",
+      "cid": "bafkreifj35he57ns7oeqc3sg7vigthztay2klq336akpcxrzkmcvmb7nve"
     },
     {
       "slug": "game-theory-competitive-strategy-collegiate-systems",
@@ -88,8 +88,8 @@
       "publishedAt": "2026-01-15",
       "modifiedAt": "2026-01-15",
       "version": "1.0.0",
-      "contentHash": "48764908f297ff7113a3cdbd113948fd2c0bdb84ee972ac876e88bb7c39cd497",
-      "cid": "bafkreiciozeqr4ux75yrhi6nxuitssh5fqf5xbhos4vmq5xiro34hhgus4"
+      "contentHash": "6a74973c49be7c3f20ad53acbd24a35721cf69caaec55cabd0db30de586fd094",
+      "cid": "bafkreidkosltysn6pq7sblktvs6sji2xehhwtsvoyvokxug3gdpfq36qsq"
     },
     {
       "slug": "knowledge-graphs-institutional-intelligence",
@@ -165,13 +165,13 @@
       "publishedAt": "2025-11-15",
       "modifiedAt": "2025-11-15",
       "version": "1.0.0",
-      "contentHash": "fa723aec1f173a3fa9bfa5d04b1e4a98748c460ed22f0d0dfa336d8f3cc7d5f3",
-      "cid": "bafkreih2oi5oyhyxhi72tp5f2bfr4suyosgemdwsf4gq36rtnwhtzr6v6m"
+      "contentHash": "84e96409d6b837da226329eb9f54805b18f33fad29fa9b44a7c09eaf846740ae",
+      "cid": "bafkreiee5fsatvvyg7nceyzj5opvjac3ddzt7ljj7knujj6at2xyiz2avy"
     }
   ],
   "epoch": {
-    "root": "005038dd4c320d2b63814753319b8faa817a05c189ff5f7c8f985da2e65d3173",
-    "timestamp": "2026-02-24T08:38:07.197Z",
+    "root": "03dec761e780f0307bfe193bef8c852408f04ec2839cc7f9a6bb8d1cc7603fe6",
+    "timestamp": "2026-02-24T09:13:42.763Z",
     "articleCount": 15,
     "hashAlgorithm": "SHA-256",
     "treeType": "Binary Merkle Tree"

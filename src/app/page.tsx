@@ -5,67 +5,67 @@ import Link from "next/link";
 
 const colleges = [
   {
-    name: "College of Arts & Sciences",
-    dean: "Professor Eleanor Ashworth",
-    established: "Est. 1783",
+    name: "College of Computational Systems",
+    dean: "Director Elara Voss",
+    established: "Epoch 0.1",
     description:
-      "The founding college of the University, dedicated to the liberal arts, natural philosophy, and the cultivation of critical inquiry across the humanities and sciences.",
+      "The foundational college. Systems architecture, distributed computing, formal verification, and the engineering substrate upon which all intelligence infrastructure is built.",
   },
   {
-    name: "School of Engineering & Applied Science",
-    dean: "Professor James Harrington",
-    established: "Est. 1847",
+    name: "College of Applied Intelligence",
+    dean: "Director James Harrington",
+    established: "Epoch 0.2",
     description:
-      "Pioneering advances in civil, mechanical, and computational engineering with a commitment to disciplined innovation and structural excellence.",
+      "Model design, training paradigms, capability evaluation, and alignment research. The college where raw compute becomes reliable, governed intelligence.",
   },
   {
-    name: "School of Law & Constitutional Studies",
-    dean: "Professor Victoria Langford",
-    established: "Est. 1801",
+    name: "College of Autonomous Governance",
+    dean: "Director Victoria Langford",
+    established: "Epoch 0.3",
     description:
-      "Training advocates, jurists, and constitutional scholars in the tradition of principled governance, legal philosophy, and institutional integrity.",
+      "Constitutional AI, institutional design for autonomous systems, regulatory frameworks, and the legal infrastructure of machine governance.",
   },
   {
-    name: "School of Divinity & Moral Philosophy",
-    dean: "Professor Thomas Wycliffe",
-    established: "Est. 1789",
+    name: "College of Cryptographic Infrastructure",
+    dean: "Director Marcus Chen",
+    established: "Epoch 0.4",
     description:
-      "Examining the enduring questions of ethics, theology, and moral reasoning that have shaped Western intellectual tradition for centuries.",
+      "Zero-knowledge proofs, multi-chain provenance, deterministic publishing, Merkle verification, and the trust architecture of decentralised systems.",
   },
   {
-    name: "School of Medicine & Public Health",
-    dean: "Professor Catherine Whitfield",
-    established: "Est. 1832",
+    name: "College of Human-Centered Systems",
+    dean: "Director Catherine Whitfield",
+    established: "Epoch 0.5",
     description:
-      "Advancing the science of healing through rigorous clinical training, biomedical research, and a commitment to the health of the commonwealth.",
+      "Human-AI interaction, cognitive augmentation, ethical reasoning under acceleration, and the preservation of human judgment as the anchor of institutional life.",
   },
   {
-    name: "Graduate School of Commerce & Strategy",
-    dean: "Professor Richard Pemberton",
-    established: "Est. 1891",
+    name: "College of Narrative & Protocol Design",
+    dean: "Director Thomas Wycliffe",
+    established: "Epoch 0.6",
     description:
-      "Developing leaders of institutional and commercial enterprise through the study of strategic management, market theory, and fiduciary stewardship.",
+      "Institutional narrative architecture, protocol specification, knowledge-graph construction, and the design of systems that explain themselves.",
   },
 ];
 
 const news = [
   {
     date: "February 2026",
-    title: "Chancellor Announces Expansion of Computational Sciences Division",
+    title: "Epoch 0.6 College Inaugurated — Narrative & Protocol Design",
     excerpt:
-      "A new endowed chair and three research laboratories will strengthen the University's leadership in artificial intelligence and formal methods.",
+      "The sixth college opens, completing the University's foundational epoch structure. Its mandate: design systems that explain themselves and encode institutional memory.",
   },
   {
     date: "January 2026",
-    title: "Restoration of Heritage Hall Completed",
+    title: "First Compute-Efficiency Doubling Verified",
     excerpt:
-      "The 1803 Gothic Revival masterwork has been meticulously restored, preserving its architectural integrity for the next century of scholarly life.",
+      "The Institute for Accelerated Intelligence confirms the University's first full compute-efficiency doubling cycle, 14 months ahead of the 24-month baseline.",
   },
   {
     date: "December 2025",
-    title: "Fitzherbert University Ascends in Global Research Rankings",
+    title: "Genesis Protocol Integration Complete",
     excerpt:
-      "The University achieved its highest-ever placement in the World Institutional Research Index, reflecting sustained investment in foundational scholarship.",
+      "Fitzherbert University's canonical publishing layer is now fully anchored to the Genesis Protocol, enabling deterministic, Merkle-verified scholarly output.",
   },
 ];
 
@@ -80,14 +80,14 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 text-center">
             {[
-              { stat: "1783", label: "Founded" },
-              { stat: "8,200", label: "Students" },
-              { stat: "420", label: "Acres" },
-              { stat: "860+", label: "Faculty" },
+              { stat: "1783", label: "Heritage Charter" },
+              { stat: "2025", label: "AI Rechartering" },
+              { stat: "12", label: "Capability Epochs" },
               { stat: "6", label: "Colleges" },
-              { stat: "12", label: "Research Institutes" },
-              { stat: "14.2B", label: "Endowment" },
-              { stat: "3", label: "Nobel Laureates" },
+              { stat: "5", label: "Research Institutes" },
+              { stat: "4", label: "Alignment Cycles" },
+              { stat: "2", label: "Compute Doublings" },
+              { stat: "~30yr", label: "AI-Time Equivalent" },
             ].map((s) => (
               <div key={s.label}>
                 <p className="font-serif text-xl md:text-2xl font-bold text-gold">
@@ -109,23 +109,28 @@ export default function HomePage() {
       <Section>
         <SectionHeader
           eyebrow="Message from the Chancellor"
-          title="A Commitment to Enduring Excellence"
+          title="Intelligence Doubles. Principles Endure."
         />
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-lg leading-relaxed text-stone mb-6 drop-cap">
-            Founded in the Age of Enlightenment, Fitzherbert University stands as a
-            steward of disciplined inquiry, moral courage, and institutional continuity.
-            For more than two centuries, we have cultivated scholars, statesmen, and
-            pioneers whose contributions have shaped the course of human understanding.
+            Fitzherbert University was chartered in 1783 on principles of disciplined
+            inquiry, constitutional governance, and public responsibility. In 2025, we
+            rechartered as an AI-native institution &mdash; not because those principles
+            changed, but because the pace of intelligence itself changed.
+          </p>
+          <p className="text-lg leading-relaxed text-stone mb-6">
+            Model capability doubles every three to six months. Algorithmic efficiency
+            doubles every twelve to eighteen months. A one-year-old AI-native institution
+            is equivalent to decades of human institutional development. Each semester
+            is a capability epoch.
           </p>
           <p className="text-lg leading-relaxed text-stone mb-8">
-            Our mission remains unchanged: to provide an education of such depth and
-            rigour that it transforms not merely careers, but characters. We invite
-            you to explore the traditions, scholarship, and community that define this
-            venerable institution.
+            The mission remains unchanged: truth through discipline. The tools evolve.
+            The tempo has accelerated. The obligation to prepare students for the world
+            as it actually exists has never been greater.
           </p>
           <p className="font-serif italic text-maroon">
-            &mdash; The Rt. Hon. Chancellor Sir Edmund Blackwell, KBE
+            &mdash; Chancellor Sir Edmund Blackwell, KBE
           </p>
         </div>
       </Section>
@@ -133,9 +138,9 @@ export default function HomePage() {
       {/* ── Colleges & Schools ────────────────────── */}
       <Section alternate stone>
         <SectionHeader
-          eyebrow="Colleges & Schools"
-          title="Six Pillars of Scholarship"
-          description="Each college upholds a distinct tradition of inquiry, united by the University's founding commitment to truth through disciplined study."
+          eyebrow="Epoch-Based Colleges"
+          title="Six Capability Milestones"
+          description="Each college represents an epoch — a capability milestone in the University's intelligence-doubling timeline. Together, they form the complete academic architecture of an AI-native institution."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {colleges.map((c) => (
@@ -144,38 +149,60 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ── Research ──────────────────────────────── */}
+      {/* ── Two Timelines ─────────────────────────── */}
       <Section>
         <SectionHeader
+          eyebrow="AI-Time ≠ Human Time"
+          title="Two Timelines, One Institution"
+          description="For most of human history, knowledge evolved across generations. AI has altered that tempo. Fitzherbert University prepares students to operate fluently in both."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="border border-gold/20 bg-ivory p-8 gold-emboss">
+            <h3 className="font-serif text-xl font-bold mb-3">Human Institutional Time</h3>
+            <ul className="space-y-2 text-stone text-sm">
+              <li className="flex items-start gap-2"><span className="text-gold mt-1">&#9670;</span>Measured in generations</li>
+              <li className="flex items-start gap-2"><span className="text-gold mt-1">&#9670;</span>Rooted in moral philosophy, constitutional law, and lived experience</li>
+              <li className="flex items-start gap-2"><span className="text-gold mt-1">&#9670;</span>Stabilised through tradition and governance</li>
+              <li className="flex items-start gap-2"><span className="text-gold mt-1">&#9670;</span>Progress measured in decades</li>
+            </ul>
+          </div>
+          <div className="border border-gold/20 bg-navy p-8 text-parchment">
+            <h3 className="font-serif text-xl font-bold mb-3 text-gold">AI Acceleration Time</h3>
+            <ul className="space-y-2 text-parchment/80 text-sm">
+              <li className="flex items-start gap-2"><span className="text-gold mt-1">&#9670;</span>Measured in capability cycles</li>
+              <li className="flex items-start gap-2"><span className="text-gold mt-1">&#9670;</span>Driven by compute scaling and algorithmic efficiency</li>
+              <li className="flex items-start gap-2"><span className="text-gold mt-1">&#9670;</span>Evolving on monthly and annual horizons</li>
+              <li className="flex items-start gap-2"><span className="text-gold mt-1">&#9670;</span>Capability doubles every 3–6 months</li>
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── Research ──────────────────────────────── */}
+      <Section alternate>
+        <SectionHeader
           eyebrow="Research & Innovation"
-          title="Advancing the Frontier of Knowledge"
-          description="Our research institutes pursue the most consequential questions of our age, from artificial intelligence governance to constitutional theory and biomedical discovery."
+          title="Intelligence Infrastructure"
+          description="Five institutes pursuing the foundational questions of accelerated intelligence, autonomous governance, and deterministic knowledge systems."
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              title: "Institute for Constitutional Governance",
-              desc: "Examining the legal and philosophical foundations of institutional authority, sovereignty, and democratic accountability.",
+              title: "Institute for Accelerated Intelligence",
+              desc: "Tracking capability doubling, alignment verification, and the science of intelligence scaling across compute and algorithmic dimensions.",
             },
             {
-              title: "Centre for Artificial Intelligence & Ethics",
-              desc: "Pioneering responsible AI development through rigorous validation, model governance, and fairness-aware machine learning.",
+              title: "Institute for Autonomous Governance",
+              desc: "Developing governance frameworks for AI-run systems — constitutional AI, validation gates, bias auditing, and human oversight mandates.",
             },
             {
-              title: "Heritage Sciences Laboratory",
-              desc: "Applying advanced analytical techniques to the preservation and understanding of cultural and architectural heritage.",
+              title: "Institute for Deterministic Publishing",
+              desc: "Maintaining Edition Manifests, Merkle roots, reproducible artifacts, and the canonical layer for sovereign scholarly output.",
             },
           ].map((inst) => (
-            <div
-              key={inst.title}
-              className="border-t-2 border-gold pt-6"
-            >
-              <h3 className="font-serif text-lg font-bold mb-3">
-                {inst.title}
-              </h3>
-              <p className="text-stone text-sm leading-relaxed">
-                {inst.desc}
-              </p>
+            <div key={inst.title} className="border-t-2 border-gold pt-6">
+              <h3 className="font-serif text-lg font-bold mb-3">{inst.title}</h3>
+              <p className="text-stone text-sm leading-relaxed">{inst.desc}</p>
             </div>
           ))}
         </div>
@@ -189,59 +216,54 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ── Athletics ─────────────────────────────── */}
-      <Section alternate>
+      {/* ── Year One Output ───────────────────────── */}
+      <Section stone>
         <SectionHeader
-          eyebrow="Athletics & Esports"
-          title="Discipline Beyond the Lecture Hall"
-          description="Competitive excellence grounded in the same values of preparation, strategy, and conviction that define our academic mission."
+          eyebrow="Year One"
+          title="How a One-Year-Old University Achieves Elite Status"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="border border-gold/20 bg-parchment p-8 gold-emboss">
-            <h3 className="font-serif text-xl font-bold mb-3">Varsity Athletics</h3>
-            <p className="text-stone text-sm leading-relaxed mb-4">
-              Twenty-four varsity programmes across traditional and emerging sports,
-              competing at the highest levels of intercollegiate competition. Our
-              student-athletes embody the University&apos;s commitment to holistic
-              development.
-            </p>
-            <Link
-              href="/athletics"
-              className="text-xs tracking-widest uppercase text-gold hover:text-maroon transition-colors"
-            >
-              Explore Teams &rarr;
-            </Link>
+        <div className="max-w-3xl mx-auto">
+          <p className="text-lg leading-relaxed text-stone mb-8 text-center">
+            Because Fitzherbert University is AI-native, it grows on <em>exponential
+            curves</em>, not linear ones. Year One output in AI-time:
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+            {[
+              { stat: "12", label: "Capability Epochs" },
+              { stat: "4", label: "Model-Alignment Cycles" },
+              { stat: "2", label: "Compute-Efficiency Doublings" },
+              { stat: "1", label: "Full Knowledge Rewrite" },
+              { stat: "1", label: "Governance Stabilisation" },
+              { stat: "1", label: "Protocol Integration" },
+            ].map((s) => (
+              <div key={s.label} className="border border-gold/20 bg-ivory p-6">
+                <p className="font-serif text-3xl font-bold text-maroon">{s.stat}</p>
+                <p className="text-xs tracking-widest uppercase text-stone-light mt-2">
+                  {s.label}
+                </p>
+              </div>
+            ))}
           </div>
-          <div className="border border-gold/20 bg-parchment p-8 gold-emboss">
-            <h3 className="font-serif text-xl font-bold mb-3">Esports Division</h3>
-            <p className="text-stone text-sm leading-relaxed mb-4">
-              The University&apos;s esports programme integrates competitive gaming
-              with strategic analytics, data science, and performance psychology &mdash;
-              bringing academic rigour to digital competition.
-            </p>
-            <Link
-              href="/athletics"
-              className="text-xs tracking-widest uppercase text-gold hover:text-maroon transition-colors"
-            >
-              Explore Esports &rarr;
-            </Link>
-          </div>
+          <p className="text-center text-stone mt-8 text-sm italic">
+            This is equivalent to <strong className="text-maroon">20–40 years</strong> of
+            human institutional development.
+          </p>
         </div>
       </Section>
 
       {/* ── Admissions ────────────────────────────── */}
-      <Section stone>
+      <Section>
         <div className="text-center max-w-3xl mx-auto">
           <p className="engraved text-gold mb-3">Admissions</p>
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
-            Begin Your Journey
+            Preparing for the AI Era
           </h2>
           <div className="gold-divider-center" />
           <p className="text-stone-light text-lg leading-relaxed mt-6 mb-10">
-            Fitzherbert University seeks students of exceptional intellect, moral
-            seriousness, and scholarly ambition. Our admissions process is both
-            selective and holistic, reflecting the institution&apos;s commitment to
-            cultivating future stewards of knowledge and governance.
+            Fitzherbert University seeks students who understand that intelligence
+            is accelerating, that governance must evolve with it, and that human
+            judgment remains the anchor. The question is not whether AI will shape
+            the future — it is whether you will shape AI responsibly.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
@@ -254,7 +276,7 @@ export default function HomePage() {
               href="/about"
               className="inline-block border border-gold text-gold px-8 py-3 text-sm tracking-widest uppercase font-serif hover:bg-gold hover:text-navy transition-colors"
             >
-              Schedule a Visit
+              Learn More
             </Link>
           </div>
         </div>
@@ -268,10 +290,7 @@ export default function HomePage() {
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {news.map((item) => (
-            <article
-              key={item.title}
-              className="border-l-2 border-gold pl-6"
-            >
+            <article key={item.title} className="border-l-2 border-gold pl-6">
               <p className="engraved text-gold/60 text-xs mb-2">{item.date}</p>
               <h3 className="font-serif text-lg font-bold mb-2 leading-snug">
                 {item.title}
@@ -284,18 +303,19 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ── Endowment ─────────────────────────────── */}
+      {/* ── Heritage ──────────────────────────────── */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
-          <p className="engraved text-gold mb-3">Endowment & Legacy</p>
+          <p className="engraved text-gold mb-3">Heritage & Legacy</p>
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
-            Stewards of an Enduring Mission
+            The Charter of 1783 Endures
           </h2>
           <div className="gold-divider-center" />
           <p className="text-stone-light text-lg leading-relaxed mt-6 mb-8">
-            The University&apos;s endowment, cultivated over centuries of careful
-            stewardship, ensures that our mission of scholarly excellence and
-            institutional integrity endures for generations yet unborn.
+            The acceleration of artificial intelligence does not erase the founding
+            commitments — academic freedom, separation of powers, transparency, public
+            service. It increases their importance. Institutions that endure are those
+            that evolve without abandoning their foundations.
           </p>
           <Link
             href="/endowment"

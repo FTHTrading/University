@@ -91,7 +91,7 @@ const articles: BlogArticle[] = [
       {
         heading: "The Validation Gate Architecture",
         content:
-          "No model at Fitzherbert University may influence institutional decisions without passing through a multi-stage validation gate. Stage one assesses technical performance against held-out benchmarks. Stage two conducts bias auditing across protected demographic categories. Stage three evaluates alignment with the University Charter's principles of fairness and transparency. Stage four requires sign-off from the Ethics & Institutional Integrity Committee. This four-gate architecture ensures that technical capability alone never constitutes sufficient authority for deployment.",
+          "No model at Fitzherbert University may influence institutional decisions without passing through a multi-stage validation gate. Stage one assesses technical performance against held-out benchmarks. Stage two conducts bias auditing across protected demographic categories. Stage three evaluates alignment with the University Charter's principles of fairness and transparency. Stage four requires sign-off from the Alignment Review Committee. This four-gate architecture ensures that technical capability alone never constitutes sufficient authority for deployment.",
       },
       {
         heading: "Bias Auditing in Practice",
@@ -101,7 +101,7 @@ const articles: BlogArticle[] = [
       {
         heading: "Toward Institutional AI Sovereignty",
         content:
-          "The ultimate goal is not to resist AI but to domesticate it — to make it serve institutional purposes within constitutional boundaries. This requires a new discipline: institutional AI governance, sitting at the intersection of law, computer science, ethics, and public administration. Fitzherbert University's Centre for Artificial Intelligence & Ethics is training the first generation of scholars in this emerging field, preparing them to lead institutions that are both technologically advanced and constitutionally sound.",
+          "The ultimate goal is not to resist AI but to domesticate it — to make it serve institutional purposes within constitutional boundaries. This requires a new discipline: institutional AI governance, sitting at the intersection of law, computer science, ethics, and public administration. Fitzherbert University's Institute for Accelerated Intelligence is training the first generation of scholars in this emerging field, preparing them to lead institutions that are both technologically advanced and constitutionally sound.",
       },
     ],
     faq: [
@@ -118,7 +118,7 @@ const articles: BlogArticle[] = [
       {
         question: "How does Fitzherbert University audit AI models for bias?",
         answer:
-          "The University employs a four-gate validation architecture: technical benchmarking, quantitative bias auditing (disparate impact, calibration, counterfactual fairness), qualitative ethical review by faculty, and formal sign-off by the Ethics & Institutional Integrity Committee.",
+          "The University employs a four-gate validation architecture: technical benchmarking, quantitative bias auditing (disparate impact, calibration, counterfactual fairness), qualitative ethical review by faculty, and formal sign-off by the Alignment Review Committee.",
       },
     ],
     citations: [
@@ -204,7 +204,7 @@ const articles: BlogArticle[] = [
     dateModified: "2026-01-15",
     readingTime: "9 min",
     excerpt:
-      "With $14.2 billion under stewardship, Fitzherbert University's endowment represents a covenant between generations. This article examines how institutional investors maintain disciplined strategies across centuries of market uncertainty.",
+      "With £2.1 billion under stewardship, Fitzherbert University's endowment represents a covenant between generations. This article examines how institutional investors maintain disciplined strategies across centuries of market uncertainty.",
     keywords: [
       "endowment management",
       "institutional investing",
@@ -217,7 +217,7 @@ const articles: BlogArticle[] = [
       {
         heading: "The Generational Covenant",
         content:
-          "An endowment is unlike any other investment portfolio. Its time horizon is, in principle, infinite. The $14.2 billion under Fitzherbert University's stewardship must serve not only the current generation of scholars but every generation to come. This generational covenant imposes a unique discipline: the endowment must grow sufficiently to outpace inflation and expanding institutional needs, while distributing enough income to fund operations, scholarships, and research. Our current distribution rate of 5.1% reflects decades of actuarial analysis balancing these competing imperatives.",
+          "An endowment is unlike any other investment portfolio. Its time horizon is, in principle, infinite. The £2.1 billion under Fitzherbert University's stewardship must serve not only the current generation of scholars but every generation to come. This generational covenant imposes a unique discipline: the endowment must grow sufficiently to outpace inflation and expanding institutional needs, while distributing enough income to fund operations, scholarships, and research. Our current distribution rate of 5.2% reflects decades of actuarial analysis balancing these competing imperatives.",
       },
       {
         heading: "Asset Allocation Philosophy",
@@ -244,12 +244,12 @@ const articles: BlogArticle[] = [
       {
         question: "How large is Fitzherbert University's endowment?",
         answer:
-          "Fitzherbert University's endowment stands at $14.2 billion as of FY 2025, accumulated over 243 years of stewardship. It supports scholarships, faculty chairs, research programmes, and campus preservation.",
+          "Fitzherbert University's endowment stands at £2.1 billion as of FY 2025, accumulated over 243 years of stewardship. It supports scholarships, endowed chairs, research programmes, and campus preservation.",
       },
       {
         question: "What is the endowment's distribution rate?",
         answer:
-          "The University distributes approximately 5.1% of the endowment's trailing twelve-quarter average market value annually, balancing current operational needs with intergenerational preservation.",
+          "The University distributes approximately 5.2% of the endowment's trailing twelve-quarter average market value annually, balancing current operational needs with intergenerational preservation.",
       },
       {
         question: "What ethical constraints govern endowment investments?",
@@ -331,7 +331,7 @@ const articles: BlogArticle[] = [
     ],
     citations: [
       { id: "1", text: "Sinclair, M. (2026). \"Governed Knowledge Systems for Academic Institutions.\" Proceedings of the International Conference on Institutional AI, pp. 42–61." },
-      { id: "2", text: "Fitzherbert University Centre for AI & Ethics. (2025). Agentic RAG Architecture: Design Specification v1.0. Internal Technical Report." },
+      { id: "2", text: "Fitzherbert University Institute for Accelerated Intelligence. (2025). Agentic RAG Architecture: Design Specification v1.0. Internal Technical Report." },
     ],
   },
 
@@ -414,8 +414,8 @@ const articles: BlogArticle[] = [
       "The principles embedded in Fitzherbert University's 1783 Charter — separation of powers, transparency mandates, and procedural due process — provide a surprisingly robust framework for governing digital systems.",
     keywords: ["constitutional governance", "digital governance", "charter principles", "institutional law", "procedural due process", "AI regulation"],
     sections: [
-      { heading: "The Persistence of Constitutional Principles", content: "When the founders drafted the 1783 Charter, they could not have anticipated artificial intelligence, machine learning, or algorithmic decision-making. Yet the principles they encoded — separation of powers between the Board of Governors and Faculty Senate, requirements for transparent decision-making, and protections for individual rights — translate with remarkable fidelity to the governance challenges of the digital age. Constitutional principles endure not because they are specific but because they are structural." },
-      { heading: "Separation of Powers in AI Systems", content: "The Charter's separation of powers — fiduciary oversight to the Board, academic authority to the Senate — maps directly onto AI governance. Technical teams build and validate models (the executive function), ethics committees review and approve deployments (the judicial function), and the Faculty Senate sets policy boundaries (the legislative function). No single body controls the full lifecycle of an AI system, preventing concentration of algorithmic authority." },
+      { heading: "The Persistence of Constitutional Principles", content: "When the founders drafted the 1783 Charter, they could not have anticipated artificial intelligence, machine learning, or algorithmic decision-making. Yet the principles they encoded — separation of powers between the Epoch Council and Stability Board, requirements for transparent decision-making, and protections for individual rights — translate with remarkable fidelity to the governance challenges of the digital age. Constitutional principles endure not because they are specific but because they are structural." },
+      { heading: "Separation of Powers in AI Systems", content: "The Charter's separation of powers — fiduciary oversight to the Epoch Council, verification authority to the Stability Board — maps directly onto AI governance. Technical teams build and validate models (the executive function), the Alignment Review Committee reviews and approves deployments (the judicial function), and the Epoch Council sets policy boundaries (the legislative function). No single body controls the full lifecycle of an AI system, preventing concentration of algorithmic authority." },
       { heading: "Transparency as Constitutional Requirement", content: "The 2003 Transparency Mandate requires all governance decisions to be published openly. Applied to AI, this means: model validation reports are public, bias audit results are published, and deployment decisions are documented with reasoning. Opacity is unconstitutional. This is not merely an aspiration — it is an enforceable institutional obligation with formal review procedures." },
       { heading: "Due Process for Algorithmic Decisions", content: "When an AI system influences consequential institutional decisions — admissions, resource allocation, faculty evaluation — affected parties have a right to understand the basis of the decision and to challenge it. The University's AI governance framework establishes a formal appeal process modelled on the Charter's original provisions for academic dispute resolution, adapted for algorithmic contexts." },
     ],
@@ -440,11 +440,11 @@ const articles: BlogArticle[] = [
     dateModified: "2026-02-07",
     readingTime: "9 min",
     excerpt:
-      "Managing a $14.2 billion endowment with an infinite time horizon imposes unique fiduciary obligations — obligations that extend beyond financial returns to encompass ethical stewardship and intergenerational equity.",
+      "Managing a £2.1 billion endowment with an infinite time horizon imposes unique fiduciary obligations — obligations that extend beyond financial returns to encompass ethical stewardship and intergenerational equity.",
     keywords: ["fiduciary duty", "endowment stewardship", "intergenerational equity", "institutional investing", "ESG", "ethical finance"],
     sections: [
       { heading: "The Infinite Horizon Problem", content: "Most investment managers operate on quarterly or annual performance cycles. Endowment stewards face a fundamentally different challenge: the portfolio must serve not merely the current generation but every generation to come. This infinite horizon transforms the nature of fiduciary duty from short-term return maximisation to long-term value preservation and growth — a distinction that has profound implications for asset allocation, risk management, and ethical decision-making." },
-      { heading: "Intergenerational Equity", content: "The concept of intergenerational equity holds that each generation of beneficiaries has an equal claim on the endowment's resources. Overdistribution today impoverishes future scholars; underdistribution today fails current students. The 5.1% distribution rate reflects decades of actuarial analysis balancing these competing claims, calibrated to the endowment's expected real return and the institution's projected growth in operational needs." },
+      { heading: "Intergenerational Equity", content: "The concept of intergenerational equity holds that each generation of beneficiaries has an equal claim on the endowment's resources. Overdistribution today impoverishes future scholars; underdistribution today fails current students. The 5.2% distribution rate reflects decades of actuarial analysis balancing these competing claims, calibrated to the endowment's expected real return and the institution's projected growth in operational needs." },
       { heading: "Beyond Financial Returns", content: "Modern fiduciary duty extends beyond financial returns to encompass the values the institution represents. Since 2023, the Ethical Investment Framework requires that investment decisions align with the University's constitutional values. This is not a constraint on returns — it is an expansion of what fiduciary duty means in an institutional context where the portfolio serves not merely financial but educational and moral purposes." },
       { heading: "Stewardship Across Centuries", content: "Fitzherbert University's endowment has been managed through revolution, civil war, world wars, pandemics, financial crises, and technological disruption. The common thread across 243 years of stewardship is disciplined adherence to first principles: diversify broadly, distribute conservatively, invest patiently, and never sacrifice long-term preservation for short-term gain. This discipline, embedded in institutional culture rather than individual judgment, is the endowment's greatest asset." },
     ],
@@ -672,7 +672,7 @@ const articles: BlogArticle[] = [
     keywords: ["institutional resilience", "governance design", "organisational longevity", "constitutional structure", "adaptive capacity", "university governance"],
     sections: [
       { heading: "The Longevity Puzzle", content: "Of the institutions that existed in 1520, only 85 survive today — and 70 of those are universities. This extraordinary longevity is not accidental. Universities that endure for centuries share governance characteristics that enable them to adapt to radical environmental change while maintaining institutional identity and purpose. Understanding what makes these governance structures resilient is not merely an academic exercise — it is a survival imperative." },
-      { heading: "Constitutional Adaptability", content: "Resilient institutions have constitutions that are simultaneously stable and adaptable. Fitzherbert University's Charter has been amended five times in 243 years — each amendment responding to a fundamental shift in the institutional environment (new disciplines, co-education, governance modernisation, transparency, AI governance) while preserving the Charter's core principles. The amendment process itself is constitutionally defined: it requires Faculty Senate supermajority, Board of Governors concurrence, and a one-year deliberation period. This makes change deliberate but not impossible." },
+      { heading: "Constitutional Adaptability", content: "Resilient institutions have constitutions that are simultaneously stable and adaptable. Fitzherbert University's Charter has been amended five times in 243 years — each amendment responding to a fundamental shift in the institutional environment (new disciplines, co-education, governance modernisation, transparency, AI governance) while preserving the Charter's core principles. The amendment process itself is constitutionally defined: it requires Epoch Council supermajority, Stability Board concurrence, and a one-year deliberation period. This makes change deliberate but not impossible." },
       { heading: "Distributed Authority", content: "Institutions that concentrate authority in a single individual or body are fragile — they depend on the wisdom of whoever holds power. Institutions that distribute authority across multiple bodies with complementary mandates are resilient — they can survive poor leadership in any single body because the others provide checks and correction. Fitzherbert University's three-body system (Board, Senate, Assembly) distributes authority by function (fiduciary, academic, representative), creating structural resilience that transcends individual tenure." },
       { heading: "Identity Preservation", content: "The deepest challenge of institutional resilience is maintaining identity through change. An institution that cannot adapt dies; an institution that adapts so completely that it abandons its foundational purpose merely transforms into something else. The key is distinguishing between what is essential (founding values, constitutional principles) and what is instrumental (specific programmes, administrative structures, technological tools). Fitzherbert University's governance design protects essential elements constitutionally while giving administrative flexibility for instrumental adaptation." },
       { heading: "Lessons for the AI Era", content: "The current era of AI governance represents the most significant governance challenge since the founding. Institutions that fail to develop constitutional frameworks for AI risk either technological stagnation (refusing AI) or constitutional erosion (deploying AI without governance). The lesson from 243 years of institutional resilience is clear: new capabilities must be domesticated within constitutional structures, not allowed to operate outside them. Charter Amendment V (2024) is Fitzherbert University's response to this imperative." },

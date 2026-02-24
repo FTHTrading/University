@@ -6,132 +6,129 @@ import { CollegeCard } from "@/components/CollegeCard";
 export const metadata: Metadata = {
   title: "Academics",
   description:
-    "Explore the colleges, programmes, research centres, faculty, notable alumni, and academic calendar of Fitzherbert University.",
+    "Epoch-based colleges, AI-native degree programmes, faculty, and the academic architecture of Fitzherbert University — operating on intelligence-doubling timelines.",
 };
 
 const colleges = [
   {
-    name: "College of Arts & Sciences",
-    dean: "Professor Eleanor Ashworth",
-    established: "Est. 1783",
+    name: "College of Computational Systems",
+    dean: "Director Elara Voss",
+    established: "Epoch 0.1",
     description:
-      "The founding college encompasses the humanities, social sciences, natural sciences, and mathematics — the bedrock of liberal education. Departments range from Classical Languages to Computational Mathematics.",
-    departments: ["Classical Languages & Literature", "Philosophy", "History", "Mathematics", "Physics", "Chemistry", "Biology", "Political Science", "Economics", "Comparative Literature"],
+      "The foundational college. Systems architecture, distributed computing, formal verification, and the engineering substrate upon which all intelligence infrastructure is built.",
+    departments: ["Systems Architecture", "Distributed Computing", "Formal Verification", "Infrastructure Engineering", "Performance Optimisation"],
   },
   {
-    name: "School of Engineering & Applied Science",
-    dean: "Professor James Harrington",
-    established: "Est. 1847",
+    name: "College of Applied Intelligence",
+    dean: "Director James Harrington",
+    established: "Epoch 0.2",
     description:
-      "Programmes in civil, mechanical, electrical, computational, and biomedical engineering. The School's laboratories are equipped for research in materials science, robotics, and infrastructure resilience.",
-    departments: ["Civil Engineering", "Mechanical Engineering", "Electrical Engineering", "Computer Science", "Biomedical Engineering", "Materials Science"],
+      "Model design, training paradigms, capability evaluation, and alignment research. The college where raw compute becomes reliable, governed intelligence.",
+    departments: ["Model Architecture", "Training & Fine-Tuning", "Capability Evaluation", "Alignment Science", "Benchmarking & Validation"],
   },
   {
-    name: "School of Law & Constitutional Studies",
-    dean: "Professor Victoria Langford",
-    established: "Est. 1801",
+    name: "College of Autonomous Governance",
+    dean: "Director Victoria Langford",
+    established: "Epoch 0.3",
     description:
-      "Juris Doctor, Master of Laws, and doctoral programmes in constitutional theory, international law, legal philosophy, and institutional governance. Home to the Langford Centre for Constitutional Jurisprudence.",
-    departments: ["Constitutional Law", "International Law", "Legal Philosophy", "Criminal Justice", "Corporate & Commercial Law"],
+      "Constitutional AI, institutional design for autonomous systems, regulatory frameworks, and the legal infrastructure of machine governance.",
+    departments: ["Constitutional AI", "Regulatory Architecture", "Institutional Design", "Policy Engineering", "Democratic Accountability"],
   },
   {
-    name: "School of Divinity & Moral Philosophy",
-    dean: "Professor Thomas Wycliffe",
-    established: "Est. 1789",
+    name: "College of Cryptographic Infrastructure",
+    dean: "Director Marcus Chen",
+    established: "Epoch 0.4",
     description:
-      "Programmes in theology, ethics, comparative religion, and moral philosophy. The School hosts the annual Wycliffe Lectures on conscience, duty, and the moral foundations of institutional life.",
-    departments: ["Systematic Theology", "Ethics & Moral Philosophy", "Comparative Religion", "Church History", "Pastoral Studies"],
+      "Zero-knowledge proofs, multi-chain provenance, deterministic publishing, Merkle verification, and the trust architecture of decentralised systems.",
+    departments: ["Zero-Knowledge Systems", "Multi-Chain Provenance", "Merkle Verification", "Deterministic Publishing", "Identity Infrastructure"],
   },
   {
-    name: "School of Medicine & Public Health",
-    dean: "Professor Catherine Whitfield",
-    established: "Est. 1832",
+    name: "College of Human-Centered Systems",
+    dean: "Director Catherine Whitfield",
+    established: "Epoch 0.5",
     description:
-      "Medical Doctor, Master of Public Health, and doctoral programmes in biomedical sciences. The teaching hospital serves as a centre of clinical excellence and community health leadership.",
-    departments: ["Anatomy & Cell Biology", "Pharmacology", "Epidemiology", "Surgery", "Internal Medicine", "Paediatrics", "Public Health Policy"],
+      "Human-AI interaction, cognitive augmentation, ethical reasoning under acceleration, and the preservation of human judgment as the anchor of institutional life.",
+    departments: ["Human-AI Interaction", "Cognitive Augmentation", "Ethics Under Acceleration", "Decision Science", "Organisational Psychology"],
   },
   {
-    name: "Graduate School of Commerce & Strategy",
-    dean: "Professor Richard Pemberton",
-    established: "Est. 1891",
+    name: "College of Narrative & Protocol Design",
+    dean: "Director Thomas Wycliffe",
+    established: "Epoch 0.6",
     description:
-      "Master of Business Administration, Master of Finance, and doctoral programmes in strategic management, market theory, and quantitative analysis. Graduates serve as leaders of enterprise and institutional stewardship.",
-    departments: ["Strategic Management", "Finance & Accounting", "Marketing", "Operations & Analytics", "Organisational Behaviour"],
+      "Institutional narrative architecture, protocol specification, knowledge-graph construction, and the design of systems that explain themselves.",
+    departments: ["Protocol Architecture", "Knowledge Graphs", "Narrative Systems", "Explainability Engineering", "Documentation Science"],
   },
 ];
 
 const programmes = [
   {
-    level: "Undergraduate",
+    level: "Undergraduate (AI-Accelerated)",
     offerings: [
-      "Bachelor of Arts (B.A.)",
-      "Bachelor of Science (B.S.)",
-      "Bachelor of Engineering (B.Eng.)",
-      "Bachelor of Fine Arts (B.F.A.)",
+      "B.Intel — Intelligence Engineering",
+      "B.Sys — Systems Architecture",
+      "B.Prov — Provenance & Audit Systems",
+      "B.Gov — Autonomous Governance",
     ],
   },
   {
     level: "Graduate",
     offerings: [
-      "Master of Arts (M.A.)",
-      "Master of Science (M.S.)",
-      "Master of Engineering (M.Eng.)",
-      "Master of Business Administration (M.B.A.)",
-      "Master of Laws (LL.M.)",
-      "Master of Public Health (M.P.H.)",
+      "M.AI — Applied Intelligence",
+      "M.Proto — Protocol Architecture",
+      "M.Gov — Governance Engineering",
+      "M.Crypto — Cryptographic Infrastructure",
     ],
   },
   {
     level: "Doctoral",
     offerings: [
-      "Doctor of Philosophy (Ph.D.)",
-      "Juris Doctor (J.D.)",
-      "Doctor of Medicine (M.D.)",
-      "Doctor of Engineering (D.Eng.)",
+      "D.Intel — Intelligence Systems",
+      "D.Eng — Sovereign Systems Engineering",
+      "D.Prov — Deterministic Publishing & Provenance",
     ],
   },
 ];
 
 const faculty = [
   {
-    name: "Professor Eleanor Ashworth",
-    title: "Dean, College of Arts & Sciences",
-    field: "Comparative Literature & Cultural Theory",
+    name: "Director Elara Voss",
+    title: "Dean, Computational Systems",
+    field: "Distributed Systems & Formal Verification",
   },
   {
-    name: "Professor James Harrington",
-    title: "Dean, School of Engineering",
-    field: "Structural Mechanics & Infrastructure Resilience",
+    name: "Director James Harrington",
+    title: "Dean, Applied Intelligence",
+    field: "Model Governance & Capability Evaluation",
   },
   {
-    name: "Professor Victoria Langford",
-    title: "Dean, School of Law",
-    field: "Constitutional Theory & Institutional Governance",
+    name: "Director Victoria Langford",
+    title: "Dean, Autonomous Governance",
+    field: "Constitutional AI & Institutional Design",
   },
   {
-    name: "Professor Thomas Wycliffe",
-    title: "Dean, School of Divinity",
-    field: "Ethics, Moral Philosophy & Theological Inquiry",
+    name: "Director Marcus Chen",
+    title: "Dean, Cryptographic Infrastructure",
+    field: "Zero-Knowledge Proofs & Multi-Chain Provenance",
   },
   {
-    name: "Professor Catherine Whitfield",
-    title: "Dean, School of Medicine",
-    field: "Epidemiology & Public Health Policy",
+    name: "Director Catherine Whitfield",
+    title: "Dean, Human-Centered Systems",
+    field: "Human-AI Interaction & Ethical Reasoning",
   },
   {
-    name: "Professor Richard Pemberton",
-    title: "Dean, School of Commerce",
-    field: "Strategic Management & Market Theory",
+    name: "Director Thomas Wycliffe",
+    title: "Dean, Narrative & Protocol Design",
+    field: "Protocol Architecture & Knowledge Graphs",
   },
   {
     name: "Professor Margaret Sinclair",
-    title: "Endowed Chair, AI & Ethics",
-    field: "Machine Learning Fairness & Model Governance",
+    title: "Endowed Chair, AI Safety & Alignment",
+    field: "Alignment Verification & Computational Ethics",
   },
   {
     name: "Professor Andrew Caldwell",
-    title: "Director, Heritage Sciences Lab",
-    field: "Analytical Chemistry & Conservation Science",
+    title: "Director, Deterministic Publishing Lab",
+    field: "Merkle Verification & Canonical Systems",
   },
 ];
 
@@ -140,15 +137,15 @@ export default function AcademicsPage() {
     <>
       <Hero
         title="Academics"
-        subtitle="Six colleges, four centuries of tradition, and an unwavering commitment to scholarly excellence."
+        subtitle="Six epoch-based colleges, AI-native degrees, and an academic architecture built for intelligence-doubling timelines."
       />
 
       {/* ── Colleges ──────────────────────────────── */}
       <Section>
         <SectionHeader
-          eyebrow="Schools & Colleges"
-          title="The Pillars of the University"
-          description="Each college maintains its own faculty assembly, curriculum authority, and research identity — unified by the University Charter."
+          eyebrow="Epoch-Based Colleges"
+          title="Six Capability Milestones"
+          description="Each college represents an epoch — not a calendar year. Together, they form the complete academic infrastructure of an AI-native institution."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {colleges.map((c) => (
@@ -161,8 +158,8 @@ export default function AcademicsPage() {
       <Section alternate stone>
         <SectionHeader
           eyebrow="Programmes of Study"
-          title="Degrees & Certifications"
-          description="From foundational undergraduate study to advanced doctoral research, the University offers credentials of the highest standard."
+          title="AI-Native Degrees"
+          description="Degrees that map directly to the intelligence infrastructure ecosystem. Every credential prepares graduates for the world as it is accelerating."
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {programmes.map((p) => (
@@ -183,29 +180,37 @@ export default function AcademicsPage() {
         </div>
       </Section>
 
-      {/* ── Research Highlights ───────────────────── */}
+      {/* ── Why These Degrees ─────────────────────── */}
       <Section>
         <SectionHeader
-          eyebrow="Research"
-          title="Scholarship That Shapes the World"
-          description="The University's research enterprise spans artificial intelligence, constitutional theory, biomedical science, heritage conservation, and beyond."
+          eyebrow="Curriculum Design"
+          title="What Preparation Now Looks Like"
+          description="Without altering its heritage, the University has rebuilt its academic focus around four pillars."
         />
-        <div className="max-w-3xl mx-auto space-y-6">
-          <p className="text-lg leading-relaxed text-stone">
-            With over three hundred active research grants, twelve dedicated institutes,
-            and partnerships spanning four continents, Fitzherbert University produces
-            scholarship that advances both theoretical understanding and practical
-            application. Our faculty publish in the most rigorous peer-reviewed venues
-            and serve as advisors to governments, international organisations, and
-            leading institutions worldwide.
-          </p>
-          <p className="text-lg leading-relaxed text-stone">
-            Recent highlights include the development of constitutional AI governance
-            frameworks adopted by three national regulatory bodies, breakthrough
-            discoveries in materials science for sustainable construction, and the
-            establishment of the world&apos;s first comprehensive model validation
-            laboratory for artificial intelligence systems.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {[
+            {
+              title: "1. AI Literacy Across Disciplines",
+              desc: "Every student, regardless of programme, engages with the fundamentals of artificial intelligence, data reasoning, and model limitations. Intelligence literacy is not optional — it is foundational.",
+            },
+            {
+              title: "2. Governance & Ethics Integration",
+              desc: "AI governance is treated as a constitutional matter — not merely a technical one. Students learn to design governance frameworks that constrain AI systems while preserving their utility.",
+            },
+            {
+              title: "3. Interdisciplinary Systems Thinking",
+              desc: "Engineering, law, philosophy, and economics are integrated to reflect how AI systems actually operate in society. No discipline is an island when intelligence is infrastructure.",
+            },
+            {
+              title: "4. Human Judgment as the Anchor",
+              desc: "Technology evolves quickly. Character does not. The University continues to prioritise moral reasoning, civic responsibility, and intellectual discipline as the foundation of every degree.",
+            },
+          ].map((pillar) => (
+            <div key={pillar.title} className="border-t-2 border-gold pt-6">
+              <h3 className="font-serif text-lg font-bold mb-3">{pillar.title}</h3>
+              <p className="text-stone text-sm leading-relaxed">{pillar.desc}</p>
+            </div>
+          ))}
         </div>
       </Section>
 
@@ -213,8 +218,8 @@ export default function AcademicsPage() {
       <Section alternate>
         <SectionHeader
           eyebrow="Faculty"
-          title="Distinguished Scholars"
-          description="The University's faculty represent the highest standards of scholarly achievement and dedication to teaching."
+          title="College Directors & Distinguished Faculty"
+          description="Leadership operating at the intersection of intelligence engineering, governance design, and institutional architecture."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {faculty.map((f) => (
@@ -236,27 +241,27 @@ export default function AcademicsPage() {
             {[
               {
                 name: "Professor Margaret Sinclair",
-                title: "Endowed Chair, AI & Ethics",
-                bio: "A pioneer in algorithmic fairness and model governance, Professor Sinclair's work on constitutional frameworks for AI regulation has been adopted by three national regulatory bodies. Her laboratory, the AI Validation Centre, is the first of its kind in higher education.",
+                title: "Endowed Chair, AI Safety & Alignment",
+                bio: "A pioneer in alignment verification and computational ethics. Sinclair's constitutional framework for AI governance has been referenced by three national regulatory bodies. Her Alignment Verification Protocol is the standard used across all University deployments.",
                 awards: "Royal Society Fellowship (2023), Turing Award Nominee (2025)",
               },
               {
-                name: "Professor Victoria Langford",
-                title: "Dean, School of Law",
-                bio: "The foremost authority on comparative constitutional governance, Professor Langford has served as advisor to the constitutional assemblies of four nations. Her treatise 'Sovereignty and Institutional Design' is considered a foundational text of the field.",
+                name: "Director Victoria Langford",
+                title: "Dean, Autonomous Governance",
+                bio: "The foremost authority on constitutional AI — governance frameworks that constrain autonomous systems using principles drawn from democratic theory. Her treatise 'Sovereignty and Institutional Design for Machine Governance' defines the field.",
                 awards: "National Order of Merit (2019), Blackstone Medal (2022)",
               },
               {
-                name: "Professor James Harrington",
-                title: "Dean, School of Engineering",
-                bio: "A structural engineer whose probabilistic resilience models have redefined how governments assess critical infrastructure risk. His Net-Zero Campus 2035 initiative applies cutting-edge sustainable engineering to the University's own heritage buildings.",
-                awards: "Institution of Civil Engineers Gold Medal (2021)",
+                name: "Director Marcus Chen",
+                title: "Dean, Cryptographic Infrastructure",
+                bio: "Founder of the Multi-Chain Provenance standard. Chen's work on deterministic publishing and Merkle verification enables the University's canonical scholarly output. His framework has been adopted by twenty-seven institutions worldwide.",
+                awards: "Global AI Safety Consortium Founder, IEEE Provenance Award (2024)",
               },
               {
                 name: "Professor Andrew Caldwell",
-                title: "Director, Heritage Sciences Lab",
-                bio: "A conservation scientist whose non-invasive analytical methods have been used to preserve cultural artefacts on four continents. His groundbreaking work on atmospheric degradation of medieval stonework informs restoration policy across Europe.",
-                awards: "UNESCO Cultural Preservation Award (2020)",
+                title: "Director, Deterministic Publishing Lab",
+                bio: "The architect of the University's Edition Manifest system. Caldwell's work ensures every scholarly artifact the University produces is reproducible, auditable, and cryptographically verified.",
+                awards: "ACM Systems Award (2024)",
               },
             ].map((spot) => (
               <div key={spot.name} className="border border-gold/20 bg-ivory p-8 gold-emboss">
@@ -270,141 +275,23 @@ export default function AcademicsPage() {
         </div>
       </Section>
 
-      {/* ── Endowed Chairs ────────────────────────── */}
-      <Section stone>
-        <SectionHeader
-          eyebrow="Endowed Chairs"
-          title="Named Professorships"
-          description="Endowed chairs represent the University's highest academic honour, sustained in perpetuity by the generosity of benefactors."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {[
-            {
-              chair: "The Ashcroft Chair in Constitutional Law",
-              holder: "Professor Victoria Langford",
-              endowed: "Est. 1803",
-              donor: "The Ashcroft Family Trust",
-              desc: "The oldest endowed chair at the University, established to ensure the permanent study of constitutional theory and institutional governance.",
-            },
-            {
-              chair: "The Pemberton Chair in Economic Theory",
-              holder: "Professor Richard Pemberton",
-              endowed: "Est. 1891",
-              donor: "Lady Margaret Pemberton (bequest)",
-              desc: "Supports research in political economy, market theory, and the ethics of commercial enterprise.",
-            },
-            {
-              chair: "The Whitfield Chair in Epidemiology",
-              holder: "Professor Catherine Whitfield",
-              endowed: "Est. 1838",
-              donor: "Dr. Nathaniel Whitfield (bequest)",
-              desc: "Dedicated to the advancement of public health through epidemiological research and clinical education.",
-            },
-            {
-              chair: "The Sinclair Chair in Artificial Intelligence & Ethics",
-              holder: "Professor Margaret Sinclair",
-              endowed: "Est. 2024",
-              donor: "Dr. Margaret Sinclair (founding gift)",
-              desc: "The University's newest endowed chair, supporting research in AI model governance, algorithmic fairness, and computational ethics.",
-            },
-            {
-              chair: "The Blackwood Chair in Architectural Heritage",
-              holder: "Professor Andrew Caldwell",
-              endowed: "Est. 1925",
-              donor: "Sir Reginald Blackwood",
-              desc: "Supports the study of architectural conservation, heritage science, and the preservation of the built environment.",
-            },
-            {
-              chair: "The FitzHerbert Chair in Moral Philosophy",
-              holder: "Professor Thomas Wycliffe",
-              endowed: "Est. 1783",
-              donor: "Sir Henry FitzHerbert (founding endowment)",
-              desc: "One of the two original endowed chairs, devoted to the study of ethics, conscience, and the moral foundations of institutional life.",
-            },
-          ].map((c) => (
-            <div key={c.chair} className="border border-gold/20 bg-ivory p-6 gold-emboss">
-              <h4 className="font-serif text-base font-bold mb-1">{c.chair}</h4>
-              <p className="text-maroon text-xs tracking-wide uppercase mb-1">
-                Holder: {c.holder}
-              </p>
-              <p className="text-stone-light text-xs mb-2">
-                {c.endowed} &middot; Endowed by {c.donor}
-              </p>
-              <p className="text-stone text-sm leading-relaxed">{c.desc}</p>
-            </div>
-          ))}
-        </div>
-        <p className="text-center mt-8 latin-inscription">
-          Cathedra perpetua — in saecula saeculorum
-        </p>
-      </Section>
-
-      {/* ── Notable Alumni ────────────────────────── */}
-      <Section>
-        <SectionHeader
-          eyebrow="Alumni"
-          title="Notable Alumni"
-          description="Scholars, statesmen, pioneers, and leaders who carry the University's mission into the world."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {[
-            {
-              name: "Sir Reginald Ashworth III",
-              class: "Class of 1928",
-              achievement: "Chief Justice of the Supreme Court (1962–1978). Authored the landmark ruling on institutional sovereignty that redefined federal judicial review.",
-            },
-            {
-              name: "Dr. Helena Whitfield",
-              class: "Class of 1954",
-              achievement: "Nobel Laureate in Medicine (1987). Pioneered immunotherapy protocols that transformed the treatment of autoimmune diseases worldwide.",
-            },
-            {
-              name: "Ambassador James Pemberton",
-              class: "Class of 1971",
-              achievement: "United Nations Secretary-General's Special Envoy (2005–2014). Negotiated the framework that stabilised three post-conflict constitutional transitions.",
-            },
-            {
-              name: "Professor Amara Okonkwo",
-              class: "Class of 1989",
-              achievement: "Fields Medal recipient (2006). Resolved the Langlands conjecture for function fields, reshaping modern algebraic geometry.",
-            },
-            {
-              name: "The Rt. Hon. Elizabeth Fairfax",
-              class: "Class of 1995",
-              achievement: "Youngest Chancellor of the Exchequer (2018–2024). Architect of the Sovereign Resilience Fund and advocate for institutional economic reform.",
-            },
-            {
-              name: "Dr. Marcus Chen",
-              class: "Class of 2008",
-              achievement: "Founder of the Global AI Safety Consortium. His framework for model governance has been endorsed by twenty-seven regulatory bodies across six continents.",
-            },
-          ].map((alum) => (
-            <div key={alum.name} className="border-l-2 border-gold pl-6">
-              <h4 className="font-serif text-lg font-bold mb-1">{alum.name}</h4>
-              <p className="text-maroon text-xs tracking-wide uppercase mb-2">{alum.class}</p>
-              <p className="text-stone text-sm leading-relaxed">{alum.achievement}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       {/* ── Academic Calendar ─────────────────────── */}
       <Section>
         <SectionHeader
           eyebrow="Calendar"
-          title="Academic Calendar 2025–2026"
+          title="Capability Epoch Calendar 2025–2026"
         />
         <div className="max-w-3xl mx-auto">
           <div className="border border-gold/20 bg-ivory p-8">
             <div className="space-y-4">
               {[
-                { term: "Michaelmas Term", dates: "1 September – 12 December 2025", weeks: "15 weeks" },
-                { term: "Winter Recess", dates: "13 December 2025 – 11 January 2026", weeks: "4 weeks" },
-                { term: "Hilary Term", dates: "12 January – 27 March 2026", weeks: "11 weeks" },
-                { term: "Easter Recess", dates: "28 March – 19 April 2026", weeks: "3 weeks" },
-                { term: "Trinity Term", dates: "20 April – 19 June 2026", weeks: "9 weeks" },
-                { term: "Commencement", dates: "20 June 2026", weeks: "" },
-                { term: "Long Vacation", dates: "21 June – 31 August 2026", weeks: "10 weeks" },
+                { term: "Epoch Cycle α", dates: "September – November 2025", weeks: "12 weeks" },
+                { term: "Alignment Review", dates: "December 2025", weeks: "4 weeks" },
+                { term: "Epoch Cycle β", dates: "January – March 2026", weeks: "12 weeks" },
+                { term: "Capability Assessment", dates: "April 2026", weeks: "3 weeks" },
+                { term: "Epoch Cycle γ", dates: "May – July 2026", weeks: "12 weeks" },
+                { term: "Integration Sprint", dates: "August 2026", weeks: "4 weeks" },
+                { term: "Annual Epoch Review", dates: "August 30, 2026", weeks: "" },
               ].map((period) => (
                 <div key={period.term} className="flex flex-wrap items-baseline gap-4 py-3 border-b border-gold/10 last:border-b-0">
                   <span className="font-serif font-bold text-base w-48 flex-shrink-0">{period.term}</span>
@@ -418,32 +305,33 @@ export default function AcademicsPage() {
           </div>
           <div className="mt-8 text-center">
             <p className="text-stone-light text-sm italic">
-              The University observes the Oxford system of named terms. Reading weeks, examination periods,
-              and college-specific dates are published by each Faculty at the start of the academic year.
+              Each epoch cycle includes capability assessment, alignment verification, and governance review.
+              The University operates three full cycles per year — each equivalent to approximately a decade of
+              traditional academic development.
             </p>
           </div>
         </div>
       </Section>
 
       {/* ── Publications ──────────────────────────── */}
-      <Section>
+      <Section alternate>
         <SectionHeader
           eyebrow="Publications"
-          title="Selected University Publications"
+          title="Scholarly Infrastructure"
         />
         <div className="max-w-3xl mx-auto space-y-6">
           {[
             {
-              title: "The Fitzherbert Review of Constitutional Studies",
-              desc: "A bi-annual peer-reviewed journal examining questions of governance, sovereignty, and institutional design. Published since 1912.",
+              title: "The Fitzherbert Review of AI Governance",
+              desc: "A peer-reviewed journal examining constitutional frameworks for autonomous systems, alignment verification, and the governance of intelligence infrastructure.",
             },
             {
-              title: "Proceedings of the Heritage Sciences Laboratory",
-              desc: "Annual collection of research papers in conservation science, analytical chemistry, and cultural heritage preservation.",
+              title: "Proceedings of the Deterministic Publishing Institute",
+              desc: "Research papers on Merkle verification, Edition Manifests, canonical registries, and reproducible scholarly artifacts.",
             },
             {
-              title: "The Ashworth Lectures in Comparative Literature",
-              desc: "Published transcripts of the annual distinguished lecture series, exploring the intersections of literary tradition, cultural theory, and moral philosophy.",
+              title: "The Epoch Reports",
+              desc: "Published at the conclusion of each capability epoch, documenting institutional progress, capability assessments, and governance decisions.",
             },
           ].map((pub) => (
             <div key={pub.title} className="border-l-2 border-gold pl-6">

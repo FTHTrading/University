@@ -34,7 +34,7 @@ export function CollegeCard({
           {name}
         </h3>
         <p className="text-sm text-stone-light italic mb-3">
-          Dean: {dean}
+          {dean}
         </p>
         <p className="text-stone text-sm leading-relaxed">{description}</p>
         <span className="inline-block mt-4 text-xs tracking-widest uppercase text-gold group-hover:text-maroon transition-colors">

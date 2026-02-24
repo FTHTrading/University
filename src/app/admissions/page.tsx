@@ -1,322 +1,275 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
-import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Admissions",
+  title: "Admissions — Veritas per Disciplina",
   description:
-    "Undergraduate, graduate, and international admissions at Fitzherbert University. Scholarships, financial aid, and the application process.",
+    "Education in the Age of Accelerated Intelligence. How Fitzherbert University prepares students for a world where intelligence is doubling every twelve to eighteen months.",
 };
-
-const admissionsStats = [
-  { stat: "4.8%", label: "Acceptance Rate" },
-  { stat: "1,580", label: "Entering Class Size" },
-  { stat: "98%", label: "Financial Aid Recipients" },
-  { stat: "72", label: "Countries Represented" },
-];
-
-const scholarships = [
-  {
-    name: "The Chancellor's Scholarship",
-    description:
-      "Full tuition, room, and board for four years, awarded to three entering students of extraordinary academic distinction and demonstrated moral leadership.",
-    value: "Full Cost of Attendance",
-  },
-  {
-    name: "The Founders' Fellowship",
-    description:
-      "A merit-based award covering tuition and providing a research stipend, honouring the legacy of the University's original benefactors.",
-    value: "Full Tuition + Stipend",
-  },
-  {
-    name: "Heritage Scholars Programme",
-    description:
-      "Support for students from historically underrepresented communities, including tuition assistance, mentoring, and priority access to research opportunities.",
-    value: "Variable, up to Full Tuition",
-  },
-  {
-    name: "International Scholars Award",
-    description:
-      "Competitive awards for international applicants demonstrating academic excellence, cultural contribution, and the potential for cross-border scholarly collaboration.",
-    value: "Partial to Full Tuition",
-  },
-];
 
 export default function AdmissionsPage() {
   return (
     <>
       <Hero
         title="Admissions"
-        subtitle="Fitzherbert University seeks students of exceptional intellect, moral seriousness, and scholarly ambition."
+        subtitle="Veritas per Disciplina — Education in the Age of Accelerated Intelligence"
       />
 
-      {/* ── Overview ──────────────────────────────── */}
+      {/* ── Opening Narrative ─────────────────────── */}
       <Section>
-        <SectionHeader
-          eyebrow="Join Our Community"
-          title="The Application Process"
-        />
-        <div className="max-w-3xl mx-auto space-y-6">
-          <p className="text-lg leading-relaxed text-stone drop-cap">
-            Admission to Fitzherbert University is both selective and holistic. We evaluate
-            each applicant as a whole person — considering academic achievement,
-            intellectual curiosity, strength of character, contributions to community,
-            and the potential to thrive within our tradition of rigorous scholarship.
-          </p>
-          <p className="text-lg leading-relaxed text-stone">
-            We practise need-blind admissions and meet the full demonstrated financial
-            need of every admitted student. No qualified candidate should be deterred from
-            applying by concerns of cost.
-          </p>
-        </div>
-
-        {/* Stats bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-14 max-w-4xl mx-auto">
-          {admissionsStats.map((s) => (
-            <div key={s.label} className="stat-card">
-              <p className="font-serif text-3xl font-bold text-maroon">{s.stat}</p>
-              <p className="text-xs tracking-widest uppercase text-stone-light mt-2">
-                {s.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* ── Class Profile ─────────────────────────── */}
-      <Section alternate>
-        <SectionHeader
-          eyebrow="Class Profile"
-          title="Entering Class of 2029"
-          description="A portrait of the most recent cohort admitted to the University."
-        />
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-            <div className="border border-gold/20 bg-ivory p-6 text-center">
-              <h4 className="text-xs tracking-widest uppercase text-stone-light mb-3">Standardised Tests (Middle 50%)</h4>
-              <div className="space-y-3">
-                <div>
-                  <p className="font-serif text-2xl font-bold text-maroon">1530–1580</p>
-                  <p className="text-xs text-stone">SAT Composite</p>
-                </div>
-                <div>
-                  <p className="font-serif text-2xl font-bold text-maroon">34–36</p>
-                  <p className="text-xs text-stone">ACT Composite</p>
-                </div>
-              </div>
-            </div>
-            <div className="border border-gold/20 bg-ivory p-6 text-center">
-              <h4 className="text-xs tracking-widest uppercase text-stone-light mb-3">Academic Record</h4>
-              <div className="space-y-3">
-                <div>
-                  <p className="font-serif text-2xl font-bold text-maroon">96%</p>
-                  <p className="text-xs text-stone">Top 10% of Secondary School</p>
-                </div>
-                <div>
-                  <p className="font-serif text-2xl font-bold text-maroon">3.97</p>
-                  <p className="text-xs text-stone">Median Unweighted GPA</p>
-                </div>
-              </div>
-            </div>
-            <div className="border border-gold/20 bg-ivory p-6 text-center">
-              <h4 className="text-xs tracking-widest uppercase text-stone-light mb-3">Class Composition</h4>
-              <div className="space-y-3">
-                <div>
-                  <p className="font-serif text-2xl font-bold text-maroon">52 / 48</p>
-                  <p className="text-xs text-stone">Female / Male (%)</p>
-                </div>
-                <div>
-                  <p className="font-serif text-2xl font-bold text-maroon">18%</p>
-                  <p className="text-xs text-stone">International Students</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Geographic diversity */}
-          <div className="border border-gold/20 bg-ivory p-6">
-            <h4 className="font-serif font-bold text-center mb-4">Geographic Distribution</h4>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
-              {[
-                { region: "Northeast", pct: "28%" },
-                { region: "Southeast", pct: "18%" },
-                { region: "Midwest", pct: "14%" },
-                { region: "West", pct: "16%" },
-                { region: "Southwest", pct: "6%" },
-                { region: "International", pct: "18%" },
-              ].map((r) => (
-                <div key={r.region}>
-                  <p className="font-serif font-bold text-maroon">{r.pct}</p>
-                  <p className="text-stone-light text-xs">{r.region}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* ── Undergraduate ─────────────────────────── */}
-      <Section alternate stone>
-        <SectionHeader
-          eyebrow="Undergraduate"
-          title="Bachelor's Programmes"
-          description="Four-year programmes in the liberal arts, sciences, and engineering — grounded in the College of Arts & Sciences and extending across all six schools."
-        />
-        <div className="max-w-3xl mx-auto space-y-6">
-          <p className="text-lg leading-relaxed text-stone">
-            Undergraduate students at Fitzherbert University receive an education that
-            is simultaneously broad and deep. The core curriculum — spanning literature,
-            philosophy, mathematics, natural science, and history — ensures that every
-            graduate possesses the foundations of a well-ordered mind, while the major
-            concentration allows sustained engagement with a chosen field.
-          </p>
-          <div className="border border-gold/30 bg-ivory p-8 mt-6">
-            <h3 className="font-serif text-lg font-bold mb-4">Application Timeline</h3>
-            <div className="space-y-3">
-              {[
-                { date: "1 September", event: "Application opens" },
-                { date: "1 November", event: "Early Decision deadline" },
-                { date: "15 December", event: "Early Decision notification" },
-                { date: "1 January", event: "Regular Decision deadline" },
-                { date: "1 April", event: "Regular Decision notification" },
-                { date: "1 May", event: "Enrollment deposit deadline" },
-              ].map((d) => (
-                <div key={d.event} className="flex gap-4 text-sm">
-                  <span className="text-maroon font-serif font-bold w-32 flex-shrink-0">
-                    {d.date}
-                  </span>
-                  <span className="text-stone">{d.event}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* ── Graduate ──────────────────────────────── */}
-      <Section>
-        <SectionHeader
-          eyebrow="Graduate"
-          title="Master's & Doctoral Programmes"
-          description="Advanced study for scholars committed to pushing the boundaries of their disciplines."
-        />
-        <div className="max-w-3xl mx-auto space-y-6">
-          <p className="text-lg leading-relaxed text-stone">
-            Graduate admissions are managed by each college independently, with
-            applications evaluated by faculty committees within the relevant department.
-            Doctoral candidates are expected to demonstrate not only mastery of their
-            field but the intellectual creativity and perseverance required to produce
-            original contributions to knowledge.
-          </p>
-          <p className="text-lg leading-relaxed text-stone">
-            All doctoral students receive full funding — tuition remission plus a
-            living stipend — for the duration of their programme. Master&apos;s candidates
-            are eligible for a range of merit-based and need-based awards.
-          </p>
-        </div>
-      </Section>
-
-      {/* ── International ─────────────────────────── */}
-      <Section alternate>
-        <SectionHeader
-          eyebrow="International"
-          title="A Global Community of Scholars"
-          description="Students from 72 nations enrich the University's intellectual life with diverse perspectives and traditions of inquiry."
-        />
-        <div className="max-w-3xl mx-auto space-y-6">
-          <p className="text-lg leading-relaxed text-stone">
-            International applicants are evaluated by the same criteria as domestic
-            candidates. The University provides comprehensive visa support, orientation
-            programming, and ongoing resources through the Office of International
-            Scholars. English language proficiency must be demonstrated through recognised
-            examinations, though allowances are made for candidates educated in
-            English-medium institutions.
-          </p>
-        </div>
-      </Section>
-
-      {/* ── Scholarships ──────────────────────────── */}
-      <Section stone>
-        <SectionHeader
-          eyebrow="Financial Aid & Scholarships"
-          title="Investing in Potential"
-          description="The University's commitment to access ensures that financial circumstances never prevent a qualified student from attending."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {scholarships.map((s) => (
-            <div key={s.name} className="border border-gold/20 bg-ivory p-8 gold-emboss">
-              <h3 className="font-serif text-lg font-bold mb-1">{s.name}</h3>
-              <p className="text-maroon text-xs tracking-wide uppercase mb-3">
-                {s.value}
-              </p>
-              <p className="text-stone text-sm leading-relaxed">{s.description}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* ── Tuition & Cost of Attendance ──────────── */}
-      <Section alternate>
-        <SectionHeader
-          eyebrow="Cost of Attendance"
-          title="Tuition & Fees — Academic Year 2025–26"
-        />
-        <div className="max-w-3xl mx-auto">
-          <div className="border border-gold/20 bg-ivory p-8">
-            <div className="space-y-4">
-              {[
-                { item: "Tuition", amount: "$62,500" },
-                { item: "Room & Board", amount: "$19,200" },
-                { item: "Student Activity Fee", amount: "$1,450" },
-                { item: "Technology & Library Fee", amount: "$1,350" },
-                { item: "Health Insurance (waivable)", amount: "$3,200" },
-              ].map((c) => (
-                <div key={c.item} className="flex justify-between items-center border-b border-gold/10 pb-3">
-                  <span className="font-serif text-sm">{c.item}</span>
-                  <span className="font-serif font-bold text-maroon">{c.amount}</span>
-                </div>
-              ))}
-              <div className="flex justify-between items-center pt-2">
-                <span className="font-serif text-base font-bold">Total Estimated Cost</span>
-                <span className="font-serif text-xl font-bold text-maroon">$87,700</span>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 max-w-2xl mx-auto text-center">
-            <p className="text-stone text-sm leading-relaxed">
-              The University meets 100% of demonstrated financial need. The average financial
-              aid award for aided students is <strong className="text-maroon">$64,800</strong> per year.
-              Families with annual income below $75,000 pay no tuition, fees, room, or board.
+        <div className="max-w-3xl mx-auto prose-container">
+          <SectionHeader
+            eyebrow="A Message to Prospective Students & Their Families"
+            title="Why It Took This Long"
+          />
+          <div className="space-y-6 text-stone leading-relaxed">
+            <p className="drop-cap">
+              For over two hundred years, Fitzherbert University educated students within a system
+              that treated knowledge as stable, disciplines as bounded, and institutional change
+              as slow. That model served well — not because it was perfect, but because the pace
+              of change outside the university was slow enough for the pace inside it to remain
+              meaningful.
+            </p>
+            <p>
+              That condition no longer holds.
+            </p>
+            <p>
+              Artificial intelligence has compressed what used to take a generation into what now
+              takes a fiscal quarter. The gap between what is taught and what is needed has widened
+              to the point where it can no longer be papered over with electives, career fairs, or
+              advisory boards. This is not a crisis of curriculum. It is a structural mismatch
+              between the speed of institutional life and the speed of the world students are
+              entering.
+            </p>
+            <p>
+              Fitzherbert University recognised this — and acted. Not by abandoning its principles,
+              but by returning to the oldest one: <em>Veritas per Disciplina</em>. Truth through
+              Discipline. The University asked a simple question: what does education mean when the
+              thing being educated — human intelligence — is no longer the fastest form of
+              intelligence in the room?
             </p>
           </div>
         </div>
       </Section>
 
-      {/* ── CTA ───────────────────────────────────── */}
+      {/* ── What Changed ──────────────────────────── */}
+      <Section alternate stone>
+        <div className="max-w-3xl mx-auto prose-container">
+          <SectionHeader
+            eyebrow="The Acceleration"
+            title="What the Next Five Years Will Bring"
+          />
+          <div className="space-y-6 text-stone leading-relaxed">
+            <p>
+              By the time a student beginning their degree in 2025 reaches graduation, the
+              capabilities of AI systems will have doubled at least three times. The jobs, tools,
+              and expectations they will face will be materially different from anything that
+              existed when they enrolled.
+            </p>
+            <p>
+              This is not speculation. It is the observable trend of capability growth across
+              foundation models, autonomous agents, and infrastructure intelligence. The
+              University does not predict the future. It prepares for the one that is already
+              arriving.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            {[
+              {
+                title: "AI Capability",
+                rate: "Doubles every 3–6 months",
+                desc: "Foundation models, autonomous agents, and coding systems are improving faster than any technology since the microprocessor.",
+              },
+              {
+                title: "Institutional Adaptation",
+                rate: "Doubles every 12–18 months",
+                desc: "University structures, governance models, and assessment frameworks now operate on epoch-based cycles rather than calendar years.",
+              },
+              {
+                title: "Workforce Transformation",
+                rate: "Restructures every 24 months",
+                desc: "Roles that did not exist two years ago now form the majority of hiring in intelligence infrastructure.",
+              },
+              {
+                title: "Knowledge Production",
+                rate: "Continuous",
+                desc: "Scholarly output is now deterministic, cryptographically verified, and published in real-time through canonical registries.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="border border-gold/20 bg-ivory p-6">
+                <h4 className="font-serif text-lg font-bold mb-1">{item.title}</h4>
+                <p className="text-maroon text-sm font-semibold mb-3">{item.rate}</p>
+                <p className="text-stone text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ── AI-Native Education ───────────────────── */}
       <Section>
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="font-serif text-3xl font-bold mb-4">
-            Ready to Begin?
-          </h2>
-          <div className="gold-divider-center" />
-          <p className="text-stone-light text-lg leading-relaxed mt-6 mb-10">
-            We invite you to take the first step toward joining a community that
-            has shaped scholars, statesmen, and pioneers for more than two centuries.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/admissions"
-              className="inline-block bg-maroon text-parchment px-8 py-3 text-sm tracking-widest uppercase font-serif hover:bg-maroon-light transition-colors"
-            >
-              Start Your Application
-            </Link>
-            <Link
-              href="/about"
-              className="inline-block border border-gold text-gold px-8 py-3 text-sm tracking-widest uppercase font-serif hover:bg-gold hover:text-navy transition-colors"
-            >
-              Plan a Campus Visit
-            </Link>
+        <div className="max-w-3xl mx-auto prose-container">
+          <SectionHeader
+            eyebrow="The Response"
+            title="What Preparation Now Looks Like"
+          />
+          <div className="space-y-6 text-stone leading-relaxed">
+            <p>
+              Without altering its heritage, Fitzherbert University has rebuilt its academic
+              focus around four pillars:
+            </p>
+          </div>
+
+          <div className="space-y-8 mt-8">
+            {[
+              {
+                num: "I",
+                title: "AI Literacy Across Disciplines",
+                text: "Every student, regardless of programme, engages with the fundamentals of artificial intelligence, data reasoning, and model limitations. This is not a technical elective. It is a condition of informed citizenship. A law student who cannot evaluate an AI-generated brief is as unprepared as an engineering student who cannot read a blueprint.",
+              },
+              {
+                num: "II",
+                title: "Governance & Ethics Integration",
+                text: "AI governance is treated as a constitutional matter — not merely a technical one. Students learn not just how to use AI, but how to constrain it, audit it, and design systems that remain accountable to human judgment. This is the institutional commitment that separates a university from a training programme.",
+              },
+              {
+                num: "III",
+                title: "Interdisciplinary Systems Thinking",
+                text: "Engineering, contract law, moral philosophy, political economy, and data science are integrated to reflect how AI systems actually operate in the world. The era of isolated disciplines ended when intelligence became infrastructure.",
+              },
+              {
+                num: "IV",
+                title: "Human Judgment as the Anchor",
+                text: "Technology evolves quickly. Character does not. The University continues to prioritise moral reasoning, civic responsibility, and intellectual discipline — not because these are nostalgic, but because they are the only things that do not depreciate when models improve.",
+              },
+            ].map((pillar) => (
+              <div key={pillar.num} className="flex gap-6 items-start border-l-2 border-gold pl-6">
+                <span className="font-serif text-3xl font-bold text-gold/40 flex-shrink-0">{pillar.num}</span>
+                <div>
+                  <h3 className="font-serif text-lg font-bold mb-2">{pillar.title}</h3>
+                  <p className="text-stone text-sm leading-relaxed">{pillar.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ── Why Families Should Care ──────────────── */}
+      <Section alternate>
+        <div className="max-w-3xl mx-auto prose-container">
+          <SectionHeader
+            eyebrow="For Families"
+            title="Why This Matters"
+          />
+          <div className="space-y-6 text-stone leading-relaxed">
+            <p className="drop-cap">
+              Choosing a university has always been a decision about the future. The difference
+              now is that the future arrives faster than it used to. The traditional markers of
+              institutional quality — age, prestige, campus beauty — remain relevant, but they
+              are no longer sufficient. What matters now is whether an institution has the
+              architectural capacity to adapt at the speed of the world its graduates will enter.
+            </p>
+            <p>
+              Fitzherbert University has that capacity — not because it abandoned its heritage,
+              but because it used that heritage as the foundation for something new. The same
+              values that sustained the institution for two centuries — rigour, integrity,
+              discipline — now power an academic architecture built for acceleration.
+            </p>
+          </div>
+
+          <blockquote className="border-l-4 border-gold bg-ivory/50 p-8 mt-8 italic">
+            <p className="text-lg text-maroon font-serif leading-relaxed">
+              &ldquo;We did not build a new university. We rechartered the one that was already here.
+              The charter of 1783 asked what truth demands. We asked the same question — and found
+              that truth now demands speed, verification, and the courage to rebuild.&rdquo;
+            </p>
+            <cite className="block mt-4 text-stone text-sm not-italic tracking-wide uppercase">
+              — Office of the Chancellor, 2025
+            </cite>
+          </blockquote>
+        </div>
+      </Section>
+
+      {/* ── How to Apply ──────────────────────────── */}
+      <Section>
+        <SectionHeader
+          eyebrow="Application Process"
+          title="Join the First Epoch"
+        />
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Statement of Intent",
+                desc: "Submit a written statement (1,500 words) explaining how you understand the relationship between intelligence acceleration and the discipline you wish to study.",
+              },
+              {
+                step: "02",
+                title: "Systems Assessment",
+                desc: "Complete a structured assessment evaluating interdisciplinary reasoning, ethical judgment, and AI literacy. This replaces standardised test scores.",
+              },
+              {
+                step: "03",
+                title: "Alignment Interview",
+                desc: "A conversation with faculty from your chosen college — not about grades, but about how you think about problems that don't yet have answers.",
+              },
+            ].map((s) => (
+              <div key={s.step} className="text-center border border-gold/20 bg-ivory p-8">
+                <span className="font-serif text-4xl font-bold text-gold/30">{s.step}</span>
+                <h3 className="font-serif text-lg font-bold mt-3 mb-3">{s.title}</h3>
+                <p className="text-stone text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center space-y-4">
+            <p className="text-stone text-sm">
+              Applications are reviewed on a rolling basis aligned with capability epoch cycles.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-6">
+              <a
+                href="mailto:admissions@fitzherbert.edu"
+                className="inline-block bg-maroon text-white font-serif text-sm px-8 py-3 tracking-wide hover:bg-maroon/90 transition-colors"
+              >
+                Begin Application
+              </a>
+              <a
+                href="/University/academics/"
+                className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
+              >
+                View Programmes
+              </a>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── Key Dates ─────────────────────────────── */}
+      <Section alternate>
+        <SectionHeader
+          eyebrow="Key Dates"
+          title="2025–2026 Admissions Calendar"
+        />
+        <div className="max-w-2xl mx-auto border border-gold/20 bg-ivory p-8">
+          <div className="space-y-4">
+            {[
+              { date: "1 July 2025", event: "Applications open for Epoch Cycle α" },
+              { date: "15 September 2025", event: "Priority deadline (guaranteed interview)" },
+              { date: "31 October 2025", event: "Standard deadline" },
+              { date: "15 December 2025", event: "Epoch Cycle α decisions released" },
+              { date: "1 January 2026", event: "Applications open for Epoch Cycle β" },
+              { date: "15 March 2026", event: "Epoch Cycle β priority deadline" },
+              { date: "Rolling", event: "Transfer and mid-cycle applications considered continuously" },
+            ].map((d) => (
+              <div key={d.event} className="flex flex-wrap items-baseline gap-4 py-2 border-b border-gold/10 last:border-b-0">
+                <span className="font-serif font-bold text-sm w-40 flex-shrink-0 text-maroon">{d.date}</span>
+                <span className="text-stone text-sm">{d.event}</span>
+              </div>
+            ))}
           </div>
         </div>
       </Section>

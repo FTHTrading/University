@@ -3,50 +3,52 @@ import { Crest } from "./Crest";
 
 const footerColumns = [
   {
-    title: "Colleges",
+    title: "Epoch Colleges",
     links: [
-      { label: "Arts & Sciences", href: "/academics" },
-      { label: "Engineering", href: "/academics" },
-      { label: "Law", href: "/academics" },
-      { label: "Divinity", href: "/academics" },
-      { label: "Medicine", href: "/academics" },
+      { label: "Computational Systems", href: "/academics" },
+      { label: "Applied Intelligence", href: "/academics" },
+      { label: "Autonomous Governance", href: "/academics" },
+      { label: "Cryptographic Infrastructure", href: "/academics" },
+      { label: "Human-Centered Systems", href: "/academics" },
+      { label: "Narrative & Protocol Design", href: "/academics" },
     ],
   },
   {
     title: "Governance",
     links: [
-      { label: "Charter", href: "/governance" },
-      { label: "Amendments", href: "/governance" },
-      { label: "Senate", href: "/governance" },
-      { label: "Transparency", href: "/governance" },
+      { label: "Epoch Council", href: "/governance" },
+      { label: "Stability Board", href: "/governance" },
+      { label: "Alignment Review", href: "/governance" },
+      { label: "Charter Articles", href: "/governance" },
     ],
   },
   {
     title: "Campus",
     links: [
-      { label: "Named Halls", href: "/campus" },
-      { label: "Residential Colleges", href: "/campus" },
-      { label: "Libraries", href: "/campus" },
-      { label: "Traditions", href: "/campus" },
-      { label: "Gardens & Grounds", href: "/campus" },
+      { label: "Heritage Quad", href: "/campus" },
+      { label: "Voss Computing Centre", href: "/campus" },
+      { label: "Wycliffe Library", href: "/campus" },
+      { label: "Governance Lab", href: "/campus" },
+      { label: "Epoch Commons", href: "/campus" },
     ],
   },
   {
     title: "Research",
     links: [
-      { label: "Institutes", href: "/research" },
-      { label: "Laboratories", href: "/research" },
-      { label: "White Papers", href: "/research" },
-      { label: "Initiatives", href: "/research" },
+      { label: "Accelerated Intelligence", href: "/research" },
+      { label: "Autonomous Governance", href: "/research" },
+      { label: "Deterministic Publishing", href: "/research" },
+      { label: "Multi-Chain Provenance", href: "/research" },
+      { label: "Narrative Protocols", href: "/research" },
     ],
   },
   {
     title: "University Record",
     links: [
       { label: "All Articles", href: "/blog" },
-      { label: "Thought Leadership", href: "/blog" },
-      { label: "Athletics Intelligence", href: "/blog" },
+      { label: "Epoch Reports", href: "/blog" },
       { label: "Governance & AI", href: "/blog" },
+      { label: "Research Output", href: "/blog" },
     ],
   },
   {
@@ -55,7 +57,6 @@ const footerColumns = [
       { label: "Timeline", href: "/timeline" },
       { label: "FAQ", href: "/faq" },
       { label: "Glossary", href: "/glossary" },
-      { label: "Citation Index", href: "/citations" },
       { label: "Canonical Archive", href: "/archive" },
       { label: "Epoch History", href: "/epochs" },
       { label: "RSS Feed", href: "/blog/rss.xml" },
@@ -105,7 +106,7 @@ export function Footer() {
         <div className="border-t border-gold/20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-parchment/50 text-center md:text-left">
             <p>Fitzherbert University &middot; Office of the Chancellor</p>
-            <p>One University Way, Heritage Hall &middot; Est. 1783</p>
+            <p>One University Way, Heritage Hall &middot; Chartered 1783 &middot; Rechartered 2025</p>
           </div>
           <div className="flex gap-6 text-sm text-parchment/50">
             <Link href="/governance" className="hover:text-gold transition-colors">
@@ -122,7 +123,7 @@ export function Footer() {
 
         {/* ── Copyright ───────────────────────────── */}
         <p className="text-center text-xs text-parchment/30 mt-8">
-          &copy; 2026 Fitzherbert University. Established 1783. All rights reserved.
+          &copy; 2026 Fitzherbert University. Chartered 1783 &middot; Rechartered 2025. All rights reserved.
         </p>
       </div>
     </footer>

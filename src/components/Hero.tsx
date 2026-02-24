@@ -16,8 +16,8 @@ interface HeroProps {
 export function Hero({
   title = "Fitzherbert University",
   motto = "Veritas per Disciplina",
-  subtitle = "A Tradition of Intellectual Sovereignty Since 1783",
-  founding = "Founded 1783",
+  subtitle = "Chartered 1783 · Rechartered 2025 · Operating on Intelligence-Doubling Timelines",
+  founding = "Chartered 1783 · AI-Native 2025",
   fullHero = false,
 }: HeroProps) {
   const sectionRef = useRef<HTMLElement>(null);

@@ -7,10 +7,12 @@ import type { GlossaryTerm } from "./page";
 const categories = [
   "All",
   "Governance & Charter",
+  "Epochs & Time",
+  "Colleges & Degrees",
+  "Research & Publishing",
+  "Infrastructure & Technology",
   "Endowment & Finance",
-  "Academic & Research",
-  "AI & Technology",
-  "Athletics & Strategy",
+  "Values",
 ];
 
 export function GlossaryPage({ terms }: { terms: GlossaryTerm[] }) {

@@ -55,6 +55,27 @@ export default async function BlogArticlePage({
 
   const author = getAuthor(article.authorId);
 
+  // ── JSON-LD: Person (Author Entity) ────────────────────────────────────────
+  const personJsonLd = article.authorId !== "editorial-board" ? {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: author.name,
+    jobTitle: author.title,
+    description: author.bio,
+    url: author.url,
+    affiliation: {
+      "@type": "CollegeOrUniversity",
+      name: "FTHTrading University",
+      url: "https://fthtrading.university",
+      foundingDate: "1783",
+    },
+    worksFor: {
+      "@type": "CollegeOrUniversity",
+      name: "FTHTrading University",
+    },
+    sameAs: [],
+  } : null;
+
   // ── JSON-LD: ScholarlyArticle ──────────────────────────────────────────────
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -142,6 +163,12 @@ export default async function BlogArticlePage({
   return (
     <>
       {/* JSON-LD scripts */}
+      {personJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}

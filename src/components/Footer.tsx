@@ -49,6 +49,16 @@ const footerColumns = [
       { label: "Governance & AI", href: "/blog" },
     ],
   },
+  {
+    title: "Reference",
+    links: [
+      { label: "Timeline", href: "/timeline" },
+      { label: "FAQ", href: "/faq" },
+      { label: "Glossary", href: "/glossary" },
+      { label: "Citation Index", href: "/citations" },
+      { label: "RSS Feed", href: "/blog/rss.xml" },
+    ],
+  },
 ];
 
 export function Footer() {
@@ -67,7 +77,7 @@ export function Footer() {
         </div>
 
         {/* ── Columns ─────────────────────────────── */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 mb-14">
           {footerColumns.map((col) => (
             <div key={col.title}>
               <h4 className="font-serif text-sm uppercase tracking-[0.15em] text-gold mb-4 font-bold">

@@ -42,6 +42,9 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": "/blog/rss.xml",
+    },
   },
   openGraph: {
     type: "website",
@@ -89,16 +92,41 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "CollegeOrUniversity",
+              "@type": ["CollegeOrUniversity", "EducationalOrganization"],
+              "@id": "https://fthtrading.university/#organization",
               name: "FTHTrading University",
-              alternateName: "FTHU",
+              alternateName: ["FTHU", "FTH Trading University"],
+              legalName: "The President and Fellows of FTHTrading University",
               foundingDate: "1783",
               description:
-                "Founded in the Age of Enlightenment, FTHTrading University stands as a steward of disciplined inquiry, moral courage, and institutional continuity.",
+                "Founded in the Age of Enlightenment, FTHTrading University stands as a steward of disciplined inquiry, moral courage, and institutional continuity. A research-intensive institution with 8,200 students, 847 faculty, and a $14.2 billion endowment.",
               url: "https://fthtrading.university",
               motto: "Veritas per Disciplina",
-              logo: "https://fthtrading.university/crest.svg",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://fthtrading.university/crest.svg",
+                width: 512,
+                height: 512,
+              },
+              image: "https://fthtrading.university/crest.svg",
               telephone: "+1-800-555-1783",
+              email: "chancellor@fthtrading.university",
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  contactType: "Admissions",
+                  telephone: "+1-800-555-1784",
+                  email: "admissions@fthtrading.university",
+                  availableLanguage: ["English"],
+                },
+                {
+                  "@type": "ContactPoint",
+                  contactType: "Office of the Chancellor",
+                  telephone: "+1-800-555-1783",
+                  email: "chancellor@fthtrading.university",
+                  availableLanguage: ["English"],
+                },
+              ],
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "1 University Place",
@@ -107,6 +135,38 @@ export default function RootLayout({
                 postalCode: "02138",
                 addressCountry: "US",
               },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 42.3736,
+                longitude: -71.1097,
+              },
+              hasCredential: [
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  credentialCategory: "degree",
+                  name: "Bachelor of Arts",
+                },
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  credentialCategory: "degree",
+                  name: "Master of Arts",
+                },
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  credentialCategory: "degree",
+                  name: "Doctor of Philosophy",
+                },
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  credentialCategory: "degree",
+                  name: "Juris Doctor",
+                },
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  credentialCategory: "degree",
+                  name: "Doctor of Medicine",
+                },
+              ],
               numberOfStudents: "8,200",
               areaServed: "Worldwide",
               department: [

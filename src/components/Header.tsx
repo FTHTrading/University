@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/governance", label: "Governance" },
   { href: "/admissions", label: "Admissions" },
   { href: "/endowment", label: "Endowment" },
+  { href: "/timeline", label: "Timeline" },
   { href: "/blog", label: "Record" },
 ];
 

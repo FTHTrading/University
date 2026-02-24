@@ -220,30 +220,54 @@ Includes:
 src/
 ├── app/
 │   ├── globals.css              # Heritage design system (270+ lines)
-│   ├── layout.tsx               # Root layout, JSON-LD, metadata, skip-link
+│   ├── layout.tsx               # Root layout, JSON-LD (Org + Edu), metadata, skip-link
 │   ├── page.tsx                 # Homepage
 │   ├── about/page.tsx           # History, Timeline, Charter, Values
 │   ├── academics/page.tsx       # Colleges, Faculty, Alumni, Calendar
 │   ├── admissions/page.tsx      # Class Profile, Tuition, Scholarships
 │   ├── athletics/page.tsx       # Varsity, Esports, Facilities
+│   ├── blog/
+│   │   ├── layout.tsx           # Blog-level metadata
+│   │   ├── page.tsx             # Article listing with category filters
+│   │   └── [slug]/
+│   │       ├── page.tsx         # Article SSG (ScholarlyArticle, Person, FAQ, Breadcrumb JSON-LD)
+│   │       └── ArticleLayout.tsx # Article UI (drop-cap, citations, FAQ, author card)
 │   ├── campus/page.tsx          # Named Halls, Residential Colleges, Traditions
+│   ├── citations/
+│   │   ├── page.tsx             # Aggregated citation index (Collection JSON-LD)
+│   │   └── CitationsPage.tsx    # Citations UI with search and filters
 │   ├── endowment/page.tsx       # Allocation, Growth, Distribution, Reports
+│   ├── faq/
+│   │   ├── page.tsx             # 27 FAQs, 7 categories (FAQPage JSON-LD)
+│   │   └── FAQPage.tsx          # FAQ accordion UI with category filters
+│   ├── glossary/
+│   │   ├── page.tsx             # 33 terms, 5 domains (DefinedTermSet JSON-LD)
+│   │   └── GlossaryPage.tsx     # Glossary UI with search and alphabetical grouping
 │   ├── governance/page.tsx      # Charter, Amendments, Senate, Archive
-│   └── research/page.tsx        # Institutes, Impact, White Papers, Labs
+│   ├── research/page.tsx        # Institutes, Impact, White Papers, Labs
+│   └── timeline/
+│       ├── page.tsx             # 20 events (Event ItemList JSON-LD)
+│       └── TimelinePage.tsx     # Interactive timeline with era filters
 ├── components/
 │   ├── CollegeCard.tsx
 │   ├── Crest.tsx                # Full heraldic SVG (200×240 viewBox)
-│   ├── Footer.tsx
-│   ├── Header.tsx
+│   ├── Footer.tsx               # 6-column footer with Reference section
+│   ├── Header.tsx               # Heritage nav with 10 links + action bar
 │   ├── Hero.tsx                 # Parallax hero with vignette
 │   ├── Section.tsx
 │   └── Timeline.tsx
+├── lib/
+│   ├── articles.ts              # 15 articles, types, query functions
+│   └── authors.ts               # 5 author profiles
+scripts/
+└── generate-rss.ts              # Build-time RSS generator (15 articles)
 public/
+├── blog/rss.xml                 # Generated RSS 2.0 feed
 ├── robots.txt
-└── sitemap.xml
+└── sitemap.xml                  # 29 URLs
 ```
 
-### Routes (9 statically pre-rendered)
+### Routes (30+ statically pre-rendered)
 
 | Route | Content |
 | --- | --- |
@@ -256,6 +280,12 @@ public/
 | `/endowment` | Founders Circle, Allocation Bars, Growth Timeline, Distribution, Reports |
 | `/governance` | 12 Charter Articles, 7 Amendments, 8 Senators, 6 Committees, Archive |
 | `/research` | 6 Institutes, Impact Metrics, 6 White Papers, 6 Key Facilities |
+| `/blog` | University Record — 15 articles, category filters, Article/FAQ/Person JSON-LD |
+| `/blog/[slug]` | 15 dynamic article pages with ScholarlyArticle, FAQPage, BreadcrumbList schema |
+| `/timeline` | Interactive 1783–2026 timeline, 20 events, 4 eras, Event JSON-LD |
+| `/faq` | Institutional FAQ hub — 27 FAQs, 7 categories, FAQPage JSON-LD |
+| `/glossary` | 33 defined terms, 5 domains, DefinedTermSet JSON-LD |
+| `/citations` | Aggregated citation index from all publications, Collection JSON-LD |
 
 ### Performance Targets
 
@@ -268,12 +298,15 @@ public/
 
 ### SEO & Machine-Readable Legitimacy
 
-- JSON-LD structured data (`CollegeOrUniversity` schema)
-- OpenGraph + Twitter Card metadata
+- JSON-LD structured data (`CollegeOrUniversity`, `EducationalOrganization`, `ScholarlyArticle`, `Person`, `Event`, `FAQPage`, `DefinedTermSet`, `Collection`, `BreadcrumbList`)
+- OpenGraph + Twitter Card metadata on all routes
 - Canonical URL tags
-- Static `sitemap.xml` (9 URLs)
+- Static `sitemap.xml` (28 URLs)
+- RSS feed (`/blog/rss.xml`) with Atom namespace
 - `robots.txt` with sitemap reference
 - Page-level `<title>` and `<meta description>` on every route
+- Person JSON-LD for all faculty authors
+- Organization JSON-LD with `hasCredential` (BA, MA, PhD, JD, MD)
 - Semantic HTML with ARIA landmarks
 - Skip-to-content accessibility link
 
@@ -284,8 +317,8 @@ public/
 ### Initial Setup
 
 ```bash
-git clone https://github.com/FTHTrading/4100-DR.git
-cd 4100-DR
+git clone https://github.com/FTHTrading/University.git
+cd University
 npm install
 npm run dev
 ```
@@ -339,6 +372,14 @@ npm run build
 - [x] Skip-to-content accessibility link
 - [x] JSON-LD structured data
 - [x] OpenGraph + Twitter Card metadata
+- [x] University Record blog (15 articles, 3 categories)
+- [x] Article/FAQ/Person/BreadcrumbList JSON-LD per article
+- [x] Enhanced Organization JSON-LD (hasCredential, contactPoint, geo)
+- [x] Interactive /timeline page (1783–2026, 4 eras, Event schema)
+- [x] Institutional /faq hub (27 FAQs, 7 categories, FAQPage schema)
+- [x] RSS feed with prebuild generation
+- [x] /glossary (33 terms, 5 domains, DefinedTermSet schema)
+- [x] /citations index (aggregated bibliography, Collection schema)
 
 ### Planned Enhancements
 
@@ -350,6 +391,9 @@ npm run build
 - [ ] Seasonal campus imagery toggle
 - [ ] Institutional Data Transparency dashboard
 - [ ] Governance Dashboard preview
+- [ ] IPFS canonical publishing layer
+- [ ] Web3 governance integration
+- [ ] Autonomous RAG agent for institutional knowledge
 
 ---
 

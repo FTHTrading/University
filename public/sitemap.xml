@@ -153,6 +153,12 @@
   </url>
   <!-- Reference Pages -->
   <url>
+    <loc>https://www.fthtrading.edu/archive</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.fthtrading.edu/timeline</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>monthly</changefreq>

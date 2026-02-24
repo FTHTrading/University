@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllArticles, getArticleBySlug, getAuthor } from "@/lib/articles";
+import { computeArticleCanonical } from "@/lib/canonical";
 import { ArticleLayout } from "./ArticleLayout";
 
 // ── Static export: pre-render every article ──────────────────────────────────
@@ -54,6 +55,7 @@ export default async function BlogArticlePage({
   if (!article) notFound();
 
   const author = getAuthor(article.authorId);
+  const canonical = computeArticleCanonical(article);
 
   // ── JSON-LD: Person (Author Entity) ────────────────────────────────────────
   const personJsonLd = article.authorId !== "editorial-board" ? {
@@ -182,7 +184,7 @@ export default async function BlogArticlePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <ArticleLayout article={article} author={author} />
+      <ArticleLayout article={article} author={author} canonical={canonical} />
     </>
   );
 }

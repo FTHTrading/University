@@ -13,12 +13,20 @@ const categoryColors: Record<string, string> = {
   "Governance & AI Infrastructure": "bg-gold/20 text-stone border-gold/30",
 };
 
+interface CanonicalData {
+  contentHash: string;
+  cid: string;
+  version: string;
+}
+
 export function ArticleLayout({
   article,
   author,
+  canonical,
 }: {
   article: BlogArticle;
   author: Author;
+  canonical: CanonicalData;
 }) {
   const related = getAllArticles()
     .filter((a) => a.slug !== article.slug)
@@ -210,6 +218,46 @@ export function ArticleLayout({
             </div>
           </aside>
         )}
+        {/* ── Canonical Artifact Identifier ────────── */}
+        <aside className="mt-14 border-t border-stone/10 pt-8">
+          <div className="bg-navy text-parchment rounded-sm border border-gold/20 p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-2 h-2 rounded-full bg-gold" />
+              <p className="text-[10px] text-gold tracking-[0.2em] uppercase font-serif font-bold">
+                Canonical Artifact Identifier
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <div>
+                <p className="text-[10px] text-parchment/40 uppercase tracking-widest mb-0.5">
+                  SHA-256
+                </p>
+                <p className="font-mono text-xs text-gold/90 break-all select-all leading-relaxed">
+                  {canonical.contentHash}
+                </p>
+              </div>
+              <div>
+                <p className="text-[10px] text-parchment/40 uppercase tracking-widest mb-0.5">
+                  IPFS CID
+                </p>
+                <p className="font-mono text-xs text-gold/90 break-all select-all leading-relaxed">
+                  {canonical.cid}
+                </p>
+              </div>
+              <div className="flex items-center gap-6 pt-2 border-t border-gold/10 text-[10px] text-parchment/40 uppercase tracking-widest">
+                <span>Version {canonical.version}</span>
+                <span>Protocol: IPFS Canonical Publishing v1.0</span>
+              </div>
+            </div>
+
+            <p className="text-[10px] text-parchment/30 mt-4 leading-relaxed">
+              This identifier is computed from the deterministic serialisation
+              of this article&rsquo;s content. Independently verify by hashing
+              slug + title + section content + citations using SHA-256.
+            </p>
+          </div>
+        </aside>
       </article>
 
       {/* ── Latin Footer ─────────────────────────────── */}

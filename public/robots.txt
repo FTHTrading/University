@@ -1,0 +1,5 @@
+# FTHTrading University — robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://www.fthtrading.edu/sitemap.xml

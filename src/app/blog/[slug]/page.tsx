@@ -1,0 +1,161 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { getAllArticles, getArticleBySlug, getAuthor } from "@/lib/articles";
+import { ArticleLayout } from "./ArticleLayout";
+
+// ── Static export: pre-render every article ──────────────────────────────────
+export function generateStaticParams() {
+  return getAllArticles().map((a) => ({ slug: a.slug }));
+}
+
+// ── Per-article metadata ─────────────────────────────────────────────────────
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
+  if (!article) return {};
+
+  const author = getAuthor(article.authorId);
+
+  return {
+    title: article.title,
+    description: article.excerpt,
+    authors: [{ name: author.name, url: author.url }],
+    keywords: article.keywords,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      type: "article",
+      publishedTime: article.datePublished,
+      modifiedTime: article.dateModified,
+      authors: [author.name],
+      section: article.category,
+      tags: article.keywords,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+    },
+  };
+}
+
+// ── Page Component ───────────────────────────────────────────────────────────
+export default async function BlogArticlePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
+  if (!article) notFound();
+
+  const author = getAuthor(article.authorId);
+
+  // ── JSON-LD: ScholarlyArticle ──────────────────────────────────────────────
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    headline: article.title,
+    alternativeHeadline: article.subtitle,
+    description: article.excerpt,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    author: {
+      "@type": "Person",
+      name: author.name,
+      jobTitle: author.title,
+      affiliation: {
+        "@type": "CollegeOrUniversity",
+        name: "FTHTrading University",
+      },
+      url: author.url,
+    },
+    publisher: {
+      "@type": "CollegeOrUniversity",
+      name: "FTHTrading University",
+      url: "https://fthtrading.university",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://fthtrading.university/crest.svg",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://fthtrading.university/blog/${article.slug}`,
+    },
+    articleSection: article.category,
+    keywords: article.keywords.join(", "),
+    wordCount: article.sections.reduce(
+      (sum, s) => sum + s.content.split(/\s+/).length,
+      0
+    ),
+    citation: article.citations.map((c) => c.text),
+    inLanguage: "en",
+    isAccessibleForFree: true,
+    creativeWorkStatus: "Published",
+  };
+
+  // ── JSON-LD: FAQPage ───────────────────────────────────────────────────────
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: article.faq.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  };
+
+  // ── JSON-LD: BreadcrumbList ────────────────────────────────────────────────
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://fthtrading.university",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "University Record",
+        item: "https://fthtrading.university/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: `https://fthtrading.university/blog/${article.slug}`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      {/* JSON-LD scripts */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
+      <ArticleLayout article={article} author={author} />
+    </>
+  );
+}

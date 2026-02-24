@@ -235,6 +235,12 @@ src/
 │   ├── archive/
 │   │   ├── page.tsx             # Canonical archive (Collection + BreadcrumbList JSON-LD)
 │   │   └── ArchivePage.tsx      # Archive UI: epoch root, SHA-256, CIDv1 per article
+│   ├── epochs/
+│   │   ├── page.tsx             # Epoch history index (ItemList + BreadcrumbList JSON-LD)
+│   │   ├── EpochsPage.tsx       # Epoch timeline UI + immutability declaration
+│   │   └── [version]/
+│   │       ├── page.tsx          # Epoch detail SSG (Dataset + BreadcrumbList JSON-LD)
+│   │       └── EpochDetailPage.tsx # Epoch detail UI: articles, diff, Merkle proof
 │   ├── campus/page.tsx          # Named Halls, Residential Colleges, Traditions
 │   ├── citations/
 │   │   ├── page.tsx             # Aggregated citation index (Collection JSON-LD)
@@ -262,7 +268,9 @@ src/
 ├── lib/
 │   ├── articles.ts              # 15 articles, types, query functions
 │   ├── authors.ts               # 5 author profiles
-│   └── canonical.ts             # SHA-256 hashing, CIDv1 generation, Merkle tree
+│   ├── canonical.ts             # SHA-256 hashing, CIDv1 generation, Merkle tree
+│   ├── epochs.ts                # Epoch versioning types + diff engine
+│   └── epoch-history.ts         # Sealed epoch snapshots (immutable history store)
 scripts/
 ├── generate-rss.ts              # Build-time RSS generator (15 articles)
 └── canonical-publish.ts         # Build-time SHA-256 + CIDv1 + Merkle epoch pipeline
@@ -292,6 +300,8 @@ public/
 | `/faq` | Institutional FAQ hub — 27 FAQs, 7 categories, FAQPage JSON-LD |
 | `/glossary` | 33 defined terms, 5 domains, DefinedTermSet JSON-LD |
 | `/archive` | Canonical Archive — SHA-256 hashes, CIDv1 identifiers, Merkle epoch root |
+| `/epochs` | Epoch History — version timeline, immutability declaration, ItemList JSON-LD |
+| `/epochs/[version]` | Epoch detail — article registry, changelog diff, Merkle proof, Dataset JSON-LD |
 | `/citations` | Aggregated citation index from all publications, Collection JSON-LD |
 
 ### Performance Targets
@@ -309,7 +319,8 @@ public/
 - IPFS Canonical Publishing v1.0 (SHA-256 content hashing, CIDv1 generation, Binary Merkle epoch root)
 - OpenGraph + Twitter Card metadata on all routes
 - Canonical URL tags
-- Static `sitemap.xml` (30 URLs)
+- Epoch Versioning System (sealed snapshots, diff engine, Merkle proof explorer)
+- Static `sitemap.xml` (32 URLs)
 - RSS feed (`/blog/rss.xml`) with Atom namespace
 - Canonical registry (`/canonical-registry.json`) with SHA-256 hashes + CIDv1 identifiers
 - `robots.txt` with sitemap reference
@@ -393,6 +404,9 @@ npm run build
 - [x] /archive (canonical attestation registry with copy-to-clipboard)
 - [x] Canonical Artifact Identifier footer on all articles
 - [x] Machine-readable canonical registry (`/canonical-registry.json`)
+- [x] Epoch Versioning System (sealed snapshots, diff changelog, Merkle proof explorer)
+- [x] /epochs index + /epochs/[version] detail SSG pages
+- [x] Immutability declaration + version selector UI
 
 ### Planned Enhancements
 
@@ -405,6 +419,7 @@ npm run build
 - [ ] Institutional Data Transparency dashboard
 - [ ] Governance Dashboard preview
 - [x] ~~IPFS canonical publishing layer~~ (v1.1.0)
+- [x] ~~Epoch Versioning System~~ (v1.2.0)
 - [ ] Web3 governance integration
 - [ ] Autonomous RAG agent for institutional knowledge
 

@@ -57,6 +57,7 @@ const footerColumns = [
       { label: "Glossary", href: "/glossary" },
       { label: "Citation Index", href: "/citations" },
       { label: "Canonical Archive", href: "/archive" },
+      { label: "Epoch History", href: "/epochs" },
       { label: "RSS Feed", href: "/blog/rss.xml" },
     ],
   },

@@ -1,0 +1,225 @@
+/**
+ * Epoch History — Static Historical Record
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Immutable snapshots of every epoch in the canonical publishing timeline.
+ * Each epoch is permanently sealed once generated.
+ *
+ * New epochs are appended by the epoch-snapshot.ts build script.
+ * Existing epochs are NEVER modified.
+ */
+
+import type { EpochSnapshot } from "./epochs";
+
+// ── Epoch v1.0.0 — Foundational Canonical Publish ───────────────────────────
+// Generated: 2026-02-24 · Tag: v1.1.0
+// First cryptographic attestation of the institutional corpus.
+
+const epoch_1_0_0: EpochSnapshot = {
+  version: "1.0.0",
+  tag: "v1.1.0",
+  timestamp: "2026-02-24T07:26:21.280Z",
+  description: "Foundational Canonical Publish — Initial cryptographic attestation of 15 articles across 3 categories. SHA-256 content hashing, CIDv1 generation, and Binary Merkle tree established.",
+  epoch: {
+    root: "89c8ca023fd5bf4c45d299eac8833f78ea607bebff3a8ee65e47e44fbf95daa2",
+    timestamp: "2026-02-24T07:26:21.280Z",
+    articleCount: 15,
+    hashAlgorithm: "SHA-256",
+    treeType: "Binary Merkle Tree",
+  },
+  articles: [
+    {
+      slug: "constitutional-precedent-digital-governance",
+      title: "Constitutional Precedent in Digital Governance",
+      author: "Professor Victoria Langford",
+      category: "Governance & AI Infrastructure",
+      publishedAt: "2026-02-14",
+      modifiedAt: "2026-02-14",
+      version: "1.0.0",
+      contentHash: "3c89789cbdd78a7e218933a78619175f12b237af34fe50aac9470b12d87e9f0d",
+      cid: "bafkreib4rf4jzpoxrj7cdcjtu6dbsf27ckzdplzu7zikvskhbmjnq7u7bu",
+    },
+    {
+      slug: "future-of-ai-governed-institutions",
+      title: "The Future of AI-Governed Institutions",
+      author: "Professor Margaret Sinclair",
+      category: "Institutional Thought Leadership",
+      publishedAt: "2026-02-10",
+      modifiedAt: "2026-02-10",
+      version: "1.0.0",
+      contentHash: "a2abfa31091d2a88dd3d8f3fa610fa6a9d49386cc8e916fe3e6e44c852531df3",
+      cid: "bafkreifcvp5dcci5fken2pmph6tbb6tktvetq3gi5elp4ptoitefeuy56m",
+    },
+    {
+      slug: "fiduciary-duty-in-perpetuity",
+      title: "Fiduciary Duty in Perpetuity",
+      author: "Professor Richard Pemberton",
+      category: "Institutional Thought Leadership",
+      publishedAt: "2026-02-07",
+      modifiedAt: "2026-02-07",
+      version: "1.0.0",
+      contentHash: "159cd5344a624250b6afee11fde8b21734234b63b73091c7cf92863b22cd8c49",
+      cid: "bafkreiavttktistcijilnl7och66rmqxgqruwy5xgci4pt4sqy5sftmmje",
+    },
+    {
+      slug: "agentic-rag-institutional-memory",
+      title: "Agentic RAG for Institutional Memory",
+      author: "Professor Margaret Sinclair",
+      category: "Governance & AI Infrastructure",
+      publishedAt: "2026-02-03",
+      modifiedAt: "2026-02-03",
+      version: "1.0.0",
+      contentHash: "ab6189b35e3f4a904193970457561c776cc473de8bbe050c789a480231454fc6",
+      cid: "bafkreiflmge3gxr7jkiede4xarlvmhdxntchhxulxycqy6e2jabdcrkpyy",
+    },
+    {
+      slug: "game-theory-competitive-strategy-collegiate-systems",
+      title: "Game Theory and Competitive Strategy in Collegiate Systems",
+      author: "Professor Richard Pemberton",
+      category: "Athletics Intelligence",
+      publishedAt: "2026-01-28",
+      modifiedAt: "2026-01-28",
+      version: "1.0.0",
+      contentHash: "9269bec1949eca271ad92760461d3249962d9af639ae7ccfdac0b44269266ded",
+      cid: "bafkreiesng7mdfe6zitrvwjhmbdb2msjsywzv5rzvz6m7wwawrbgsjtn5u",
+    },
+    {
+      slug: "simulation-driven-recruitment-strategy",
+      title: "Simulation-Driven Recruitment Strategy",
+      author: "Professor James Harrington",
+      category: "Athletics Intelligence",
+      publishedAt: "2026-01-25",
+      modifiedAt: "2026-01-25",
+      version: "1.0.0",
+      contentHash: "dd668ed8933ac66cd596105fcd7183620176fc9e72e2733c8126fa57049d9a1f",
+      cid: "bafkreig5m2hnrez2yzwnlfqql7gxda3caf3pzhts4jztzajg7jlqjhm2d4",
+    },
+    {
+      slug: "opponent-modeling-modern-esports",
+      title: "Opponent Modeling in Modern Esports",
+      author: "Professor James Harrington",
+      category: "Athletics Intelligence",
+      publishedAt: "2026-01-20",
+      modifiedAt: "2026-01-20",
+      version: "1.0.0",
+      contentHash: "66617f12e8713833cb5091e3d657a06fe652da868d54d3749b6918e7a54d5450",
+      cid: "bafkreidgmf7rf2drhaz4wuer4plfpidp4zjnvbunktjxjg3jddt2ktkuka",
+    },
+    {
+      slug: "endowment-stewardship-age-of-volatility",
+      title: "Endowment Stewardship in the Age of Volatility",
+      author: "The Editorial Board",
+      category: "Institutional Thought Leadership",
+      publishedAt: "2026-01-15",
+      modifiedAt: "2026-01-15",
+      version: "1.0.0",
+      contentHash: "16046087165e90c8e4d2604bf35c17739da5427b684a9488fa8916d5ae3b4c64",
+      cid: "bafkreiawarqiofs6sdeojutajpzvyf3ttwsue63ijkkir6ujc3k24o2mmq",
+    },
+    {
+      slug: "knowledge-graphs-institutional-intelligence",
+      title: "Knowledge Graphs for Institutional Intelligence",
+      author: "Professor Margaret Sinclair",
+      category: "Governance & AI Infrastructure",
+      publishedAt: "2025-12-20",
+      modifiedAt: "2025-12-20",
+      version: "1.0.0",
+      contentHash: "50d4c27ebb004c359d064ace1c663ee3f7fdbc7972dd6ba4baa39c5830dbb8be",
+      cid: "bafkreicq2tbh5oyajq2z2bskzyogmpxd6763y6ls3vv2jovdtrmdbw5yxy",
+    },
+    {
+      slug: "ethics-of-predictive-analytics-admissions",
+      title: "The Ethics of Predictive Analytics in Admissions",
+      author: "Professor Victoria Langford",
+      category: "Institutional Thought Leadership",
+      publishedAt: "2025-12-15",
+      modifiedAt: "2025-12-15",
+      version: "1.0.0",
+      contentHash: "33a7680b7ba36098f1eb93eb5593ba21a6f869d66edbc15ff9f4c19bf732f9f2",
+      cid: "bafkreibtu5uaw65dmcmpd24t5nkzhorbu34gtvto3pav76puygn7omxz6i",
+    },
+    {
+      slug: "biomechanical-modelling-injury-prevention",
+      title: "Biomechanical Modelling for Injury Prevention",
+      author: "Professor James Harrington",
+      category: "Athletics Intelligence",
+      publishedAt: "2025-12-10",
+      modifiedAt: "2025-12-10",
+      version: "1.0.0",
+      contentHash: "07165e49c9f9a101e15b64c19343de7fd08df044f4399d883535af920d2a1f92",
+      cid: "bafkreiahczpetspzuea6cw3eygjuhxt72cg7arhuhgoyqnjvv6ja2kq7si",
+    },
+    {
+      slug: "academic-freedom-age-of-algorithms",
+      title: "Academic Freedom in the Age of Algorithms",
+      author: "Professor Victoria Langford",
+      category: "Institutional Thought Leadership",
+      publishedAt: "2025-12-05",
+      modifiedAt: "2025-12-05",
+      version: "1.0.0",
+      contentHash: "69bf4d81b422fff4f532faed887bcf2916ac497191e7e4b67014ddda5c3ee5c8",
+      cid: "bafkreidjx5gydnbc772pkmx25wehxtzjc2wes4mr47slm4xau3xnfypxfza",
+    },
+    {
+      slug: "transfer-portal-economics",
+      title: "Transfer Portal Economics",
+      author: "Professor Richard Pemberton",
+      category: "Athletics Intelligence",
+      publishedAt: "2025-11-28",
+      modifiedAt: "2025-11-28",
+      version: "1.0.0",
+      contentHash: "8de7b37127e31376dd07be362adebee2c37ca77e227248c56e2dbf0940c36be1",
+      cid: "bafkreien46zxcj7dcn3n2b56gyvn5pxcyn6ko7rcojemk3rnx4eubq3l4e",
+    },
+    {
+      slug: "vector-databases-institutional-memory",
+      title: "Vector Databases for Institutional Memory",
+      author: "Professor Margaret Sinclair",
+      category: "Governance & AI Infrastructure",
+      publishedAt: "2025-11-20",
+      modifiedAt: "2025-11-20",
+      version: "1.0.0",
+      contentHash: "8aadec4dbcec3bfc66cc31965a09d49e3d9a2b2835e6ef40425f3f3b73a92039",
+      cid: "bafkreiekvxwe3phmhp6gntbrsznatve6hwncwkbv43xuaqs7h45xhkjahe",
+    },
+    {
+      slug: "institutional-resilience-through-governance-design",
+      title: "Institutional Resilience Through Governance Design",
+      author: "The Editorial Board",
+      category: "Institutional Thought Leadership",
+      publishedAt: "2025-11-15",
+      modifiedAt: "2025-11-15",
+      version: "1.0.0",
+      contentHash: "7436e540ff050881e46f06eb7ff4c00aecba4aabde9bf805f3e6da8089c6e8c8",
+      cid: "bafkreidug3sub7yfbca6i3yg5n77jqak5s5evk66tp4al47g3kaitrxiza",
+    },
+  ],
+};
+
+// ─── Epoch Registry ──────────────────────────────────────────────────────────
+// Append new epochs below. NEVER modify sealed epochs above.
+
+export const epochHistory: EpochSnapshot[] = [
+  epoch_1_0_0,
+];
+
+// ── Query functions ──────────────────────────────────────────────────────────
+
+export function getAllEpochs(): EpochSnapshot[] {
+  return epochHistory.sort(
+    (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+  );
+}
+
+export function getEpochByVersion(version: string): EpochSnapshot | undefined {
+  return epochHistory.find((e) => e.version === version);
+}
+
+export function getCurrentEpoch(): EpochSnapshot {
+  return getAllEpochs()[0];
+}
+
+export function getPreviousEpoch(version: string): EpochSnapshot | undefined {
+  const sorted = getAllEpochs();
+  const idx = sorted.findIndex((e) => e.version === version);
+  return idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : undefined;
+}

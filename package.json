@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npx tsx scripts/generate-rss.ts && npx tsx scripts/canonical-publish.ts",
+    "prebuild": "tsx --tsconfig tsconfig.scripts.json scripts/generate-rss.ts && tsx --tsconfig tsconfig.scripts.json scripts/canonical-publish.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

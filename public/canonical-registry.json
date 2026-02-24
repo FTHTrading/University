@@ -1,7 +1,7 @@
 {
   "institution": "FTHTrading University",
   "protocol": "IPFS Canonical Publishing v1.0",
-  "generatedAt": "2026-02-24T07:43:08.073Z",
+  "generatedAt": "2026-02-24T07:46:58.476Z",
   "articles": [
     {
       "slug": "constitutional-precedent-digital-governance",
@@ -171,7 +171,7 @@
   ],
   "epoch": {
     "root": "89c8ca023fd5bf4c45d299eac8833f78ea607bebff3a8ee65e47e44fbf95daa2",
-    "timestamp": "2026-02-24T07:43:08.073Z",
+    "timestamp": "2026-02-24T07:46:58.476Z",
     "articleCount": 15,
     "hashAlgorithm": "SHA-256",
     "treeType": "Binary Merkle Tree"

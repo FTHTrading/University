@@ -54,10 +54,10 @@ export default function EndowmentPage() {
             { value: "5.2%", label: "Annual Distribution Rate" },
             { value: "£109M", label: "Annual Operating Support" },
             { value: "8.4%", label: "10-Year Average Return" },
-            { value: "29%", label: "AI Infrastructure Allocation" },
-            { value: "24%", label: "Heritage Preservation" },
-            { value: "22%", label: "Research & Faculty" },
-            { value: "25%", label: "Student Support" },
+            { value: "24%", label: "AI Infrastructure" },
+            { value: "18%", label: "Heritage Preservation" },
+            { value: "18%", label: "Research & Faculty" },
+            { value: "40%", label: "Student Builder Fund" },
           ].map((stat) => (
             <div key={stat.label} className="stat-card text-center">
               <div className="font-serif text-2xl font-bold text-maroon">{stat.value}</div>
@@ -77,7 +77,7 @@ export default function EndowmentPage() {
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             {
-              title: "AI Infrastructure (29%)",
+              title: "AI Infrastructure (24%)",
               icon: "⬢",
               items: [
                 "Computational infrastructure and GPU clusters",
@@ -87,7 +87,7 @@ export default function EndowmentPage() {
               ],
             },
             {
-              title: "Heritage Preservation (24%)",
+              title: "Heritage Preservation (18%)",
               icon: "🏛",
               items: [
                 "Georgian quadrangle maintenance and restoration",
@@ -97,7 +97,7 @@ export default function EndowmentPage() {
               ],
             },
             {
-              title: "Research & Faculty (22%)",
+              title: "Research & Faculty (18%)",
               icon: "◈",
               items: [
                 "Endowed chairs and faculty compensation",
@@ -107,13 +107,13 @@ export default function EndowmentPage() {
               ],
             },
             {
-              title: "Student Support (25%)",
+              title: "Student Builder Fund (40%)",
               icon: "◇",
               items: [
-                "Need-based financial aid (100% of demonstrated need)",
-                "Merit scholarships",
-                "Cognitive wellness programme funding",
-                "Student governance and activities",
+                "Student living stipends (£24,000+ per year)",
+                "Performance multiplier payments (up to 2.5×)",
+                "Housing, wellness, and cognitive performance",
+                "Equipment, compute access, and tools",
               ],
             },
           ].map((pillar) => (
@@ -132,6 +132,56 @@ export default function EndowmentPage() {
               </ul>
             </div>
           ))}
+        </div>
+      </Section>
+
+      {/* ── Revenue Architecture ─────────────────── */}
+      <Section alternate stone>
+        <SectionHeader
+          eyebrow="Beyond the Endowment"
+          title="How Zero Tuition Is Funded"
+          description="The endowment is one pillar. Six additional revenue streams fund the Builder Compact — the constitutional guarantee that students are paid, never charged."
+        />
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              title: "Protocol Licensing",
+              desc: "Deterministic publishing, Merkle verification, and canonical registry systems built by students and faculty — licensed to universities, publishers, and governments worldwide.",
+            },
+            {
+              title: "Sovereign Infrastructure Bonds",
+              desc: "Financial instruments backed by the University's growing intellectual property portfolio. Collateralised by protocol assets, not student debt.",
+            },
+            {
+              title: "Research Contracts",
+              desc: "AI safety, governance, alignment, and institutional design research contracted by governments, regulators, and international organisations.",
+            },
+            {
+              title: "Institutional Certification",
+              desc: "The Fitzherbert Alignment Certification and Four-Gate Validation — verification that other institutions meet sovereign AI governance standards.",
+            },
+            {
+              title: "Canonical Registry Subscriptions",
+              desc: "The University's verified publishing infrastructure operated as a subscription service for institutions seeking deterministic, tamper-proof scholarly output.",
+            },
+            {
+              title: "Revenue Participation Returns",
+              desc: "As licensed protocols generate returns, a portion flows back into the Student Builder Fund — ensuring the system compounds with every epoch.",
+            },
+          ].map((stream) => (
+            <div key={stream.title} className="border border-gold/20 bg-ivory p-6">
+              <h4 className="font-serif text-base font-bold mb-3">{stream.title}</h4>
+              <p className="text-stone text-sm leading-relaxed">{stream.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <a
+            href="/University/student-economics/"
+            className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
+          >
+            Full Student Economics Model →
+          </a>
         </div>
       </Section>
 

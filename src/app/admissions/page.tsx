@@ -157,6 +157,53 @@ export default function AdmissionsPage() {
         </div>
       </Section>
 
+      {/* ── The Builder Compact ─────────────────── */}
+      <Section alternate stone>
+        <div className="max-w-3xl mx-auto prose-container">
+          <SectionHeader
+            eyebrow="The Builder Compact"
+            title="You Won't Pay Tuition. You'll Be Paid to Build."
+          />
+          <div className="space-y-6 text-stone leading-relaxed">
+            <p className="drop-cap">
+              Every university in the world asks you the same question: how will you pay?
+              Fitzherbert University asks a different one: <strong>what will you build?</strong>
+            </p>
+            <p>
+              No student at Fitzherbert University pays tuition. Every enrolled student receives
+              a living stipend from the day they matriculate — because at this institution,
+              students are not consumers. They are builders of sovereign infrastructure. The
+              protocols they design, the governance frameworks they test, the research they
+              publish through the Legitimacy Engine — all of it has real economic value. The
+              University shares that value with the people who create it.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            {[
+              { value: "£0", label: "Tuition", desc: "Zero. Not reduced. Not deferred. Zero." },
+              { value: "£24K+", label: "Annual Stipend", desc: "Living stipend for every enrolled student." },
+              { value: "2.5×", label: "Performance Multiplier", desc: "Up to £60K/yr for exceptional builders." },
+            ].map((s) => (
+              <div key={s.label} className="stat-card text-center">
+                <div className="font-serif text-2xl font-bold text-maroon">{s.value}</div>
+                <div className="text-stone text-xs mt-2 tracking-wide uppercase">{s.label}</div>
+                <p className="text-stone text-xs mt-2">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <a
+              href="/University/student-economics/"
+              className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
+            >
+              How Student Economics Works →
+            </a>
+          </div>
+        </div>
+      </Section>
+
       {/* ── Why Families Should Care ──────────────── */}
       <Section alternate>
         <div className="max-w-3xl mx-auto prose-container">
@@ -167,16 +214,21 @@ export default function AdmissionsPage() {
           <div className="space-y-6 text-stone leading-relaxed">
             <p className="drop-cap">
               Choosing a university has always been a decision about the future. The difference
-              now is that the future arrives faster than it used to. The traditional markers of
-              institutional quality — age, prestige, campus beauty — remain relevant, but they
-              are no longer sufficient. What matters now is whether an institution has the
-              architectural capacity to adapt at the speed of the world its graduates will enter.
+              now is that the future arrives faster than it used to. Families today face an
+              additional burden: the prospect of six-figure debt for an education that may not
+              prepare their child for a world that changes quarterly.
             </p>
             <p>
-              Fitzherbert University has that capacity — not because it abandoned its heritage,
-              but because it used that heritage as the foundation for something new. The same
-              values that sustained the institution for two centuries — rigour, integrity,
-              discipline — now power an academic architecture built for acceleration.
+              Fitzherbert University eliminates that burden entirely. No tuition. No fees. No
+              debt. Your child will be paid to learn — not as charity, but as recognition that
+              the work of learning at this institution <em>is</em> the work of building
+              infrastructure with real economic value.
+            </p>
+            <p>
+              The same values that sustained the institution for two centuries — rigour, integrity,
+              discipline — now power an academic architecture built for acceleration. Your child
+              will graduate with zero debt, a portfolio of verified credentials, and ongoing
+              revenue participation from the infrastructure they helped build.
             </p>
           </div>
 
@@ -184,7 +236,8 @@ export default function AdmissionsPage() {
             <p className="text-lg text-maroon font-serif leading-relaxed">
               &ldquo;We did not build a new university. We rechartered the one that was already here.
               The charter of 1783 asked what truth demands. We asked the same question — and found
-              that truth now demands speed, verification, and the courage to rebuild.&rdquo;
+              that truth now demands speed, verification, and the courage to invert the economics
+              of education itself.&rdquo;
             </p>
             <cite className="block mt-4 text-stone text-sm not-italic tracking-wide uppercase">
               — Office of the Chancellor, 2025

@@ -8,6 +8,7 @@ import { Crest } from "./Crest";
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/academics", label: "Academics" },
+  { href: "/student-economics", label: "Student Economics" },
   { href: "/campus", label: "Campus" },
   { href: "/athletics", label: "Athletics" },
   { href: "/research", label: "Research" },

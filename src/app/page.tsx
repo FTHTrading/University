@@ -251,32 +251,43 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ── Admissions ────────────────────────────── */}
+      {/* ── Student Economics ─────────────────────── */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
-          <p className="engraved text-gold mb-3">Admissions</p>
+          <p className="engraved text-gold mb-3">The Builder Compact</p>
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
-            Preparing for the AI Era
+            Zero Tuition. Students Get Paid.
           </h2>
           <div className="gold-divider-center" />
-          <p className="text-stone-light text-lg leading-relaxed mt-6 mb-10">
-            Fitzherbert University seeks students who understand that intelligence
-            is accelerating, that governance must evolve with it, and that human
-            judgment remains the anchor. The question is not whether AI will shape
-            the future — it is whether you will shape AI responsibly.
+          <p className="text-stone-light text-lg leading-relaxed mt-6 mb-4">
+            Fitzherbert University charges no tuition and pays every enrolled student
+            a living stipend. Students are not consumers — they are builders of
+            sovereign infrastructure whose work has real economic value.
           </p>
+          <div className="grid grid-cols-3 gap-4 max-w-md mx-auto my-8">
+            {[
+              { stat: "£0", label: "Tuition" },
+              { stat: "£24K+", label: "Annual Stipend" },
+              { stat: "2.5×", label: "Performance Max" },
+            ].map((s) => (
+              <div key={s.label} className="text-center">
+                <p className="font-serif text-2xl font-bold text-maroon">{s.stat}</p>
+                <p className="text-xs tracking-widest uppercase text-stone mt-1">{s.label}</p>
+              </div>
+            ))}
+          </div>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/admissions"
+              href="/student-economics"
               className="inline-block bg-maroon text-parchment px-8 py-3 text-sm tracking-widest uppercase font-serif hover:bg-maroon-light transition-colors"
             >
-              Apply Now
+              How It Works
             </Link>
             <Link
-              href="/about"
+              href="/admissions"
               className="inline-block border border-gold text-gold px-8 py-3 text-sm tracking-widest uppercase font-serif hover:bg-gold hover:text-navy transition-colors"
             >
-              Learn More
+              Apply Now
             </Link>
           </div>
         </div>

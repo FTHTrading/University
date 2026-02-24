@@ -1,7 +1,7 @@
 {
   "institution": "Fitzherbert University",
   "protocol": "IPFS Canonical Publishing v1.0",
-  "generatedAt": "2026-02-24T09:13:42.763Z",
+  "generatedAt": "2026-02-24T09:33:44.225Z",
   "articles": [
     {
       "slug": "constitutional-precedent-digital-governance",
@@ -171,7 +171,7 @@
   ],
   "epoch": {
     "root": "03dec761e780f0307bfe193bef8c852408f04ec2839cc7f9a6bb8d1cc7603fe6",
-    "timestamp": "2026-02-24T09:13:42.763Z",
+    "timestamp": "2026-02-24T09:33:44.225Z",
     "articleCount": 15,
     "hashAlgorithm": "SHA-256",
     "treeType": "Binary Merkle Tree"

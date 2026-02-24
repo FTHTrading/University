@@ -44,7 +44,7 @@ jobs:
           echo "── Canonical Registry Verification ──"
           if [ -f out/canonical-registry.json ]; then
             echo "✓ canonical-registry.json present"
-            node -e "const r=require('./out/canonical-registry.json'); console.log('  Articles:', r.articles.length); console.log('  Merkle Root:', r.epoch.merkleRoot.slice(0,24) + '…')"
+            node -e "const r=require('./out/canonical-registry.json'); console.log('  Articles:', r.articles.length); console.log('  Merkle Root:', r.epoch.root.slice(0,24) + '…')"
           else
             echo "✗ canonical-registry.json MISSING"
             exit 1

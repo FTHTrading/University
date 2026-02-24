@@ -211,6 +211,127 @@ export default function GovernancePage() {
         </div>
       </Section>
 
+      {/* ── Proof Chain & Verification ────────────── */}
+      <Section>
+        <SectionHeader
+          eyebrow="Verification Infrastructure"
+          title="The Proof Chain"
+          description="Every governance decision, research output, and financial flow is recorded in a cryptographically verified audit chain. This is not aspirational — it is operational."
+        />
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {[
+              {
+                title: "Canonical Registry",
+                desc: "A Merkle-verified ledger of all institutional outputs — research publications, governance decisions, credential issuances, and financial distributions. Every entry is timestamped, hashed, and independently verifiable.",
+              },
+              {
+                title: "Epoch Verification",
+                desc: "At the close of each capability epoch, the Stability Board conducts a full verification audit. All claims made during the epoch are tested against recorded evidence. Discrepancies are published — not hidden.",
+              },
+              {
+                title: "Peer Review Pipeline",
+                desc: "Research outputs pass through a three-stage peer review process: automated reproducibility check, faculty review, and external validation. Every stage is recorded in the canonical registry with reviewer attestations.",
+              },
+              {
+                title: "Model Governance",
+                desc: "Every AI model deployed within the University's infrastructure is registered with its training data provenance, capability boundaries, and alignment constraints. No model operates without constitutional authorisation.",
+              },
+              {
+                title: "Financial Transparency",
+                desc: "Revenue flows — from sponsorships, subscriptions, licensing, and bonds — are distributed according to the constitutional rule (50/20/20/10) and published quarterly with Merkle verification. Public audit at any time.",
+              },
+              {
+                title: "Credential Chain",
+                desc: "Every student credential is issued as a W3C Verifiable Credential — cryptographically signed by the University, anchored in the canonical registry, and portable for life. No credential can be fabricated or revoked without audit trail.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="border border-gold/20 bg-ivory p-8">
+                <h4 className="font-serif text-lg font-bold mb-3">{item.title}</h4>
+                <p className="text-stone text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="border-2 border-gold bg-ivory p-8">
+            <h4 className="font-serif text-lg font-bold mb-4 text-center">The Audit Chain Principle</h4>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center text-sm text-stone">
+              <span className="border border-gold/40 px-4 py-2 bg-white">Action Occurs</span>
+              <span className="text-gold font-bold">→</span>
+              <span className="border border-gold/40 px-4 py-2 bg-white">Hash Recorded</span>
+              <span className="text-gold font-bold">→</span>
+              <span className="border border-gold/40 px-4 py-2 bg-white">Merkle Tree Updated</span>
+              <span className="text-gold font-bold">→</span>
+              <span className="border border-gold/40 px-4 py-2 bg-white">Public Verification</span>
+            </div>
+            <p className="text-stone text-xs text-center mt-4 italic">
+              Every institutional action — governance decision, financial distribution, credential
+              issuance, research publication — follows this chain. Immutable. Auditable. Public.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── AI Autonomy Limitations ───────────────── */}
+      <Section alternate stone>
+        <SectionHeader
+          eyebrow="AI Governance"
+          title="What AI Runs — and What It Cannot"
+          description="AI is the operating system. It is not the authority. The University maintains strict constitutional boundaries on AI autonomy."
+        />
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="font-serif text-lg font-bold mb-4 text-maroon">AI Operates</h4>
+              <ul className="space-y-3">
+                {[
+                  "Curriculum delivery and adaptive learning",
+                  "Performance analytics and learning profiles",
+                  "Administrative scheduling and logistics",
+                  "Research data processing and analysis",
+                  "Canonical registry and verification systems",
+                  "Financial reporting and distribution tracking",
+                ].map((item) => (
+                  <li key={item} className="text-stone text-sm flex items-start gap-2">
+                    <span className="text-gold mt-0.5">&#9670;</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-serif text-lg font-bold mb-4 text-maroon">Humans Decide</h4>
+              <ul className="space-y-3">
+                {[
+                  "Student admissions and programme placement",
+                  "Faculty appointments and governance roles",
+                  "Charter amendments and constitutional changes",
+                  "Disciplinary actions and student welfare",
+                  "External partnerships and alignment screening",
+                  "Halt authority — stopping any AI deployment",
+                ].map((item) => (
+                  <li key={item} className="text-stone text-sm flex items-start gap-2">
+                    <span className="text-maroon mt-0.5">&#9670;</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <blockquote className="border-l-4 border-gold bg-ivory/50 p-8 mt-10 italic">
+            <p className="text-base text-maroon font-serif leading-relaxed">
+              &ldquo;AI operates under constitutional governance with human sovereignty.
+              It is not the university. It is the operating system. Students are the product.
+              Human development is the mission. Verified capability is the output.&rdquo;
+            </p>
+            <cite className="block mt-4 text-stone text-sm not-italic tracking-wide uppercase">
+              — Rechartering Protocol, Article V
+            </cite>
+          </blockquote>
+        </div>
+      </Section>
+
       {/* ── Charter Articles ─────────────────────── */}
       <Section>
         <SectionHeader

@@ -10,9 +10,11 @@ const navLinks = [
   { href: "/academics", label: "Academics" },
   { href: "/student-economics", label: "Student Economics" },
   { href: "/campus", label: "Campus" },
-  { href: "/athletics", label: "Athletics" },
+  { href: "/athletics", label: "Athletics Intelligence" },
   { href: "/research", label: "Research" },
   { href: "/governance", label: "Governance" },
+  { href: "/sponsor", label: "Sponsor" },
+  { href: "/partnerships", label: "Partnerships" },
   { href: "/admissions", label: "Admissions" },
   { href: "/endowment", label: "Endowment" },
   { href: "/timeline", label: "Timeline" },
@@ -21,7 +23,7 @@ const navLinks = [
 
 const actionLinks = [
   { href: "/admissions", label: "Apply" },
-  { href: "/about", label: "Visit" },
+  { href: "/sponsor", label: "Sponsor" },
   { href: "/endowment", label: "Give" },
 ];
 

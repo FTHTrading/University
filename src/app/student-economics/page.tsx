@@ -341,6 +341,110 @@ export default function StudentEconomicsPage() {
         </div>
       </Section>
 
+      {/* ── V-B. Distribution Rule ────────────────── */}
+      <Section alternate>
+        <SectionHeader
+          eyebrow="Constitutional Rule"
+          title="How Every Pound Is Distributed"
+          description="Every revenue stream — sponsorships, subscriptions, licensing, bonds — passes through the same constitutional distribution rule. No exceptions. No discretion. Verified on the canonical registry."
+        />
+        <div className="max-w-3xl mx-auto">
+          {/* Visual distribution bar */}
+          <div className="flex h-14 w-full overflow-hidden rounded mb-8">
+            <div className="bg-maroon flex items-center justify-center text-white text-sm font-bold" style={{ width: "50%" }}>50%</div>
+            <div className="bg-navy flex items-center justify-center text-white text-sm font-bold" style={{ width: "20%" }}>20%</div>
+            <div className="bg-gold flex items-center justify-center text-white text-sm font-bold" style={{ width: "20%" }}>20%</div>
+            <div className="bg-stone flex items-center justify-center text-white text-sm font-bold" style={{ width: "10%" }}>10%</div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {[
+              { pct: "50%", label: "Student Pool", desc: "Direct stipends, project funding, and student welfare." },
+              { pct: "20%", label: "Reserve", desc: "Institutional reserve for long-term sustainability." },
+              { pct: "20%", label: "Operations", desc: "Infrastructure, mentorship, and programme delivery." },
+              { pct: "10%", label: "R&D / Tools", desc: "AI systems, compute, and research tooling." },
+            ].map((d) => (
+              <div key={d.label} className="text-center">
+                <div className="font-serif text-3xl font-bold text-maroon">{d.pct}</div>
+                <div className="text-stone text-xs uppercase tracking-wide mt-1 font-bold">{d.label}</div>
+                <p className="text-stone text-xs mt-2 leading-relaxed">{d.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-6 text-stone leading-relaxed">
+            <p>
+              This distribution rule is constitutional — it cannot be changed by administrative
+              decision. Any modification requires a Charter Amendment approved by the Epoch
+              Council. Distribution data is published quarterly with Merkle verification.
+              Anyone — student, sponsor, public — can independently verify compliance.
+            </p>
+          </div>
+
+          <div className="mt-8 text-center">
+            <a
+              href="/University/sponsor/"
+              className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
+            >
+              See How Sponsors Fund This Model →
+            </a>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── V-C. How Students Earn (Practical) ────── */}
+      <Section>
+        <SectionHeader
+          eyebrow="Earn Paths"
+          title="How Students Actually Earn"
+          description="Not theoretical. These are the operational paths through which students generate income — today."
+        />
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "Base Stipend",
+                value: "£24,000/yr",
+                desc: "Every enrolled student. No conditions beyond active contribution. Covers accommodation, food, and personal expenses.",
+              },
+              {
+                title: "Protocol Building",
+                value: "Up to £60K/yr",
+                desc: "Build protocol components — Merkle libraries, verification tools, canonical registries. Performance multiplier up to 2.5× base stipend.",
+              },
+              {
+                title: "CISSS Analytics",
+                value: "£1K–£5K/engagement",
+                desc: "Paid analyst roles in Athletics Intelligence. Tactical analysis, scouting reports, NIL strategy, data engineering.",
+              },
+              {
+                title: "Studio Projects",
+                value: "Project-based",
+                desc: "Commissioned projects for external partners — audits, builds, analytics, RWA. Revenue shared through the distribution rule.",
+              },
+              {
+                title: "Research Output",
+                value: "Contract-linked",
+                desc: "Published research that attracts institutional contracts. Revenue from research contracts feeds the student stipend pool.",
+              },
+              {
+                title: "Revenue Participation",
+                value: "Ongoing",
+                desc: "Builders of licensed protocols retain revenue participation rights — ongoing income from infrastructure they helped create, even after graduation.",
+              },
+            ].map((path) => (
+              <div key={path.title} className="border border-gold/20 bg-ivory p-6">
+                <div className="flex items-baseline justify-between mb-3">
+                  <h4 className="font-serif text-base font-bold">{path.title}</h4>
+                  <span className="font-serif text-sm font-bold text-maroon">{path.value}</span>
+                </div>
+                <p className="text-stone text-sm leading-relaxed">{path.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* ── VI. What Students Receive ─────────────── */}
       <Section alternate stone>
         <SectionHeader

@@ -204,6 +204,59 @@ export default function AdmissionsPage() {
         </div>
       </Section>
 
+      {/* ── The No-Debt Model ──────────────────────── */}
+      <Section>
+        <div className="max-w-3xl mx-auto prose-container">
+          <SectionHeader
+            eyebrow="The No-Debt Model"
+            title="What Zero Tuition Actually Means"
+          />
+          <div className="space-y-6 text-stone leading-relaxed">
+            <p className="drop-cap">
+              Zero tuition does not mean &ldquo;free.&rdquo; It means the cost of your education
+              is funded by the infrastructure you help build — not extracted from your future
+              earnings. The University&rsquo;s revenue comes from protocol licensing, cohort
+              sponsorships, Athletics Intelligence subscriptions, and commissioned studio
+              projects. Students are builders, not revenue sources.
+            </p>
+          </div>
+
+          <div className="space-y-6 mt-8">
+            {[
+              {
+                title: "Eligibility",
+                text: "Every admitted student qualifies for zero tuition and the living stipend. There is no separate financial aid application. No means testing. No scholarship competition. Admission is the qualification.",
+              },
+              {
+                title: "Expectations",
+                text: "Students are expected to actively contribute to institutional projects throughout their programme. This is not optional community service — it is the economic mechanism that makes zero tuition possible. Building is learning. Learning generates revenue. Revenue funds stipends.",
+              },
+              {
+                title: "Stipend Rules",
+                text: "The base stipend of £24,000 per year is paid monthly from the day of matriculation. Performance multipliers (up to 2.5×) are assessed quarterly based on verified contribution to institutional projects. All stipend allocation follows the constitutional distribution rule.",
+              },
+              {
+                title: "What This Replaces",
+                text: "No tuition fees. No student loans. No deferred payment schemes. No graduate tax. No debt of any kind. When you leave Fitzherbert University, you leave with a verified portfolio, revenue participation rights, and zero financial burden from your education.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="border-l-2 border-gold pl-6">
+                <h4 className="font-serif text-base font-bold mb-2">{item.title}</h4>
+                <p className="text-stone text-sm leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 border-2 border-gold bg-ivory p-8 text-center">
+            <p className="text-stone text-sm leading-relaxed max-w-2xl mx-auto">
+              <strong>The question is not &ldquo;can you afford this?&rdquo;</strong> The question
+              is: <strong>what will you build?</strong> The University invests in students who
+              build systems with compounding value. The economics are structural — not aspirational.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       {/* ── Why Families Should Care ──────────────── */}
       <Section alternate>
         <div className="max-w-3xl mx-auto prose-container">

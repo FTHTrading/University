@@ -13,6 +13,7 @@ const desktopLinks = [
   { href: "/research", label: "Research" },
   { href: "/governance", label: "Governance" },
   { href: "/campus", label: "Campus" },
+  { href: "/campus-map", label: "3D Map" },
   { href: "/documents", label: "Documents" },
   { href: "/blog", label: "Record" },
 ];
@@ -24,6 +25,7 @@ const mobileNavGroups = [
     links: [
       { href: "/about", label: "About" },
       { href: "/campus", label: "Campus" },
+      { href: "/campus-map", label: "3D Campus Map" },
       { href: "/timeline", label: "Timeline" },
       { href: "/athletics", label: "Athletics Intelligence" },
     ],

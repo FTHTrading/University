@@ -3,6 +3,7 @@ import { Playfair_Display, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import ProfessorGuideLoader from "@/components/ProfessorGuideLoader";
 
 const playfair = Playfair_Display({
   variable: "--font-serif",
@@ -241,6 +242,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content" role="main">{children}</main>
         <Footer />
+        <ProfessorGuideLoader />
       </body>
     </html>
   );

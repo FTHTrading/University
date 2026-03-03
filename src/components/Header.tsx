@@ -44,6 +44,7 @@ const mobileNavGroups = [
       { href: "/blog", label: "University Record" },
       { href: "/documents", label: "Documents & Downloads" },
       { href: "/epochs", label: "Epoch History" },
+      { href: "/on-chain", label: "Polygon Registry" },
     ],
   },
   {

@@ -60,6 +60,7 @@ const footerColumns = [
       { label: "Glossary", href: "/glossary" },
       { label: "Canonical Archive", href: "/archive" },
       { label: "Epoch History", href: "/epochs" },
+      { label: "Polygon Registry", href: "/on-chain" },
       { label: "RSS Feed", href: "/blog/rss.xml" },
     ],
   },

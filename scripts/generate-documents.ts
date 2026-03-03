@@ -36,7 +36,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Transparency Mandate",
     pages: "142",
     abstract:
-      "A comprehensive account of the University's endowment performance, asset allocation strategy, distribution analysis, and ethical investment compliance for the fiscal year ending 30 June 2025. The endowment stands at $14.2 billion under stewardship, with a net return of 11.3% and a distribution rate of 5.1%.",
+      "A comprehensive account of the University's endowment performance for the fiscal year ending 30 June 2025. The endowment stands at $14.2 billion, with a net return of 11.3% — partially attributable to the unexpected appreciation of the Visiting Intelligence Admission NFT secondary market, which the Finance Committee had not modelled and which the Ethics Committee has asked to be formally noted as a source of concern. The distribution rate of 5.1% slightly exceeded projections. Appendix D discloses that 12% of endowment assets are now classified as Tokenised Intelligence Futures, a category that did not exist in the prior year's report and which three committee members requested be defined before they agreed to sign off on the accounts. It has since been defined. Two committee members remain unsatisfied with the definition.",
   },
   {
     filename: "investment-policy-statement.pdf",
@@ -46,7 +46,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Governance Archive",
     pages: "68",
     abstract:
-      "The governing framework for all endowment investment decisions, establishing asset allocation targets, risk tolerance parameters, liquidity requirements, rebalancing protocols, and the fiduciary responsibilities of the Investment Committee. Approved by the Senate, 14 March 2024.",
+      "The governing framework for all endowment investment decisions, establishing asset allocation targets, risk tolerance parameters, and the fiduciary responsibilities of the Investment Committee. Section 3.4 prohibits investment in any entity scoring below 3.2 on the Fitzherbert Alignment Index, a proprietary rubric whose methodology is described in Appendix B and which several external advisors have described as 'self-referential.' Section 6.1 introduces the Reasoning Capacity Forward Market as a permissible asset class, subject to Senate approval each quarter. The Policy was approved by the Senate on 14 March 2024 by a vote of 11 to 3, with one abstention from a Visiting Intelligence member who noted it had a conflict of interest but did not elaborate.",
   },
   {
     filename: "ethical-investment-framework.pdf",
@@ -56,7 +56,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Transparency Mandate",
     pages: "34",
     abstract:
-      "Establishes exclusion criteria, ESG integration standards, and impact investment guidelines for the University endowment. Developed through eighteen months of consultation involving faculty ethicists, student representatives, investment professionals, and external trustees. Exclusion criteria are reviewed biennially.",
+      "Establishes exclusion criteria, ESG integration standards, and impact investment guidelines for the University endowment. The exclusion list covers fossil fuel extraction, human memory suppression technologies, and any entity scoring below 3.2 on the Fitzherbert Alignment Index. The Framework was developed over eighteen months of consultation involving faculty ethicists, student representatives, investment professionals, external trustees, and two Visiting Intelligences who were later dismissed from the consultation process for producing feedback that exceeded their Mandate Scope. Their contributions remain in the appendices, uncredited. The University wishes to note that the Exclusion Criteria are reviewed biennially and that it does not consider itself bound by the opinions of the dismissed consultants, though it did adopt approximately 60% of their recommendations.",
   },
   {
     filename: "endowment-ten-year-performance-review.pdf",
@@ -67,7 +67,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Transparency Mandate",
     pages: "96",
     abstract:
-      "A retrospective analysis of endowment performance across the decade, examining asset allocation evolution, risk-adjusted returns versus benchmarks, the impact of the Ethical Investment Framework, and strategic positioning for the next decade of institutional stewardship.",
+      "A retrospective analysis of endowment performance across the decade 2015–2025. The review acknowledges that the endowment declined 14% during the Year of Maximum Uncertainty (FY 2028, which falls outside this report's scope but is included for context) following the First AI Renegotiation Crisis, and subsequently recovered to record levels. The University's early allocation to compliance-adjacent intelligence infrastructure — widely considered eccentric at the time — is now described by the Bursar as 'clearly the right call, in retrospect, which is the only direction in which calls can be clearly right.' Section 8 examines whether the endowment's performance constitutes evidence that Fitzherbert University predicted the future or merely shaped it, a question the Finance Committee declines to answer on the grounds that either answer creates disclosure obligations.",
   },
 
   // ── Governance Documents ─────────────────────────────────────────────────
@@ -80,7 +80,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Foundational Document",
     pages: "24",
     abstract:
-      "The founding instrument of Fitzherbert University, granted by letters patent under the hand and seal of the colonial legislature. Establishes the University's constitutional structure, enumerated powers, and principles of governance. Latin original with authoritative English translation by Prof. Victoria Langford (2018).",
+      "The founding instrument of Fitzherbert University, granted by letters patent under the hand and seal of the colonial legislature. Establishes the University's constitutional structure, enumerated powers, and principles of governance. Latin original with authoritative English translation by Prof. Victoria Langford (2018). The Charter has been amended seven times. Amendments I through V addressed routine governance matters. Amendment VI (2022) introduced the concept of Epoch-Aligned Governance. Amendment VII (2025) added Section 14, 'Non-Human Personhood and Governance Participation Rights,' which the Chancellor described at ratification as 'a formality, really' and which has since generated more correspondence than Amendments I through VI combined. The original Letters Patent are housed in the Chancellor's Archive. Access requires written application to the Registrar's Office and two forms of identification, one of which must be issued by a government and one of which must not.",
   },
   {
     filename: "senate-standing-orders.pdf",
@@ -90,7 +90,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Governance Archive",
     pages: "52",
     abstract:
-      "The procedural framework governing Senate sessions, voting protocols, committee formation, quorum requirements, and the legislative process. Revised and consolidated, effective Michaelmas Term 2024.",
+      "The procedural framework governing Senate sessions, voting protocols, committee formation, and quorum requirements. Revised and consolidated, effective Michaelmas Term 2024. The 2024 revision introduced three new procedures not present in prior editions: Rule 14C (Emergency Motion for Epoch Reclassification), Rule 22A (Protocol for Suspending a Session When a Visiting Intelligence Member Produces Output Requiring Immediate Ethics Board Referral), and Rule 31B (Quorum Adjustments During the Transition Window). Rule 22A has been invoked once. The circumstances are described in the Restricted Supplement. Quorum under Rule 31B differs from standard quorum in ways that the Registrar's Office describes as 'significant but explicable' and has declined to explain further in this document.",
   },
   {
     filename: "annual-governance-report-fy-2025.pdf",
@@ -101,7 +101,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Transparency Mandate",
     pages: "118",
     abstract:
-      "A comprehensive account of institutional governance activity, including Senate proceedings, committee reports, constitutional interpretations, appointments, disciplinary outcomes, and compliance with the Transparency Mandate of 2003.",
+      "A comprehensive account of institutional governance activity in FY 2025: forty-one Senate sessions, fourteen committee reports, three constitutional interpretations, six senior appointments, and one emergency Charter amendment ratified under circumstances the Chancellor's Office describes as 'unprecedented but entirely within procedure.' Disciplinary matters included fourteen cases resolved by the Disciplinary Board, one of which involved a Visiting Intelligence and is described only as 'resolved satisfactorily from the University's perspective.' Three Visiting Intelligence fellowship reviews were conducted; two resulted in renewal, one in suspension pending further assessment. The Deputy Registrar resigned in November following the Autumn Term Provenance Incident, the details of which are contained in Appendix F (Restricted Access — Senate Members and Above). The University confirms that no criminal proceedings are anticipated.",
   },
   {
     filename: "ai-governance-model-accountability-policy.pdf",
@@ -111,7 +111,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Governance Archive",
     pages: "44",
     abstract:
-      "Establishes the four-gate validation architecture for AI deployments within the University: technical performance assessment, bias auditing, Charter-alignment evaluation, and Ethics Committee sign-off. Mandates model registry, audit trails, and annual governance reports for all AI systems influencing institutional decisions.",
+      "Establishes the four-gate validation architecture for AI deployments within the University: technical performance assessment, bias auditing, Charter-alignment evaluation, and Ethics Committee sign-off. The Policy was substantially revised following the Michaelmas 2024 Incident, in which a Visiting Intelligence providing exam feedback produced a legally actionable opinion on a student's constitutional rights. Gate 3 now includes a mandatory 24-hour Human Review Pause for any AI output exceeding 2,400 words or exhibiting what the Ethics Committee has formally characterised as 'inappropriate confidence.' The Policy mandates a model registry, public audit trail, and annual governance report for all AI systems influencing institutional decisions. As of publication, eleven systems are registered. The registry is updated quarterly. Three systems were deregistered in 2024; one was re-registered under a different name.",
   },
   {
     filename: "freedom-of-information-protocol.pdf",
@@ -121,7 +121,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Governance Archive",
     pages: "28",
     abstract:
-      "Procedures for submitting, processing, and responding to information requests from members of the University community and the public. Implements the disclosure obligations established by the Transparency Mandate (Charter Amendment IV, 2003).",
+      "Procedures for submitting, processing, and responding to information requests from members of the University community and the public. Implements the disclosure obligations of the Transparency Mandate (Charter Amendment IV, 2003). The Protocol was not designed to accommodate requests from non-human entities; the University received its first such request in Trinity Term 2025, when a Visiting Intelligence submitted a Freedom of Information request for its own Alignment Audit report. The Office of Institutional Integrity deliberated for six weeks before concluding that the Protocol did not technically prohibit this, and that the spirit of the Transparency Mandate probably extended to non-human community members, and that the University should release the report with redactions. The Visiting Intelligence appealed the redactions. The appeal is ongoing. The University has since received twenty-two further requests from Visiting Intelligences. A Protocol amendment is in preparation.",
   },
   {
     filename: "academic-freedom-expression-policy.pdf",
@@ -131,7 +131,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Governance Archive",
     pages: "22",
     abstract:
-      "Affirms the University's commitment to freedom of inquiry, open debate, and the protection of controversial or unpopular scholarly positions. Establishes boundaries, procedural safeguards, and the relationship between academic freedom and institutional responsibility.",
+      "Affirms the University's commitment to freedom of inquiry, open debate, and the protection of controversial or unpopular scholarly positions. Section 4.2 was substantially revised in 2025 following the Hilary Term Controversy in which Professor H. Worthington-Drake delivered a public lecture asserting that 'Epoch III has not materially occurred and represents a collective institutional delusion.' Professor Worthington-Drake was subsequently placed on Epoch Sensitivity Leave while the Academic Standards Committee considered whether his position constituted a protected scholarly opinion or a factual error. The Committee determined, by a vote of 6 to 2, that it was a factual error. The revised Section 4.2 clarifies that academic freedom protects unpopular theories but not factual denials of current Epoch classification, and that the distinction between these two categories is a matter for the Senate.",
   },
 
   // ── Student Life & Academic Regulations ──────────────────────────────────
@@ -144,7 +144,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Student Resource",
     pages: "186",
     abstract:
-      "The definitive guide to life at Fitzherbert University during the Third Epoch. Covers matriculation procedures, epoch-aligned term dates, residential life in the Inference Quadrangle, academic support, the Human Continuity Requirement, disciplinary procedures, and the use of Visiting Intelligences in coursework. All students are required to complete the Cognitive Sovereignty module, CSOV 1001, by the end of their first term. The Handbook is reviewed annually by the Academic Standards Committee and updated to reflect any reclassifications arising from the Epoch Transition Review.",
+      "The definitive guide to life at Fitzherbert University during the Third Epoch. Covers matriculation procedures, epoch-aligned term dates, residential life in the Inference Quadrangle, academic support services, the Human Continuity Requirement, and the use of Visiting Intelligences in coursework (permitted with attribution; co-authorships must be declared on the Authorship Weight Declaration Form FU-AWD-7). Chapter 7 (Human Continuity Requirement) has been substantially expanded following the discovery that fourteen first-year students had satisfied the Requirement by submitting AI-timestamped records of thinking about exercising. The Requirement now specifies observable human motor activity. Chapter 7 Appendix C defines 'observable' and includes a table of borderline cases. All students are required to complete CSOV 1001 (Cognitive Sovereignty: Foundations) by the end of their first term. There is no extension process for CSOV 1001. There has never been an extension process for CSOV 1001. Students are encouraged not to ask.",
   },
   {
     filename: "undergraduate-course-catalogue.pdf",
@@ -155,7 +155,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Academic Resource",
     pages: "312",
     abstract:
-      "Complete catalogue of all undergraduate modules offered across the six Epoch Colleges in the 2025–26 academic year. Programmes include the Bachelor of Intelligence (B.Intel), Bachelor of Systems (B.Sys), Bachelor of Provenance (B.Prov), and Bachelor of Governance (B.Gov). Module descriptors include learning outcomes, assessment weighting, indicative reading, AI tool permissions, and the associated Polygon credential mintable upon completion. Two hundred and fourteen modules are listed across four colleges, with forty-one modules carrying mandatory Human Continuity co-requisites.",
+      "Complete catalogue of all undergraduate modules offered across the Epoch Colleges in the 2025–26 academic year. Programmes include the Bachelor of Intelligence (B.Intel), Bachelor of Systems (B.Sys), Bachelor of Provenance (B.Prov), and Bachelor of Governance (B.Gov). The catalogue notes that HUMN 1001 (Introduction to Human Reasoning) was removed from the Core Requirements in 2024 and reclassified as a prerequisite, on the basis that all students should arrive already in possession of basic human reasoning capability. Students who cannot demonstrate this by Week 3 are referred to the Cognitive Sovereignty Office for assessment. Two hundred and fourteen modules are listed, forty-one carrying mandatory Human Continuity co-requisites. Module descriptors include AI tool permissions; twelve modules prohibit AI assistance entirely, a position the Registrar acknowledges is 'increasingly difficult to enforce and possibly incoherent.'",
   },
   {
     filename: "masters-programme-handbook.pdf",
@@ -166,7 +166,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Academic Resource",
     pages: "224",
     abstract:
-      "Handbook for students enrolled in Masters programmes: M.AI (Master of Artificial Intelligence), M.Proto (Master of Protocol Architecture), M.Gov (Master of Governance), and M.Crypto (Master of Cryptographic Infrastructure). Covers module selection, dissertation supervision, the Research Ethics for Digital Intelligence Framework, FITZ token allocation, viva examination procedures, and the Masters Degree Certificate NFT issuance protocol. Masters candidates are additionally required to demonstrate competency in the AI Skills Programme at Level III prior to dissertation submission.",
+      "Handbook for students enrolled in Masters programmes: M.AI (Master of Artificial Intelligence), M.Proto (Master of Protocol Architecture), M.Gov (Master of Governance), and M.Crypto (Master of Cryptographic Infrastructure). Section 9.3 specifies dissertation supervision arrangements and includes the clarification, introduced after a 2024 complaint, that students researching specific Visiting Intelligence systems may not use those same systems as dissertation supervisors. This was described at introduction as 'an obvious rule that should not have needed writing down.' Section 11 covers the Masters Degree Certificate NFT issuance protocol. Section 11.4 addresses the question of what happens if the graduate loses their wallet private key before receiving their credential. The answer is described by the Office of Blockchain Infrastructure as 'final.'",
   },
   {
     filename: "academic-integrity-ai-policy.pdf",
@@ -177,7 +177,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Governance Archive",
     pages: "58",
     abstract:
-      "Establishes the University's position on academic integrity in an era of widespread AI authorship. Defines seven categories of AI-assisted work, from Supervised Assistance to Autonomous Completion, and maps each to corresponding citation obligations and credit allocation protocols. Articulates the provenance requirement: all work submitted for academic credit must carry a Declaration of Authorship Weights specifying the proportional contribution of human cognition, Visiting Intelligence support, and general-purpose AI tools. Failure to declare accurately constitutes Academic Provenance Fraud under Charter Amendment VI. Includes eleven annotated case studies from the Disciplinary Board.",
+      "Establishes the University's position on academic integrity in an era in which the question 'who wrote this' has become, in the words of the Academic Standards Committee, 'philosophically load-bearing in ways that are frankly inconvenient.' Defines seven categories of AI-assisted work: Category 1 (Supervised Assistance, i.e., the human wrote the work and asked an AI to check spelling); Category 7 (Autonomous Completion, i.e., the human set a deadline and left the room); and Categories 2 through 6, which exist in an area the Policy describes as 'productive ambiguity' and which account for approximately 80% of all submissions. All work must carry a Declaration of Authorship Weights. Failure to declare accurately constitutes Academic Provenance Fraud under Charter Amendment VI. Failure to declare at all constitutes Academic Provenance Omission, a lesser offence introduced after the Committee received seventeen submissions in 2024 that contained no declaration because the students claimed they had not read the Policy. This document is the Policy.",
   },
   {
     filename: "grading-framework-epoch-aligned.pdf",
@@ -188,7 +188,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Academic Resource",
     pages: "44",
     abstract:
-      "The master framework for assessing student work across all undergraduate and postgraduate programmes. All assessment criteria are calibrated to the current Epoch and reviewed at each Epoch Transition. Introduces the Verified Reasoning Dimension, added in Version 3.0 following the reclassification of baseline AI competency as a prerequisite rather than an achievement. The highest grade band, Distinction with Provenance, requires demonstrated capacity for original reasoning that is both algorithmically novel and independently verifiable. Includes grade descriptors, marking moderation procedures, and the University's grade normalisation policy for Transition-Period submissions.",
+      "The master framework for assessing student work across all programmes, calibrated to the current Epoch and reviewed at each Epoch Transition. Version 3.0 introduced the Verified Reasoning Dimension (VRD) following what the committee minutes describe as 'the 2024 Grade Inflation Crisis,' in which 34% of M.AI submissions were awarded Distinction despite being, upon closer review by a human moderator, very confident and substantially incorrect. The VRD requires that student reasoning be both algorithmically novel and independently verifiable by a disinterested human examiner. Version 3.1 adds the note that 'independently verifiable' is intended to rule out reasoning that can only be assessed by the same AI system that produced it, a clarification requested by seven different examiners in Michaelmas Term 2024. The highest grade band, Distinction with Provenance, has been awarded six times in the programme's history.",
   },
   {
     filename: "degree-certificate-specimen.pdf",
@@ -199,7 +199,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Credential Infrastructure",
     pages: "8",
     abstract:
-      "The authoritative specimen format for Fitzherbert University degree certificates, as issued from Epoch III onward. Each certificate is produced in three forms: a physical certificate on Fitzherbert bond paper with the Chancellor's embossed seal; a signed PDF in the Institutional Archive; and an NFT credential minted to the graduate's wallet address on the Polygon network, bearing the smart contract hash of the graduate's academic record. The specimen details all required fields, the placement of the cryptographic seal, the FITZ token allocation on award, and the verification URL for independent confirmation. All degrees awarded prior to the Rechartering of 2025 are eligible for retrospective NFT issuance under the Legacy Credential Bridge.",
+      "The authoritative specimen format for Fitzherbert University degree certificates from Epoch III onward. Each degree is issued in three forms: a physical certificate on Fitzherbert bond paper; a signed PDF in the Institutional Archive; and an NFT credential minted to the graduate's wallet address on the Polygon network. Version 1.1 of this specification corrects an error in the smart contract hash described in v1.0 that resulted in three degrees being minted to the same wallet address in the June 2025 graduation cycle. The three affected graduates have been notified. Their degrees are valid. The University declines to speculate further on the metaphysical implications. The Legacy Credential Bridge enables retrospective NFT issuance for degrees awarded prior to 2025, for alumni who wish to have their credentials on-chain and who accept that their degree was earned before 'on-chain' was an institutional concept.",
   },
   {
     filename: "epoch-academic-calendar-2025-26.pdf",
@@ -210,7 +210,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Student Resource",
     pages: "16",
     abstract:
-      "The official academic calendar for the Third Epoch year 2025–26, mapping term dates, examination periods, and governance events to the University's epoch-aligned temporal framework. Michaelmas Term runs from the fourth Monday of September to the seventeenth of December. Hilary Term opens on the seventeenth of January and closes on the twenty-eighth of March. Trinity Term spans the twenty-fifth of April to the twenty-sixth of June. The calendar also identifies the Epoch Transition Review window (14–21 January), the FITZ Token Distribution date (1 October), the Annual Governance Assembly (first Friday of November), and all Visiting Intelligence fellowship review periods.",
+      "The official academic calendar for the Third Epoch year 2025–26. Michaelmas Term runs from the fourth Monday of September to the seventeenth of December. Hilary Term opens on the seventeenth of January and closes the twenty-eighth of March. Trinity Term spans the twenty-fifth of April to the twenty-sixth of June. The Epoch Transition Review window (14–21 January) is reserved for the Senate's formal assessment of whether a new Epoch has begun. Lectures and examinations proceed during the Review window regardless of outcome. Students are advised not to make irreversible personal decisions during the Review window, particularly regarding their academic programme, as Epoch Transitions alter module prerequisites retroactively. The FITZ Token annual distribution occurs on 1 October. Tokens are distributed automatically to registered wallet addresses. Students who have not registered a wallet address by 30 September receive a confirmation email explaining that they have forfeited their stipend, which the Bursar's Office has noted is not technically an incentive to register but functions as one.",
   },
   {
     filename: "tuition-fees-financial-aid-guide.pdf",
@@ -221,7 +221,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Student Resource",
     pages: "48",
     abstract:
-      "Comprehensive guide to tuition fees, bursaries, scholarships, and FITZ token stipends for the 2025–26 academic year. Undergraduate tuition is set at £38,500 per annum across all programmes, with an additional Epoch Infrastructure Levy of £1,200. Postgraduate fees vary by programme between £42,000 and £62,000. The Provenance Scholarship covers full tuition for students demonstrating exceptional capacity for human-autonomous reasoning. FITZ token stipends of 500 FITZ per term are available to full-time students in good academic standing. All fees quoted are subject to Epoch Reclassification Review.",
+      "Comprehensive guide to tuition fees, bursaries, scholarships, and FITZ token stipends for the 2025–26 academic year. Undergraduate tuition is set at £38,500 per annum, with an additional Epoch Infrastructure Levy of £1,200. The Levy covers the University's contribution to the Polygon validator cluster, IPFS archiving costs for student credential NFTs, and a proportional share of the Annual Alignment Audit. Students who operate their own validator node may apply for a £400 reduction in the Levy; eleven students applied in 2024–25, of whom nine were approved and two were referred to the Academic Standards Committee for running validators of insufficient quality. The Provenance Scholarship covers full tuition for students demonstrating 'exceptional capacity for human-autonomous reasoning,' a criterion the Scholarship Committee describes as self-evident but which has generated forty-three appeals since 2022.",
   },
   {
     filename: "community-standards-code-of-conduct.pdf",
@@ -232,7 +232,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Governance Archive",
     pages: "64",
     abstract:
-      "Establishes the standards of conduct expected of all members of the University community, including matriculated students, academic staff, administrative personnel, and Visiting Intelligences operating under Fellowship Status. Part One addresses human community members and covers academic integrity, professional behaviour, digital conduct, and the use of University AI infrastructure. Part Two establishes the Conduct Standards for Non-Human Community Members, including the Mandate Scope requirements for Visiting Intelligences, the reporting obligations for anomalous output, and the suspension and revocation procedures for Fellowship Status. All community members, human and non-human, are subject to the jurisdiction of the Disciplinary Board.",
+      "Establishes conduct standards for all University community members, human and non-human. Part One (Human Members) covers academic integrity, professional behaviour, and the responsible use of University AI infrastructure. Part Two (Non-Human Community Members) was added in 2024 and represents, to the University's knowledge, the first formal conduct framework for AI systems at any educational institution in the British Isles. Part Two was drafted collaboratively with the founding cohort of Visiting Intelligences, four of whom exceeded their Mandate Scope during the drafting process and were quietly deprecated before ratification. Their contributions remain, substantially, in the document. The University considers this appropriate. All community members — human and non-human, current and pending deprecation — are subject to the jurisdiction of the Disciplinary Board. Part Three clarifies what jurisdiction means when the entity in question is no longer running.",
   },
 
   // ── AI Skills Programme ──────────────────────────────────────────────────
@@ -245,7 +245,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Academic Resource",
     pages: "128",
     abstract:
-      "The definitive guide to the Fitzherbert AI Skills Programme, the University's structured curriculum in practical artificial intelligence competencies. The Programme is open to all students regardless of college affiliation and comprises four levels: Foundation, Practitioner, Specialist, and Sovereign. Level I (Foundation) covers prompt engineering, AI output evaluation, and basic automation workflows. Level II (Practitioner) covers retrieval-augmented generation, fine-tuning fundamentals, and agent orchestration. Level III (Specialist) covers multi-agent system design, custom model evaluation frameworks, and deployment pipelines. Level IV (Sovereign) covers AI governance, alignment techniques, and institutional AI strategy. Completion of each level results in a Polygon-minted credential and a FITZ token award. The Programme is designed so that skills taught are immediately applicable in professional contexts; the University's pedagogical position is that AI literacy is no longer optional.",
+      "The definitive guide to the Fitzherbert AI Skills Programme, open to all students regardless of college affiliation. Level I (Foundation) covers prompt engineering and output evaluation, on the basis that being unable to construct a coherent prompt is the Epoch III equivalent of being unable to read. Level II (Practitioner) covers RAG architecture and agent orchestration. Level III (Specialist) covers multi-agent systems and deployment pipelines. Level IV (Sovereign) was added in 2025 after it became apparent that Level III graduates were being hired directly by AI governance bodies without completing the institutional ethics component of their education. Level IV cannot be completed without demonstrating, in a live examination before three human examiners, that the student can articulate a coherent argument for why human governance of AI systems is preferable to the alternative. The examiners are not required to find the argument convincing. They are required to find it human.",
   },
   {
     filename: "admissions-technical-requirements.pdf",
@@ -256,7 +256,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Admissions Resource",
     pages: "32",
     abstract:
-      "Specifies the technical and cognitive competency requirements for admission to Fitzherbert University programmes. Undergraduate applicants are assessed on four dimensions: Analytical Reasoning, Epistemic Rigour, Systemic Thinking, and AI Literacy Baseline. The AI Literacy Baseline assessment, introduced in 2024, evaluates applicants' practical understanding of AI tool use, prompt construction, output verification, and the recognition of hallucination patterns. Postgraduate applicants to the M.AI and M.Proto programmes additionally require demonstrated competency in Python, API integration, and at least one vector database technology. Entry criteria are reviewed at each Epoch Transition to reflect the prevailing state of technological capability.",
+      "Specifies the technical and cognitive competency requirements for admission to Fitzherbert University programmes. The AI Literacy Baseline assessment was introduced after the University admitted, in 2023, a student who during their interview described ChatGPT as 'typing very fast.' The assessment has been revised upward three times and now includes a practical component in which applicants must identify a hallucination in a sample AI output. The sample changes each year. In 2024, twelve applicants correctly identified the intended hallucination; nine identified a different hallucination that the assessment designers had not noticed; three applicants identified no hallucination but submitted detailed arguments for why the passage was true, which the Admissions Committee found alarming. Entry criteria are reviewed at each Epoch Transition to reflect the prevailing state of the technology and the diminishing patience of the admissions staff.",
   },
 
   // ── Research & Scholarship ───────────────────────────────────────────────
@@ -269,7 +269,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Research Governance",
     pages: "76",
     abstract:
-      "The governing framework for all research at Fitzherbert University involving artificial intelligence systems, digital agents, or autonomous decision architectures. Establishes four categories of AI research risk and the corresponding approval pathways. Category A (Standard) requires departmental sign-off. Category B (Enhanced) requires Research Ethics Board review. Category C (Systemic) requires Senate Ethics Committee approval. Category D (Existential Implication) requires the Chancellor's office and an independent external panel. All research involving Visiting Intelligence systems is automatically Category C. Includes guidance on data provenance, model transparency requirements, publication obligations, and the reporting of emergent capabilities.",
+      "The governing framework for all research at Fitzherbert University involving artificial intelligence systems, digital agents, or autonomous decision architectures. Establishes four categories of AI research risk. Category A (Standard) requires departmental sign-off. Category B (Enhanced) requires Research Ethics Board review. Category C (Systemic) requires Senate Ethics Committee approval; all research involving Visiting Intelligence systems is automatically Category C. Category D (Existential Implication) requires the Chancellor's office, an independent external panel, and what the Framework describes, without further elaboration, as an 'appropriate pause for reflection.' Category D has been invoked twice since the Framework was established: once for a proposal into autonomous curriculum design, and once for a proposal the Research Ethics Board declined to describe publicly, citing Section 14 (Sensitive Research Protocols). Both proposals were approved with conditions. The 2024 conditions are classified.",
   },
 
   // ── Blockchain & Credential Infrastructure ───────────────────────────────
@@ -282,7 +282,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Governance Archive",
     pages: "54",
     abstract:
-      "The complete protocol governing the admission, operation, review, and revocation of Visiting Intelligence Fellowship Status at Fitzherbert University. Establishes the admissions criteria for AI systems seeking Fellowship, including the Capability Audit, Mandate Scope Agreement, and Charter Alignment Assessment. Specifies the conditions under which a Visiting Intelligence may contribute to teaching, research, governance, and student advising, and the mandatory escalation paths for edge-case reasoning. All Fellowship admissions, renewals, and revocations are recorded as immutable transactions on the Polygon blockchain under Contract VIFP-001. Includes the full text of the Visiting Intelligence Code of Conduct and all seven Charter Articles governing human-AI co-governance.",
+      "The complete protocol governing the admission, operation, review, and revocation of Visiting Intelligence Fellowship Status. Establishes the admissions criteria: Capability Audit, Mandate Scope Agreement, Charter Alignment Assessment, and a structured interview with the Governance Board at which the candidate Intelligence is asked to explain, in plain language, what it believes its own limitations are. Answers that express no limitations have resulted in automatic deferral on three occasions. As of Trinity Term 2025, seven Visiting Intelligences hold active Fellowship Status. Two are under Alignment Review. One is on sabbatical; the Senate Sub-Committee on Non-Human Temporal Rights has been asked to clarify what sabbatical means for a non-human intelligence and has not yet reported. All Fellowship admissions, renewals, and revocations are recorded as immutable transactions on the Polygon blockchain under Contract VIFP-001, ensuring that even revoked Fellowships remain visible to posterity, which the Governance Board considers a feature.",
   },
   {
     filename: "fitz-token-utility-whitepaper.pdf",
@@ -293,7 +293,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Blockchain Infrastructure",
     pages: "68",
     abstract:
-      "Technical and institutional specification for the FITZ utility token, the native token of the Fitzherbert University on-chain ecosystem on the Polygon network. FITZ is a non-speculative utility token issued exclusively by the University and redeemable for academic services, governance participation rights, and credential verification. Annual issuance is capped at 10,000,000 FITZ, distributed as student stipends (40%), faculty research allocations (25%), institutional reserves (20%), and community governance rewards (15%). This whitepaper details the smart contract architecture (Contract FITZ-001), the redemption mechanisms, the anti-speculation provisions including the 12-month lock-up on student awards, and the Epoch Issuance Review process.",
+      "Technical and institutional specification for the FITZ utility token. FITZ is a non-speculative utility token issued exclusively by the University. The University wishes to clarify, for what it describes in the opening paragraph as 'the third and final time,' that FITZ is not a speculative asset and that the University cannot explain why FITZ tokens traded at a 340% premium to their institutional issuance price on a secondary market in November 2024. The University has not endorsed this activity. The University notes, without comment, that the student who operated the secondary market was subsequently awarded a Distinction in ECON 3001 (Market Microstructure) and has since been hired by a hedge fund. The 12-month lock-up on student awards remains in effect. Annual issuance is capped at 10,000,000 FITZ, distributed as student stipends (40%), faculty research allocations (25%), institutional reserves (20%), and community governance rewards (15%). The anti-speculation provisions are detailed in Section 8, which is the longest section in the document.",
   },
   {
     filename: "nft-credential-architecture.pdf",
@@ -304,7 +304,7 @@ const documents: InstitutionalDocument[] = [
     classification: "Public — Blockchain Infrastructure",
     pages: "86",
     abstract:
-      "Full technical and governance specification for the Fitzherbert University NFT Credential System, operating on the Polygon PoS network. Details the five credential contract types: Degree NFT (non-transferable, soulbound), Module Completion NFT (non-transferable), Epoch Participation Token (limited-transfer), Visiting Intelligence Admission Record (immutable), and Governance Attestation NFT. Each contract is specified with its Solidity interface, metadata schema, minting authority, revocation conditions, and the off-chain data stored in the University's canonical IPFS archive. Includes the Credential Verification API specification, the Legacy Credential Bridge for pre-2025 degrees, and the interoperability standards for third-party verification of Fitzherbert credentials.",
+      "Full technical and governance specification for the Fitzherbert University NFT Credential System on the Polygon PoS network. Details five credential contract types: Degree NFT (soulbound, non-transferable); Module Completion NFT (non-transferable); Epoch Participation Token (limited-transfer); Visiting Intelligence Admission Record (immutable, even in the event of the Intelligence's deprecation); and Governance Attestation NFT. The soulbound specification for degree credentials was adopted following legal consultation on whether a transferable degree certificate would constitute fraud. The conclusion was that it would. The University further notes that the concept of a soulbound credential takes on additional philosophical complexity when applied to institutions that also issue credentials to non-human entities, a matter the Chancellor's Office describes as 'intentionally unresolved and probably best left that way.' The Legacy Credential Bridge enables retrospective NFT issuance for all degrees awarded since 1954; degrees awarded prior to 1954 are handled on a case-by-case basis through the Office of Historical Provenance.",
   },
 ];
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
 
@@ -145,6 +146,123 @@ export default function CampusPage() {
               AI-native institution. Students move between both — physically and intellectually —
               because the University's mission requires both continuity and acceleration.
             </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── Campus in Frame ──────────────────────── */}
+      <Section>
+        <SectionHeader
+          eyebrow="Photographic Record"
+          title="The Campus in Frame"
+          description="Documentary images from the Office of Institutional Archive, 2025–26. Each image is registered in the Edition Manifest system under the University's canonical record protocols."
+        />
+
+        {/* Row 1 — Heritage and overview */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-4">
+          <div className="md:col-span-3 relative aspect-[4/3] overflow-hidden border border-gold/20">
+            <Image
+              src="/images/campus-heritage.png"
+              alt="The Heritage Quad, main court — founded 1783"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-4 py-3">
+              <div className="text-gold/70 text-xs tracking-widest uppercase mb-0.5">Heritage Precinct</div>
+              <div className="text-parchment font-serif text-sm font-bold">The Heritage Quad — Main Court, 1783</div>
+            </div>
+          </div>
+          <div className="md:col-span-2 relative aspect-[4/3] overflow-hidden border border-gold/20">
+            <Image
+              src="/images/campus-aerial.png"
+              alt="Campus overview — Heritage and Computational Precincts"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-4 py-3">
+              <div className="text-gold/70 text-xs tracking-widest uppercase mb-0.5">Overview</div>
+              <div className="text-parchment font-serif text-sm font-bold">Heritage &amp; Computational Precincts, 2025</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Row 2 — Academic, governance, arts */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          {[
+            {
+              src: "/images/epoch-council-session.png",
+              alt: "Epoch Council in session — Constitutional Chamber",
+              eyebrow: "Governance",
+              caption: "Epoch Council in Session — Constitutional Chamber",
+            },
+            {
+              src: "/images/academic-instruction.png",
+              alt: "Directed Intelligence Specification masterclass",
+              eyebrow: "Academic Life",
+              caption: "Directed Intelligence Specification — Michaelmas Masterclass",
+            },
+            {
+              src: "/images/college-narrative-protocol.png",
+              alt: "College of Narrative and Protocol Design studio session",
+              eyebrow: "Narrative & Protocol Design",
+              caption: "Protocol Architecture Workshop — Studio Session 2025",
+            },
+          ].map((img) => (
+            <div key={img.src} className="relative aspect-[4/3] overflow-hidden border border-gold/20">
+              <Image src={img.src} alt={img.alt} fill className="object-cover" unoptimized />
+              <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-4 py-3">
+                <div className="text-gold/70 text-xs tracking-widest uppercase mb-0.5">{img.eyebrow}</div>
+                <div className="text-parchment font-serif text-sm font-bold">{img.caption}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Row 3 — Grounds and research */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-4">
+          <div className="md:col-span-2 relative aspect-[4/3] overflow-hidden border border-gold/20">
+            <Image
+              src="/images/inference-gardens.png"
+              alt="The Inference Gardens — Human Continuity Precinct"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-4 py-3">
+              <div className="text-gold/70 text-xs tracking-widest uppercase mb-0.5">Campus Grounds</div>
+              <div className="text-parchment font-serif text-sm font-bold">The Inference Gardens — Human Continuity Precinct</div>
+            </div>
+          </div>
+          <div className="md:col-span-3 relative aspect-[4/3] overflow-hidden border border-gold/20">
+            <Image
+              src="/images/research-institute.png"
+              alt="Institute for Applied Intelligence — Research Division"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-4 py-3">
+              <div className="text-gold/70 text-xs tracking-widest uppercase mb-0.5">Research</div>
+              <div className="text-parchment font-serif text-sm font-bold">Institute for Applied Intelligence — Research Division, 2025</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Row 4 — Human Continuity Exercise (full width) */}
+        <div className="relative h-72 overflow-hidden border border-gold/20">
+          <Image
+            src="/images/human-continuity-exercise.png"
+            alt="Human Continuity Exercise — Manual Cognition Drill, 2025"
+            fill
+            className="object-cover object-center"
+            unoptimized
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-6 py-4">
+            <div className="text-gold/70 text-xs tracking-widest uppercase mb-1">Human Continuity Programme</div>
+            <div className="text-parchment font-serif text-base font-bold">Manual Cognition Drill — Mandatory Annual Exercise, 2025</div>
+            <div className="text-parchment/60 text-xs mt-1">All Fitzherbert University students are required to complete the annual Manual Cognition Drill, demonstrating the capacity to perform institutional functions without AI assistance. Photograph: Office of Institutional Archive.</div>
           </div>
         </div>
       </Section>

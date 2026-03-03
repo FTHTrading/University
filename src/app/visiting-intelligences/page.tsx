@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
 
@@ -212,7 +213,28 @@ export default function VisitingIntelligencesPage() {
           </div>
         </div>
       </Section>
-
+      {/* ── Council Image ───────────────────────── */}
+      <Section stone>
+        <div className="relative h-80 overflow-hidden border border-gold/20">
+          <Image
+            src="/images/epoch-council-session.png"
+            alt="Epoch Council in Joint Session with the Visiting Intelligence Governance Board"
+            fill
+            className="object-cover object-center"
+            unoptimized
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-navy/85 px-6 py-4">
+            <div className="text-gold/70 text-xs tracking-widest uppercase mb-1">Governance Record</div>
+            <div className="text-parchment font-serif text-base font-bold">
+              Epoch Council in Joint Session with the Visiting Intelligence Governance Board
+            </div>
+            <div className="text-parchment/60 text-xs mt-1">
+              Constitutional Chamber, Trinity Term 2025. The first such joint session in the University&apos;s history.
+              Minutes and recordings are registered in the canonical archive under VIFP-SESSION-001.
+            </div>
+          </div>
+        </div>
+      </Section>
       {/* ── II. Current Fellows ───────────────────── */}
       <Section alternate stone>
         <SectionHeader

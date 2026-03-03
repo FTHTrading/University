@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
 
@@ -210,7 +211,28 @@ export default function ResearchPage() {
           ))}
         </div>
       </Section>
-
+      {/* ── Research in Frame ─────────────────── */}
+      <Section stone>
+        <div className="relative h-80 overflow-hidden border border-gold/20">
+          <Image
+            src="/images/research-institute.png"
+            alt="Institute for Applied Intelligence — Active Research Session"
+            fill
+            className="object-cover object-center"
+            unoptimized
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-navy/85 px-6 py-4">
+            <div className="text-gold/70 text-xs tracking-widest uppercase mb-1">Research Division</div>
+            <div className="text-parchment font-serif text-base font-bold">
+              Institute for Applied Intelligence — Active Research Session, 2025
+            </div>
+            <div className="text-parchment/60 text-xs mt-1">
+              Cross-disciplinary work at the boundary of directed intelligence and socioeconomic modelling.
+              All research outputs are published in pre-canonical form pending Epoch Council review.
+            </div>
+          </div>
+        </div>
+      </Section>
       {/* ── Year One Impact ──────────────────────── */}
       <Section>
         <SectionHeader

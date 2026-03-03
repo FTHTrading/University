@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
 import { Timeline } from "@/components/Timeline";
@@ -170,8 +171,19 @@ export default function AboutPage() {
           eyebrow="Foundation"
           title="Charter & Constitution"
         />
-        <div className="max-w-3xl mx-auto space-y-6">
-          <p className="text-lg leading-relaxed text-stone drop-cap">
+        <div className="max-w-3xl mx-auto space-y-6">          {/* Coat of arms */}
+          <div className="relative h-80 w-full overflow-hidden border border-gold/20 mb-4">
+            <Image
+              src="/images/coat-of-arms.png"
+              alt="Fitzherbert University Coat of Arms"
+              fill
+              className="object-contain bg-navy/5"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/70 px-4 py-2 text-center">
+              <div className="text-parchment/70 text-xs tracking-widest uppercase">Coat of Arms — Granted 1783 · Ratified under the 2025 Rechartering Protocol</div>
+            </div>
+          </div>          <p className="text-lg leading-relaxed text-stone drop-cap">
             The University Charter of 1783 established foundational principles that
             survive the rechartering: the sovereignty of scholarly inquiry, the duty of
             institutional stewardship, and the obligation to serve the public good. The

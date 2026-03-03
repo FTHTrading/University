@@ -32,6 +32,8 @@ const mobileNavGroups = [
     title: "Academics & Students",
     links: [
       { href: "/academics", label: "Colleges & Programmes" },
+      { href: "/skills", label: "AI Skills Programme" },
+      { href: "/credentials", label: "Academic Credentials" },
       { href: "/student-economics", label: "Student Economics" },
       { href: "/admissions", label: "Admissions & Apply" },
       { href: "/research", label: "Research Institutes" },
@@ -45,6 +47,7 @@ const mobileNavGroups = [
       { href: "/documents", label: "Documents & Downloads" },
       { href: "/epochs", label: "Epoch History" },
       { href: "/on-chain", label: "Polygon Registry" },
+      { href: "/credentials", label: "Credential Registry" },
     ],
   },
   {

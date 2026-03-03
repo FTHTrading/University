@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Documents & Downloads",
   description:
-    "Official documents, policies, governance records, and institutional reports of Fitzherbert University. Download the University Charter, governance policies, annual reports, and endowment materials.",
+    "Official documents, policies, student handbooks, degree certificates, programme catalogues, governance records, and blockchain infrastructure specifications of Fitzherbert University.",
 };
 
 /* ── Document categories ─────────────────────────── */
@@ -27,6 +27,7 @@ const documentCategories: {
   icon: string;
   documents: DocumentItem[];
 }[] = [
+  // ── Founding & Governance ─────────────────────────────────────────────────
   {
     title: "Founding & Governance",
     eyebrow: "Charter & Constitution",
@@ -40,7 +41,7 @@ const documentCategories: {
           "The original Heritage Charter granted to Fitzherbert University in 1783 and ratified under the 2025 Rechartering Protocol. The foundational constitutional document.",
         href: "/documents/university-charter-1783.pdf",
         fileType: "PDF",
-        size: "~280 KB",
+        size: "~4 KB",
       },
       {
         title: "Senate Standing Orders",
@@ -48,7 +49,15 @@ const documentCategories: {
           "Procedural rules and standing orders governing the Academic Senate, committee formation, voting protocols, and legislative procedures.",
         href: "/documents/senate-standing-orders.pdf",
         fileType: "PDF",
-        size: "~190 KB",
+        size: "~4 KB",
+      },
+      {
+        title: "Annual Governance Report — FY 2025",
+        description:
+          "Comprehensive annual report covering governance decisions, epoch transitions, compliance assessments, and institutional milestones for fiscal year 2025.",
+        href: "/documents/annual-governance-report-fy-2025.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
       },
       {
         title: "Freedom of Information Protocol",
@@ -56,81 +65,238 @@ const documentCategories: {
           "The University's commitment to transparency and public access to institutional records, governance decisions, and research output.",
         href: "/documents/freedom-of-information-protocol.pdf",
         fileType: "PDF",
-        size: "~150 KB",
+        size: "~4 KB",
+      },
+      {
+        title: "Community Standards & Code of Conduct",
+        description:
+          "Standards of conduct for all University community members — including human staff, students, and Visiting Intelligences operating under Fellowship Status.",
+        href: "/documents/community-standards-code-of-conduct.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
       },
     ],
   },
+
+  // ── Student Life & Academic Regulations ──────────────────────────────────
   {
-    title: "Policies & Frameworks",
-    eyebrow: "Institutional Policies",
+    title: "Student Life & Academic Regulations",
+    eyebrow: "Handbooks & Regulations",
     description:
-      "Operational policies governing academic practice, artificial intelligence, ethical investment, and the expression rights of the University community.",
+      "Everything a student needs to understand life at Fitzherbert University — from epoch-aligned term dates and tuition provisions to grading frameworks and the Human Continuity Requirement.",
+    icon: "◉",
+    documents: [
+      {
+        title: "Student Handbook 2025–26",
+        description:
+          "The definitive guide to University life during the Third Epoch. Covers matriculation, residential life, the Human Continuity Requirement, and the use of Visiting Intelligences in coursework.",
+        href: "/documents/student-handbook-2025-26.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+      {
+        title: "Epoch Academic Calendar 2025–26",
+        description:
+          "Official term dates, examination periods, Epoch Transition Review windows, FITZ Token Distribution date, and Visiting Intelligence fellowship review periods.",
+        href: "/documents/epoch-academic-calendar-2025-26.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+      {
+        title: "Tuition Fees & Financial Aid Guide",
+        description:
+          "Complete fee schedule, bursary information, the Provenance Scholarship criteria, and FITZ token stipend provisions for 2025–26.",
+        href: "/documents/tuition-fees-financial-aid-guide.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+      {
+        title: "Assessment & Grading Framework",
+        description:
+          "Epoch-aligned assessment criteria including the Verified Reasoning Dimension. Grade descriptors, moderation procedures, and Transition-Period submission policy.",
+        href: "/documents/grading-framework-epoch-aligned.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+      {
+        title: "Academic Integrity & AI Authorship Policy",
+        description:
+          "Seven categories of AI-assisted work, provenance declaration requirements, and the full case-study catalogue of Academic Provenance Fraud rulings.",
+        href: "/documents/academic-integrity-ai-policy.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+    ],
+  },
+
+  // ── Programmes & Degrees ──────────────────────────────────────────────────
+  {
+    title: "Programmes, Degrees & Admissions",
+    eyebrow: "Academic Programmes",
+    description:
+      "Complete programme handbooks, course catalogues, degree certificate specifications, and the technical admissions requirements for all Fitzherbert University qualifications.",
     icon: "◈",
     documents: [
+      {
+        title: "Undergraduate Course Catalogue 2025–26",
+        description:
+          "All 214 undergraduate modules across the B.Intel, B.Sys, B.Prov, and B.Gov programmes — with learning outcomes, AI tool permissions, and Polygon credential details.",
+        href: "/documents/undergraduate-course-catalogue.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+      {
+        title: "Masters Programme Handbook 2025–26",
+        description:
+          "Handbook for M.AI, M.Proto, M.Gov, and M.Crypto students. Covers module selection, dissertation supervision, FITZ allocations, and viva procedures.",
+        href: "/documents/masters-programme-handbook.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+      {
+        title: "Degree Certificate — Specimen Format",
+        description:
+          "Authoritative specimen showing the physical certificate, signed PDF, and NFT credential issued to graduates — including the cryptographic seal specification.",
+        href: "/documents/degree-certificate-specimen.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+      {
+        title: "Admissions Technical Requirements",
+        description:
+          "Entry criteria across four dimensions: Analytical Reasoning, Epistemic Rigour, Systemic Thinking, and the AI Literacy Baseline assessment.",
+        href: "/documents/admissions-technical-requirements.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+    ],
+  },
+
+  // ── AI Skills Programme ───────────────────────────────────────────────────
+  {
+    title: "AI Skills Programme",
+    eyebrow: "Practical Intelligence Curriculum",
+    description:
+      "The Fitzherbert AI Skills Programme equips students across all colleges with practical AI competencies that are immediately applicable in professional contexts. The University's position: AI literacy is no longer optional.",
+    icon: "◆",
+    documents: [
+      {
+        title: "AI Skills Programme Guide",
+        description:
+          "Complete guide to Levels I–IV: Foundation (prompt engineering, output evaluation), Practitioner (RAG, fine-tuning), Specialist (multi-agent systems), and Sovereign (AI governance & alignment).",
+        href: "/documents/ai-skills-programme-guide.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+      {
+        title: "AI Governance & Model Accountability Policy",
+        description:
+          "Standards for deploying, auditing, and governing AI models across institutional operations and research programmes. Four-gate validation architecture.",
+        href: "/documents/ai-governance-model-accountability-policy.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
       {
         title: "Academic Freedom & Expression Policy",
         description:
           "Protections for academic inquiry, intellectual dissent, and scholarly expression within the University's constitutional framework.",
         href: "/documents/academic-freedom-expression-policy.pdf",
         fileType: "PDF",
-        size: "~170 KB",
-      },
-      {
-        title: "AI Governance & Model Accountability Policy",
-        description:
-          "Standards for deploying, auditing, and governing AI models across institutional operations and research programmes.",
-        href: "/documents/ai-governance-model-accountability-policy.pdf",
-        fileType: "PDF",
-        size: "~210 KB",
-      },
-      {
-        title: "Ethical Investment Framework",
-        description:
-          "Principles governing the University Endowment's investment decisions, exclusion criteria, and alignment with institutional values.",
-        href: "/documents/ethical-investment-framework.pdf",
-        fileType: "PDF",
-        size: "~160 KB",
-      },
-      {
-        title: "Investment Policy Statement",
-        description:
-          "Formal investment policy governing endowment allocation, risk tolerance, return targets, and fiduciary responsibilities.",
-        href: "/documents/investment-policy-statement.pdf",
-        fileType: "PDF",
-        size: "~180 KB",
+        size: "~4 KB",
       },
     ],
   },
+
+  // ── Research & Graduate Studies ───────────────────────────────────────────
   {
-    title: "Annual Reports & Stewardship",
-    eyebrow: "Reports",
+    title: "Research & Graduate Studies",
+    eyebrow: "Research Governance",
     description:
-      "Year-end governance reports, stewardship reviews, and performance assessments documenting the University's operational and institutional progress.",
+      "Frameworks governing research ethics, digital intelligence research categories, the Visiting Intelligence Fellowship, and the University's endowment performance record.",
     icon: "◇",
     documents: [
       {
-        title: "Annual Governance Report — FY 2025",
+        title: "Research Ethics for Digital Intelligence",
         description:
-          "Comprehensive annual report covering governance decisions, epoch transitions, compliance assessments, and institutional milestones for fiscal year 2025.",
-        href: "/documents/annual-governance-report-fy-2025.pdf",
+          "Four-category AI research approval framework: Standard, Enhanced, Systemic, and Existential Implication. Includes data provenance requirements and emergent capability reporting.",
+        href: "/documents/research-ethics-digital-intelligence-framework.pdf",
         fileType: "PDF",
-        size: "~320 KB",
+        size: "~4 KB",
+      },
+      {
+        title: "Visiting Intelligence Fellowship Protocol",
+        description:
+          "Complete governance protocol for AI systems seeking Fellowship Status — capability audit, mandate scope agreement, charter alignment assessment, and revocation conditions.",
+        href: "/documents/visiting-intelligence-fellowship-protocol.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
       },
       {
         title: "Annual Stewardship Report — FY 2025",
         description:
-          "Report on endowment stewardship, donor engagement, capital allocation, and the financial health of the University's philanthropic instruments.",
+          "Full endowment stewardship report for FY 2025: $14.2B under management, 11.3% net return, ethical investment compliance, and distribution analysis.",
         href: "/documents/annual-stewardship-report-fy-2025.pdf",
         fileType: "PDF",
-        size: "~290 KB",
+        size: "~4 KB",
       },
       {
         title: "Endowment Ten-Year Performance Review",
         description:
-          "Longitudinal performance analysis of the Fitzherbert Endowment across asset classes, risk-adjusted returns, and benchmark comparisons.",
+          "Longitudinal performance analysis across asset classes, risk-adjusted returns, and benchmark comparisons for the decade 2015–2025.",
         href: "/documents/endowment-ten-year-performance-review.pdf",
         fileType: "PDF",
-        size: "~250 KB",
+        size: "~4 KB",
+      },
+      {
+        title: "Investment Policy Statement",
+        description:
+          "Governing framework for all endowment investment decisions: asset allocation targets, risk tolerance, liquidity requirements, and rebalancing protocols.",
+        href: "/documents/investment-policy-statement.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+      {
+        title: "Ethical Investment Framework",
+        description:
+          "ESG integration standards, exclusion criteria, and impact investment guidelines for the University Endowment. Reviewed biennially.",
+        href: "/documents/ethical-investment-framework.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+    ],
+  },
+
+  // ── Blockchain & Credential Infrastructure ────────────────────────────────
+  {
+    title: "Blockchain & Credential Infrastructure",
+    eyebrow: "On-Chain Documentation",
+    description:
+      "Technical specifications, whitepapers, and governance frameworks for the University's Polygon-based credential system, FITZ utility token, and NFT degree certificates.",
+    icon: "⬟",
+    documents: [
+      {
+        title: "NFT Credential Architecture",
+        description:
+          "Full technical specification for all five NFT credential contract types — Degree, Module, Epoch, Visiting Intelligence Admission, and Governance Attestation. Includes Solidity interfaces and metadata schemas.",
+        href: "/documents/nft-credential-architecture.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+      {
+        title: "FITZ Token Utility Whitepaper",
+        description:
+          "Technical and institutional specification for the FITZ utility token: issuance cap, distribution model, redemption mechanisms, anti-speculation provisions, and smart contract architecture.",
+        href: "/documents/fitz-token-utility-whitepaper.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
+      },
+      {
+        title: "Degree Certificate — Specimen Format",
+        description:
+          "Shows the physical, PDF, and NFT forms of the degree certificate — including the Legacy Credential Bridge for pre-2025 degree holders.",
+        href: "/documents/degree-certificate-specimen.pdf",
+        fileType: "PDF",
+        size: "~4 KB",
       },
     ],
   },
@@ -191,7 +357,7 @@ export default function DocumentsPage() {
           <SectionHeader
             eyebrow="University Records"
             title="Institutional Documents"
-            description="All foundational documents, policies, and reports of Fitzherbert University are published here for transparency and public access. Every document listed below is available for immediate download."
+            description="All foundational documents, programme handbooks, policies, research frameworks, and blockchain infrastructure specifications of Fitzherbert University are published here under the Transparency Mandate. Every document listed below is available for immediate download."
           />
         </div>
       </Section>

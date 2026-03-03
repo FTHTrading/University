@@ -55,6 +55,8 @@ const footerColumns = [
     title: "Reference",
     links: [
       { label: "Documents & Downloads", href: "/documents" },
+      { label: "AI Skills Programme", href: "/skills" },
+      { label: "Credential Registry", href: "/credentials" },
       { label: "Timeline", href: "/timeline" },
       { label: "FAQ", href: "/faq" },
       { label: "Glossary", href: "/glossary" },

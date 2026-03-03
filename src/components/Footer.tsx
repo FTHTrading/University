@@ -63,6 +63,16 @@ const footerColumns = [
       { label: "RSS Feed", href: "/blog/rss.xml" },
     ],
   },
+  {
+    title: "Divisions",
+    links: [
+      { label: "Visiting Intelligences", href: "/visiting-intelligences" },
+      { label: "Legal Intelligence", href: "/legal-intelligence" },
+      { label: "Human Continuity", href: "/human-continuity" },
+      { label: "Sovereign Systems", href: "/sovereign-systems" },
+      { label: "Institutional Architecture", href: "/institutional-architecture" },
+    ],
+  },
 ];
 
 export function Footer() {
@@ -81,7 +91,7 @@ export function Footer() {
         </div>
 
         {/* ── Columns ─────────────────────────────── */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-10 mb-14">
           {footerColumns.map((col) => (
             <div key={col.title}>
               <h4 className="font-serif text-sm uppercase tracking-[0.15em] text-gold mb-4 font-bold">

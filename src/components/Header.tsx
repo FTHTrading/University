@@ -54,6 +54,16 @@ const mobileNavGroups = [
       { href: "/partnerships", label: "Partnerships" },
     ],
   },
+  {
+    title: "Specialist Divisions",
+    links: [
+      { href: "/visiting-intelligences", label: "Visiting Intelligences" },
+      { href: "/legal-intelligence", label: "Legal Intelligence" },
+      { href: "/human-continuity", label: "Human Continuity" },
+      { href: "/sovereign-systems", label: "Sovereign Systems" },
+      { href: "/institutional-architecture", label: "Institutional Architecture" },
+    ],
+  },
 ];
 
 const actionLinks = [

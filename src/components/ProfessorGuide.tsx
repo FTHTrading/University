@@ -30,16 +30,22 @@ interface AvatarProps {
 
 function ProfessorAvatar({ isSpeaking, isThinking }: AvatarProps) {
   const groupRef = useRef<THREE.Group>(null);
-  const headRef = useRef<THREE.Mesh>(null);
+  const headRef = useRef<THREE.Group>(null);
   const jawRef = useRef<THREE.Mesh>(null);
-  const leftArmRef = useRef<THREE.Mesh>(null);
-  const rightArmRef = useRef<THREE.Mesh>(null);
+  const leftArmRef = useRef<THREE.Group>(null);
+  const rightArmRef = useRef<THREE.Group>(null);
+  const leftEyeRef = useRef<THREE.Mesh>(null);
+  const rightEyeRef = useRef<THREE.Mesh>(null);
+  const leftBrowRef = useRef<THREE.Mesh>(null);
+  const rightBrowRef = useRef<THREE.Mesh>(null);
 
   // Colours
-  const ROBE = "#0B1F3B";       // navy academic robe
-  const SKIN = "#E8C9A0";       // warm skin tone
-  const GOLD_TRIM = "#C8A24C";  // gold trim
+  const ROBE = "#0B1F3B";
+  const SKIN = "#E8C9A0";
+  const GOLD_TRIM = "#C8A24C";
   const PARCHMENT = "#F4F1EA";
+  const SPECTACLE = "#8B7355";
+  const HAIR = "#6B6B6B";
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
@@ -50,132 +56,279 @@ function ProfessorAvatar({ isSpeaking, isThinking }: AvatarProps) {
       groupRef.current.rotation.y = Math.sin(t * 0.3) * 0.08;
     }
 
-    // Head nod while thinking
+    // Head — nod when thinking, tilt when speaking
     if (headRef.current) {
       const nodSpeed = isThinking ? 2.5 : 0.8;
       const nodAmp = isThinking ? 0.06 : 0.02;
       headRef.current.rotation.x = Math.sin(t * nodSpeed) * nodAmp;
+      if (isSpeaking) {
+        headRef.current.rotation.z = Math.sin(t * 1.4) * 0.04;
+      } else {
+        headRef.current.rotation.z = 0;
+      }
     }
 
-    // Jaw / mouth for speaking
+    // Blinking — closed 150ms every ~3.5s
+    const blinkPhase = t % 3.5;
+    const isBlinking = blinkPhase > 3.3 && blinkPhase < 3.45;
+    if (leftEyeRef.current && rightEyeRef.current) {
+      leftEyeRef.current.scale.y = isBlinking ? 0.08 : 1;
+      rightEyeRef.current.scale.y = isBlinking ? 0.08 : 1;
+    }
+
+    // Eyebrow lift when thinking
+    if (leftBrowRef.current && rightBrowRef.current) {
+      const lift = isThinking ? 0.018 : 0;
+      leftBrowRef.current.position.y = 0.1 + lift + Math.sin(t * 0.5) * 0.003;
+      rightBrowRef.current.position.y = 0.1 + lift + Math.sin(t * 0.5) * 0.003;
+    }
+
+    // Jaw / mouth
     if (jawRef.current) {
       if (isSpeaking) {
         const jawOpen =
           Math.abs(Math.sin(t * 12)) * 0.07 +
           Math.abs(Math.sin(t * 7.3)) * 0.04;
         jawRef.current.scale.y = 1 + jawOpen;
-        jawRef.current.position.y = -0.02 - jawOpen * 0.15;
+        jawRef.current.position.y = -0.105 - jawOpen * 0.15;
       } else {
         jawRef.current.scale.y = 1;
-        jawRef.current.position.y = -0.02;
+        jawRef.current.position.y = -0.105;
       }
     }
 
-    // Gesture — left arm
+    // Left arm — expressive gesture when speaking, chin-stroke when thinking
     if (leftArmRef.current) {
       if (isSpeaking) {
-        leftArmRef.current.rotation.z =
-          0.4 + Math.sin(t * 2.1) * 0.25;
-        leftArmRef.current.rotation.x = Math.sin(t * 1.7) * 0.15;
+        leftArmRef.current.rotation.z = 0.4 + Math.sin(t * 2.1) * 0.3;
+        leftArmRef.current.rotation.x = Math.sin(t * 1.7) * 0.2;
+      } else if (isThinking) {
+        leftArmRef.current.rotation.z = 0.6 + Math.sin(t * 0.8) * 0.05;
+        leftArmRef.current.rotation.x = 0.3;
       } else {
         leftArmRef.current.rotation.z = 0.15 + Math.sin(t * 0.5) * 0.02;
         leftArmRef.current.rotation.x = 0;
       }
     }
 
-    // Right arm — subtle gesture
+    // Right arm — holds book, subtler
     if (rightArmRef.current) {
       if (isSpeaking) {
-        rightArmRef.current.rotation.z =
-          -0.3 + Math.sin(t * 1.9 + 1) * 0.18;
+        rightArmRef.current.rotation.z = -0.3 + Math.sin(t * 1.9 + 1) * 0.2;
       } else {
-        rightArmRef.current.rotation.z = -0.15 + Math.sin(t * 0.5) * 0.02;
+        rightArmRef.current.rotation.z = -0.2 + Math.sin(t * 0.5) * 0.02;
       }
     }
   });
 
   return (
     <group ref={groupRef} position={[0, -0.6, 0]}>
-      {/* Academic robe / torso */}
+      {/* ── Torso / robe ── */}
       <mesh position={[0, 0, 0]}>
         <cylinderGeometry args={[0.28, 0.38, 0.9, 12]} />
         <meshStandardMaterial color={ROBE} />
       </mesh>
-
+      {/* Robe lapels */}
+      <mesh position={[0.08, 0.25, 0.22]} rotation={[0.3, 0.2, 0]}>
+        <boxGeometry args={[0.12, 0.35, 0.02]} />
+        <meshStandardMaterial color="#0D2347" />
+      </mesh>
+      <mesh position={[-0.08, 0.25, 0.22]} rotation={[0.3, -0.2, 0]}>
+        <boxGeometry args={[0.12, 0.35, 0.02]} />
+        <meshStandardMaterial color="#0D2347" />
+      </mesh>
       {/* Gold trim band */}
       <mesh position={[0, 0.35, 0]}>
         <cylinderGeometry args={[0.29, 0.29, 0.06, 12]} />
         <meshStandardMaterial color={GOLD_TRIM} />
       </mesh>
-
-      {/* Head */}
-      <mesh ref={headRef} position={[0, 0.68, 0]}>
-        <sphereGeometry args={[0.2, 16, 16]} />
+      {/* White collar */}
+      <mesh position={[0, 0.42, 0]}>
+        <cylinderGeometry args={[0.18, 0.22, 0.08, 12]} />
+        <meshStandardMaterial color="#FFFFFF" />
+      </mesh>
+      {/* Neck */}
+      <mesh position={[0, 0.5, 0]}>
+        <cylinderGeometry args={[0.08, 0.1, 0.12, 8]} />
         <meshStandardMaterial color={SKIN} />
       </mesh>
 
-      {/* Mortarboard */}
-      <group position={[0, 0.88, 0]}>
-        {/* board */}
-        <mesh rotation={[0, Math.PI / 4, 0]}>
-          <boxGeometry args={[0.42, 0.03, 0.42]} />
+      {/* ── Head group (nods together) ── */}
+      <group ref={headRef} position={[0, 0.68, 0]}>
+        {/* Skull */}
+        <mesh>
+          <sphereGeometry args={[0.2, 16, 16]} />
+          <meshStandardMaterial color={SKIN} />
+        </mesh>
+        {/* Hair — sides & back */}
+        <mesh position={[0, 0.07, -0.08]}>
+          <sphereGeometry args={[0.19, 12, 8, 0, Math.PI * 2, 0, Math.PI / 2]} />
+          <meshStandardMaterial color={HAIR} />
+        </mesh>
+        <mesh position={[-0.16, 0, 0]}>
+          <boxGeometry args={[0.06, 0.14, 0.15]} />
+          <meshStandardMaterial color={HAIR} />
+        </mesh>
+        <mesh position={[0.16, 0, 0]}>
+          <boxGeometry args={[0.06, 0.14, 0.15]} />
+          <meshStandardMaterial color={HAIR} />
+        </mesh>
+
+        {/* Mortarboard */}
+        <group position={[0, 0.2, 0]}>
+          <mesh rotation={[0, Math.PI / 4, 0]}>
+            <boxGeometry args={[0.42, 0.03, 0.42]} />
+            <meshStandardMaterial color={ROBE} />
+          </mesh>
+          <mesh position={[0, 0.025, 0]}>
+            <sphereGeometry args={[0.03, 8, 8]} />
+            <meshStandardMaterial color={GOLD_TRIM} />
+          </mesh>
+          <mesh position={[0.18, -0.02, 0.18]}>
+            <cylinderGeometry args={[0.006, 0.006, 0.18, 4]} />
+            <meshStandardMaterial color={GOLD_TRIM} />
+          </mesh>
+          <mesh position={[0.18, -0.12, 0.18]}>
+            <cylinderGeometry args={[0.015, 0.004, 0.06, 4]} />
+            <meshStandardMaterial color={GOLD_TRIM} />
+          </mesh>
+        </group>
+
+        {/* Eye whites */}
+        <mesh position={[-0.065, 0.04, 0.16]}>
+          <sphereGeometry args={[0.032, 8, 8]} />
+          <meshStandardMaterial color="#FFFFFF" />
+        </mesh>
+        <mesh position={[0.065, 0.04, 0.16]}>
+          <sphereGeometry args={[0.032, 8, 8]} />
+          <meshStandardMaterial color="#FFFFFF" />
+        </mesh>
+        {/* Pupils (blink via scale.y) */}
+        <mesh ref={leftEyeRef} position={[-0.065, 0.04, 0.185]}>
+          <sphereGeometry args={[0.018, 8, 8]} />
+          <meshStandardMaterial color="#1a1a1a" />
+        </mesh>
+        <mesh ref={rightEyeRef} position={[0.065, 0.04, 0.185]}>
+          <sphereGeometry args={[0.018, 8, 8]} />
+          <meshStandardMaterial color="#1a1a1a" />
+        </mesh>
+
+        {/* Eyebrows */}
+        <mesh ref={leftBrowRef} position={[-0.065, 0.1, 0.17]} rotation={[0, 0, 0.15]}>
+          <boxGeometry args={[0.06, 0.012, 0.02]} />
+          <meshStandardMaterial color={HAIR} />
+        </mesh>
+        <mesh ref={rightBrowRef} position={[0.065, 0.1, 0.17]} rotation={[0, 0, -0.15]}>
+          <boxGeometry args={[0.06, 0.012, 0.02]} />
+          <meshStandardMaterial color={HAIR} />
+        </mesh>
+
+        {/* Spectacles — round lenses */}
+        <mesh position={[-0.065, 0.04, 0.19]} rotation={[Math.PI / 2, 0, 0]}>
+          <torusGeometry args={[0.035, 0.004, 8, 16]} />
+          <meshStandardMaterial color={SPECTACLE} metalness={0.6} roughness={0.3} />
+        </mesh>
+        <mesh position={[0.065, 0.04, 0.19]} rotation={[Math.PI / 2, 0, 0]}>
+          <torusGeometry args={[0.035, 0.004, 8, 16]} />
+          <meshStandardMaterial color={SPECTACLE} metalness={0.6} roughness={0.3} />
+        </mesh>
+        {/* Spectacle bridge */}
+        <mesh position={[0, 0.04, 0.2]}>
+          <boxGeometry args={[0.04, 0.004, 0.004]} />
+          <meshStandardMaterial color={SPECTACLE} metalness={0.6} roughness={0.3} />
+        </mesh>
+        {/* Temple arms */}
+        <mesh position={[-0.1, 0.04, 0.12]} rotation={[0, 0.3, 0]}>
+          <boxGeometry args={[0.004, 0.004, 0.12]} />
+          <meshStandardMaterial color={SPECTACLE} metalness={0.6} roughness={0.3} />
+        </mesh>
+        <mesh position={[0.1, 0.04, 0.12]} rotation={[0, -0.3, 0]}>
+          <boxGeometry args={[0.004, 0.004, 0.12]} />
+          <meshStandardMaterial color={SPECTACLE} metalness={0.6} roughness={0.3} />
+        </mesh>
+
+        {/* Nose */}
+        <mesh position={[0, -0.02, 0.2]}>
+          <coneGeometry args={[0.025, 0.06, 6]} />
+          <meshStandardMaterial color={SKIN} />
+        </mesh>
+
+        {/* Mouth / jaw */}
+        <mesh ref={jawRef} position={[0, -0.105, 0.16]}>
+          <boxGeometry args={[0.08, 0.03, 0.04]} />
+          <meshStandardMaterial color="#9B5B3A" />
+        </mesh>
+
+        {/* Beard / chin detail */}
+        <mesh position={[0, -0.12, 0.12]}>
+          <sphereGeometry args={[0.06, 8, 6, 0, Math.PI * 2, Math.PI / 3, Math.PI / 2]} />
+          <meshStandardMaterial color={HAIR} />
+        </mesh>
+      </group>
+
+      {/* ── Left arm group ── */}
+      <group ref={leftArmRef} position={[0.35, 0.1, 0]}>
+        <mesh>
+          <cylinderGeometry args={[0.06, 0.05, 0.55, 8]} />
           <meshStandardMaterial color={ROBE} />
         </mesh>
-        {/* button */}
-        <mesh position={[0, 0.025, 0]}>
-          <sphereGeometry args={[0.03, 8, 8]} />
+        {/* Sleeve cuff */}
+        <mesh position={[0, -0.25, 0]}>
+          <cylinderGeometry args={[0.055, 0.06, 0.05, 8]} />
           <meshStandardMaterial color={GOLD_TRIM} />
         </mesh>
-        {/* tassel string */}
-        <mesh position={[0.18, -0.02, 0.18]}>
-          <cylinderGeometry args={[0.006, 0.006, 0.18, 4]} />
+        {/* Hand */}
+        <mesh position={[0, -0.32, 0]}>
+          <sphereGeometry args={[0.05, 8, 8]} />
+          <meshStandardMaterial color={SKIN} />
+        </mesh>
+        {/* Scroll in left hand */}
+        <mesh position={[0, -0.28, 0.05]} rotation={[0, 0, 0.3]}>
+          <cylinderGeometry args={[0.022, 0.022, 0.18, 8]} />
+          <meshStandardMaterial color={PARCHMENT} />
+        </mesh>
+        <mesh position={[0, -0.19, 0.05]}>
+          <cylinderGeometry args={[0.028, 0.028, 0.015, 8]} />
+          <meshStandardMaterial color={GOLD_TRIM} />
+        </mesh>
+        <mesh position={[0, -0.37, 0.05]}>
+          <cylinderGeometry args={[0.028, 0.028, 0.015, 8]} />
           <meshStandardMaterial color={GOLD_TRIM} />
         </mesh>
       </group>
 
-      {/* Eyes */}
-      <mesh position={[-0.06, 0.72, 0.17]}>
-        <sphereGeometry args={[0.025, 8, 8]} />
-        <meshStandardMaterial color="#1a1a1a" />
-      </mesh>
-      <mesh position={[0.06, 0.72, 0.17]}>
-        <sphereGeometry args={[0.025, 8, 8]} />
-        <meshStandardMaterial color="#1a1a1a" />
-      </mesh>
-
-      {/* Mouth / jaw area */}
-      <mesh ref={jawRef} position={[0, 0.58, 0.16]}>
-        <boxGeometry args={[0.08, 0.03, 0.04]} />
-        <meshStandardMaterial color="#8B4513" />
-      </mesh>
-
-      {/* Left arm */}
-      <mesh ref={leftArmRef} position={[0.35, 0.1, 0]}>
-        <cylinderGeometry args={[0.06, 0.05, 0.55, 8]} />
-        <meshStandardMaterial color={ROBE} />
-      </mesh>
-      {/* Left hand */}
-      <mesh position={[0.35, -0.18, 0]}>
-        <sphereGeometry args={[0.06, 8, 8]} />
-        <meshStandardMaterial color={SKIN} />
-      </mesh>
-
-      {/* Right arm */}
-      <mesh ref={rightArmRef} position={[-0.35, 0.1, 0]}>
-        <cylinderGeometry args={[0.06, 0.05, 0.55, 8]} />
-        <meshStandardMaterial color={ROBE} />
-      </mesh>
-      {/* Right hand */}
-      <mesh position={[-0.35, -0.18, 0]}>
-        <sphereGeometry args={[0.06, 8, 8]} />
-        <meshStandardMaterial color={SKIN} />
-      </mesh>
-
-      {/* Parchment scroll in hand */}
-      <mesh position={[0.38, -0.12, 0.05]} rotation={[0, 0, 0.3]}>
-        <cylinderGeometry args={[0.025, 0.025, 0.2, 8]} />
-        <meshStandardMaterial color={PARCHMENT} />
-      </mesh>
+      {/* ── Right arm group ── */}
+      <group ref={rightArmRef} position={[-0.35, 0.1, 0]}>
+        <mesh>
+          <cylinderGeometry args={[0.06, 0.05, 0.55, 8]} />
+          <meshStandardMaterial color={ROBE} />
+        </mesh>
+        {/* Sleeve cuff */}
+        <mesh position={[0, -0.25, 0]}>
+          <cylinderGeometry args={[0.055, 0.06, 0.05, 8]} />
+          <meshStandardMaterial color={GOLD_TRIM} />
+        </mesh>
+        {/* Hand */}
+        <mesh position={[0, -0.32, 0]}>
+          <sphereGeometry args={[0.05, 8, 8]} />
+          <meshStandardMaterial color={SKIN} />
+        </mesh>
+        {/* Book in right hand */}
+        <group position={[0, -0.26, 0.06]} rotation={[0.2, 0, 0]}>
+          <mesh>
+            <boxGeometry args={[0.12, 0.15, 0.03]} />
+            <meshStandardMaterial color="#7A0019" />
+          </mesh>
+          <mesh position={[0, 0, 0.005]}>
+            <boxGeometry args={[0.10, 0.13, 0.02]} />
+            <meshStandardMaterial color={PARCHMENT} />
+          </mesh>
+          <mesh position={[-0.055, 0, 0]}>
+            <boxGeometry args={[0.008, 0.15, 0.03]} />
+            <meshStandardMaterial color={GOLD_TRIM} />
+          </mesh>
+        </group>
+      </group>
     </group>
   );
 }
@@ -511,17 +664,23 @@ export default function ProfessorGuide() {
 
           {/* Quick topics */}
           <div className="flex gap-1 px-2 pb-2 flex-wrap">
-            {["Campus tour", "Colleges", "AI Skills", "Documents", "Who are you?"].map(
-              (topic) => (
-                <button
-                  key={topic}
-                  onClick={() => askProfessor(topic)}
-                  className="text-[10px] px-2 py-1 rounded-full bg-navy/5 text-navy/70 hover:bg-gold/20 hover:text-navy border border-gold/10 transition-colors"
-                >
-                  {topic}
-                </button>
-              )
-            )}
+            {[
+              "Campus tour",
+              "Colleges",
+              "AI Skills",
+              "Admissions",
+              "Governance",
+              "Blockchain",
+              "Who are you?",
+            ].map((topic) => (
+              <button
+                key={topic}
+                onClick={() => askProfessor(topic)}
+                className="text-[10px] px-2 py-1 rounded-full bg-navy/5 text-navy/70 hover:bg-gold/20 hover:text-navy border border-gold/10 transition-colors"
+              >
+                {topic}
+              </button>
+            ))}
           </div>
         </div>
       )}

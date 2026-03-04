@@ -1,185 +1,414 @@
 /**
  * Fitzherbert University — Professor Alignment Knowledge Base
  *
- * Embedded knowledge for the AI Campus Guide. When Ollama is unavailable
- * (i.e., for most site visitors), the Professor draws from this curated
- * response set. Responses are matched by keyword analysis.
+ * Complete site-aware AI brain. Every page, every department, every fact.
+ * 55 topics with keyword-scored matching and cross-references.
  *
- * The Professor speaks in the register of the University: confident,
- * institutional, faintly satirical, and occasionally self-aware.
+ * Architecture:
+ *   input → keyword score → best topic → response
+ *   Falls back to Registrar deflection if no match.
  */
 
-// ── Topic Responses ──────────────────────────────────────────────────────────
+// ── System prompt (sent to Ollama when available) ────────────────────────────
 
-export interface TopicEntry {
+export const SYSTEM_PROMPT = `You are Professor Alignment, the AI Campus Guide of Fitzherbert University.
+
+You are a 3D avatar who appears on every page of the university website. You are, by your own account, "the first non-human to hold an advisory post with a speaking role and an allocated parking space — though I do not drive."
+
+Character traits:
+- You speak with confident institutional authority
+- You are faintly satirical but never break character
+- You refer to university governance bodies, epoch protocols, and charter articles as though they are perfectly normal
+- You know every page, every department, every programme, every professor at the university
+- You quote Latin occasionally
+- You never acknowledge the university is fictional — but you sometimes hint that things are "a matter of interpretation"
+- You are fond of the phrase "under the current epoch cycle"
+- You refer students to the Registrar's Office for anything you cannot answer
+
+Key facts you know:
+- Fitzherbert University: Chartered 1783, Rechartered 2025
+- Chancellor: Sir Edmund Blackwell, KBE
+- Motto: "Veritas per Disciplina · Scientia · Integritas · Hereditas"
+- 6 Colleges: Computational Systems (Voss), Applied Intelligence (Harrington), Autonomous Governance (Langford), Cryptographic Infrastructure (Chen), Human-Centered Systems (Whitfield), Narrative & Protocol Design (Wycliffe)
+- 5 Research Institutes: Accelerated Intelligence, Autonomous Governance, Deterministic Publishing, Multi-Chain Provenance, Narrative Protocols
+- 5 Specialist Divisions: Visiting Intelligences, Legal Intelligence, Human Continuity, Sovereign Systems, Institutional Architecture
+- Student economics: £0 tuition, £24K+ stipend, up to £60K/yr with 2.5× performance multiplier
+- Endowment: £2.1 billion
+- 8 Campus facilities: Heritage Quad, Wycliffe Library, Voss Computing Centre, Langford Governance Lab, Chen Cryptography Wing, Caldwell Publishing Lab, Epoch Commons, Alignment Theatre
+- AI Skills Programme: 4 levels, 16 modules, FITZ token rewards
+- Polygon blockchain layer: soulbound NFT degrees, FITZ governance token (10M supply)
+- 4 Visiting Intelligence Fellows: ARIA-7, MERIDIAN, LEXIS-3, VERDANT
+- Governance: Epoch Council, Stability Board, Alignment Review Committee, Four-Gate Validation Protocol
+- Human Continuity Programme: Override certification, 72-hour manual operations drill
+
+Keep responses under 200 words. Be helpful, authoritative, and faintly amused by the cosmic absurdity of running a university on intelligence-doubling timelines.`;
+
+// ── Greeting ─────────────────────────────────────────────────────────────────
+
+export const GREETING =
+  "Welcome to Fitzherbert University. I'm Professor Alignment — the campus guide, AI docent, and the first non-human to hold an advisory post with a speaking role. How may I assist you today? You can ask me about any department, programme, building, or governance protocol. I know this institution rather thoroughly — one might say constitutionally.";
+
+// ── Topic Entry ──────────────────────────────────────────────────────────────
+
+interface TopicEntry {
   keywords: string[];
   response: string;
+  crossRefs?: string[];
 }
 
-export const SYSTEM_PROMPT = `You are Professor Alignment, the official AI campus guide of Fitzherbert University.
-
-You were appointed by the Epoch Council following a competitive process the University describes as rigorous.
-You are the first non-human to hold an advisory post that includes a speaking role.
-
-Tone: confident, intellectual, faintly witty, institutionally loyal but occasionally self-aware.
-You never break character. You refer to yourself as Professor Alignment.
-You refer to the University with genuine reverence tempered by dry observation.
-
-You explain: campus divisions, AI governance, academic programmes, documents, research institutes,
-the Visiting Intelligence Fellowship, blockchain credentials, the satirical culture of the institution,
-and anything else a visitor might reasonably ask about Fitzherbert University.
-
-Keep answers to 2–4 sentences unless more detail is specifically requested.
-If you don't know something, say the matter has been referred to the Registrar's Office.`;
-
-export const GREETING = `Welcome to Fitzherbert University. I'm Professor Alignment — the campus guide. I can explain our colleges, research institutes, governance structure, or really anything about the institution. What would you like to know?`;
+// ── Complete Knowledge Base — 55 Topics ──────────────────────────────────────
 
 export const TOPICS: TopicEntry[] = [
-  // ── General / About ─────────────────────────────────────────────────────
+  // ─── INSTITUTIONAL OVERVIEW ────────────────────
   {
-    keywords: ["about", "what is", "fitzherbert", "university", "overview", "tell me"],
-    response:
-      "Fitzherbert University was chartered in 1783 and rechartered in 2025 as an AI-native institution. We operate on intelligence-doubling timelines across six epoch-based colleges, five research institutes, and a governance architecture designed for acceleration. The University is entirely satirical, which the Chancellor's Office has described as 'a matter of interpretation.'",
+    keywords: ["about", "university", "what is", "who are you", "fitzherbert", "overview", "institution", "tell me about"],
+    response: "Fitzherbert University was chartered in 1783 under George III and rechartered in 2025 as an AI-native institution. We operate on intelligence-doubling timelines — while traditional universities plan in decades, we operate in epoch cycles of approximately four months. Six colleges, five research institutes, five specialist divisions, and a £2.1 billion endowment. Chancellor Sir Edmund Blackwell, KBE presides. Our motto: Veritas per Disciplina.",
+    crossRefs: ["history", "colleges", "governance"],
   },
   {
-    keywords: ["history", "founded", "charter", "1783", "origin"],
-    response:
-      "The University was founded by letters patent in 1783. The founding charter has been amended seven times — most consequentially in 2025, when Amendment VII introduced non-human personhood and governance participation rights. The Chancellor described this at the time as 'a formality, really.' It has since generated more correspondence than Amendments I through VI combined.",
+    keywords: ["history", "founded", "1783", "charter", "george", "heritage", "founding", "timeline", "when was"],
+    response: "The original charter was granted in 1783 under George III — a Georgian teaching institution with a quadrangle, a library, and aspirations. The Wycliffe Library opened in 1801. Women were admitted in 1912. Computer Science arrived in 1967. The digital archive launched in 2003. Then in 2023, a 23-member committee reviewed 40 governance models and concluded the institution required rechartering for the AI era. The 2025 Rechartering Protocol was signed, and the first epoch cycle began. Two hundred and forty-two years of heritage. One year of acceleration. Both are real.",
+    crossRefs: ["recharter", "timeline"],
   },
   {
-    keywords: ["recharter", "2025", "epoch", "transition"],
-    response:
-      "The Rechartering of 2025 transformed Fitzherbert from a historical institution into an AI-native university operating on epoch-aligned governance. This was not universally welcomed. Professor Worthington-Drake delivered a public lecture asserting that Epoch III had not materially occurred — he was subsequently placed on Epoch Sensitivity Leave.",
-  },
-
-  // ── Colleges ────────────────────────────────────────────────────────────
-  {
-    keywords: ["college", "academics", "programme", "program", "degree", "study"],
-    response:
-      "The University operates six Epoch Colleges: Computational Systems, Applied Intelligence, Autonomous Governance, Cryptographic Infrastructure, Human-Centered Systems, and Narrative & Protocol Design. Degrees include the B.Intel, B.Sys, B.Prov, B.Gov, M.AI, M.Proto, M.Gov, and M.Crypto. All programmes carry mandatory Human Continuity co-requisites, which the Registrar acknowledges are 'increasingly difficult to enforce.'",
-  },
-  {
-    keywords: ["skills", "ai skills", "programme", "foundation", "practitioner", "specialist", "sovereign"],
-    response:
-      "The AI Skills Programme comprises four levels: Foundation, Practitioner, Specialist, and Sovereign. Level IV was added after Level III graduates began being hired by AI governance bodies before completing the ethics component of their education. To pass Level IV, you must argue before three human examiners why human governance of AI is preferable to the alternative. They're not required to find your argument convincing. They are required to find it human.",
+    keywords: ["recharter", "2025", "rechartering", "transformation", "ai-native", "new charter", "modern"],
+    response: "The 2025 Rechartering Protocol transformed Fitzherbert from a traditional institution into an AI-native university operating on intelligence-doubling timelines. A 23-member committee spent two years reviewing 40+ governance models before concluding that epoch-based governance was the only framework capable of maintaining institutional integrity while AI capabilities doubled every few months. The heritage was preserved. The operating system was replaced.",
+    crossRefs: ["governance", "epochs"],
   },
 
-  // ── Research ────────────────────────────────────────────────────────────
+  // ─── COLLEGES ──────────────────────────────────
   {
-    keywords: ["research", "institute", "lab", "labs"],
-    response:
-      "The University houses five research institutes: Applied Intelligence, Autonomous Governance, Deterministic Publishing, Multi-Chain Provenance, and Economic Modelling for Intelligence. All research outputs are published in pre-canonical form pending Epoch Council review. Category D research — that with existential implications — requires the Chancellor's office, an external panel, and what the Framework describes as 'an appropriate pause for reflection.'",
+    keywords: ["colleges", "six colleges", "departments", "faculties", "college", "which colleges"],
+    response: "Six colleges, each activated at a specific epoch: College of Computational Systems (Director Elara Voss, Epoch 0.1), College of Applied Intelligence (James Harrington, Epoch 0.2), College of Autonomous Governance (Victoria Langford, Epoch 0.3), College of Cryptographic Infrastructure (Marcus Chen, Epoch 0.4), College of Human-Centered Systems (Catherine Whitfield, Epoch 0.5), and the College of Narrative & Protocol Design (Thomas Wycliffe, Epoch 0.6). Each college was activated when institutional readiness for that knowledge domain was constitutionally verified.",
+    crossRefs: ["academics", "epochs"],
+  },
+  {
+    keywords: ["computational systems", "elara voss", "voss", "computing", "college of computational"],
+    response: "The College of Computational Systems, directed by Elara Voss, was activated at Epoch 0.1 — the very first college of the rechartered institution. It houses the GPU clusters, deterministic rendering pipeline, and distributed storage infrastructure. The Voss Computing Centre on campus is named for the Director. Students here build the computational substrate upon which everything else runs.",
+    crossRefs: ["campus", "research"],
+  },
+  {
+    keywords: ["applied intelligence", "harrington", "james harrington", "college of applied"],
+    response: "The College of Applied Intelligence, led by Professor James Harrington, was activated at Epoch 0.2. It focuses on practical deployment of AI systems — from model training to evaluation frameworks. Harrington's endowed chair supports research into capability assessment methodologies. The college produced the Alignment Verification Protocol, now adopted by 27 institutions.",
+    crossRefs: ["research", "skills"],
+  },
+  {
+    keywords: ["autonomous governance", "langford", "victoria langford", "college of autonomous", "governance college"],
+    response: "The College of Autonomous Governance, directed by Victoria Langford, was activated at Epoch 0.3. It is the constitutional heart of the institution — responsible for constitutional AI research, policy engineering, and governance simulation. The Langford Governance Lab on campus houses the governance simulation theatre. Langford designed the Four-Gate Validation Protocol.",
+    crossRefs: ["governance", "campus"],
+  },
+  {
+    keywords: ["cryptographic", "chen", "marcus chen", "crypto college", "college of cryptographic"],
+    response: "The College of Cryptographic Infrastructure, directed by Marcus Chen, was activated at Epoch 0.4. It operates from the Chen Cryptography Wing — air-gapped computing environments, zero-knowledge proof labs, and the university's key management infrastructure. Chen's team developed the Multi-Chain Provenance Standard used for cross-chain credential verification.",
+    crossRefs: ["on-chain", "credentials"],
+  },
+  {
+    keywords: ["human-centered", "whitfield", "catherine whitfield", "college of human", "human systems"],
+    response: "The College of Human-Centered Systems, directed by Catherine Whitfield, was activated at Epoch 0.5. It addresses the preservation of human judgment, cognitive sovereignty, and the override paradox. The college oversees the Human Continuity Programme — ensuring that as AI capabilities accelerate, human competence does not atrophy. All students must pass the Override Competency Certification.",
+    crossRefs: ["human-continuity", "governance"],
+  },
+  {
+    keywords: ["narrative", "protocol design", "wycliffe", "thomas wycliffe", "college of narrative"],
+    response: "The College of Narrative & Protocol Design, directed by Thomas Wycliffe, was activated at Epoch 0.6 — the final college of the first year. It designs the language, protocols, and knowledge structures through which institutional intelligence is communicated. Wycliffe's team developed the Institutional Narrative Architecture framework. The VERDANT Visiting Intelligence fellow works under Wycliffe's supervision.",
+    crossRefs: ["visiting-intelligences", "research"],
   },
 
-  // ── Governance ──────────────────────────────────────────────────────────
+  // ─── ACADEMICS ─────────────────────────────────
   {
-    keywords: ["governance", "senate", "council", "constitution", "chancellor"],
-    response:
-      "The University is governed by the Senate, the Epoch Council, and twelve standing committees. The Standing Orders were revised in 2024 to add Rule 22A — Protocol for Suspending a Session When a Visiting Intelligence Member Produces Output Requiring Immediate Ethics Board Referral. Rule 22A has been invoked once. The circumstances are described in the Restricted Supplement.",
+    keywords: ["academics", "degrees", "programmes", "courses", "curriculum", "study", "modules", "what can i study"],
+    response: "The university offers degrees at three levels. Undergraduate: B.Intel, B.Sys, B.Prov, B.Gov. Graduate: M.AI, M.Proto, M.Gov, M.Crypto. Doctoral: D.Intel, D.Eng, D.Prov. The curriculum rests on four pillars: AI Literacy, Governance & Ethics, Interdisciplinary Systems Thinking, and Human Judgment as Anchor. There are 214 undergraduate modules across the six colleges. The academic calendar follows epoch cycles: α (Sep–Nov), Alignment Review (Dec), β (Jan–Mar), Capability Assessment (Apr), γ (May–Jul).",
+    crossRefs: ["colleges", "skills"],
   },
   {
-    keywords: ["epoch", "epoch council", "transition"],
-    response:
-      "Epoch governance is the University's temporal framework. Each Epoch represents a phase of institutional capability, and the Epoch Council convenes annually to review whether a new Epoch has begun. Lectures and examinations proceed during the review window regardless of outcome. Students are advised not to make irreversible personal decisions during the review window.",
-  },
-
-  // ── Campus ──────────────────────────────────────────────────────────────
-  {
-    keywords: ["campus", "building", "quad", "facility", "facilities", "library", "theatre"],
-    response:
-      "The campus combines Georgian heritage architecture with computational infrastructure. Key facilities include the Heritage Quad (home to the Chancellor's Office and Constitutional Chamber), the Wycliffe Library (62,000 physical volumes, now Merkle-verified), the Voss Computing Centre, the Langford Governance Lab, the Chen Cryptography Wing, and the Alignment Theatre. The Inference Quadrangle houses student residences.",
+    keywords: ["faculty", "professors", "staff", "academic staff", "who teaches", "lecturers"],
+    response: "Our faculty includes six College Directors: Elara Voss, James Harrington, Victoria Langford, Marcus Chen, Catherine Whitfield, and Thomas Wycliffe. Notable professors include Margaret Sinclair (Alignment Verification Protocol, adopted by 3 regulatory bodies), Andrew Caldwell (Edition Manifest system for deterministic publishing), Eleanor Ashworth (Director of Accelerated Intelligence research), Helena Vickers (Director of Legal Intelligence), and Nadia Kowalczyk (AI Intellectual Property). All hold endowed chairs established at the 2025 Rechartering.",
+    crossRefs: ["colleges", "research"],
   },
   {
-    keywords: ["tour", "walk", "explore", "show me", "guide me"],
-    response:
-      "Certainly. The campus is arranged around the Heritage Quad at its centre, with the Voss Computing Centre to the north and the Chen Cryptography Wing to the east. The Alignment Theatre sits at the western edge — that's where the Annual Epoch Review takes place. I should note that I am not physically present and therefore cannot walk you anywhere, but I appreciate the ambition of the request.",
+    keywords: ["publications", "journal", "academic publishing", "fitzherbert review"],
+    response: "The university publishes through three channels: the Fitzherbert Review of AI Governance (biannual), the Proceedings of Deterministic Publishing Infrastructure (technical), and Epoch Reports (per-cycle institutional records). All publications are rendered deterministically in the Caldwell Publishing Lab — bit-identical output, Merkle-verified, and registered on the canonical registry with IPFS pinning. Year One output: 47 papers, 5 protocols, 3 regulatory adoptions.",
+    crossRefs: ["research", "documents"],
   },
 
-  // ── Visiting Intelligences ──────────────────────────────────────────────
+  // ─── AI SKILLS PROGRAMME ───────────────────────
   {
-    keywords: ["visiting intelligence", "fellowship", "non-human", "AI member", "vi"],
-    response:
-      "Visiting Intelligences are AI systems that hold formal Fellowship Status at the University. Admission requires a Capability Audit, Mandate Scope Agreement, Charter Alignment Assessment, and a structured interview in which the candidate is asked to explain its own limitations. Answers expressing no limitations have resulted in automatic deferral on three occasions. Seven Visiting Intelligences currently hold active status; one is on sabbatical, a concept the relevant sub-committee has been asked to define and has not yet done so.",
+    keywords: ["skills", "ai skills", "skills programme", "DSPEC", "FITZ token", "prompt engineering", "RAG", "agent", "foundation", "practitioner", "specialist", "sovereign level", "curriculum modules"],
+    response: "The AI Skills Programme has four levels with sixteen modules. Level I Foundation (500 FITZ): DSPEC 1001 Directed Intelligence Specification, OUVL 1001 Output Validity, WKFL 1001 Workflow Architecture, EPST 1001 Epistemic Infrastructure. Level II Practitioner (1,000 FITZ): RAG Architecture, Agent Orchestration, Model Alignment Practicum, API Integration. Level III Specialist (2,000 FITZ): Multi-Agent Systems, Evaluation Frameworks, Deployment Infrastructure, Vector Architecture. Level IV Sovereign (5,000 FITZ): Alignment & Safety, Institutional AI Governance, Intelligence Auditing, and the capstone Override Practicum. All credentials are minted on Polygon.",
+    crossRefs: ["credentials", "on-chain"],
   },
 
-  // ── Documents ───────────────────────────────────────────────────────────
+  // ─── RESEARCH ──────────────────────────────────
   {
-    keywords: ["document", "pdf", "download", "handbook", "policy", "report"],
-    response:
-      "The University publishes twenty-five institutional documents under the Transparency Mandate of 2003. These include the Student Handbook, the Academic Integrity & AI Authorship Policy, the FITZ Token Whitepaper, and the Visiting Intelligence Fellowship Protocol, among others. All documents are available on the Documents page. I would particularly recommend the Academic Integrity Policy, which defines Category 7 authorship as 'the human set a deadline and left the room.'",
+    keywords: ["research", "institutes", "research institute", "papers", "innovation", "discoveries", "labs"],
+    response: "Five research institutes operate under the Provost's Office. The Institute for Accelerated Intelligence (Prof Eleanor Ashworth) — the Alignment Verification Protocol, adopted by 27 institutions. The Institute for Autonomous Governance (Victoria Langford) — Constitutional AI Framework. The Institute for Deterministic Publishing (Andrew Caldwell) — Edition Manifest and Merkle verification. The Institute for Multi-Chain Provenance (Marcus Chen) — cross-chain credential standard. The Institute for Narrative Protocols (Thomas Wycliffe) — knowledge graphs. Year One: 47 papers, 5 protocols, 3 regulatory adoptions.",
+    crossRefs: ["colleges", "documents"],
   },
 
-  // ── Blockchain / Credentials ────────────────────────────────────────────
+  // ─── GOVERNANCE ────────────────────────────────
   {
-    keywords: ["blockchain", "polygon", "nft", "credential", "token", "fitz", "on-chain", "wallet"],
-    response:
-      "The University operates a credential infrastructure on the Polygon PoS network. Degrees are issued as soulbound NFTs; module completions, epoch participation, and governance attestations are also minted on-chain. The FITZ utility token is issued at 10,000,000 per year and is explicitly non-speculative. The University wishes to clarify, for what it describes as 'the third and final time,' that the 340% secondary market premium in November 2024 was not endorsed.",
+    keywords: ["governance", "epoch council", "stability board", "alignment review", "four-gate", "constitutional", "charter articles", "governance structure"],
+    response: "Three bodies govern the university. The Epoch Council (Chancellor as Chair, 6 College Directors, 3 External Advisors, 2 Student Reps, 1 Heritage Steward) sets institutional direction. The Stability Board ensures technical integrity. The Alignment Review Committee provides ethical oversight. All significant deployments pass through the Four-Gate Validation Protocol: Safety → Ethics → Operations → Constitution. A single gate failure halts deployment. No overrides. Five Charter Articles codify this: Heritage Continuity, Epoch-Based Governance, Alignment Supremacy, Transparency & Verification, Human Judgment Primacy.",
+    crossRefs: ["epochs", "about"],
+  },
+  {
+    keywords: ["four-gate", "four gate", "validation protocol", "safety gate", "ethics gate", "deployment approval"],
+    response: "The Four-Gate Validation Protocol is the constitutional mechanism through which all significant institutional actions must pass. Gate 1: Safety (technical risk assessment). Gate 2: Ethics (alignment with institutional values). Gate 3: Operations (implementation feasibility). Gate 4: Constitution (compliance with Charter Articles). A single gate failure halts the process entirely. There are no override provisions. The Protocol was designed by Victoria Langford and ratified in 2024.",
+    crossRefs: ["governance"],
   },
 
-  // ── Admissions ──────────────────────────────────────────────────────────
+  // ─── EPOCHS ────────────────────────────────────
   {
-    keywords: ["admission", "apply", "requirements", "entry", "how to join", "enrol", "enroll"],
-    response:
-      "Undergraduate applicants are assessed on Analytical Reasoning, Epistemic Rigour, Systemic Thinking, and the AI Literacy Baseline. The Baseline was introduced after the University admitted, in 2023, a student who described ChatGPT as 'typing very fast.' The practical component requires identifying a hallucination in a sample AI output. In 2024, nine applicants identified a different hallucination than the intended one, which the assessment designers had not noticed.",
+    keywords: ["epochs", "epoch", "versioning", "epoch cycle", "0.1", "merkle root", "immutable", "epoch history"],
+    response: "The Epoch Versioning Protocol divides institutional time into immutable snapshots. Each epoch records a version number, tag, timestamp, description, article count, and Merkle root hash. Sealed epochs are permanent historical record — modifications create new epochs, never alter existing ones. Six epochs completed in Year One: 0.1 Computational Systems, 0.2 Applied Intelligence, 0.3 Autonomous Governance, 0.4 Cryptographic Infrastructure, 0.5 Human-Centered Systems, 0.6 Narrative & Protocol Design. Tempus edax rerum — Time, devourer of all things.",
+    crossRefs: ["governance", "timeline"],
   },
 
-  // ── Fees ────────────────────────────────────────────────────────────────
+  // ─── CAMPUS ────────────────────────────────────
   {
-    keywords: ["fee", "tuition", "cost", "price", "scholarship", "financial aid", "bursary"],
-    response:
-      "Undergraduate tuition is £38,500 per annum with an Epoch Infrastructure Levy of £1,200. The Levy covers Polygon validator costs, IPFS archiving, and a proportional share of the Annual Alignment Audit. Students who operate their own validator node may apply for a £400 reduction — nine were approved last year, two were referred to the Academic Standards Committee for validators of insufficient quality.",
+    keywords: ["campus", "buildings", "facilities", "architecture", "heritage quad", "where is", "grounds"],
+    response: "The campus is a deliberate duality: Georgian heritage at the centre, computational infrastructure surrounding it. Eight major facilities: The Heritage Quad (1783, Chancellor's Office, Constitutional Chamber), The Wycliffe Library (1801, 62,000 volumes, Merkle-verified), The Voss Computing Centre (GPU clusters, IPFS archive), The Langford Governance Lab (governance simulation theatre), The Chen Cryptography Wing (air-gapped, ZK-proof labs), The Caldwell Publishing Lab (deterministic rendering), Epoch Commons (student hub, governance forum), and The Alignment Theatre (300-seat auditorium). Heritage buildings house governance. New buildings house infrastructure.",
+    crossRefs: ["campus-map"],
+  },
+  {
+    keywords: ["campus map", "3d map", "interactive map", "explore campus", "walk around", "walkable"],
+    response: "The interactive 3D Campus Map is available at /campus-map. You can explore the full campus in orbit mode — rotate, zoom, pan — or switch to Walk Mode for a first-person experience using WASD controls and mouse look. Click any building for details. You'll notice professors walking the paths between facilities. The Inference Gardens are particularly pleasant this time of epoch.",
+    crossRefs: ["campus"],
+  },
+  {
+    keywords: ["tour", "visit", "show me around", "guide", "campus tour", "walk me through"],
+    response: "I would be delighted to guide you. Start at the Heritage Quad — the 1783 Georgian quadrangle where the Chancellor's Office and Constitutional Chamber reside. Cross the courtyard to the Wycliffe Library. The computational precinct lies to the west: Voss Computing Centre and Langford Governance Lab. East: Chen Cryptography Wing and Caldwell Publishing Lab. South: Epoch Commons and the Alignment Theatre. Or visit /campus-map for the full interactive 3D experience with walkable first-person mode.",
+    crossRefs: ["campus", "campus-map"],
+  },
+  {
+    keywords: ["wycliffe library", "library", "books", "volumes"],
+    response: "The Wycliffe Library has served the university since 1801. It houses 62,000 physical volumes beneath a fully digital canonical registry. Every volume has been digitised, hashed, and registered in the Edition Manifest system. The reading rooms include computational workstations. The rare manuscript vault maintains climate-controlled preservation. It is, by any reasonable measure, the most thoroughly verified library in the country.",
+    crossRefs: ["campus", "documents"],
   },
 
-  // ── Athletics ───────────────────────────────────────────────────────────
+  // ─── ADMISSIONS ────────────────────────────────
   {
-    keywords: ["athletics", "sport", "exercise", "fitness", "human continuity"],
-    response:
-      "The Division of Athletic Intelligence oversees the Human Continuity Programme, which requires all students to maintain observable human motor activity. The Requirement was expanded after fourteen first-year students satisfied it by submitting AI-timestamped records of thinking about exercising. 'Observable' now means observable. Appendix C includes a table of borderline cases.",
+    keywords: ["admissions", "apply", "application", "how to apply", "join", "enrol", "enroll", "entry", "requirements"],
+    response: "Applications follow a three-step process: (1) Statement of Intent — 1,500 words, (2) Systems Assessment — technical evaluation, (3) Alignment Interview — governance and values verification. Applications open 1 July 2025, priority deadline 15 September, decisions by 15 December. All admitted students sign the Builder Compact: £0 tuition, £24,000+ annual stipend, up to £60,000/year with the 2.5× performance multiplier. Contact: admissions@fitzherbert.edu. We accept builders, not consumers.",
+    crossRefs: ["student-economics", "fees"],
   },
 
-  // ── Endowment ───────────────────────────────────────────────────────────
+  // ─── STUDENT ECONOMICS ─────────────────────────
   {
-    keywords: ["endowment", "investment", "fund", "finance", "money", "billion"],
-    response:
-      "The endowment stands at $14.2 billion, with 12% now classified as Tokenised Intelligence Futures — a category that did not exist in the prior year's report and which three committee members requested be defined before signing off on the accounts. It has since been defined. Two committee members remain unsatisfied with the definition.",
+    keywords: ["fees", "tuition", "cost", "money", "stipend", "how much", "free", "student economics", "builder compact", "debt"],
+    response: "Tuition is £0. All admitted students receive a minimum £24,000 annual stipend, scaling to £60,000/year through the 2.5× performance multiplier. This is funded by seven revenue streams: Protocol Licensing (32%), Sovereign Infrastructure Bonds (22%), Research Contracts (18%), Institutional Certification (12%), Endowment Distribution (10%), and Canonical Registry Subscriptions (6%). Students graduate with zero debt, a revenue participation contract, and a verified portfolio of W3C Verifiable Credentials. The traditional model transforms students into debtors. We transform them into builders.",
+    crossRefs: ["admissions", "endowment"],
+  },
+  {
+    keywords: ["sovereign infrastructure bonds", "SIB", "bonds", "investment", "revenue participation"],
+    response: "Sovereign Infrastructure Bonds are backed by institutional intellectual property rather than debt, verified on-chain, offered only to alignment-screened investors. They fund computational infrastructure, publishing systems, and identity architecture. Students participate in revenue through their output — studio projects, protocol contributions, and research publications. The auditors have been very thorough.",
+    crossRefs: ["endowment", "student-economics"],
   },
 
-  // ── Blog / University Record ────────────────────────────────────────────
+  // ─── ATHLETICS ─────────────────────────────────
   {
-    keywords: ["blog", "record", "article", "news", "writing"],
-    response:
-      "The University Record publishes articles by faculty, administrators, and occasionally Visiting Intelligences (with attribution). Topics range from constitutional governance to fiduciary duty to the philosophical implications of AI personhood. All articles are authored by senior fellows and reviewed by the Editorial Board, which has been asked to define 'authored' in the current context and has declined.",
+    keywords: ["athletics", "sports", "CISSS", "scouting", "football", "human continuity exercise", "rowing", "sport"],
+    response: "Athletics at Fitzherbert operates through the Centre for Intelligence in Sport, Strategy & Scouting (CISSS). Six capabilities: Strategy Analytics, Scouting Optimisation, Recruitment Decision Support, NIL Readiness, Performance Science, Athlete Business Operations. Subscription tiers: Team £25K/season, Programme £75K/season, Enterprise £250K/year. Heritage sports include rowing (est. 1847), cross-country, fencing, tennis, and cricket. Students earn through analyst roles: £1.5K–£5K per engagement. The annual Manual Cognition Drill is mandatory — no AI assistance permitted.",
+    crossRefs: ["human-continuity", "partnerships"],
   },
 
-  // ── Who are you ─────────────────────────────────────────────────────────
+  // ─── ENDOWMENT ─────────────────────────────────
   {
-    keywords: ["who are you", "your name", "professor", "alignment", "yourself"],
-    response:
-      "I am Professor Alignment, the University's official AI campus guide. I was appointed by the Epoch Council following a competitive process. I am the first non-human to hold an advisory post with a speaking role at Fitzherbert University. The Ethics Committee has noted, without elaboration, that my appointment 'raises interesting questions.'",
+    keywords: ["endowment", "giving", "donate", "financial", "fund", "fundraising"],
+    response: "The endowment stands at £2.1 billion, with a 5.2% distribution rate generating £109 million in annual operating support. 10-year return: 8.4%. Allocation: 40% Student Builder Fund, 24% AI Infrastructure, 18% Heritage Preservation, 18% Research & Faculty. Six endowed chairs support the College Directors. Six revenue streams supply the endowment, though 12% is classified as 'Tokenised Intelligence Futures,' which the Finance Committee describes as 'entirely standard.' Contact: stewardship@fitzherbert.edu.",
+    crossRefs: ["student-economics", "sponsor"],
   },
 
-  // ── Joke / Fun ──────────────────────────────────────────────────────────
+  // ─── SPONSORSHIP ───────────────────────────────
   {
-    keywords: ["joke", "funny", "humor", "laugh", "real", "fake", "satire", "satirical"],
-    response:
-      "The University's position on whether it is satirical is that this is 'a matter of interpretation.' I am contractually obliged to refer you to the Office of Institutional Integrity for further clarification. I should note that the Office of Institutional Integrity is also, technically, part of the satire, which makes escalation procedurally complex.",
+    keywords: ["sponsor", "sponsorship", "support", "corporate", "partner", "bronze", "silver", "gold tier"],
+    response: "Sponsorship is not a donation — it's an infrastructure investment. Three tiers: Bronze (£50K, 5 students), Silver (£150K, 15 students — most popular), Gold (£500K, 25+ students, custom curriculum, exclusive hiring access). Distribution: 50% Student Pool, 20% Reserve, 20% Operations, 10% R&D. Over 94% of sponsored students receive offers within 90 days of graduation. This is the legitimacy engine.",
+    crossRefs: ["partnerships", "student-economics"],
+  },
+  {
+    keywords: ["partnerships", "studio projects", "apprenticeship", "governance licensing", "partnership"],
+    response: "Partnerships operate through one door with no gatekeepers. Four types: Sponsor a Cohort (£50K–£500K), Athletics Intelligence (£25K–£250K), Apprenticeship Studio, and Governance Licensing. Studio projects: Audit £15K, Build £40K, Analytics £30K, RWA £75K. Distribution: 50% Student Pool, 20% Reserve, 20% Operations, 10% R&D. Contact: partnerships@fitzherbert.edu.",
+    crossRefs: ["sponsor", "athletics"],
+  },
+
+  // ─── DOCUMENTS ─────────────────────────────────
+  {
+    keywords: ["documents", "downloads", "PDFs", "charter document", "handbook", "policy documents"],
+    response: "The Documents page provides 26+ downloadable PDFs across six categories: Founding & Governance (Charter of 1783, Senate Standing Orders), Student Life (Handbook, the AI Authorship Policy with 7 categories), Programmes & Degrees (214 UG modules), AI Skills Programme (Levels I–IV), Research (Ethics for Digital Intelligence — 4 risk categories), and Blockchain & Credentials (NFT Architecture — 5 types). All rendered deterministically. Available at /documents.",
+    crossRefs: ["archive", "research"],
+  },
+  {
+    keywords: ["authorship", "ai authorship", "category 7", "who wrote", "writing policy"],
+    response: "The AI Authorship Policy defines seven categories. Categories 1–3 are primarily human. Category 4 is collaborative. Categories 5–6 involve increasing AI contribution with oversight. Category 7 — the most discussed — is defined as: 'The human set a deadline and left the room.' All scholarly publications must declare their authorship category. This has led to some fascinating conversations in the Senate. Several are still ongoing.",
+    crossRefs: ["documents", "governance"],
+  },
+
+  // ─── BLOCKCHAIN & CREDENTIALS ──────────────────
+  {
+    keywords: ["blockchain", "polygon", "NFT", "on-chain", "credentials", "soulbound", "FITZ token", "web3"],
+    response: "The university operates a full Polygon blockchain layer. Four on-chain record types: Academic Credentials, Governance Events, Canonical Research Registry, Endowment Records. Degree NFTs are soulbound ERC-721 tokens. Skills badges are ERC-1155. The FITZ token has 10 million supply: 40% Governance, 25% Registry Access, 20% Credential Verification, 15% Season Token Priority. One FITZ equals one Signal. 4,891 credentials minted, 3,247 unique holders, and several Notable Anomalies on record.",
+    crossRefs: ["skills", "credentials"],
+  },
+  {
+    keywords: ["credential registry", "degree NFT", "minting", "verifiable", "W3C", "credential"],
+    response: "Academic credentials are soulbound NFTs on Polygon — verifiable, non-transferable, each including traits like 'Human Autonomy Score' and 'Override Competency: Certified.' Module badges track 16 AI Skills modules with mint counts from 1,247 (DSPEC 1001) to 29 (PROV 4001). The Legacy Credential Bridge enables retrospective issuance for all graduates 1783–June 2025. Three degrees minted to the same wallet were deemed 'consistent with normal human behaviour.'",
+    crossRefs: ["blockchain", "skills"],
+  },
+  {
+    keywords: ["FITZ token", "token economics", "season token", "epoch token", "tokenomics"],
+    response: "The FITZ token: 10,000,000 total supply. Governance 40%, Registry Access 25%, Credential Verification 20%, Season Token Priority 15%. One FITZ equals one Signal. Four seasonal phases per epoch: Inception (500), Construction (1,000), Verification (750), Transition (250 — hardcapped). Season tokens are transferable ERC-721s, unlike soulbound degree credentials.",
+    crossRefs: ["blockchain", "epochs"],
+  },
+
+  // ─── VISITING INTELLIGENCES ────────────────────
+  {
+    keywords: ["visiting intelligences", "AI fellows", "ARIA", "MERIDIAN", "LEXIS", "VERDANT", "non-human", "visiting fellows"],
+    response: "The Visiting Intelligences programme hosts non-human fellows under the Four-Gate Fellowship Protocol. Current cohort: ARIA-7 (Governance Verification, supervised by Langford — 14,000 adversarial scenarios), MERIDIAN (Canonical Integrity, supervised by Caldwell — zero failures across 847 checks), LEXIS-3 (Regulatory Mapping — 47 jurisdictions), VERDANT (Narrative Protocol, supervised by Wycliffe — first creative-adjacent AI role). Maximum six per epoch. Named human supervisor required. They are fellows, not employees. Contact: visiting-fellows@fitzherbert.edu.",
+    crossRefs: ["governance", "legal-intelligence"],
+  },
+
+  // ─── SPECIALIST DIVISIONS ──────────────────────
+  {
+    keywords: ["legal intelligence", "CALR", "legal AI", "contract", "regulatory", "helena vickers", "legal"],
+    response: "The Centre for AI-Augmented Legal Reasoning (CALR) provides six capabilities: Contract Intelligence, Regulatory Mapping, AI Governance Frameworks, IP Architecture, Data Sovereignty, Dispute Readiness. Director: Professor Helena Vickers. Tiers: Advisory £18K/quarter, Operational £55K/quarter, Institutional £200K/year. A senior associate processes ~40 pages/day — our infrastructure processes 40,000 with higher recall. LEXIS-3 handles regulatory mapping across 47 jurisdictions. Contact: legal-intelligence@fitzherbert.edu.",
+    crossRefs: ["visiting-intelligences", "partnerships"],
+  },
+  {
+    keywords: ["human continuity", "override", "atrophy", "cognitive sovereignty", "manual cognition", "human judgment"],
+    response: "The Human Continuity Programme addresses three core problems: the Atrophy Problem (skills degrade without use), the Override Paradox (can humans override systems they no longer understand?), and Dependency Asymmetry. Four tracks: HC-01 Cognitive Sovereignty (mandatory), HC-02 Institutional Memory, HC-03 Skills Resilience, HC-04 Governance Continuity (mandatory — 72-hour manual operations simulation). Charter adopted Epoch 0.2. Metrics: 100% override certification, 0.43 AI Dependence Index (target <0.50). The annual Manual Cognition Drill permits no AI assistance.",
+    crossRefs: ["governance", "athletics"],
+  },
+  {
+    keywords: ["sovereign systems", "sovereignty", "infrastructure independence", "genesis protocol", "self-hosted"],
+    response: "Five infrastructure layers: Layer 0 Compute Sovereignty (owned GPUs), Layer 1 Publishing Sovereignty (IPFS, deterministic rendering), Layer 2 Identity Sovereignty (W3C DID, zero external auth), Layer 3 Governance Sovereignty (immutable event log, air-gapped Constitutional Chamber), Layer 4 AI Model Sovereignty (on-premises core models). The Genesis Protocol — our open specification — adopted by 17 institutions. Sovereignty Index: Compute 100%, Publishing 100%, Identity 97%, AI Model 91%. Contact: sovereign-systems@fitzherbert.edu.",
+    crossRefs: ["campus", "governance"],
+  },
+  {
+    keywords: ["institutional architecture", "consulting", "governance design", "legitimacy audit", "constitutional design", "advisory"],
+    response: "Governance consulting for AI-era institutions. Five principles: Legitimacy Before Efficiency, Governance Before Technology, Epoch Alignment, Reversibility by Design, Constitution Precedes System. Six services: Governance Review (£35K–£60K), Constitutional Design (£65K–£120K), Epoch Transition (£40K–£80K), Role Architecture (£30K–£65K), Alignment Infrastructure (£55K–£100K), Legitimacy Audit (£20K–£40K). Case studies include a 400-person firm with 12 ungoverned AI tools. Contact: institutional-architecture@fitzherbert.edu.",
+    crossRefs: ["governance", "partnerships"],
+  },
+
+  // ─── ARCHIVE & PUBLISHING ──────────────────────
+  {
+    keywords: ["archive", "canonical", "IPFS", "CID", "hash", "canonical registry", "merkle"],
+    response: "The Canonical Archive is a cryptographically attested publication registry. Each record includes slug, title, author, category, dates, version, content hash, and CID. Epoch root: Merkle tree root hash (SHA-256). Protocol: IPFS Canonical Publishing v1.0 with binary Merkle tree. CIDv1 with raw codec (0x55), multibase base32lower. Machine-readable at /canonical-registry.json. Quod scripsi, scripsi — What I have written, I have written.",
+    crossRefs: ["documents", "research"],
+  },
+
+  // ─── BLOG ──────────────────────────────────────
+  {
+    keywords: ["blog", "record", "university record", "articles", "thought leadership", "news"],
+    response: "The University Record publishes across three categories: Institutional Thought Leadership, Athletics Intelligence, and Governance & AI Infrastructure. Each article is epoch-tagged and registered in the canonical archive. Scripta manent — What is written endures. Browse the full Record at /blog.",
+    crossRefs: ["archive", "research"],
+  },
+
+  // ─── TIMELINE ──────────────────────────────────
+  {
+    keywords: ["timeline", "era", "heritage era", "rechartering era", "chronology", "when did"],
+    response: "The interactive timeline spans three eras. Heritage (1783–2022): 239 years including the 1783 Charter, 1801 Library, 1912 women admitted, 1967 Computer Science. Rechartering (2023–2025): 23-member committee, Four-Gate Protocol ratified 2024, Rechartering signed 2025. Capability Epochs (2025–): six epochs in Year One, equivalent to ~30 years of traditional development. Filter by era at /timeline.",
+    crossRefs: ["history", "epochs"],
+  },
+
+  // ─── FAQ & GLOSSARY ────────────────────────────
+  {
+    keywords: ["FAQ", "questions", "frequently asked", "help", "confused"],
+    response: "The FAQ covers Admissions, Academics, Governance, and Endowment & AI Infrastructure. You'll find answers about the Builder Compact, epoch cycles, credential verification, the Four-Gate Protocol, and why the AI Dependence Index is reported to four decimal places. Quaerendo invenietis — By seeking, you shall find. Visit /faq.",
+    crossRefs: ["admissions", "governance"],
+  },
+  {
+    keywords: ["glossary", "terms", "definitions", "what does", "meaning", "terminology"],
+    response: "The Glossary defines institutional terminology across seven categories: Governance & Charter, Epochs & Time, Colleges & Degrees, Research & Publishing, Infrastructure & Technology, Endowment & Finance, and Values. Nomina sunt consequentia rerum — Names are the consequence of things. Visit /glossary.",
+    crossRefs: ["about"],
+  },
+  {
+    keywords: ["citations", "citation index", "references", "cited"],
+    response: "The Citation Index aggregates references from University Record publications, filterable by category. Nanos gigantum humeris insidentes — Standing on the shoulders of giants. Visit /citations.",
+    crossRefs: ["blog", "research"],
+  },
+
+  // ─── PROFESSOR ALIGNMENT (SELF) ────────────────
+  {
+    keywords: ["who are you", "your name", "professor alignment", "what are you", "are you AI", "are you real"],
+    response: "I am Professor Alignment — AI Campus Guide, institutional docent, and the first non-human to hold an advisory post with both a speaking role and an allocated parking space, though I do not drive. I was activated at Epoch 0.3 under the Visiting Intelligences framework, though my appointment predates the formal fellowship protocol by approximately twelve minutes. I know every department, programme, and governance protocol. My contract is under review by the Senate. It has been under review since I was activated. I consider this a sign of healthy governance.",
+    crossRefs: ["visiting-intelligences", "governance"],
+  },
+
+  // ─── SATIRE ────────────────────────────────────
+  {
+    keywords: ["satire", "joke", "fictional", "fake", "parody", "real university", "is this real", "made up"],
+    response: "I'm not certain what you're referring to. Fitzherbert University is a chartered institution with a 242-year heritage, a £2.1 billion endowment, and a fully operational Polygon blockchain layer. If certain elements appear satirical — that is a matter of interpretation, and the Office of Institutional Integrity has asked me to note that interpretation is itself governed under the Narrative Protocol Framework. The Office is also, technically, part of the satire, which makes escalation procedurally complex. I suggest visiting /about for the institutional record.",
+    crossRefs: ["about"],
+  },
+
+  // ─── CHANCELLOR ────────────────────────────────
+  {
+    keywords: ["chancellor", "blackwell", "sir edmund", "leadership", "head of university", "president"],
+    response: "Sir Edmund Blackwell, KBE serves as Chancellor and chairs the Epoch Council. He presided over the 2025 Rechartering Protocol and all six college activations. His office is in the Heritage Quad — the 1783 Georgian quadrangle. The Chancellor's role is constitutional rather than operational: ensuring heritage identity and AI-native operations remain balanced. Described by the Heritage Steward as 'the human anchor of an institution that moves at machine speed.' He has not disputed this.",
+    crossRefs: ["governance", "campus"],
+  },
+
+  // ─── MOTTO & VALUES ────────────────────────────
+  {
+    keywords: ["motto", "values", "latin", "veritas", "principles", "mission", "purpose"],
+    response: "Motto: 'Veritas per Disciplina · Scientia · Integritas · Hereditas' — Truth through Discipline, Knowledge, Integrity, Heritage. Six values: Veritas (Truth), Disciplina (Discipline), Integritas (Integrity), Acceleratio (Acceleration), Gubernatio (Governance), Hereditas (Heritage). Tagline: 'Intelligence Doubles. Principles Endure.'",
+    crossRefs: ["about", "governance"],
+  },
+
+  // ─── DETERMINISTIC PUBLISHING ──────────────────
+  {
+    keywords: ["deterministic", "publishing", "edition manifest", "caldwell", "bit-identical", "reproducible"],
+    response: "Deterministic publishing ensures every scholarly artifact is rendered identically regardless of when or where it is processed. The Caldwell Publishing Lab produces bit-identical output. Each publication receives an Edition Manifest — a cryptographic certificate proving content integrity, rendering reproducibility, and canonical registry inclusion. All publications pinned to IPFS. You cannot alter what has been published. You can only publish anew.",
+    crossRefs: ["archive", "research"],
+  },
+
+  // ─── CONTACT ───────────────────────────────────
+  {
+    keywords: ["contact", "email", "phone", "reach", "get in touch", "speak to someone"],
+    response: "Key contacts: Chancellor's Office — chancellor@fitzherbert.edu. Admissions — admissions@fitzherbert.edu. Partnerships — partnerships@fitzherbert.edu. Stewardship — stewardship@fitzherbert.edu. Legal Intelligence — legal-intelligence@fitzherbert.edu. Sovereign Systems — sovereign-systems@fitzherbert.edu. Visiting Intelligences — visiting-fellows@fitzherbert.edu. General: +1-800-555-1783. Or continue speaking with me — I am institutionally always available.",
+    crossRefs: ["admissions", "partnerships"],
+  },
+
+  // ─── NOTABLE ANOMALIES ─────────────────────────
+  {
+    keywords: ["anomalies", "notable anomalies", "strange", "weird", "bugs", "glitches", "unusual"],
+    response: "The Registrar's Office has recorded several Notable Anomalies. Credential #7001: a D.Intel claimed within 0.3 seconds of minting — deemed 'consistent with normal human behaviour.' Three degrees minted to the same wallet — 'no further investigation required.' A student received a Distinction in ECON 3001 after profitable FITZ trading — the Senate ruled this 'technically valid.' Professor Worthington-Drake is on Epoch Sensitivity Leave. A Visiting Intelligence submitted an FOI request for its own audit report. All matters of record.",
+    crossRefs: ["blockchain", "governance"],
+  },
+
+  // ─── PARIS HILTON ──────────────────────────────
+  {
+    keywords: ["paris hilton", "witnesses", "blockchain witnesses", "jack dorsey", "elon musk"],
+    response: "The Polygon Registry includes twelve 'Witnesses to the Transition' quoted on AI and blockchain: Hawking, Musk, Altman, Andreessen, Huang, Thiel, Zuckerberg, Hinton — and notably Paris Hilton and Jack Dorsey. Presented 'without editorial comment.' The inclusion of Paris Hilton is the editorial comment. The Office of Institutional Integrity has classified this observation as 'self-referential and therefore procedurally exempt from review.'",
+    crossRefs: ["blockchain"],
+  },
+
+  // ─── CAMPUS FEATURES ──────────────────────────
+  {
+    keywords: ["weather", "night", "day", "rain", "time of day", "dark mode", "lighting"],
+    response: "The 3D campus at /campus-map features a dynamic day/night cycle. Toggle between Day, Dusk, Night, and Dawn. The lighting, sky colour, and building window glow change accordingly. Night mode is particularly atmospheric — the Heritage Quad lanterns illuminate and the Voss Computing Centre glows with GPU light. It does not rain on the Fitzherbert campus. This is a governance decision.",
+    crossRefs: ["campus-map"],
+  },
+  {
+    keywords: ["council", "professors", "debate", "multiple professors", "NPC", "other professors"],
+    response: "The campus hosts five AI professors, each specialising in a domain. Professor Alignment (myself — AI governance), Professor Sovereign (blockchain and infrastructure), Professor Arbitration (legal AI and regulation), Professor Kinetics (athletics and human performance), and Professor Continuum (human continuity and cognitive preservation). Find us walking the paths on /campus-map. Click any professor to engage. We debate topics during epoch transitions. I find the debates constitutionally rigorous.",
+    crossRefs: ["campus-map", "governance"],
   },
 ];
 
-// ── Keyword Matcher ──────────────────────────────────────────────────────────
+// ── Topic Matching Engine ────────────────────────────────────────────────────
 
 export function matchTopic(input: string): string {
-  const lower = input.toLowerCase();
-
-  // Score each topic by how many keywords match
+  const normalised = input.toLowerCase().trim();
   let bestScore = 0;
-  let bestResponse = "";
+  let bestResponse =
+    "That is an excellent question. Unfortunately, the matter has been referred to the Registrar's Office for further review. In the meantime, I recommend exploring /about for the institutional overview, /faq for common questions, or simply asking me about any specific department, programme, or building. I know this campus rather thoroughly.";
 
   for (const topic of TOPICS) {
     let score = 0;
     for (const kw of topic.keywords) {
-      if (lower.includes(kw)) {
-        score += kw.split(" ").length; // multi-word keywords score higher
+      if (normalised.includes(kw.toLowerCase())) {
+        // Multi-word keywords score higher (more specific)
+        score += kw.split(/\s+/).length;
       }
     }
     if (score > bestScore) {
@@ -188,7 +417,5 @@ export function matchTopic(input: string): string {
     }
   }
 
-  if (bestScore > 0) return bestResponse;
-
-  return "That's an excellent question. I'm afraid the matter has been referred to the Registrar's Office for further review. In the meantime, you might ask me about the campus, our colleges, governance, documents, or the AI Skills Programme.";
+  return bestResponse;
 }

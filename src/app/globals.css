@@ -13,6 +13,7 @@
   --color-maroon-light:#9B1A33;
   --color-gold:        #C8A24C;
   --color-gold-light:  #D4B76A;
+  --color-gold-text:   #7B5E1A;
   --color-parchment:   #F4F1EA;
   --color-parchment-dark: #E8E3D8;
   --color-stone:       #1A1A1A;
@@ -37,6 +38,7 @@
     --color-stone-light:    #CCCCCC;
     --color-navy:           #C8D6E8;
     --color-maroon:         #D4788E;
+    --color-gold-text:      #D4B76A;
   }
 }
 
@@ -58,7 +60,8 @@ body {
   background-color: var(--color-parchment);
   color: var(--color-ink);
   font-family: var(--font-body);
-  line-height: 1.75;
+  line-height: 1.8;
+  font-size: 1.0625rem;
 }
 
 /* ── Heading hierarchy ────────────────────────────── */
@@ -116,7 +119,7 @@ h4 { font-size: 1.375rem; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.85rem;
-  color: var(--color-stone);
+  color: var(--color-gold-text);
 }
 
 /* ── Section borders ──────────────────────────────── */
@@ -291,8 +294,8 @@ a {
   font-family: var(--font-serif);
   font-style: italic;
   letter-spacing: 0.15em;
-  color: var(--color-gold);
-  opacity: 0.5;
+  color: var(--color-gold-text);
+  opacity: 0.8;
   text-transform: none;
   font-size: 0.75rem;
 }

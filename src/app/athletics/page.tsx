@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
 
@@ -112,6 +113,28 @@ export default function AthleticsIntelligencePage() {
         title="Athletics Intelligence"
         subtitle="Centre for Intelligence in Sport, Strategy & Scouting — Where Athletic Excellence Meets AI Infrastructure"
       />
+
+      {/* ── Athletics in Frame ────────────────────── */}
+      <Section stone>
+        <div className="relative h-80 overflow-hidden border border-gold/20">
+          <Image
+            src="/images/ai-military.png"
+            alt="Strategic Operations Division — CISSS Field Analysis Session"
+            fill
+            className="object-cover object-center"
+            unoptimized
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-navy/85 px-6 py-4">
+            <div className="text-gold/70 text-xs tracking-widest uppercase mb-1">Field Intelligence</div>
+            <div className="text-parchment font-serif text-base font-bold">
+              CISSS Tactical Analysis Unit — Pre-Match Strategic Briefing, 2025
+            </div>
+            <div className="text-parchment/70 text-xs mt-1">
+              The tactical analysis team preparing a scouting dossier. The clipboard is ceremonial. All actual data is processed by neural network.
+            </div>
+          </div>
+        </div>
+      </Section>
 
       {/* ── The Division ──────────────────────────── */}
       <Section>

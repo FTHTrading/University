@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
 
@@ -115,6 +116,20 @@ export default function GovernancePage() {
           title="Designed for Acceleration"
           description="Traditional university governance was built for stability. Fitzherbert's governance is built for controlled acceleration — fast enough to match intelligent systems, constrained enough to remain accountable, and sufficiently complex that no single person fully understands it."
         />
+
+        {/* Governance round table image */}
+        <div className="relative h-64 md:h-80 w-full max-w-4xl mx-auto overflow-hidden border border-gold/20 mb-10">
+          <Image
+            src="/images/ai-n-human-round-table.png"
+            alt="The Epoch Council in session — AI and human delegates"
+            fill
+            className="object-cover"
+            unoptimized
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-navy/70 px-4 py-2 text-center">
+            <div className="text-parchment/80 text-xs tracking-widest uppercase">The Epoch Council in Session · Quorum Achieved · Minutes Classified</div>
+          </div>
+        </div>
 
         <div className="max-w-5xl mx-auto space-y-12">
           {governanceBodies.map((body) => (

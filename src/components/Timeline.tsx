@@ -56,11 +56,11 @@ export function Timeline({ events }: TimelineProps) {
                   isLeft ? "md:pr-8 md:text-right" : "md:pl-8 md:text-left"
                 }`}
               >
-                <span className="engraved text-gold">{event.year}</span>
+                <span className="engraved text-gold-text">{event.year}</span>
                 <h3 className="font-serif text-xl font-bold mt-1 mb-2 group-hover:text-maroon transition-colors">
                   {event.title}
                 </h3>
-                <p className="text-stone-light leading-relaxed text-sm">
+                <p className="text-stone leading-relaxed text-sm">
                   {event.description}
                 </p>
 
@@ -80,7 +80,7 @@ export function Timeline({ events }: TimelineProps) {
                         </p>
                       )}
                       {event.latin && (
-                        <p className="text-gold/60 text-xs italic mt-2 tracking-wide">
+                        <p className="text-gold-text text-xs italic mt-2 tracking-wide">
                           {event.latin}
                         </p>
                       )}
@@ -90,7 +90,7 @@ export function Timeline({ events }: TimelineProps) {
 
                 {/* Expand indicator */}
                 {(event.detail || event.latin) && (
-                  <span className={`inline-block text-gold/40 text-xs mt-2 transition-transform duration-200 ${
+                  <span className={`inline-block text-gold/60 text-xs mt-2 transition-transform duration-200 ${
                     isExpanded ? "rotate-180" : ""
                   }`}>
                     ▼

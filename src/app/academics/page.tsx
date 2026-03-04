@@ -182,22 +182,41 @@ export default function AcademicsPage() {
       </Section>
       {/* ── Academic Life in Frame ──────────────── */}
       <Section stone>
-        <div className="relative h-80 overflow-hidden border border-gold/20">
-          <Image
-            src="/images/academic-instruction.png"
-            alt="Directed Intelligence Specification masterclass in progress"
-            fill
-            className="object-cover object-center"
-            unoptimized
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-navy/85 px-6 py-4">
-            <div className="text-gold/70 text-xs tracking-widest uppercase mb-1">Academic Life</div>
-            <div className="text-parchment font-serif text-base font-bold">
-              Directed Intelligence Specification — Michaelmas Masterclass, 2025
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="relative h-80 overflow-hidden border border-gold/20">
+            <Image
+              src="/images/academic-instruction.png"
+              alt="Directed Intelligence Specification masterclass in progress"
+              fill
+              className="object-cover object-center"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/85 px-6 py-4">
+              <div className="text-gold/70 text-xs tracking-widest uppercase mb-1">Academic Life</div>
+              <div className="text-parchment font-serif text-base font-bold">
+                Directed Intelligence Specification — Michaelmas Masterclass, 2025
+              </div>
+              <div className="text-parchment/70 text-xs mt-1">
+                DSPEC 3001: Advanced Specification Theory. Attendance is compulsory for all third-year candidates.
+              </div>
             </div>
-            <div className="text-parchment/60 text-xs mt-1">
-              DSPEC 3001: Advanced Specification Theory. Attendance is compulsory for all third-year candidates.
-              Guest instruction provided by a Senior Reasoning Model on sabbatical from the Open Protocol Consortium.
+          </div>
+          <div className="relative h-80 overflow-hidden border border-gold/20">
+            <Image
+              src="/images/ai-art-class.png"
+              alt="Creative Intelligence Seminar — Visual Protocol Design"
+              fill
+              className="object-cover object-center"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/85 px-6 py-4">
+              <div className="text-gold/70 text-xs tracking-widest uppercase mb-1">Creative Intelligence</div>
+              <div className="text-parchment font-serif text-base font-bold">
+                Visual Protocol Design — Studio Session, Hilary Term 2026
+              </div>
+              <div className="text-parchment/70 text-xs mt-1">
+                Students explore the intersection of aesthetic reasoning and machine cognition. No marks are awarded, but the models provide encouraging feedback regardless.
+              </div>
             </div>
           </div>
         </div>

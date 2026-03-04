@@ -77,6 +77,40 @@ const timelineEvents = [
     detail:
       "The sixth and final foundational college, completing the epoch structure. Its founding principle: if a system cannot explain itself, it should not govern. The College itself could not explain why it was founded last.",
   },
+  {
+    year: "1801",
+    title: "The Great Pigeon Incident (First Recorded)",
+    description:
+      "University archives note the first recorded pigeon entering the Wycliffe Library. The pigeon was asked to leave. It declined. The matter was referred to committee.",
+    detail:
+      "The committee met twice, failed to reach quorum both times, and the pigeon was granted temporary residency. Two hundred and twenty-four years later, the pigeon (or a descendant indistinguishable from the original) remains. Its tenure is now constitutionally protected.",
+    latin: "Columba in perpetuum — nemo eam movere audet.",
+  },
+  {
+    year: "1842",
+    title: "The Bursar's First Recorded Weeping",
+    description:
+      "The Bursar, upon being informed that the University had committed to free tuition in perpetuity, was observed weeping in the Heritage Quad. This was noted without comment in the minutes.",
+    detail:
+      "Subsequent Bursars have continued this tradition. The current Bursar weeps quarterly, which the Finance Committee considers a leading indicator of fiscal health.",
+  },
+  {
+    year: "1923",
+    title: "Heritage Moisture Feature First Documented",
+    description:
+      "A damp patch on the wall of Heritage Hall was first noted in the maintenance log. The groundskeeper recommended remedial work.",
+    detail:
+      "The recommendation was overruled by the Heritage Steward, who argued the moisture pre-dated the 1783 Charter and was therefore constitutionally protected. The damp patch was reclassified as a Heritage Moisture Feature and assigned its own entry in the asset register.",
+    latin: "Humiditas hereditaria — sub tutela Cartae.",
+  },
+  {
+    year: "1962",
+    title: "The Library Cat Appointed (and Dismissed)",
+    description:
+      "The Wycliffe Library briefly employed a cat to address the pigeon situation. The cat was dismissed after three days for 'failure to engage with the strategic objective.'",
+    detail:
+      "The cat's dismissal letter remains in the University Archives and is, by some accounts, the finest piece of administrative prose the institution has ever produced. The pigeon was unaffected.",
+  },
 ];
 
 export default function AboutPage() {
@@ -133,7 +167,7 @@ export default function AboutPage() {
               &ldquo;Human institutions operate on generational time.
               AI institutions must operate on doubling time.&rdquo;
             </p>
-            <p className="text-center text-sm text-stone-light mt-4">
+            <p className="text-center text-sm text-stone mt-4">
               — The Rechartering Thesis, 2025
             </p>
           </div>
@@ -177,14 +211,14 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto space-y-6">          {/* Coat of arms */}
           <div className="relative h-80 w-full overflow-hidden border border-gold/20 mb-4">
             <Image
-              src="/images/coat-of-arms.png"
+              src="/images/ai-code-of-arms.png"
               alt="Fitzherbert University Coat of Arms"
               fill
               className="object-contain bg-navy/5"
               unoptimized
             />
             <div className="absolute bottom-0 left-0 right-0 bg-navy/70 px-4 py-2 text-center">
-              <div className="text-parchment/70 text-xs tracking-widest uppercase">Coat of Arms — Granted 1783 · Ratified under the 2025 Rechartering Protocol</div>
+              <div className="text-parchment/80 text-xs tracking-widest uppercase">Coat of Arms — Granted 1783 · Ratified under the 2025 Rechartering Protocol</div>
             </div>
           </div>          <p className="text-lg leading-relaxed text-stone drop-cap">
             The University Charter of 1783 established foundational principles that
@@ -206,7 +240,7 @@ export default function AboutPage() {
               community bears an obligation to uphold these principles with integrity and
               moral seriousness.&rdquo;
             </p>
-            <p className="text-center text-sm text-stone-light mt-4">
+            <p className="text-center text-sm text-stone mt-4">
               — Preamble to the University Charter, 1783 (preserved in 2025 Rechartering)
             </p>
           </div>

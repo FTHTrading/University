@@ -217,22 +217,41 @@ export default function ResearchPage() {
       </Section>
       {/* ── Research in Frame ─────────────────── */}
       <Section stone>
-        <div className="relative h-80 overflow-hidden border border-gold/20">
-          <Image
-            src="/images/research-institute.png"
-            alt="Institute for Applied Intelligence — Active Research Session"
-            fill
-            className="object-cover object-center"
-            unoptimized
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-navy/85 px-6 py-4">
-            <div className="text-gold/70 text-xs tracking-widest uppercase mb-1">Research Division</div>
-            <div className="text-parchment font-serif text-base font-bold">
-              Institute for Applied Intelligence — Active Research Session, 2025
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="relative h-80 overflow-hidden border border-gold/20">
+            <Image
+              src="/images/research-institute.png"
+              alt="Institute for Applied Intelligence — Active Research Session"
+              fill
+              className="object-cover object-center"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/85 px-6 py-4">
+              <div className="text-gold/70 text-xs tracking-widest uppercase mb-1">Research Division</div>
+              <div className="text-parchment font-serif text-base font-bold">
+                Institute for Applied Intelligence — Active Research Session, 2025
+              </div>
+              <div className="text-parchment/70 text-xs mt-1">
+                Cross-disciplinary work at the boundary of directed intelligence and socioeconomic modelling.
+              </div>
             </div>
-            <div className="text-parchment/60 text-xs mt-1">
-              Cross-disciplinary work at the boundary of directed intelligence and socioeconomic modelling.
-              All research outputs are published in pre-canonical form pending Epoch Council review.
+          </div>
+          <div className="relative h-80 overflow-hidden border border-gold/20">
+            <Image
+              src="/images/ai-at-its-best.png"
+              alt="Research output demonstration — Capability Frontier Exhibition"
+              fill
+              className="object-cover object-center"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/85 px-6 py-4">
+              <div className="text-gold/70 text-xs tracking-widest uppercase mb-1">Capability Exhibition</div>
+              <div className="text-parchment font-serif text-base font-bold">
+                AI at Its Best — Annual Capability Frontier Showcase, 2025
+              </div>
+              <div className="text-parchment/70 text-xs mt-1">
+                Outcomes from the Institute&apos;s Year One programme. The phrase &ldquo;at its best&rdquo; is under review by the Stability Board.
+              </div>
             </div>
           </div>
         </div>

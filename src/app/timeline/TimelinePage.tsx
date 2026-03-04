@@ -32,7 +32,21 @@ const events: TimelineEvent[] = [
     title: "First Library Wing Completed",
     era: "heritage",
     description:
-      "The Wycliffe Library opens, housing the University's first permanent collection. The library established the institutional commitment to knowledge preservation that later informed the canonical registry system.",
+      "The Wycliffe Library opens, housing the University's first permanent collection. The library established the institutional commitment to knowledge preservation that later informed the canonical registry system. A pigeon entered on opening day and has not left since.",
+  },
+  {
+    year: "1819",
+    title: "First Recorded Student Complaint",
+    era: "heritage",
+    description:
+      "A theology student petitioned the Chancellor regarding 'inadequate heating and the persistent smell of something institutional.' The petition was acknowledged, filed, and discovered unopened in 2025 during the Heritage Archive digitisation.",
+  },
+  {
+    year: "1842",
+    title: "The Bursar's First Recorded Weeping",
+    era: "heritage",
+    description:
+      "Upon being informed that the University Charter committed the institution to free tuition in perpetuity, the Bursar wept in the Heritage Quad. This established a tradition that subsequent Bursars have maintained quarterly.",
   },
   {
     year: "1847",
@@ -42,11 +56,25 @@ const events: TimelineEvent[] = [
       "Expansion beyond the original three faculties. The addition of Natural Sciences marked the University's first major structural adaptation — a precedent for the epoch-based restructuring of 2025.",
   },
   {
+    year: "1883",
+    title: "Centenary Celebrations (Sparsely Attended)",
+    era: "heritage",
+    description:
+      "The University celebrated its centenary with a ceremony in the Heritage Quad. Attendance records have been lost, but a surviving photograph shows the Chancellor, three members of staff, two students, and what appears to be the pigeon.",
+  },
+  {
     year: "1912",
     title: "Women Admitted to All Programmes",
     era: "heritage",
     description:
       "Fitzherbert University opens all degree programmes to women, ahead of most peer institutions. The decision was framed as a constitutional obligation under the Charter's commitment to truth without restriction.",
+  },
+  {
+    year: "1923",
+    title: "Heritage Moisture Feature First Documented",
+    era: "heritage",
+    description:
+      "A damp patch on the wall of Heritage Hall was first noted in the maintenance log. The groundskeeper recommended remedial work. The Heritage Steward overruled the recommendation on constitutional grounds, arguing the moisture pre-dated the Charter. The damp patch was reclassified as a Heritage Moisture Feature.",
   },
   {
     year: "1945",
@@ -56,11 +84,25 @@ const events: TimelineEvent[] = [
       "The University rebuilt and expanded following wartime damage. The reconstruction fund established the precedent for the modern endowment structure and introduced the concept of institutional resilience through infrastructure.",
   },
   {
+    year: "1962",
+    title: "The Library Cat Experiment",
+    era: "heritage",
+    description:
+      "The Wycliffe Library briefly employed a cat to address the pigeon situation. The cat was dismissed after three days for 'failure to engage with the strategic objective.' Its dismissal letter is considered the finest piece of administrative prose in the University Archives.",
+  },
+  {
     year: "1967",
     title: "Computer Science Department Founded",
     era: "heritage",
     description:
       "One of the first computer science departments in the country. The department's early work on formal verification methods directly informed the deterministic publishing infrastructure built in 2025.",
+  },
+  {
+    year: "1984",
+    title: "The Quad Ghost Incident",
+    era: "heritage",
+    description:
+      "A night porter reported seeing 'the translucent figure of Sir Henry FitzHerbert inspecting the damp patch.' An investigation concluded the apparition was caused by condensation, a misaligned security light, and institutional zeal. The Heritage Steward recorded it anyway.",
   },
   {
     year: "2003",

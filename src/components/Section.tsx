@@ -45,12 +45,12 @@ export function SectionHeader({
   return (
     <div className={`mb-14 ${align}`}>
       {eyebrow && (
-        <p className="engraved text-gold mb-3">{eyebrow}</p>
+        <p className="engraved text-gold-text mb-3">{eyebrow}</p>
       )}
       <h2 className="font-serif text-3xl md:text-4xl font-bold">{title}</h2>
       <div className={divider} />
       {description && (
-        <p className="mt-4 text-stone-light max-w-2xl mx-auto leading-relaxed text-lg">
+        <p className="mt-4 text-stone max-w-2xl mx-auto leading-relaxed text-lg">
           {description}
         </p>
       )}

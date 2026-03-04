@@ -268,6 +268,36 @@ export default function CampusPage() {
             <div className="text-parchment/60 text-xs mt-1">All Fitzherbert University students are required to complete the annual Manual Cognition Drill, demonstrating the capacity to perform institutional functions without AI assistance. Photograph: Office of Institutional Archive.</div>
           </div>
         </div>
+
+        {/* Row 5 — Additional campus views */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div className="relative aspect-[4/3] overflow-hidden border border-gold/20">
+            <Image
+              src="/images/university-2.png"
+              alt="The South Precinct — Computational Wing, 2025"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-4 py-3">
+              <div className="text-gold/70 text-xs tracking-widest uppercase mb-0.5">South Precinct</div>
+              <div className="text-parchment font-serif text-sm font-bold">Computational Wing — Opened 2025, Leaking 2025</div>
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden border border-gold/20">
+            <Image
+              src="/images/gardening-ai.png"
+              alt="The Inference Gardens — Grounds Maintenance Division"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-4 py-3">
+              <div className="text-gold/70 text-xs tracking-widest uppercase mb-0.5">Grounds & Horticulture</div>
+              <div className="text-parchment font-serif text-sm font-bold">Inference Gardens — Tended by Algorithm, Watered by Optimism</div>
+            </div>
+          </div>
+        </div>
       </Section>
 
       {/* ── Facilities ────────────────────────────── */}

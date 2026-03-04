@@ -80,7 +80,7 @@ const footerColumns = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-parchment/80">
+    <footer className="bg-navy text-parchment/90">
       {/* ── Gold accent line ──────────────────────── */}
       <div className="h-[2px] bg-gold" />
 
@@ -105,7 +105,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-parchment/60 hover:text-gold transition-colors"
+                      className="text-sm text-parchment/80 hover:text-gold transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -118,11 +118,11 @@ export function Footer() {
 
         {/* ── Contact + Legal ─────────────────────── */}
         <div className="border-t border-gold/20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-sm text-parchment/50 text-center md:text-left">
+          <div className="text-sm text-parchment/70 text-center md:text-left">
             <p>Fitzherbert University &middot; Office of the Chancellor</p>
             <p>One University Way, Heritage Hall &middot; Chartered 1783 &middot; Rechartered 2025</p>
           </div>
-          <div className="flex gap-6 text-sm text-parchment/50">
+          <div className="flex gap-6 text-sm text-parchment/70">
             <Link href="/governance" className="hover:text-gold transition-colors">
               Legal
             </Link>
@@ -136,7 +136,7 @@ export function Footer() {
         </div>
 
         {/* ── Copyright ───────────────────────────── */}
-        <p className="text-center text-xs text-parchment/30 mt-8">
+        <p className="text-center text-xs text-parchment/50 mt-8">
           &copy; 2026 Fitzherbert University. Chartered 1783 &middot; Rechartered 2025. All rights reserved.
         </p>
       </div>

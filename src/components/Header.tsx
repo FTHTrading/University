@@ -98,7 +98,7 @@ export function Header() {
       {/* ── Top bar ─────────────────────────────────── */}
       <div className="border-b border-gold/20">
         <div className="mx-auto flex max-w-[1280px] items-center justify-between px-4 sm:px-6 py-2 text-xs tracking-widest uppercase">
-          <span className="hidden sm:inline text-gold/70 font-serif">
+          <span className="hidden sm:inline text-gold/90 font-serif">
             Chartered 1783 · Rechartered 2025
           </span>
           <div className="flex gap-4 sm:gap-6 ml-auto sm:ml-0">
@@ -133,7 +133,7 @@ export function Header() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-[13px] font-serif uppercase tracking-[0.12em] text-parchment/80 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all pb-1 whitespace-nowrap"
+                className="text-[13px] font-serif uppercase tracking-[0.12em] text-parchment/90 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all pb-1 whitespace-nowrap"
               >
                 {l.label}
               </Link>
@@ -207,7 +207,7 @@ export function Header() {
               <div className="flex-1 overflow-y-auto overscroll-contain px-5 py-4">
                 {mobileNavGroups.map((group, gi) => (
                   <div key={group.title} className={gi > 0 ? "mt-5" : ""}>
-                    <p className="text-[11px] font-serif uppercase tracking-[0.2em] text-gold/60 mb-2 px-1">
+                    <p className="text-[11px] font-serif uppercase tracking-[0.2em] text-gold/80 mb-2 px-1">
                       {group.title}
                     </p>
                     <ul className="space-y-0.5">
@@ -216,9 +216,9 @@ export function Header() {
                           <Link
                             href={l.href}
                             onClick={() => setMobileOpen(false)}
-                            className="flex items-center gap-3 py-3 px-3 rounded-md text-[15px] font-serif text-parchment/85 hover:text-gold hover:bg-navy/50 active:bg-navy/70 transition-colors"
+                            className="flex items-center gap-3 py-3 px-3 rounded-md text-[15px] font-serif text-parchment/95 hover:text-gold hover:bg-navy/50 active:bg-navy/70 transition-colors"
                           >
-                            <span className="text-gold/40 text-xs">›</span>
+                            <span className="text-gold/60 text-xs">›</span>
                             {l.label}
                           </Link>
                         </li>

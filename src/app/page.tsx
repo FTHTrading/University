@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
 import { CollegeCard } from "@/components/CollegeCard";
+import Image from "next/image";
 import Link from "next/link";
 
 const colleges = [
@@ -93,7 +94,7 @@ export default function HomePage() {
                 <p className="font-serif text-xl md:text-2xl font-bold text-gold">
                   {s.stat}
                 </p>
-                <p className="text-xs tracking-widest uppercase text-parchment/60 mt-1">
+                <p className="text-xs tracking-widest uppercase text-parchment/80 mt-1">
                   {s.label}
                 </p>
               </div>
@@ -112,6 +113,19 @@ export default function HomePage() {
           title="Intelligence Doubles. Principles Endure."
         />
         <div className="max-w-3xl mx-auto text-center">
+          {/* Campus image */}
+          <div className="relative h-64 md:h-80 w-full overflow-hidden border border-gold/20 mb-8">
+            <Image
+              src="/images/university.png"
+              alt="Fitzherbert University — Heritage Quad"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-navy/70 px-4 py-2 text-center">
+              <div className="text-parchment/80 text-xs tracking-widest uppercase">Heritage Quad — Construction Date Disputed · Maintenance Budget Theoretical</div>
+            </div>
+          </div>
           <p className="text-lg leading-relaxed text-stone mb-6 drop-cap">
             Fitzherbert University was chartered in 1783 on principles of disciplined
             inquiry, constitutional governance, and public responsibility. In 2025, we
@@ -187,6 +201,19 @@ export default function HomePage() {
           title="Intelligence Infrastructure"
           description="Five institutes pursuing the foundational questions of accelerated intelligence, autonomous governance, and deterministic knowledge systems."
         />
+        {/* AI teaching scene */}
+        <div className="relative h-64 md:h-72 w-full max-w-4xl mx-auto overflow-hidden border border-gold/20 mb-10">
+          <Image
+            src="/images/ai-teaching.png"
+            alt="AI instructional session at the College of Applied Intelligence"
+            fill
+            className="object-cover"
+            unoptimized
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-navy/70 px-4 py-2 text-center">
+            <div className="text-parchment/80 text-xs tracking-widest uppercase">A Typical Lecture · Attendance: 1 Human, 4 Models · Grade Curve: Vertical</div>
+          </div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
@@ -241,7 +268,7 @@ export default function HomePage() {
             ].map((s) => (
               <div key={s.label} className="border border-gold/20 bg-ivory p-6">
                 <p className="font-serif text-3xl font-bold text-maroon">{s.stat}</p>
-                <p className="text-xs tracking-widest uppercase text-stone-light mt-2">
+                <p className="text-xs tracking-widest uppercase text-stone mt-2">
                   {s.label}
                 </p>
               </div>
@@ -263,7 +290,7 @@ export default function HomePage() {
             Zero Tuition. Students Get Paid.
           </h2>
           <div className="gold-divider-center" />
-          <p className="text-stone-light text-lg leading-relaxed mt-6 mb-4">
+          <p className="text-stone text-lg leading-relaxed mt-6 mb-4">
             Fitzherbert University charges no tuition and pays every enrolled student
             a living stipend. Students are not consumers — they are builders of
             sovereign infrastructure. The University considers this arrangement
@@ -307,7 +334,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {news.map((item) => (
             <article key={item.title} className="border-l-2 border-gold pl-6">
-              <p className="engraved text-gold/60 text-xs mb-2">{item.date}</p>
+              <p className="engraved text-gold/80 text-xs mb-2">{item.date}</p>
               <h3 className="font-serif text-lg font-bold mb-2 leading-snug">
                 {item.title}
               </h3>
@@ -327,7 +354,7 @@ export default function HomePage() {
             The Charter of 1783 Endures
           </h2>
           <div className="gold-divider-center" />
-          <p className="text-stone-light text-lg leading-relaxed mt-6 mb-8">
+          <p className="text-stone text-lg leading-relaxed mt-6 mb-8">
             The Heritage Charter of 1783 established principles of academic freedom,
             separation of powers, and public service. The 2025 Rechartering preserved
             all of these principles in a ceremony attended by the Chancellor, six

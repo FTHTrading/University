@@ -92,7 +92,7 @@ export function Hero({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-gold/60 text-xs tracking-[0.35em] uppercase mb-5 font-serif"
+            className="text-gold/80 text-xs tracking-[0.35em] uppercase mb-5 font-serif"
           >
             {founding}
           </motion.p>
@@ -133,7 +133,7 @@ export function Hero({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2.0, duration: 1 }}
-            className="text-parchment/50 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mt-2"
+            className="text-parchment/75 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mt-2"
           >
             {subtitle}
           </motion.p>
@@ -150,7 +150,7 @@ export function Hero({
               transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
               className="flex flex-col items-center gap-2"
             >
-              <span className="text-gold/40 text-[10px] tracking-[0.3em] uppercase font-serif">Scroll</span>
+              <span className="text-gold/60 text-[10px] tracking-[0.3em] uppercase font-serif">Scroll</span>
               <div className="w-[1px] h-10 bg-gradient-to-b from-gold/40 to-transparent" />
             </motion.div>
           </motion.div>
@@ -181,7 +181,7 @@ export function Hero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="engraved text-gold/60 mb-4">{motto}</p>
+          <p className="engraved text-gold/80 mb-4">{motto}</p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-parchment tracking-wide">
             {title}
           </h1>
@@ -189,7 +189,7 @@ export function Hero({
             <span className="ornament">&#10041;</span>
           </div>
           {subtitle && (
-            <p className="text-parchment/50 mt-4 text-lg leading-relaxed">{subtitle}</p>
+            <p className="text-parchment/75 mt-4 text-lg leading-relaxed">{subtitle}</p>
           )}
         </motion.div>
       </div>

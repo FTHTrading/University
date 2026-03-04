@@ -2,11 +2,11 @@
 
 import dynamic from "next/dynamic";
 
-const ProfessorGuide = dynamic(
-  () => import("@/components/ProfessorGuide"),
+const WalkingProfessor = dynamic(
+  () => import("@/components/WalkingProfessor"),
   { ssr: false }
 );
 
 export default function ProfessorGuideLoader() {
-  return <ProfessorGuide />;
+  return <WalkingProfessor />;
 }

@@ -14,7 +14,7 @@ const governanceBodies = [
     role: "Strategic Direction & Institutional Authority",
     icon: "⬡",
     description:
-      "The supreme governing body of the rechartered University. The Epoch Council sets institutional direction, approves capability epoch transitions, and holds ultimate authority over the University's strategic posture. Council membership rotates on an epoch-aligned cycle — not a calendar year — ensuring governance evolves at the speed of the institution it governs.",
+      "The supreme governing body of the rechartered University. The Epoch Council sets institutional direction, approves capability epoch transitions, and holds ultimate authority over the University's strategic posture. Council membership rotates on an epoch-aligned cycle — not a calendar year — ensuring governance evolves at the speed of the institution it governs. The Council has met four times. Minutes from the first three meetings have been classified under the Heritage Confidentiality Protocol, which was ratified at the fourth.",
     members: [
       "Chancellor (Chair)",
       "Six College Directors (rotating annually)",
@@ -34,7 +34,7 @@ const governanceBodies = [
     role: "Reproducibility, Verification & Institutional Integrity",
     icon: "◈",
     description:
-      "The Stability Board ensures that every output of the University — scholarly, operational, and governance-level — is reproducible, auditable, and cryptographically verified. The Board operates the Merkle verification infrastructure, maintains the canonical registry, and certifies the Edition Manifest for all published artifacts.",
+      "The Stability Board ensures that every output of the University — scholarly, operational, and governance-level — is reproducible, auditable, and cryptographically verified. The Board operates the Merkle verification infrastructure, maintains the canonical registry, and certifies the Edition Manifest for all published artifacts. The Board has yet to identify an output that failed verification, which it attributes to rigorous standards rather than the absence of outputs.",
     members: [
       "Director of Deterministic Publishing (Chair)",
       "Chief Verification Officer",
@@ -54,7 +54,7 @@ const governanceBodies = [
     role: "Safety, Ethics & Four-Gate Validation",
     icon: "◇",
     description:
-      "The Alignment Review Committee operates the University's four-gate validation protocol — ensuring that every AI deployment, research output, and governance decision passes through safety, ethical, operational, and constitutional review before activation. The Committee has the authority to halt any deployment that fails alignment verification.",
+      "The Alignment Review Committee operates the University's four-gate validation protocol — ensuring that every AI deployment, research output, and governance decision passes through safety, ethical, operational, and constitutional review before activation. The Committee has the authority to halt any deployment that fails alignment verification. To date, it has halted everything, including itself.",
     members: [
       "Professor of AI Safety & Alignment (Chair)",
       "Dean of Autonomous Governance",
@@ -86,7 +86,7 @@ const charterArticles = [
   {
     number: "III",
     title: "Alignment Supremacy",
-    text: "No AI deployment, research output, or governance decision shall proceed without passing the four-gate validation protocol. The Alignment Review Committee holds veto authority over all institutional AI activity.",
+    text: "No AI deployment, research output, or governance decision shall proceed without passing the four-gate validation protocol. The Alignment Review Committee holds veto authority over all institutional AI activity. The Committee exercises this authority with enthusiasm.",
   },
   {
     number: "IV",
@@ -96,7 +96,7 @@ const charterArticles = [
   {
     number: "V",
     title: "Human Judgment Primacy",
-    text: "AI systems advise, augment, and accelerate — but human judgment remains the final authority in all governance, academic, and ethical decisions. This principle is non-negotiable and cannot be amended by any governance body.",
+    text: "AI systems advise, augment, and accelerate — but human judgment remains the final authority in all governance, academic, and ethical decisions. This principle is non-negotiable and cannot be amended by any governance body. It was, however, drafted by an AI system, which the University has described as 'a coincidence of workflow.'",
   },
 ];
 
@@ -113,7 +113,7 @@ export default function GovernancePage() {
         <SectionHeader
           eyebrow="Governance Architecture"
           title="Designed for Acceleration"
-          description="Traditional university governance was built for stability. Fitzherbert's governance is built for controlled acceleration — fast enough to match intelligent systems, constrained enough to remain accountable."
+          description="Traditional university governance was built for stability. Fitzherbert's governance is built for controlled acceleration — fast enough to match intelligent systems, constrained enough to remain accountable, and sufficiently complex that no single person fully understands it."
         />
 
         <div className="max-w-5xl mx-auto space-y-12">

@@ -59,13 +59,13 @@ const processSteps = [
   {
     num: "01",
     title: "Initial Contact",
-    desc: "Reach out through this page or email partnerships@fitzherbert.edu. Tell us what you're looking for — workforce pipeline, analytics service, commissioned projects, or licensing. No forms to fill. No gatekeepers.",
+    desc: "Reach out through this page or email partnerships@fitzherbert.edu. Tell us what you're looking for — workforce pipeline, analytics service, commissioned projects, or licensing. No forms to fill. No gatekeepers. No precedent for what happens next, as this step has not yet been reached.",
     duration: "Same-day acknowledgement",
   },
   {
     num: "02",
     title: "Discovery Conversation",
-    desc: "A structured conversation with the Partnership Office — not a sales pitch. We discuss your goals, constraints, and alignment with the University's mission. If we're not the right fit, we'll tell you.",
+    desc: "A structured conversation with the Partnership Office — not a sales pitch. We discuss your goals, constraints, and alignment with the University's mission. If we're not the right fit, we'll tell you. This has been the outcome of every conversation to date, in the sense that no conversations have occurred.",
     duration: "Within 5 working days",
   },
   {
@@ -141,7 +141,10 @@ export default function PartnershipsPage() {
             <p className="drop-cap">
               Traditional universities make partnership difficult. Layers of administration,
               months of committee review, and opaque decision-making that exhausts everyone
-              involved. Fitzherbert University operates differently.
+              involved. Fitzherbert University operates differently. The Partnership Office
+              is staffed, the door is open, and the process is transparent. The fact that
+              nobody has yet walked through the door is, the Office maintains, 'a reflection
+              of the market\'s readiness, not ours.'
             </p>
             <p>
               The Partnership Office is a single point of contact for every external engagement —
@@ -152,7 +155,8 @@ export default function PartnershipsPage() {
             <p>
               We do not have development officers who will take you to dinner. We have a
               Partnership Office that will tell you exactly what we can deliver, what it costs,
-              and how we will prove it worked.
+              and how we will prove it worked. The Office has rehearsed this conversation
+              extensively among themselves.
             </p>
           </div>
         </div>

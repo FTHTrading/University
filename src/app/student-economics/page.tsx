@@ -70,14 +70,17 @@ export default function StudentEconomicsPage() {
               Traditional universities extract tuition from students, load them with debt, and
               release them into a world that has changed beyond recognition since they enrolled.
               The economic model of higher education was designed for a world where knowledge
-              depreciated slowly and a degree guaranteed a career trajectory. That world ended.
+              depreciated slowly and a degree guaranteed a career trajectory. That world ended
+              approximately on a Tuesday in 2023; nobody wrote down which Tuesday.
             </p>
             <p>
               Fitzherbert University operates on a different premise: <strong>students are not
               consumers of education — they are builders of sovereign infrastructure</strong>.
               Every protocol designed, every governance framework tested, every research output
               verified through the Legitimacy Engine is real work with real economic value.
-              The University does not charge for this. It pays for it.
+              The University does not charge for this. It pays for it. The students are,
+              technically, employees. The University prefers the term 'scholars with
+              compensation alignment.'
             </p>
             <p>
               No student at Fitzherbert University pays tuition. Every enrolled student receives
@@ -154,7 +157,9 @@ export default function StudentEconomicsPage() {
               alongside our own.&rdquo;
             </p>
             <cite className="block mt-4 text-stone text-sm not-italic tracking-wide uppercase">
-              — Office of the Chancellor, 2025
+              &mdash; Office of the Chancellor, 2025 (attributed; the Chancellor&rsquo;s Office
+              has neither confirmed nor denied authorship, which is itself consistent with the
+              University&rsquo;s approach to verification)
             </cite>
           </blockquote>
         </div>
@@ -282,7 +287,8 @@ export default function StudentEconomicsPage() {
             <p>
               This is not a promise — it is an economic architecture. Seven revenue streams
               fund the student stipend programme. Each is structural, meaning it grows as the
-              University grows.
+              University grows. At present, it has not yet grown, but the architecture is, the
+              Bursar assures, 'structurally patient.'
             </p>
           </div>
 
@@ -335,7 +341,9 @@ export default function StudentEconomicsPage() {
               Students build protocols → Protocols generate licensing revenue → Revenue funds
               stipends → Stipends attract the best students → Better students build better
               protocols. The system compounds. Every epoch, the infrastructure grows more
-              valuable. Every epoch, the students are better compensated.
+              valuable. Every epoch, the students are better compensated. The fact that the
+              cycle has not yet completed its first revolution is, the Bursar insists, a matter
+              of timing rather than arithmetic.
             </p>
           </div>
         </div>
@@ -510,7 +518,9 @@ export default function StudentEconomicsPage() {
               designed for institutions that create compounding intellectual property. Unlike
               traditional university bonds backed by tuition revenue (which requires extracting
               from students), SIBs are backed by the growing value of the University&rsquo;s
-              protocol portfolio.
+              protocol portfolio. No SIBs have been issued to date. The instrument is described
+              internally as 'pre-mature,' a term the Bursar chose carefully and the Chancellor
+              pretended not to hear.
             </p>
             <p>
               Every protocol built, every governance framework licensed, every canonical registry
@@ -570,6 +580,8 @@ export default function StudentEconomicsPage() {
               <strong> infrastructure students help build</strong>. The economic model is inverted:
               students are an investment, not a revenue source. The better the students,
               the more valuable the infrastructure, the more sustainable the institution.
+              Traditional universities have described this logic as 'theoretically interesting,'
+              which is academic language for 'threatening.'
             </p>
           </div>
         </div>
@@ -606,7 +618,9 @@ export default function StudentEconomicsPage() {
               institutions license. You will design governance frameworks that regulators adopt.
               You will publish research that is cryptographically verified and permanently
               archived. And you will be paid to do it — because what you build has real value,
-              and the University recognises that.
+              and the University recognises that. Your parents may have questions. The University
+              has a FAQ page, though it concedes that frequently asked is a generous description
+              for questions nobody has asked yet.
             </p>
           </div>
         </div>
@@ -623,7 +637,7 @@ export default function StudentEconomicsPage() {
             {[
               {
                 title: "Zero Debt",
-                desc: "Every Fitzherbert graduate leaves with zero educational debt. Not reduced debt. Not manageable debt. Zero. The economic model ensures that education enriches students rather than encumbering them.",
+                desc: "Every Fitzherbert graduate leaves with zero educational debt. Not reduced debt. Not manageable debt. Zero. The economic model ensures that education enriches students rather than encumbering them. This claim has not yet been tested, as there are no graduates, but the University considers the projection robust.",
               },
               {
                 title: "Revenue Participation",
@@ -666,7 +680,9 @@ export default function StudentEconomicsPage() {
             <p>
               Every claim this page makes is either already verified through the University&rsquo;s
               Legitimacy Engine or in the process of being built into verifiable infrastructure.
-              This is the difference between a promise and a protocol.
+              This is the difference between a promise and a protocol. The University acknowledges
+              that most entries below currently read 'in development,' and considers this evidence
+              of transparency rather than incompleteness.
             </p>
           </div>
 

@@ -76,12 +76,12 @@ const capabilities = [
   {
     title: "Strategy Analytics",
     icon: "⬢",
-    desc: "AI-powered tactical analysis that decomposes game strategy into quantifiable decision trees. Pre-match preparation, in-game adjustments, and post-match review — all through deterministic models that show their reasoning.",
+    desc: "AI-powered tactical analysis that decomposes game strategy into quantifiable decision trees. Pre-match preparation, in-game adjustments, and post-match review — all through deterministic models that show their reasoning, which is more than most coaches do.",
   },
   {
     title: "Scouting Optimisation",
     icon: "◇",
-    desc: "Automated scouting pipelines that evaluate talent across physical metrics, tactical awareness, development trajectory, and cultural fit. Not to replace human scouts — but to ensure they never miss what the data sees.",
+    desc: "Automated scouting pipelines that evaluate talent across physical metrics, tactical awareness, development trajectory, and cultural fit. Not to replace human scouts — but to ensure they never miss what the data sees. No scouts have been replaced so far, primarily because none have been hired.",
   },
   {
     title: "Recruitment Decision Support",
@@ -91,12 +91,12 @@ const capabilities = [
   {
     title: "NIL Readiness Programme",
     icon: "⬡",
-    desc: "Comprehensive Name, Image, and Likeness preparation: brand development, contract evaluation, financial literacy, and market positioning. Athletes learn to run themselves as businesses — with AI tools and human mentorship.",
+    desc: "Comprehensive Name, Image, and Likeness preparation: brand development, contract evaluation, financial literacy, and market positioning. Athletes learn to run themselves as businesses — with AI tools and human mentorship. The programme is considered mature despite there being, at time of writing, no athletes.",
   },
   {
     title: "Performance Science",
     icon: "◆",
-    desc: "Cognitive performance training, sleep architecture analysis, recovery optimisation, and load management. The intersection of sports science and AI — where marginal gains become structural advantages.",
+    desc: "Cognitive performance training, sleep architecture analysis, recovery optimisation, and load management. The intersection of sports science and AI — where marginal gains become structural advantages and athletes are told when to nap by a neural network.",
   },
   {
     title: "Athlete Business Operations",
@@ -125,14 +125,16 @@ export default function AthleticsIntelligencePage() {
               Traditional sports analytics tells you what happened. Athletics Intelligence tells
               you what will happen — and what to do about it. The Centre for Intelligence in Sport,
               Strategy & Scouting (CISSS) is Fitzherbert University&rsquo;s dedicated division
-              for applying sovereign AI infrastructure to competitive athletics.
+              for applying sovereign AI infrastructure to competitive athletics. The acronym
+              was selected by committee. The committee has not apologised.
             </p>
             <p>
               CISSS is not a department that studies sport. It is an operational intelligence
               service that <strong>serves teams, programmes, and federations</strong> — delivering
               strategy analytics, scouting optimisation, and recruitment decision support through
               the same deterministic AI infrastructure that powers the University&rsquo;s research
-              and governance systems.
+              and governance systems. Whether any team has actually subscribed is a matter the
+              Division describes as 'commercially sensitive.'
             </p>
             <p>
               Students run the analytics. Faculty oversee the models. AI operates the infrastructure.
@@ -238,7 +240,7 @@ export default function AthleticsIntelligencePage() {
             >
               {tier.highlight && (
                 <span className="text-[10px] tracking-[0.2em] uppercase text-maroon font-bold mb-2">
-                  Most Popular
+                  Most Popular (Theoretically)
                 </span>
               )}
               <h3 className="font-serif text-2xl font-bold">{tier.name}</h3>
@@ -332,11 +334,11 @@ export default function AthleticsIntelligencePage() {
             <h4 className="font-serif text-lg font-bold mb-4 text-maroon">Competitive Programmes</h4>
             <ul className="space-y-3">
               {[
-                "Rowing — Men's & Women's VIIIs (est. 1847)",
-                "Cross-Country & Athletics",
-                "Fencing — Foil, Épée, Sabre",
-                "Tennis — Singles & Doubles",
-                "Cricket — First XI & Development",
+                "Rowing — Men's & Women's VIIIs (est. 1847; results: unrecorded)",
+                "Cross-Country & Athletics (route: under review since 1903)",
+                "Fencing — Foil, Épée, Sabre (no injuries; no participants)",
+                "Tennis — Singles & Doubles (court location: disputed)",
+                "Cricket — First XI & Development (last match: unclear)",
               ].map((sport) => (
                 <li key={sport} className="text-stone text-sm flex items-start gap-2">
                   <span className="text-gold mt-0.5">&#9670;</span>
@@ -375,7 +377,7 @@ export default function AthleticsIntelligencePage() {
           {[
             {
               title: "CISSS Analytics Lab",
-              desc: "The operational centre for Athletics Intelligence — workstations, real-time data feeds, multi-display tactical analysis, and secure model deployment infrastructure.",
+              desc: "The operational centre for Athletics Intelligence — workstations, real-time data feeds, multi-display tactical analysis, and secure model deployment infrastructure. Currently operates at full capacity, which is to say: empty.",
             },
             {
               title: "The Fitzherbert Sports Centre",
@@ -383,7 +385,7 @@ export default function AthleticsIntelligencePage() {
             },
             {
               title: "The Boathouse",
-              desc: "Home of University rowing since 1847. Now equipped with biomechanical sensors and stroke analytics for the intelligence-enhanced training programme.",
+              desc: "Home of University rowing since 1847, though photographs of the boathouse before 2025 have proven elusive. Now equipped with biomechanical sensors and stroke analytics for the intelligence-enhanced training programme. The boats are, the Athletics Office confirms, 'on order.'",
             },
             {
               title: "Cognitive Performance Lab",

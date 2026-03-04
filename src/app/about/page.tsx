@@ -15,18 +15,18 @@ const timelineEvents = [
     year: "1783",
     title: "Charter of Foundation",
     description:
-      "The colonial legislature grants a royal charter establishing Fitzherbert University. Sir Henry FitzHerbert, the Reverend Jonathan Ashworth, and Lady Margaret Pemberton sign the founding charter in the presence of the Governor-General.",
+      "The colonial legislature grants a charter establishing Fitzherbert University. Sir Henry FitzHerbert, the Reverend Jonathan Ashworth, and Lady Margaret Pemberton sign the founding charter. The Governor-General abstains on the grounds that the ink smells suspicious.",
     detail:
-      "The original parchment is held in the University Archives. The Charter established principles of disciplined inquiry, constitutional governance, and public responsibility that remain the institution's moral infrastructure.",
+      "The original parchment is held in the University Archives, alongside a quill allegedly used by Sir Henry, a second quill of uncertain provenance, and a pigeon.",
     latin: "In nomine veritatis et disciplinae, hanc universitatem fundamus.",
   },
   {
     year: "2025",
     title: "AI-Native Rechartering",
     description:
-      "Recognising that model capability doubles every 3–6 months, the University rechartered as an AI-native institution — restructuring its academic programme around intelligence-doubling curves.",
+      "Recognising that model capability doubles every 3–6 months, the University rechartered as an AI-native institution — a decision that took approximately four hours, which the Chancellor described as 'two epochs of deliberation.'",
     detail:
-      "The Rechartering Thesis: 'Human institutions operate on generational time. AI institutions must operate on doubling time.' Six epoch-based colleges replace the century-old departmental structure.",
+      "The Rechartering Thesis: 'Human institutions operate on generational time. AI institutions must operate on doubling time.' This thesis has been cited 47 times, 44 of which are by the University itself.",
     latin: "Tempus acceleratum — novam disciplinam postulat.",
   },
   {
@@ -41,9 +41,9 @@ const timelineEvents = [
     year: "Epoch 0.2",
     title: "College of Applied Intelligence",
     description:
-      "Model design, training paradigms, capability evaluation, and alignment research. Where raw compute becomes reliable, governed intelligence.",
+      "Model design, training paradigms, capability evaluation, and alignment research. Where raw compute becomes reliable, governed intelligence — or at minimum, plausibly deniable intelligence.",
     detail:
-      "The college completed its first full model-alignment cycle within three months of founding — a pace impossible in traditional academia.",
+      "The college completed its first full model-alignment cycle within three months of founding — a pace impossible in traditional academia, and, some have argued, in reality.",
   },
   {
     year: "Epoch 0.3",
@@ -51,7 +51,7 @@ const timelineEvents = [
     description:
       "Constitutional AI frameworks, institutional design for autonomous systems, regulatory architecture, and the legal infrastructure of machine governance.",
     detail:
-      "The college's governance frameworks have been referenced by three national regulatory bodies within its first year.",
+      "The college's governance frameworks have been referenced by three national regulatory bodies within its first year. None have implemented them. The College considers this a success.",
   },
   {
     year: "Epoch 0.4",
@@ -75,7 +75,7 @@ const timelineEvents = [
     description:
       "Institutional narrative architecture, protocol specification, knowledge-graph construction, and the design of systems that explain themselves.",
     detail:
-      "The sixth and final foundational college, completing the epoch structure. Its mandate: if a system cannot explain itself, it should not govern.",
+      "The sixth and final foundational college, completing the epoch structure. Its founding principle: if a system cannot explain itself, it should not govern. The College itself could not explain why it was founded last.",
   },
 ];
 
@@ -99,7 +99,9 @@ export default function AboutPage() {
             extraordinary intellectual ferment. For more than two centuries, its founders&apos;
             principles — disciplined inquiry, constitutional governance, and public
             responsibility — guided the institution through industrial revolutions,
-            scientific transformations, and the rise of digital infrastructure.
+            scientific transformations, and the rise of digital infrastructure. Or so
+            the charter claims. The historical record between 1784 and 2024 is, the
+            University concedes, 'characteristically sparse.'
           </p>
           <p className="text-lg leading-relaxed text-stone">
             In 2025, the University reached another inflection point. Not the replacement
@@ -107,13 +109,14 @@ export default function AboutPage() {
             autonomous systems, and AI-mediated decision infrastructures had fundamentally
             altered the tempo at which knowledge evolves. The University rechartered as an
             AI-native institution, restructuring its entire academic programme around
-            intelligence-doubling curves.
+            intelligence-doubling curves — a concept it simultaneously invented and
+            claimed expertise in.
           </p>
           <p className="text-lg leading-relaxed text-stone">
             A one-year-old AI-native institution is equivalent to 20–40 years of human
-            institutional development — because each semester is effectively a capability
-            epoch. This gives the University a credible basis for institutional depth that
-            operates on exponential, not linear, timelines.
+            institutional development. This calculation was performed by the University
+            itself, peer-reviewed by a committee the University appointed, and published
+            in its own journal. The methodology is, we are assured, beyond reproach.
           </p>
         </div>
       </Section>

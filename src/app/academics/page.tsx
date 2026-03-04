@@ -32,7 +32,7 @@ const colleges = [
     dean: "Director Victoria Langford",
     established: "Epoch 0.3",
     description:
-      "Constitutional AI, institutional design for autonomous systems, regulatory frameworks, and the legal infrastructure of machine governance.",
+      "Constitutional AI, institutional design for autonomous systems, regulatory frameworks, and the legal infrastructure of machine governance. No governance framework produced by the College has been implemented outside the University. The College considers external adoption 'a downstream concern.'",
     departments: ["Constitutional AI", "Regulatory Architecture", "Institutional Design", "Policy Engineering", "Democratic Accountability"],
   },
   {
@@ -56,7 +56,7 @@ const colleges = [
     dean: "Director Thomas Wycliffe",
     established: "Epoch 0.6",
     description:
-      "Institutional narrative architecture, protocol specification, knowledge-graph construction, and the design of systems that explain themselves.",
+      "Institutional narrative architecture, protocol specification, knowledge-graph construction, and the design of systems that explain themselves. Founded last. The College itself could not explain why, which it considers thematically appropriate.",
     departments: ["Protocol Architecture", "Knowledge Graphs", "Narrative Systems", "Explainability Engineering", "Documentation Science"],
   },
 ];
@@ -264,8 +264,8 @@ export default function AcademicsPage() {
               {
                 name: "Professor Margaret Sinclair",
                 title: "Endowed Chair, AI Safety & Alignment",
-                bio: "A pioneer in alignment verification and computational ethics. Sinclair's constitutional framework for AI governance has been referenced by three national regulatory bodies. Her Alignment Verification Protocol is the standard used across all University deployments.",
-                awards: "Royal Society Fellowship (2023), Turing Award Nominee (2025)",
+                bio: "A pioneer in alignment verification and computational ethics. Sinclair's constitutional framework for AI governance has been referenced by three national regulatory bodies (citation context: 'concerns'). Her Alignment Verification Protocol is the standard used across all University deployments, which is to say, internal deployments that she also designed.",
+                awards: "Royal Society Fellowship (2023), Turing Award Nominee (2025, self-nominated)",
               },
               {
                 name: "Director Victoria Langford",
@@ -276,8 +276,8 @@ export default function AcademicsPage() {
               {
                 name: "Director Marcus Chen",
                 title: "Dean, Cryptographic Infrastructure",
-                bio: "Founder of the Multi-Chain Provenance standard. Chen's work on deterministic publishing and Merkle verification enables the University's canonical scholarly output. His framework has been adopted by twenty-seven institutions worldwide.",
-                awards: "Global AI Safety Consortium Founder, IEEE Provenance Award (2024)",
+                bio: "Founder of the Multi-Chain Provenance standard. Chen's work on deterministic publishing and Merkle verification enables the University's canonical scholarly output. His framework has been adopted by twenty-seven institutions worldwide, twenty-four of which are fictional, though Chen insists they are 'pre-operational.'",
+                awards: "Global AI Safety Consortium Founder (sole member), IEEE Provenance Award (2024)",
               },
               {
                 name: "Professor Andrew Caldwell",
@@ -329,7 +329,8 @@ export default function AcademicsPage() {
             <p className="text-stone-light text-sm italic">
               Each epoch cycle includes capability assessment, alignment verification, and governance review.
               The University operates three full cycles per year — each equivalent to approximately a decade of
-              traditional academic development.
+              traditional academic development, according to a conversion formula the University invented,
+              published, and cited in its own accreditation submission.
             </p>
           </div>
         </div>
@@ -345,7 +346,7 @@ export default function AcademicsPage() {
           {[
             {
               title: "The Fitzherbert Review of AI Governance",
-              desc: "A peer-reviewed journal examining constitutional frameworks for autonomous systems, alignment verification, and the governance of intelligence infrastructure.",
+              desc: "A peer-reviewed journal examining constitutional frameworks for autonomous systems, alignment verification, and the governance of intelligence infrastructure. Peer review is conducted by the University's own faculty, which the editorial board describes as 'rigorous' rather than 'circular.'",
             },
             {
               title: "Proceedings of the Deterministic Publishing Institute",
@@ -353,7 +354,7 @@ export default function AcademicsPage() {
             },
             {
               title: "The Epoch Reports",
-              desc: "Published at the conclusion of each capability epoch, documenting institutional progress, capability assessments, and governance decisions.",
+              desc: "Published at the conclusion of each capability epoch, documenting institutional progress, capability assessments, and governance decisions. The reports are authored, reviewed, and approved by the same body, which the Epoch Council considers an efficiency.",
             },
           ].map((pub) => (
             <div key={pub.title} className="border-l-2 border-gold pl-6">

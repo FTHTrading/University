@@ -135,7 +135,8 @@ export default function SponsorPage() {
             <p>
               You are not buying goodwill. You are investing in a workforce pipeline where every
               output is provable, every student is building, and every penny can be traced to
-              measurable human development.
+              measurable human development. No sponsor has yet tested this claim, but the
+              infrastructure to prove it is, the University insists, 'architecturally complete.'
             </p>
           </div>
         </div>
@@ -158,7 +159,7 @@ export default function SponsorPage() {
             >
               {tier.highlight && (
                 <span className="text-[10px] tracking-[0.2em] uppercase text-maroon font-bold mb-2">
-                  Most Popular
+                  Most Popular (Projected)
                 </span>
               )}
               <h3 className="font-serif text-2xl font-bold">{tier.name}</h3>
@@ -305,7 +306,7 @@ export default function SponsorPage() {
           {[
             {
               q: "Is this tax-deductible?",
-              a: "Fitzherbert University is a chartered educational institution. Sponsorship contributions qualify for charitable deductions in most jurisdictions. We provide full documentation for your tax advisers.",
+              a: "Fitzherbert University is a chartered educational institution. Sponsorship contributions qualify for charitable deductions in most jurisdictions. We provide full documentation for your tax advisers. The tax status has been confirmed by the University's own legal counsel, which was assembled during the Rechartering and has not been independently retained by anyone else.",
             },
             {
               q: "Can we sponsor a specific discipline or skills track?",
@@ -313,7 +314,7 @@ export default function SponsorPage() {
             },
             {
               q: "What if students don't meet expectations?",
-              a: "Every cohort has defined milestones and competency targets. If a student falls short, the verified dashboard shows exactly where and why. We don't hide failure — we document it and adapt.",
+              a: "Every cohort has defined milestones and competency targets. If a student falls short, the verified dashboard shows exactly where and why. We don't hide failure — we document it and adapt. This transparency has been universally praised by the zero sponsors who have experienced it.",
             },
             {
               q: "How is this different from a graduate recruitment programme?",
@@ -339,6 +340,8 @@ export default function SponsorPage() {
           <p className="text-stone text-sm leading-relaxed mb-8">
             No pitch decks. No gala dinners. Just a conversation about what you need,
             what your industry is becoming, and how we build the workforce for it — together.
+            The University has held this page open since January 2025. It remains, in the
+            Chancellor&rsquo;s words, &lsquo;optimistically patient.&rsquo;
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a

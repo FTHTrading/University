@@ -27,9 +27,9 @@ export default function AdmissionsPage() {
             <p className="drop-cap">
               For over two hundred years, Fitzherbert University educated students within a system
               that treated knowledge as stable, disciplines as bounded, and institutional change
-              as slow. That model served well — not because it was perfect, but because the pace
-              of change outside the university was slow enough for the pace inside it to remain
-              meaningful.
+              as slow. That model served well — not because it was perfect, but because nobody
+              had yet invented a machine that could make the entire curriculum obsolete during
+              freshers' week.
             </p>
             <p>
               That condition no longer holds.
@@ -37,17 +37,18 @@ export default function AdmissionsPage() {
             <p>
               Artificial intelligence has compressed what used to take a generation into what now
               takes a fiscal quarter. The gap between what is taught and what is needed has widened
-              to the point where it can no longer be papered over with electives, career fairs, or
-              advisory boards. This is not a crisis of curriculum. It is a structural mismatch
-              between the speed of institutional life and the speed of the world students are
-              entering.
+              to the point where most universities are, in effect, training students for jobs that
+              disappeared while the prospectus was being printed. This is not a crisis of
+              curriculum. It is a structural mismatch between the speed of institutional life and
+              the speed of the world students are entering.
             </p>
             <p>
               Fitzherbert University recognised this — and acted. Not by abandoning its principles,
               but by returning to the oldest one: <em>Veritas per Disciplina</em>. Truth through
               Discipline. The University asked a simple question: what does education mean when the
               thing being educated — human intelligence — is no longer the fastest form of
-              intelligence in the room?
+              intelligence in the room? The answer, it turns out, involves a great deal of
+              blockchain.
             </p>
           </div>
         </div>
@@ -174,16 +175,17 @@ export default function AdmissionsPage() {
               a living stipend from the day they matriculate — because at this institution,
               students are not consumers. They are builders of sovereign infrastructure. The
               protocols they design, the governance frameworks they test, the research they
-              publish through the Legitimacy Engine — all of it has real economic value. The
-              University shares that value with the people who create it.
+              publish through the Legitimacy Engine — all of it has real economic value. Or
+              will have. The University is confident. The students are less certain but
+              appreciate the £24,000.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             {[
-              { value: "£0", label: "Tuition", desc: "Zero. Not reduced. Not deferred. Zero." },
-              { value: "£24K+", label: "Annual Stipend", desc: "Living stipend for every enrolled student." },
-              { value: "2.5×", label: "Performance Multiplier", desc: "Up to £60K/yr for exceptional builders." },
+              { value: "£0", label: "Tuition", desc: "Zero. Not reduced. Not deferred. Zero. The Bursar wept." },
+              { value: "£24K+", label: "Annual Stipend", desc: "Living stipend for every enrolled student. Conditions apply. The conditions are: exist." },
+              { value: "2.5×", label: "Performance Multiplier", desc: "Up to £60K/yr for exceptional builders. 'Exceptional' is defined by a committee that has not yet convened." },
             ].map((s) => (
               <div key={s.label} className="stat-card text-center">
                 <div className="font-serif text-2xl font-bold text-maroon">{s.value}</div>

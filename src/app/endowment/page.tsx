@@ -27,16 +27,17 @@ export default function EndowmentPage() {
             <p className="drop-cap">
               The endowment exists for one purpose: to guarantee the University's independence.
               Since 1783, the endowment has ensured that Fitzherbert University is beholden to
-              no government, no corporation, and no transient interest. In 2025, that mandate
-              expanded — the endowment now sustains not only the heritage campus and faculty
-              but the computational infrastructure, governance architecture, and research
-              institutes that define the AI-native institution.
+              no government, no corporation, and no transient interest. The fact that the
+              endowment balance between 1784 and 2024 appears nowhere in the historical record
+              has been described by the Finance Committee as 'consistent with pre-digital
+              stewardship norms.'
             </p>
             <p>
-              Stewardship at Fitzherbert University is not financial management. It is the
-              constitutional guarantee of institutional autonomy — the assurance that the
-              University can operate on intelligence-doubling timelines without compromising
-              its independence or its values.
+              In 2025, the mandate expanded — the endowment now sustains not only the heritage
+              campus and faculty but the computational infrastructure, governance architecture,
+              and research institutes that define the AI-native institution. The endowment's
+              precise composition is, the Chancellor notes, 'a matter of fiduciary confidence,'
+              which is a phrase that means approximately nothing but sounds reassuring.
             </p>
           </div>
         </div>
@@ -55,7 +56,7 @@ export default function EndowmentPage() {
             { value: "£109M", label: "Annual Operating Support" },
             { value: "8.4%", label: "10-Year Average Return" },
             { value: "24%", label: "AI Infrastructure" },
-            { value: "18%", label: "Heritage Preservation" },
+            { value: "18%", label: "Heritage (incl. Pigeon)" },
             { value: "18%", label: "Research & Faculty" },
             { value: "40%", label: "Student Builder Fund" },
           ].map((stat) => (
@@ -90,10 +91,10 @@ export default function EndowmentPage() {
               title: "Heritage Preservation (18%)",
               icon: "🏛",
               items: [
-                "Georgian quadrangle maintenance and restoration",
-                "Library preservation and digitisation",
-                "Heritage Archive conservation",
-                "Campus grounds and heritage buildings",
+                "Georgian quadrangle maintenance and occasional structural prayers",
+                "Library preservation and digitisation of volumes nobody has opened since 1912",
+                "Heritage Archive conservation (including pigeon habitat management)",
+                "Campus grounds and heritage buildings, several of which are listed",
               ],
             },
             {
@@ -150,7 +151,7 @@ export default function EndowmentPage() {
             },
             {
               title: "Sovereign Infrastructure Bonds",
-              desc: "Financial instruments backed by the University's growing intellectual property portfolio. Collateralised by protocol assets, not student debt.",
+              desc: "Financial instruments backed by the University's growing intellectual property portfolio. Collateralised by protocol assets, not student debt. The Bonds have yet to be rated by any agency, which the Finance Committee describes as 'rating-agency-free governance.'",
             },
             {
               title: "Research Contracts",
@@ -158,7 +159,7 @@ export default function EndowmentPage() {
             },
             {
               title: "Institutional Certification",
-              desc: "The Fitzherbert Alignment Certification and Four-Gate Validation — verification that other institutions meet sovereign AI governance standards.",
+              desc: "The Fitzherbert Alignment Certification and Four-Gate Validation — verification that other institutions meet sovereign AI governance standards. No institution has yet applied. The University considers the programme 'aspirationally oversubscribed.'",
             },
             {
               title: "Canonical Registry Subscriptions",

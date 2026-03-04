@@ -26,7 +26,11 @@ const faqs = [
       },
       {
         q: "What is 'Veritas per Disciplina'?",
-        a: "Latin for 'Truth through Discipline.' It has been the University's motto since 1783. In the rechartered institution, it carries additional weight: truth now demands not just intellectual rigour but verification infrastructure, reproducibility guarantees, and governance frameworks that can keep pace with accelerating intelligence.",
+        a: "Latin for 'Truth through Discipline.' It has been the University's motto since 1783. In the rechartered institution, it carries additional weight: truth now demands not just intellectual rigour but verification infrastructure, reproducibility guarantees, and governance frameworks that can keep pace with accelerating intelligence. The motto was recently verified as authentic by the Stability Board, which also verified itself.",
+      },
+      {
+        q: "Is there really a pigeon living in the library?",
+        a: "The University can confirm that a pigeon of indeterminate species has resided in the rare manuscript vault of the Wycliffe Library since at least Epoch 0.1. The pigeon is protected under Charter Article I (Heritage Continuity) and is classified as a heritage asset. Attempts to relocate the pigeon were halted by the Alignment Review Committee on the grounds that the pigeon had not consented. The pigeon's contribution to institutional life is described by the Heritage Steward as 'characteristically non-verbal.'",
       },
     ],
   },
@@ -47,7 +51,7 @@ const faqs = [
       },
       {
         q: "Who has the final say on AI deployments?",
-        a: "Human beings. Article V of the Charter framework establishes that human judgment is the final authority in all governance, academic, and ethical decisions. AI systems advise, augment, and accelerate — but they do not govern.",
+        a: "Human beings. Article V of the Charter framework establishes that human judgment is the final authority in all governance, academic, and ethical decisions. AI systems advise, augment, and accelerate — but they do not govern. Article V was, however, drafted by an AI system, which the University has described as 'a coincidence of workflow.'",
       },
     ],
   },
@@ -68,7 +72,7 @@ const faqs = [
       },
       {
         q: "How long are degree programmes?",
-        a: "Undergraduate programmes span 6–8 epoch cycles (approximately 3 years). Graduate programmes span 4–6 epoch cycles (approximately 2 years). Doctoral programmes are epoch-completion based — students advance when capability milestones are met, not when a calendar target is reached.",
+        a: "Undergraduate programmes span 6–8 epoch cycles (approximately 3 years). Graduate programmes span 4–6 epoch cycles (approximately 2 years). Doctoral programmes are epoch-completion based — students advance when capability milestones are met, not when a calendar target is reached. No student has yet completed a programme. The University describes its graduation statistics as 'forthcoming.'",
       },
     ],
   },
@@ -102,7 +106,7 @@ const faqs = [
       },
       {
         q: "What are the five research institutes?",
-        a: "Accelerated Intelligence, Autonomous Governance, Deterministic Publishing, Multi-Chain Provenance, and Narrative Protocols. Each operates at a frontier that did not exist five years ago.",
+        a: "Accelerated Intelligence, Autonomous Governance, Deterministic Publishing, Multi-Chain Provenance, and Narrative Protocols. Each operates at a frontier that did not exist five years ago. Their combined publication output has been cited 127 times, 119 of which are by other institutes within the University.",
       },
     ],
   },
@@ -115,7 +119,7 @@ const faqs = [
       },
       {
         q: "How does the University handle AI safety?",
-        a: "Through the Four-Gate Validation Protocol, continuous alignment audits, and the constitutional primacy of human judgment. The Alignment Review Committee has the authority to halt any deployment that fails verification. Safety is not a policy — it is a constitutional obligation.",
+        a: "Through the Four-Gate Validation Protocol, continuous alignment audits, and the constitutional primacy of human judgment. The Alignment Review Committee has the authority to halt any deployment that fails verification. Safety is not a policy — it is a constitutional obligation. The Committee has exercised this authority once, halting its own meeting on procedural grounds.",
       },
       {
         q: "Is the University connected to other organisations?",

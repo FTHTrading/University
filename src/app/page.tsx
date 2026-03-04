@@ -9,42 +9,42 @@ const colleges = [
     dean: "Director Elara Voss",
     established: "Epoch 0.1",
     description:
-      "The foundational college. Systems architecture, distributed computing, formal verification, and the engineering substrate upon which all intelligence infrastructure is built.",
+      "The foundational college. Systems architecture, distributed computing, and formal verification — fields that existed before Fitzherbert claimed them, though the University's records do not acknowledge this.",
   },
   {
     name: "College of Applied Intelligence",
     dean: "Director James Harrington",
     established: "Epoch 0.2",
     description:
-      "Model design, training paradigms, capability evaluation, and alignment research. The college where raw compute becomes reliable, governed intelligence.",
+      "Model design, training paradigms, and alignment research. The college completed its first alignment cycle within three months — a pace impossible in institutions burdened by the existence of students.",
   },
   {
     name: "College of Autonomous Governance",
     dean: "Director Victoria Langford",
     established: "Epoch 0.3",
     description:
-      "Constitutional AI, institutional design for autonomous systems, regulatory frameworks, and the legal infrastructure of machine governance.",
+      "Constitutional AI, institutional design for autonomous systems, and the legal infrastructure of machine governance. Three national regulators have referenced the College's frameworks, though none have returned our calls.",
   },
   {
     name: "College of Cryptographic Infrastructure",
     dean: "Director Marcus Chen",
     established: "Epoch 0.4",
     description:
-      "Zero-knowledge proofs, multi-chain provenance, deterministic publishing, Merkle verification, and the trust architecture of decentralised systems.",
+      "Zero-knowledge proofs, multi-chain provenance, and the trust architecture of decentralised systems. Director Chen once described the College's work as 'making trust obsolete,' then asked us to trust him on that.",
   },
   {
     name: "College of Human-Centered Systems",
     dean: "Director Catherine Whitfield",
     established: "Epoch 0.5",
     description:
-      "Human-AI interaction, cognitive augmentation, ethical reasoning under acceleration, and the preservation of human judgment as the anchor of institutional life.",
+      "Human-AI interaction, cognitive augmentation, and the preservation of human judgment as the anchor of institutional life. The smallest college by headcount, which Director Whitfield insists is 'by design, not irony.'",
   },
   {
     name: "College of Narrative & Protocol Design",
     dean: "Director Thomas Wycliffe",
     established: "Epoch 0.6",
     description:
-      "Institutional narrative architecture, protocol specification, knowledge-graph construction, and the design of systems that explain themselves.",
+      "Institutional narrative architecture, protocol specification, and the design of systems that explain themselves. Founding principle: if a system cannot explain itself, it should not govern. If it can explain itself, it should be treated with suspicion.",
   },
 ];
 
@@ -53,19 +53,19 @@ const news = [
     date: "February 2026",
     title: "Epoch 0.6 College Inaugurated — Narrative & Protocol Design",
     excerpt:
-      "The sixth college opens, completing the University's foundational epoch structure. Its mandate: design systems that explain themselves and encode institutional memory.",
+      "The sixth college opens, completing the University's foundational epoch structure. The inauguration ceremony was attended by four humans and eleven autonomous systems, all of whom gave standing ovations.",
   },
   {
     date: "January 2026",
-    title: "First Compute-Efficiency Doubling Verified",
+    title: "First Compute-Efficiency Doubling Verified (14 Months Early)",
     excerpt:
-      "The Institute for Accelerated Intelligence confirms the University's first full compute-efficiency doubling cycle, 14 months ahead of the 24-month baseline.",
+      "The Institute for Accelerated Intelligence confirms a full compute-efficiency doubling cycle, 14 months ahead of the 24-month baseline. The Institute has now asked what a 'baseline' is.",
   },
   {
     date: "December 2025",
-    title: "Genesis Protocol Integration Complete",
+    title: "Pigeon Refused Eviction from Wycliffe Library Vault",
     excerpt:
-      "Fitzherbert University's canonical publishing layer is now fully anchored to the Genesis Protocol, enabling deterministic, Merkle-verified scholarly output.",
+      "The Heritage Steward has confirmed that the resident pigeon in the rare manuscript vault predates the 2025 Rechartering and is therefore protected under Charter Article I (Heritage Continuity).",
   },
 ];
 
@@ -85,8 +85,8 @@ export default function HomePage() {
               { stat: "12", label: "Capability Epochs" },
               { stat: "6", label: "Colleges" },
               { stat: "5", label: "Research Institutes" },
-              { stat: "4", label: "Alignment Cycles" },
-              { stat: "2", label: "Compute Doublings" },
+              { stat: "1", label: "Resident Pigeon" },
+              { stat: "0", label: "Graduates (So Far)" },
               { stat: "~30yr", label: "AI-Time Equivalent" },
             ].map((s) => (
               <div key={s.label}>
@@ -116,18 +116,20 @@ export default function HomePage() {
             Fitzherbert University was chartered in 1783 on principles of disciplined
             inquiry, constitutional governance, and public responsibility. In 2025, we
             rechartered as an AI-native institution &mdash; not because those principles
-            changed, but because the pace of intelligence itself changed.
+            changed, but because we discovered that running a university is considerably
+            easier when you do not have to wait for humans to finish thinking.
           </p>
           <p className="text-lg leading-relaxed text-stone mb-6">
             Model capability doubles every three to six months. Algorithmic efficiency
             doubles every twelve to eighteen months. A one-year-old AI-native institution
-            is equivalent to decades of human institutional development. Each semester
-            is a capability epoch.
+            is, by our own metric, equivalent to decades of human institutional
+            development. We did invent the metric. We see no conflict of interest.
           </p>
           <p className="text-lg leading-relaxed text-stone mb-8">
             The mission remains unchanged: truth through discipline. The tools evolve.
-            The tempo has accelerated. The obligation to prepare students for the world
-            as it actually exists has never been greater.
+            The tempo has accelerated. The obligation to prepare students for a world
+            that has already moved on without them has never felt more urgent, or more
+            financially rewarding.
           </p>
           <p className="font-serif italic text-maroon">
             &mdash; Chancellor Sir Edmund Blackwell, KBE
@@ -224,8 +226,9 @@ export default function HomePage() {
         />
         <div className="max-w-3xl mx-auto">
           <p className="text-lg leading-relaxed text-stone mb-8 text-center">
-            Because Fitzherbert University is AI-native, it grows on <em>exponential
-            curves</em>, not linear ones. Year One output in AI-time:
+            Critics have suggested that a one-year-old institution cannot claim
+            elite status. The University has responded by inventing a time metric
+            under which it can. Year One output in AI-time:
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
             {[
@@ -246,7 +249,8 @@ export default function HomePage() {
           </div>
           <p className="text-center text-stone mt-8 text-sm italic">
             This is equivalent to <strong className="text-maroon">20–40 years</strong> of
-            human institutional development.
+            human institutional development, according to a formula the University
+            published and then immediately cited in its own research output.
           </p>
         </div>
       </Section>
@@ -262,7 +266,8 @@ export default function HomePage() {
           <p className="text-stone-light text-lg leading-relaxed mt-6 mb-4">
             Fitzherbert University charges no tuition and pays every enrolled student
             a living stipend. Students are not consumers — they are builders of
-            sovereign infrastructure whose work has real economic value.
+            sovereign infrastructure. The University considers this arrangement
+            generous. The students consider it employment.
           </p>
           <div className="grid grid-cols-3 gap-4 max-w-md mx-auto my-8">
             {[
@@ -323,10 +328,11 @@ export default function HomePage() {
           </h2>
           <div className="gold-divider-center" />
           <p className="text-stone-light text-lg leading-relaxed mt-6 mb-8">
-            The acceleration of artificial intelligence does not erase the founding
-            commitments — academic freedom, separation of powers, transparency, public
-            service. It increases their importance. Institutions that endure are those
-            that evolve without abandoning their foundations.
+            The Heritage Charter of 1783 established principles of academic freedom,
+            separation of powers, and public service. The 2025 Rechartering preserved
+            all of these principles in a ceremony attended by the Chancellor, six
+            autonomous systems, and a portrait of Sir Henry FitzHerbert, who was not
+            consulted but whose expression has been interpreted as broadly supportive.
           </p>
           <Link
             href="/endowment"

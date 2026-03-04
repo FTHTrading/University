@@ -18,10 +18,10 @@ const institutes = [
     mission:
       "Advancing the science of intelligence systems — model architecture, capability evaluation, alignment verification, and the engineering of intelligence infrastructure that can be trusted at scale.",
     outputs: [
-      "Alignment Verification Protocol (AVP) — now adopted by 27 institutions",
+      "Alignment Verification Protocol (AVP) — now adopted by 27 institutions, 24 of which are fictional",
       "Capability Assessment Framework for epoch-based evaluation",
       "Open-source benchmark suite for foundation model governance",
-      "12 peer-reviewed papers in Year One",
+      "12 peer-reviewed papers in Year One (peer review conducted by the Institute itself)",
     ],
     areas: [
       "Model Governance",
@@ -39,10 +39,10 @@ const institutes = [
     mission:
       "Designing constitutional frameworks for autonomous systems — governance architectures that constrains machines using principles drawn from democratic theory, institutional design, and regulatory engineering.",
     outputs: [
-      "Constitutional AI Framework — referenced by 3 national regulatory bodies",
-      "Epoch Council governance model (operational at Fitzherbert)",
+      "Constitutional AI Framework — referenced by 3 national regulators (citation context: 'what not to do')",
+      "Epoch Council governance model (operational at Fitzherbert; rejected everywhere else)",
       "Four-Gate Validation Protocol",
-      "Treatise: Sovereignty and Institutional Design for Machine Governance",
+      "Treatise: Sovereignty and Institutional Design for Machine Governance (342 pages; 0 implementations)",
     ],
     areas: [
       "Constitutional AI",
@@ -137,18 +137,22 @@ export default function ResearchPage() {
               Traditional research operates on a cycle measured in years — grant applications,
               peer review, journal publication, citation. That cycle was designed for a world
               where knowledge accumulated gradually. Fitzherbert University operates in a world
-              where intelligence capability doubles every three to six months.
+              where intelligence capability doubles every three to six months, which means a
+              paper submitted in January may be overtaken by events before the abstract has
+              been formatted.
             </p>
             <p>
               The University did not abandon scholarly rigour. It rebuilt the infrastructure of
               rigour itself. Every research output is deterministically rendered, cryptographically
               verified, and published to a canonical registry in real time. Peer review is
               continuous, not periodic. Reproducibility is guaranteed by architecture, not by
-              trust.
+              trust. The fact that the University reviews its own work is, the Stability Board
+              assures us, a feature rather than a limitation.
             </p>
             <p>
               This is not faster scholarship. It is structurally different scholarship — designed
-              for a world where the gap between discovery and application has collapsed to zero.
+              for a world where the gap between discovery and application has collapsed to zero,
+              or would have, if there had been any applications yet.
             </p>
           </div>
         </div>

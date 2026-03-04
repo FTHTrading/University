@@ -15,12 +15,12 @@ const facilities = [
     type: "Heritage Architecture",
     icon: "🏛",
     description:
-      "The original Georgian quadrangle, dating to 1783. Now preserved as the ceremonial heart of the University, housing the Chancellor's Office, the Heritage Archive, and the Constitutional Chamber where the Epoch Council convenes.",
+      "The original Georgian quadrangle, dating to 1783. Now preserved as the ceremonial heart of the University, housing the Chancellor's Office, the Heritage Archive, and the Constitutional Chamber where the Epoch Council convenes. A persistent damp patch in the east wing has been designated a 'heritage moisture feature' and is protected under Charter Article I.",
     features: [
       "Chancellor's Office & Heritage Steward's quarters",
       "Constitutional Chamber (Epoch Council seat)",
-      "Heritage Archive — original 1783 charter and institutional records",
-      "Ceremonial courtyard for epoch transition ceremonies",
+      "Heritage Archive — original 1783 charter, questionable provenance collection",
+      "Ceremonial courtyard for epoch transition ceremonies (rain contingency: the corridor)",
     ],
   },
   {
@@ -28,12 +28,12 @@ const facilities = [
     type: "Heritage + Digital Infrastructure",
     icon: "📚",
     description:
-      "The University's library since 1801. The physical collection now serves as the heritage layer beneath a fully digital canonical registry. Every volume in the collection has been digitised, hashed, and registered in the Edition Manifest system.",
+      "The University's library since 1801. The physical collection now serves as the heritage layer beneath a fully digital canonical registry. Every volume in the collection has been digitised, hashed, and registered in the Edition Manifest system. The resident pigeon in the rare manuscript vault has been there longer than any member of staff and is believed to be load-bearing.",
     features: [
-      "62,000 physical volumes (heritage collection)",
+      "62,000 physical volumes (heritage collection; approximately 340 have been opened)",
       "Full digital canonical registry (Merkle-verified)",
-      "Reading rooms with computational workstations",
-      "Rare manuscript vault with climate-controlled preservation",
+      "Reading rooms with computational workstations (and adequate heating, as of February 2026)",
+      "Rare manuscript vault with climate-controlled preservation and one (1) pigeon",
     ],
   },
   {
@@ -93,12 +93,12 @@ const facilities = [
     type: "Student & Social Hub",
     icon: "🏢",
     description:
-      "The primary hub for student life — collaborative workspaces, social areas, dining facilities, and the Student Governance Forum where epoch-cycle representatives convene.",
+      "The primary hub for student life — collaborative workspaces, social areas, dining facilities, and the Student Governance Forum where epoch-cycle representatives convene. The dining hall serves three meals daily. The menu rotates on an epoch-aligned cycle. Complaints are routed through the Four-Gate Protocol.",
     features: [
       "Open-plan collaborative workspaces with compute access",
-      "Student Governance Forum chamber",
+      "Student Governance Forum chamber (quorum rarely achieved)",
       "Dining hall and social commons",
-      "Inter-college meeting spaces",
+      "Inter-college meeting spaces (booking system pending since Epoch 0.2)",
     ],
   },
   {
@@ -106,12 +106,12 @@ const facilities = [
     type: "Events & Review Facility",
     icon: "🎭",
     description:
-      "A 300-seat theatre used for public lectures, epoch transition ceremonies, alignment review presentations, and the Annual Epoch Review. Equipped for live-streaming and deterministic recording.",
+      "A 300-seat theatre used for public lectures, epoch transition ceremonies, alignment review presentations, and the Annual Epoch Review. The Theatre was originally designed for 150 seats; the additional capacity was achieved by the College of Narrative & Protocol Design redefining 'seat' to include 'standing positions with moral support.'",
     features: [
-      "300-seat auditorium with broadcast capability",
+      "300-seat auditorium (see above re: definition of 'seat')",
       "Deterministic recording infrastructure",
       "Public lecture and ceremony space",
-      "Annual Epoch Review venue",
+      "Annual Epoch Review venue (attendance: compulsory; enthusiasm: optional)",
     ],
   },
 ];
@@ -138,13 +138,16 @@ export default function CampusPage() {
               maintained, and still in active use as the ceremonial heart of the institution.
               Around it, the computational infrastructure of the rechartered University has been
               built: computing centres, governance laboratories, cryptographic research facilities,
-              and deterministic publishing labs.
+              and deterministic publishing labs. The juxtaposition of eighteenth-century stonework
+              and server racks has been described by the Heritage Steward as 'architecturally
+              courageous' and by the fire marshal as 'concerning.'
             </p>
             <p>
               The architecture is deliberate. Heritage buildings house governance, ceremony, and
               the archive. New facilities house the computational infrastructure that powers the
               AI-native institution. Students move between both — physically and intellectually —
-              because the University's mission requires both continuity and acceleration.
+              and are required to remove their shoes in the Heritage Archive, which the Chancellor
+              insists is a mark of respect rather than a cost-saving measure on carpet cleaning.
             </p>
           </div>
         </div>

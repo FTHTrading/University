@@ -26,7 +26,7 @@ export interface CanonicalRecord {
 }
 
 export interface CanonicalEpoch {
-  root: string; // Merkle root hex digest
+  merkleRoot: string; // Merkle root hex digest
   timestamp: string; // ISO 8601
   articleCount: number;
   hashAlgorithm: string;

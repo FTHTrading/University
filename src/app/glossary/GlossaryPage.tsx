@@ -61,7 +61,7 @@ export function GlossaryPage({ terms }: { terms: GlossaryTerm[] }) {
             Authoritative definitions for the terms, concepts, and frameworks
             that define institutional discourse at Fitzherbert University.
           </p>
-          <p className="text-gold/50 text-sm mt-6 italic font-serif">
+          <p className="text-gold/70 text-sm mt-6 italic font-serif">
             {terms.length} defined terms across {categories.length - 1} domains
           </p>
         </div>
@@ -96,7 +96,7 @@ export function GlossaryPage({ terms }: { terms: GlossaryTerm[] }) {
               </button>
             ))}
           </div>
-          <p className="text-xs text-stone/50 mt-3">
+          <p className="text-xs text-stone/80 mt-3">
             Showing {filtered.length} of {terms.length} terms
           </p>
         </div>
@@ -111,7 +111,7 @@ export function GlossaryPage({ terms }: { terms: GlossaryTerm[] }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="text-center text-stone/50 italic py-12"
+              className="text-center text-stone/80 italic py-12"
             >
               No terms match your search.
             </motion.p>
@@ -151,7 +151,7 @@ export function GlossaryPage({ terms }: { terms: GlossaryTerm[] }) {
                             {t.category}
                           </span>
                           {t.relatedTerms && t.relatedTerms.length > 0 && (
-                            <span className="text-xs text-stone/40">
+                            <span className="text-xs text-stone/70">
                               Related:{" "}
                               {t.relatedTerms.map((rt, i) => (
                                 <span key={rt}>
@@ -186,7 +186,7 @@ export function GlossaryPage({ terms }: { terms: GlossaryTerm[] }) {
           <p className="text-gold/60 italic font-serif text-sm">
             « Nomina sunt consequentia rerum »
           </p>
-          <p className="text-stone/40 text-xs mt-2 uppercase tracking-widest">
+          <p className="text-stone/70 text-xs mt-2 uppercase tracking-widest">
             Names are the consequence of things — Justinian, Institutes II.7.3
           </p>
         </div>

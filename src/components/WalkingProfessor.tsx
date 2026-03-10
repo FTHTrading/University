@@ -10,6 +10,7 @@
  */
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import { fetchNarration } from "@/lib/ai-professor-client";
 
 // ── Witty idle observations ────────────────────────────────────────────────
 const OBSERVATIONS = [
@@ -65,6 +66,60 @@ const PAGE_INTROS: Record<string, string> = {
 type Direction = "left" | "right";
 type ProfState = "walking" | "idle" | "speaking" | "tripping" | "adjusting" | "narrating";
 
+function collectNarrationText(root: ParentNode, maxItems = 24) {
+  const selectors = [
+    "[data-page-title]",
+    "h1",
+    "h2",
+    "h3",
+    "p",
+    "li",
+    "blockquote",
+    "figcaption",
+  ].join(", ");
+
+  const seen = new Set<string>();
+  const textParts: string[] = [];
+
+  root.querySelectorAll(selectors).forEach((node) => {
+    const text = node.textContent?.replace(/\s+/g, " ").trim();
+    if (!text || text.length < 12 || seen.has(text)) return;
+    seen.add(text);
+    textParts.push(text);
+  });
+
+  return textParts.slice(0, maxItems);
+}
+
+function findMostVisibleSection(sections: HTMLElement[]) {
+  if (sections.length === 0) return null;
+
+  const viewportCenter = window.innerHeight / 2;
+  const scored = sections
+    .map((section) => {
+      const rect = section.getBoundingClientRect();
+      const visibleTop = Math.max(rect.top, 0);
+      const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      const distanceToCenter = Math.abs(rect.top + rect.height / 2 - viewportCenter);
+
+      return {
+        section,
+        visibleHeight,
+        distanceToCenter,
+      };
+    })
+    .sort((a, b) => {
+      if (b.visibleHeight !== a.visibleHeight) {
+        return b.visibleHeight - a.visibleHeight;
+      }
+
+      return a.distanceToCenter - b.distanceToCenter;
+    });
+
+  return scored[0]?.section ?? null;
+}
+
 export default function WalkingProfessor() {
   const [state, setState] = useState<ProfState>("walking");
   const [direction, setDirection] = useState<Direction>("right");
@@ -79,13 +134,30 @@ export default function WalkingProfessor() {
   const stateTimerRef = useRef<NodeJS.Timeout | null>(null);
   const dragStartRef = useRef<{ x: number; startPosX: number } | null>(null);
   const synthRef = useRef<SpeechSynthesis | null>(null);
+  const voicesRef = useRef<SpeechSynthesisVoice[]>([]);
   const profRef = useRef<HTMLDivElement>(null);
 
-  // ── Initialise SpeechSynthesis ────────────────────────────────────────
+  // ── Initialise SpeechSynthesis & preload voices ───────────────────────
   useEffect(() => {
-    if (typeof window !== "undefined" && window.speechSynthesis) {
-      synthRef.current = window.speechSynthesis;
-    }
+    if (typeof window === "undefined" || !window.speechSynthesis) return;
+    const synth = window.speechSynthesis;
+    synthRef.current = synth;
+
+    // Voices load asynchronously in most browsers — poll + listen
+    const loadVoices = () => {
+      const v = synth.getVoices();
+      if (v.length > 0) voicesRef.current = v;
+    };
+    loadVoices();
+    synth.addEventListener("voiceschanged", loadVoices);
+
+    // Some browsers (Chrome) need a short delay
+    const timer = setTimeout(loadVoices, 250);
+
+    return () => {
+      synth.removeEventListener("voiceschanged", loadVoices);
+      clearTimeout(timer);
+    };
   }, []);
 
   // ── Walking animation loop ────────────────────────────────────────────
@@ -175,22 +247,92 @@ export default function WalkingProfessor() {
 
   // ── TTS speak helper ──────────────────────────────────────────────────
   const speak = useCallback((text: string, onEnd?: () => void) => {
-    if (!synthRef.current) return;
-    synthRef.current.cancel();
-    const utt = new SpeechSynthesisUtterance(text);
-    utt.rate = 0.9;
-    utt.pitch = 0.85;
+    if (typeof window === "undefined") { onEnd?.(); return; }
 
-    // Try to find a British voice
-    const voices = synthRef.current.getVoices();
+    const synth = synthRef.current ?? window.speechSynthesis;
+    if (!synth) { onEnd?.(); return; }
+    synthRef.current = synth;
+
+    // Cancel anything currently playing
+    synth.cancel();
+
+    // Chrome bug: SpeechSynthesis can get stuck in a paused state
+    try { if (synth.paused) synth.resume(); } catch { /* ignore */ }
+
+    // Break text into sentences — Chrome cuts off after ~200-250 chars.
+    // Splitting into chunks keeps each utterance short enough to complete.
+    const chunks = text
+      .replace(/([.!?])\s+/g, "$1|SPLIT|")
+      .split("|SPLIT|")
+      .map((s) => s.trim())
+      .filter((s) => s.length > 0);
+
+    // Find best voice — prefer British, then any English
+    const voices = voicesRef.current.length > 0 ? voicesRef.current : synth.getVoices();
     const british = voices.find(
-      (v) => v.lang.startsWith("en-GB") || v.name.includes("British")
+      (v) =>
+        v.lang === "en-GB" ||
+        v.name.toLowerCase().includes("british") ||
+        v.name.toLowerCase().includes("daniel") ||
+        v.name.toLowerCase().includes("george")
     );
     const english = voices.find((v) => v.lang.startsWith("en"));
-    utt.voice = british || english || null;
+    const selectedVoice = british || english || voices[0] || null;
 
-    utt.onend = () => onEnd?.();
-    synthRef.current.speak(utt);
+    let chunkIndex = 0;
+    let keepAlive: ReturnType<typeof setInterval> | null = null;
+    let stuckTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const cleanup = () => {
+      if (keepAlive) { clearInterval(keepAlive); keepAlive = null; }
+      if (stuckTimer) { clearTimeout(stuckTimer); stuckTimer = null; }
+    };
+
+    const speakNext = () => {
+      if (chunkIndex >= chunks.length) {
+        cleanup();
+        onEnd?.();
+        return;
+      }
+
+      const utt = new SpeechSynthesisUtterance(chunks[chunkIndex]);
+      utt.rate = 0.9;
+      utt.pitch = 0.85;
+      utt.volume = 1.0;
+      if (selectedVoice) utt.voice = selectedVoice;
+
+      // Safety: if utterance doesn't fire onend within 30s, force-advance
+      stuckTimer = setTimeout(() => {
+        synth.cancel();
+        chunkIndex++;
+        speakNext();
+      }, 30000);
+
+      utt.onend = () => {
+        if (stuckTimer) { clearTimeout(stuckTimer); stuckTimer = null; }
+        chunkIndex++;
+        // Small pause between sentences for natural cadence
+        setTimeout(speakNext, 150);
+      };
+
+      utt.onerror = () => {
+        if (stuckTimer) { clearTimeout(stuckTimer); stuckTimer = null; }
+        chunkIndex++;
+        speakNext();
+      };
+
+      synth.speak(utt);
+    };
+
+    // Chrome workaround: keep synthesis alive by toggling pause/resume
+    keepAlive = setInterval(() => {
+      if (synth.speaking && !synth.paused) {
+        synth.pause();
+        synth.resume();
+      }
+    }, 8000);
+
+    speakNext();
   }, []);
 
   // ── Stop narration ───────────────────────────────────────────────────
@@ -201,52 +343,94 @@ export default function WalkingProfessor() {
     setState("walking");
   }, []);
 
-  // ── Narrate current page ─────────────────────────────────────────────
-  const narratePage = useCallback(() => {
-    if (isNarrating) {
-      stopNarration();
-      return;
-    }
+  const narrateSelection = useCallback(
+    async (mode: "page" | "section") => {
+      if (isNarrating) {
+        stopNarration();
+        return;
+      }
 
-    setIsNarrating(true);
-    setState("narrating");
+      setIsNarrating(true);
+      setState("narrating");
+      setSpeechBubble(`🎙️ Preparing ${mode === "page" ? "page" : "section"} narration...`);
 
-    // Get page path for intro
-    const path = window.location.pathname.replace(/\/University/g, "").replace(/\/$/, "") || "/";
-    const intro = PAGE_INTROS[path] || "Allow me to read this page to you. Please remain seated.";
+      const path = window.location.pathname.replace(/\/$/, "") || "/";
+      const titleSource =
+        document.querySelector("[data-page-title]")?.textContent?.trim() ||
+        document.querySelector("h1")?.textContent?.trim() ||
+        document.title ||
+        "Page";
 
-    // Extract visible text from main content
-    const main = document.querySelector("main") || document.body;
-    const sections = main.querySelectorAll("section, article");
-    const textParts: string[] = [intro];
+      const narrationRoot =
+        (document.querySelector("[data-narration-root]") as HTMLElement | null) ||
+        (document.querySelector("main") as HTMLElement | null) ||
+        document.body;
 
-    sections.forEach((sec) => {
-      const headings = sec.querySelectorAll("h1, h2, h3");
-      const paragraphs = sec.querySelectorAll("p");
-      headings.forEach((h) => {
-        const txt = h.textContent?.trim();
-        if (txt) textParts.push(txt + ".");
+      let contentTitle = titleSource;
+      let contentParts: string[] = [];
+
+      if (mode === "section") {
+        const sectionNodes = Array.from(
+          narrationRoot.querySelectorAll("[data-narration-section], section, article")
+        ).filter((node): node is HTMLElement => node instanceof HTMLElement);
+
+        const activeSection = findMostVisibleSection(sectionNodes) ?? narrationRoot;
+        const sectionTitle =
+          activeSection.querySelector("h1, h2, h3")?.textContent?.trim() ||
+          activeSection.getAttribute("data-narration-section") ||
+          titleSource;
+
+        contentTitle = `${titleSource} — ${sectionTitle}`;
+        contentParts = collectNarrationText(activeSection, 18);
+      } else {
+        contentParts = collectNarrationText(narrationRoot, 32);
+      }
+
+      if (contentParts.length === 0) {
+        contentParts = [PAGE_INTROS[path] || "Allow me to tell you about this page. Please remain seated."];
+      }
+
+      const pageContent = contentParts.join(". ").slice(0, 4000);
+
+      let narrationText: string;
+      try {
+        narrationText = await fetchNarration({
+          pageTitle: contentTitle,
+          pageContent,
+          style: mode === "section" ? "observation" : "introduction",
+        });
+      } catch {
+        const intro = PAGE_INTROS[path] || "Allow me to tell you about this page. Please remain seated.";
+        narrationText = `${intro} ${contentParts.slice(0, 10).join(". ")}`;
+      }
+
+      setSpeechBubble("🎙️ " + narrationText.slice(0, 100) + (narrationText.length > 100 ? "..." : ""));
+
+      speak(narrationText, () => {
+        setIsNarrating(false);
+        setSpeechBubble(
+          mode === "section"
+            ? "That concludes the section. You may now continue studying."
+            : "That concludes my narration. You may applaud."
+        );
+        setState("idle");
+        setTimeout(() => {
+          setSpeechBubble(null);
+          setState("walking");
+        }, 4000);
       });
-      paragraphs.forEach((p) => {
-        const txt = p.textContent?.trim();
-        if (txt && txt.length > 20) textParts.push(txt);
-      });
-    });
+    },
+    [isNarrating, speak, stopNarration]
+  );
 
-    // Limit to avoid extremely long narration
-    const fullText = textParts.slice(0, 15).join(" ... ");
-    setSpeechBubble("🎙️ Narrating page...");
+  // ── Narrate current page via Cloudflare AI ──────────────────────────
+  const narratePage = useCallback(async () => {
+    await narrateSelection("page");
+  }, [narrateSelection]);
 
-    speak(fullText, () => {
-      setIsNarrating(false);
-      setSpeechBubble("That concludes my narration. You may applaud.");
-      setState("idle");
-      setTimeout(() => {
-        setSpeechBubble(null);
-        setState("walking");
-      }, 4000);
-    });
-  }, [isNarrating, speak, stopNarration]);
+  const narrateSection = useCallback(async () => {
+    await narrateSelection("section");
+  }, [narrateSelection]);
 
   // ── Click handler ────────────────────────────────────────────────────
   const handleClick = useCallback(() => {
@@ -293,7 +477,7 @@ export default function WalkingProfessor() {
     return (
       <button
         onClick={() => setIsMinimised(false)}
-        className="fixed bottom-4 right-4 z-[9990] w-12 h-12 rounded-full bg-navy text-gold border-2 border-gold/40 shadow-lg hover:scale-110 transition-transform flex items-center justify-center text-xl"
+        className="fixed bottom-4 right-4 z-9990 w-12 h-12 rounded-full bg-navy text-gold border-2 border-gold/40 shadow-lg hover:scale-110 transition-transform flex items-center justify-center text-xl"
         title="Summon Professor Alignment"
       >
         🎓
@@ -312,7 +496,7 @@ export default function WalkingProfessor() {
       {/* ── Speech bubble ───────────────────────────────── */}
       {speechBubble && (
         <div
-          className="fixed z-[9992] pointer-events-none transition-all duration-300"
+          className="fixed z-9992 pointer-events-none transition-all duration-300"
           style={{
             bottom: "140px",
             left: `${Math.max(5, Math.min(75, posX - 5))}%`,
@@ -332,7 +516,7 @@ export default function WalkingProfessor() {
       {/* ── Controls popup ──────────────────────────────── */}
       {showControls && (
         <div
-          className="fixed z-[9993] transition-all duration-200"
+          className="fixed z-9993 transition-all duration-200"
           style={{
             bottom: "140px",
             left: `${posX}%`,
@@ -348,7 +532,13 @@ export default function WalkingProfessor() {
                   : "bg-gold/20 text-gold hover:bg-gold/30"
               }`}
             >
-              {isNarrating ? "⏹ Stop" : "🎙️ Narrate"}
+              {isNarrating ? "⏹ Stop" : "🎙️ Page"}
+            </button>
+            <button
+              onClick={narrateSection}
+              className="px-3 py-2 rounded-lg text-xs font-serif uppercase tracking-widest bg-gold/10 text-parchment/90 hover:bg-gold/20 transition-colors"
+            >
+              § Section
             </button>
             <button
               onClick={() => {
@@ -367,7 +557,7 @@ export default function WalkingProfessor() {
       {/* ── Professor character ─────────────────────────── */}
       <div
         ref={profRef}
-        className="fixed z-[9991] cursor-grab active:cursor-grabbing select-none"
+        className="fixed z-9991 cursor-grab active:cursor-grabbing select-none"
         style={{
           bottom: isTripping ? "10px" : "20px",
           left: `${posX}%`,

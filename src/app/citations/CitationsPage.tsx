@@ -64,7 +64,7 @@ export function CitationsPage({
             comprehensive reference of scholarly sources, institutional reports,
             and primary documents.
           </p>
-          <p className="text-gold/50 text-sm mt-6 italic font-serif">
+          <p className="text-gold/70 text-sm mt-6 italic font-serif">
             {citations.length} citations from {new Set(citations.map((c) => c.articleSlug)).size} articles
           </p>
         </div>
@@ -97,7 +97,7 @@ export function CitationsPage({
               </button>
             ))}
           </div>
-          <p className="text-xs text-stone/50 mt-3">
+          <p className="text-xs text-stone/80 mt-3">
             Showing {filtered.length} of {citations.length} citations
           </p>
         </div>
@@ -112,7 +112,7 @@ export function CitationsPage({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="text-center text-stone/50 italic py-12"
+              className="text-center text-stone/80 italic py-12"
             >
               No citations match your search.
             </motion.p>
@@ -132,7 +132,7 @@ export function CitationsPage({
                       {letter}
                     </span>
                     <div className="flex-1 h-px bg-gold/30" />
-                    <span className="text-xs text-stone/40">
+                    <span className="text-xs text-stone/70">
                       {letterCitations.length}
                     </span>
                   </div>
@@ -154,12 +154,12 @@ export function CitationsPage({
                           >
                             {c.articleTitle}
                           </Link>
-                          <span className="text-xs text-stone/40">·</span>
-                          <span className="text-xs text-stone/40">
+                          <span className="text-xs text-stone/70">·</span>
+                          <span className="text-xs text-stone/70">
                             {c.authorName}
                           </span>
-                          <span className="text-xs text-stone/40">·</span>
-                          <span className="text-xs text-stone/40">
+                          <span className="text-xs text-stone/70">·</span>
+                          <span className="text-xs text-stone/70">
                             {new Date(c.datePublished).toLocaleDateString(
                               "en-GB",
                               { year: "numeric", month: "long", day: "numeric" }
@@ -182,7 +182,7 @@ export function CitationsPage({
           <p className="text-gold/60 italic font-serif text-sm">
             « Nanos gigantum humeris insidentes »
           </p>
-          <p className="text-stone/40 text-xs mt-2 uppercase tracking-widest">
+          <p className="text-stone/70 text-xs mt-2 uppercase tracking-widest">
             Standing on the shoulders of giants — Bernard of Chartres
           </p>
         </div>

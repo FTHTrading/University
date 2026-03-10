@@ -136,7 +136,7 @@ export function Footer() {
         </div>
 
         {/* ── Copyright ───────────────────────────── */}
-        <p className="text-center text-xs text-parchment/50 mt-8">
+        <p className="text-center text-xs text-parchment/80 mt-8">
           &copy; 2026 Fitzherbert University. Chartered 1783 &middot; Rechartered 2025. All rights reserved.
         </p>
       </div>

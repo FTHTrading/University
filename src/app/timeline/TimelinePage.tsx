@@ -286,7 +286,7 @@ export default function TimelinePage() {
 
         {/* ── Timeline ────────────────────────────── */}
         <div className="max-w-3xl mx-auto space-y-6">
-          {filtered.map((event, idx) => {
+          {filtered.map((event) => {
             const globalIdx = events.indexOf(event);
             const isOpen = expanded.has(globalIdx);
 

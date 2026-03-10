@@ -140,7 +140,7 @@ function escapeXml(str: string): string {
 }
 
 function generateRSS(): string {
-  const baseUrl = "https://fitzherbert.university";
+  const baseUrl = "https://university.xxxiii.io";
   const now = new Date().toUTCString();
 
   const items = articles
@@ -166,8 +166,8 @@ function generateRSS(): string {
     <description>Original scholarship from the faculties, centres, and institutes of Fitzherbert University — advancing the discourse on institutional governance, competitive strategy, and technological sovereignty.</description>
     <language>en-us</language>
     <lastBuildDate>${now}</lastBuildDate>
-    <managingEditor>chancellor@fitzherbert.university (Office of the Chancellor)</managingEditor>
-    <webMaster>webmaster@fitzherbert.university (University Web Services)</webMaster>
+    <managingEditor>chancellor@university.xxxiii.io (Office of the Chancellor)</managingEditor>
+    <webMaster>webmaster@university.xxxiii.io (University Web Services)</webMaster>
     <copyright>© 2026 Fitzherbert University. Established 1783. All rights reserved.</copyright>
     <atom:link href="${baseUrl}/blog/rss.xml" rel="self" type="application/rss+xml" />
     <image>

@@ -70,6 +70,63 @@ const news = [
   },
 ];
 
+const insights = [
+  {
+    title: "AI certificates are multiplying faster than institutional restraint",
+    excerpt:
+      "Every platform now promises fluency, employability, or transformation. Some promise all three before the landing page finishes animating. Fitzherbert's position is that credential abundance is useful, provided someone still checks what the credential means.",
+    href: "/blog",
+    cta: "Read the Record",
+  },
+  {
+    title: "Wallet-native academic records have become annoyingly sensible",
+    excerpt:
+      "Employers want verification, graduates want portability, and universities would prefer never again to email a PDF called final-final-REAL-transcript. On-chain provenance has acquired the deeply inconvenient quality of making sense.",
+    href: "/on-chain",
+    cta: "Inspect the Registry",
+  },
+  {
+    title: "The market wants both speed and legitimacy, which is regrettably our speciality",
+    excerpt:
+      "Short-form AI certificates address urgency. Full degrees address depth. We have responded with both, plus a constitutional tone of voice usually unavailable outside old parliaments and very committed deaneries.",
+    href: "/admissions",
+    cta: "View Admissions",
+  },
+];
+
+const credentialLandscape = [
+  {
+    provider: "OpenAI Academy & platform certificates",
+    type: "Vendor credential",
+    offer: "Fast ecosystem literacy, product fluency, and a high probability of sounding current in meetings.",
+    gap: "Less focused on whether your governance framework survives contact with a registrar and two suspicious committee chairs.",
+  },
+  {
+    provider: "Google / Microsoft / cloud AI certifications",
+    type: "Applied technical pathway",
+    offer: "Operational tooling, deployment patterns, and the practical dignity of dashboards that mostly load on the first attempt.",
+    gap: "Usually stops just short of asking whether a university should issue soulbound credentials to a Visiting Intelligence.",
+  },
+  {
+    provider: "Coursera, DeepLearning.AI, and the certificate republic",
+    type: "Modular upskilling",
+    offer: "Breadth, accessibility, and enough specialisations to sustain a second browser tab indefinitely.",
+    gap: "Stackability is strong. Institutional mythos is thin. No resident pigeon.",
+  },
+  {
+    provider: "Conventional university AI degrees",
+    type: "Formal degree",
+    offer: "Accredited seriousness, research supervision, and footnotes with strong emotional boundaries.",
+    gap: "Many are still debating whether AI belongs in the curriculum while AI has already rewritten the group project rubric.",
+  },
+];
+
+const fitzOfferings = [
+  "B.Intel, B.Sys, B.Prov, and B.Gov degree pathways with serious curriculum and unserious confidence",
+  "AI Skills Levels I–IV with stackable certificates, soulbound records, and enough governance to worry a founder",
+  "Wallet-native registration, FITZ-linked infrastructure, and Polygon-verifiable provenance for those who prefer evidence to vibes",
+];
+
 export default function HomePage() {
   return (
     <>
@@ -321,6 +378,127 @@ export default function HomePage() {
             >
               Apply Now
             </Link>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── Insights ─────────────────────────────── */}
+      <Section alternate stone>
+        <SectionHeader
+          eyebrow="Insights"
+          title="What the AI credential market is quietly becoming"
+          description="A brief institutional reading of the certificate boom, the degree race, and the curious fact that everyone now wants speed and legitimacy at the same time."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {insights.map((item) => (
+            <article key={item.title} className="border border-gold/20 bg-ivory p-6 gold-emboss">
+              <h3 className="font-serif text-xl font-bold mb-3">{item.title}</h3>
+              <p className="text-stone text-sm leading-relaxed mb-5">{item.excerpt}</p>
+              <Link
+                href={item.href}
+                className="inline-block text-xs tracking-widest uppercase text-gold hover:text-maroon transition-colors"
+              >
+                {item.cta}
+              </Link>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── Credential Landscape ────────────────── */}
+      <Section>
+        <SectionHeader
+          eyebrow="AI Degrees & Certificates"
+          title="A crowded bazaar of credentials, badges, pathways, and confident promises"
+          description="The landscape is real, useful, slightly chaotic, and fully committed to issuing proof of competence. We have, reluctantly but elegantly, joined it."
+        />
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 max-w-6xl mx-auto">
+          <div className="space-y-4">
+            {credentialLandscape.map((item) => (
+              <div key={item.provider} className="border border-gold/20 bg-ivory p-6">
+                <p className="engraved text-gold mb-2">{item.type}</p>
+                <h3 className="font-serif text-xl font-bold mb-3">{item.provider}</h3>
+                <p className="text-stone text-sm leading-relaxed mb-3">
+                  <strong className="text-navy">What it offers:</strong> {item.offer}
+                </p>
+                <p className="text-stone text-sm leading-relaxed">
+                  <strong className="text-maroon">What it omits:</strong> {item.gap}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="border border-gold bg-navy text-parchment p-8 gold-emboss">
+            <p className="engraved text-gold mb-3">Our Response</p>
+            <h3 className="font-serif text-3xl font-bold text-gold mb-4">Fitzherbert University</h3>
+            <p className="text-parchment/85 leading-relaxed mb-6">
+              Degrees, certificates, governance theatre, wallet-native registration,
+              and a Polygon-backed credential layer for applicants who would like their
+              academic record to look slightly more inevitable than everyone else&apos;s.
+            </p>
+            <ul className="space-y-3 mb-8">
+              {fitzOfferings.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm text-parchment/80 leading-relaxed">
+                  <span className="text-gold mt-0.5">◆</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/skills"
+                className="inline-block bg-maroon text-parchment px-6 py-3 text-xs tracking-widest uppercase font-serif hover:bg-maroon-light transition-colors"
+              >
+                Explore Certificates
+              </Link>
+              <Link
+                href="/academics"
+                className="inline-block border border-gold text-gold px-6 py-3 text-xs tracking-widest uppercase font-serif hover:bg-gold hover:text-navy transition-colors"
+              >
+                Explore Degrees
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── Apply / Register ────────────────────── */}
+      <Section alternate>
+        <div className="max-w-5xl mx-auto border border-gold/20 bg-ivory p-8 md:p-10 gold-emboss">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] gap-8 items-start">
+            <div>
+              <p className="engraved text-gold mb-3">Apply & Register</p>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
+                Register now, before someone else invents a certificate for blinking confidently at a chatbot
+              </h2>
+              <p className="text-stone text-lg leading-relaxed mb-6">
+                Fitzherbert offers AI degrees, stackable AI certificates, and a registration
+                system that assumes your wallet, your credential, and your institutional identity
+                should know one another. The process is real. The tone is satirical. The paperwork remains undefeated.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/admissions"
+                  className="inline-block bg-maroon text-parchment px-8 py-3 text-sm tracking-widest uppercase font-serif hover:bg-maroon-light transition-colors"
+                >
+                  Apply for Admission
+                </Link>
+                <Link
+                  href="/on-chain"
+                  className="inline-block border border-gold text-gold px-8 py-3 text-sm tracking-widest uppercase font-serif hover:bg-gold hover:text-navy transition-colors"
+                >
+                  Register Wallet & Credentials
+                </Link>
+              </div>
+            </div>
+            <div className="border border-gold/20 bg-navy p-6 text-parchment">
+              <p className="engraved text-gold mb-3">Included in the ritual</p>
+              <ul className="space-y-3 text-sm text-parchment/80">
+                <li className="flex gap-3"><span className="text-gold">◇</span><span>Admissions review across reasoning, systems thinking, and AI literacy</span></li>
+                <li className="flex gap-3"><span className="text-gold">◇</span><span>Internal wallet provisioning for students, systems, sponsors, and fellow travellers</span></li>
+                <li className="flex gap-3"><span className="text-gold">◇</span><span>Mint-ready records for degrees, skills certificates, season artefacts, and FITZ-linked infrastructure</span></li>
+                <li className="flex gap-3"><span className="text-gold">◇</span><span>A level of institutional seriousness disproportionate to the number of graduates currently available to confirm it</span></li>
+              </ul>
+            </div>
           </div>
         </div>
       </Section>

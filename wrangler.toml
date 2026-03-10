@@ -1,0 +1,11 @@
+name = "fitzherbert-university"
+compatibility_date = "2025-06-01"
+pages_build_output_dir = "./out"
+
+# ── Pages project ────────────────────────────────────────
+# Deploy via: npx wrangler pages deploy --project-name=fitzherbert-university
+# Custom domain: university.xxxiii.io
+
+[vars]
+NEXT_BASE_PATH = ""
+NODE_ENV = "production"

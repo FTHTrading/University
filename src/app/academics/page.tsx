@@ -3,135 +3,13 @@ import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
 import { CollegeCard } from "@/components/CollegeCard";
+import { colleges, faculty, programmes } from "@/lib/academics-data";
 
 export const metadata: Metadata = {
   title: "Academics",
   description:
     "Epoch-based colleges, AI-native degree programmes, faculty, and the academic architecture of Fitzherbert University — operating on intelligence-doubling timelines.",
 };
-
-const colleges = [
-  {
-    name: "College of Computational Systems",
-    dean: "Director Elara Voss",
-    established: "Epoch 0.1",
-    description:
-      "The foundational college. Systems architecture, distributed computing, formal verification, and the engineering substrate upon which all intelligence infrastructure is built.",
-    departments: ["Systems Architecture", "Distributed Computing", "Formal Verification", "Infrastructure Engineering", "Performance Optimisation"],
-  },
-  {
-    name: "College of Applied Intelligence",
-    dean: "Director James Harrington",
-    established: "Epoch 0.2",
-    description:
-      "Model design, training paradigms, capability evaluation, and alignment research. The college where raw compute becomes reliable, governed intelligence.",
-    departments: ["Model Architecture", "Training & Fine-Tuning", "Capability Evaluation", "Alignment Science", "Benchmarking & Validation"],
-  },
-  {
-    name: "College of Autonomous Governance",
-    dean: "Director Victoria Langford",
-    established: "Epoch 0.3",
-    description:
-      "Constitutional AI, institutional design for autonomous systems, regulatory frameworks, and the legal infrastructure of machine governance. No governance framework produced by the College has been implemented outside the University. The College considers external adoption 'a downstream concern.'",
-    departments: ["Constitutional AI", "Regulatory Architecture", "Institutional Design", "Policy Engineering", "Democratic Accountability"],
-  },
-  {
-    name: "College of Cryptographic Infrastructure",
-    dean: "Director Marcus Chen",
-    established: "Epoch 0.4",
-    description:
-      "Zero-knowledge proofs, multi-chain provenance, deterministic publishing, Merkle verification, and the trust architecture of decentralised systems.",
-    departments: ["Zero-Knowledge Systems", "Multi-Chain Provenance", "Merkle Verification", "Deterministic Publishing", "Identity Infrastructure"],
-  },
-  {
-    name: "College of Human-Centered Systems",
-    dean: "Director Catherine Whitfield",
-    established: "Epoch 0.5",
-    description:
-      "Human-AI interaction, cognitive augmentation, ethical reasoning under acceleration, and the preservation of human judgment as the anchor of institutional life.",
-    departments: ["Human-AI Interaction", "Cognitive Augmentation", "Ethics Under Acceleration", "Decision Science", "Organisational Psychology"],
-  },
-  {
-    name: "College of Narrative & Protocol Design",
-    dean: "Director Thomas Wycliffe",
-    established: "Epoch 0.6",
-    description:
-      "Institutional narrative architecture, protocol specification, knowledge-graph construction, and the design of systems that explain themselves. Founded last. The College itself could not explain why, which it considers thematically appropriate.",
-    departments: ["Protocol Architecture", "Knowledge Graphs", "Narrative Systems", "Explainability Engineering", "Documentation Science"],
-  },
-];
-
-const programmes = [
-  {
-    level: "Undergraduate (AI-Accelerated)",
-    offerings: [
-      "B.Intel — Intelligence Engineering",
-      "B.Sys — Systems Architecture",
-      "B.Prov — Provenance & Audit Systems",
-      "B.Gov — Autonomous Governance",
-    ],
-  },
-  {
-    level: "Graduate",
-    offerings: [
-      "M.AI — Applied Intelligence",
-      "M.Proto — Protocol Architecture",
-      "M.Gov — Governance Engineering",
-      "M.Crypto — Cryptographic Infrastructure",
-    ],
-  },
-  {
-    level: "Doctoral",
-    offerings: [
-      "D.Intel — Intelligence Systems",
-      "D.Eng — Sovereign Systems Engineering",
-      "D.Prov — Deterministic Publishing & Provenance",
-    ],
-  },
-];
-
-const faculty = [
-  {
-    name: "Director Elara Voss",
-    title: "Dean, Computational Systems",
-    field: "Distributed Systems & Formal Verification",
-  },
-  {
-    name: "Director James Harrington",
-    title: "Dean, Applied Intelligence",
-    field: "Model Governance & Capability Evaluation",
-  },
-  {
-    name: "Director Victoria Langford",
-    title: "Dean, Autonomous Governance",
-    field: "Constitutional AI & Institutional Design",
-  },
-  {
-    name: "Director Marcus Chen",
-    title: "Dean, Cryptographic Infrastructure",
-    field: "Zero-Knowledge Proofs & Multi-Chain Provenance",
-  },
-  {
-    name: "Director Catherine Whitfield",
-    title: "Dean, Human-Centered Systems",
-    field: "Human-AI Interaction & Ethical Reasoning",
-  },
-  {
-    name: "Director Thomas Wycliffe",
-    title: "Dean, Narrative & Protocol Design",
-    field: "Protocol Architecture & Knowledge Graphs",
-  },
-  {
-    name: "Professor Margaret Sinclair",
-    title: "Endowed Chair, AI Safety & Alignment",
-    field: "Alignment Verification & Computational Ethics",
-  },
-  {
-    name: "Professor Andrew Caldwell",
-    title: "Director, Deterministic Publishing Lab",
-    field: "Merkle Verification & Canonical Systems",
-  },
-];
 
 export default function AcademicsPage() {
   return (
@@ -150,7 +28,7 @@ export default function AcademicsPage() {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {colleges.map((c) => (
-            <CollegeCard key={c.name} {...c} />
+            <CollegeCard key={c.name} {...c} href={`/academics/${c.slug}`} />
           ))}
         </div>
       </Section>
@@ -335,7 +213,7 @@ export default function AcademicsPage() {
                 { term: "Annual Epoch Review", dates: "August 30, 2026", weeks: "" },
               ].map((period) => (
                 <div key={period.term} className="flex flex-wrap items-baseline gap-4 py-3 border-b border-gold/10 last:border-b-0">
-                  <span className="font-serif font-bold text-base w-48 flex-shrink-0">{period.term}</span>
+                  <span className="font-serif font-bold text-base w-48 shrink-0">{period.term}</span>
                   <span className="text-stone text-sm flex-1">{period.dates}</span>
                   {period.weeks && (
                     <span className="text-stone-light text-xs tracking-wide uppercase">{period.weeks}</span>

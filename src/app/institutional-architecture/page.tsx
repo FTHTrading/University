@@ -28,7 +28,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "Fitzherbert University",
-    url: "https://fitzherbert.university",
+    url: "https://university.xxxiii.io",
   },
 };
 
@@ -36,12 +36,12 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://fitzherbert.university" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://university.xxxiii.io" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Institutional Architecture",
-      item: "https://fitzherbert.university/institutional-architecture",
+      item: "https://university.xxxiii.io/institutional-architecture",
     },
   ],
 };
@@ -189,7 +189,7 @@ export default function InstitutionalArchitecturePage() {
           />
           <div className="space-y-6 text-stone leading-relaxed">
             <p className="drop-cap">
-              When Fitzherbert University recharters in 2025, it faced a design problem that no
+              When Fitzherbert University rechartered in 2025, it faced a design problem that no
               consultancy had a model for: how do you govern an institution whose capabilities are
               doubling faster than its governance cycle can track? How do you preserve two hundred
               and forty years of institutional legitimacy while rebuilding everything below it for
@@ -257,13 +257,13 @@ export default function InstitutionalArchitecturePage() {
               <p className="text-stone text-sm leading-relaxed mb-5 flex-1">{svc.desc}</p>
               <div className="border-t border-gold/20 pt-4 space-y-2">
                 <div className="flex justify-between text-xs">
-                  <span className="text-stone/60 uppercase tracking-widest font-semibold">
+                  <span className="text-stone/80 uppercase tracking-widest font-semibold">
                     Outcome
                   </span>
                 </div>
                 <p className="text-stone text-xs leading-relaxed italic mb-3">{svc.outcome}</p>
                 <div className="flex justify-between text-xs">
-                  <span className="text-stone/60">{svc.duration}</span>
+                  <span className="text-stone/80">{svc.duration}</span>
                   <span className="font-semibold text-navy">{svc.priceRange}</span>
                 </div>
               </div>

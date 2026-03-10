@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getAllArticles, getAuthor } from "@/lib/articles";
-import { computeArticleCanonical, computeMerkleRoot, sha256, type CanonicalRecord } from "@/lib/canonical";
+import { computeArticleCanonical, computeMerkleRoot, type CanonicalRecord } from "@/lib/canonical";
 import { ArchivePage } from "./ArchivePage";
 
 // ── Metadata ─────────────────────────────────────────────────────────────────
@@ -70,7 +70,7 @@ export default function ArchiveRoute() {
     publisher: {
       "@type": "CollegeOrUniversity",
       name: "Fitzherbert University",
-      url: "https://fitzherbert.university",
+      url: "https://university.xxxiii.io",
     },
     numberOfItems: records.length,
     mainEntity: {
@@ -82,7 +82,7 @@ export default function ArchiveRoute() {
         item: {
           "@type": "ScholarlyArticle",
           name: r.title,
-          url: `https://fitzherbert.university/blog/${r.slug}`,
+          url: `https://university.xxxiii.io/blog/${r.slug}`,
           identifier: [
             { "@type": "PropertyValue", name: "SHA-256", value: r.contentHash },
             { "@type": "PropertyValue", name: "IPFS CID", value: r.cid },
@@ -103,13 +103,13 @@ export default function ArchiveRoute() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://fitzherbert.university",
+        item: "https://university.xxxiii.io",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Canonical Archive",
-        item: "https://fitzherbert.university/archive",
+        item: "https://university.xxxiii.io/archive",
       },
     ],
   };

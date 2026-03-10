@@ -157,7 +157,7 @@ export default function AthleticsIntelligencePage() {
               strategy analytics, scouting optimisation, and recruitment decision support through
               the same deterministic AI infrastructure that powers the University&rsquo;s research
               and governance systems. Whether any team has actually subscribed is a matter the
-              Division describes as 'commercially sensitive.'
+              Division describes as &lsquo;commercially sensitive.&rsquo;
             </p>
             <p>
               Students run the analytics. Faculty oversee the models. AI operates the infrastructure.
@@ -281,7 +281,7 @@ export default function AthleticsIntelligencePage() {
                 ))}
               </ul>
               <a
-                href="/University/partnerships/"
+                href="/partnerships/"
                 className={`mt-8 block text-center font-serif text-sm px-6 py-3 tracking-wide transition-colors ${
                   tier.highlight
                     ? "bg-maroon text-white hover:bg-maroon/90"
@@ -434,13 +434,13 @@ export default function AthleticsIntelligencePage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/University/partnerships/"
+              href="/partnerships/"
               className="inline-block bg-maroon text-white font-serif text-sm px-8 py-3 tracking-wide hover:bg-maroon/90 transition-colors"
             >
               Subscribe to CISSS
             </a>
             <a
-              href="/University/sponsor/"
+              href="/sponsor/"
               className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
             >
               Sponsor a Cohort

@@ -132,7 +132,7 @@ export function FAQPage({ sections }: { sections: FAQSection[] }) {
           {sections.reduce((sum, s) => sum + s.faqs.length, 0)} questions across{" "}
           {sections.length} categories
         </p>
-        <p className="latin-inscription text-gold/40 text-sm tracking-[0.3em] italic">
+        <p className="latin-inscription text-gold/60 text-sm tracking-[0.3em] italic">
           Quaerendo invenietis — By seeking, you shall find
         </p>
       </section>

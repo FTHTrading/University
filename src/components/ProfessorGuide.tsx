@@ -411,7 +411,7 @@ export default function ProfessorGuide() {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isThinking, setIsThinking] = useState(false);
   const [isListening, setIsListening] = useState(false);
-  const [hasGreeted, setHasGreeted] = useState(false);
+  const hasGreetedRef = useRef(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<{ abort: () => void } | null>(null);
 
@@ -422,21 +422,27 @@ export default function ProfessorGuide() {
 
   // Greeting on first open
   useEffect(() => {
-    if (isOpen && !hasGreeted) {
-      setHasGreeted(true);
+    if (isOpen && !hasGreetedRef.current) {
+      hasGreetedRef.current = true;
       const greetMsg: ChatMessage = { role: "professor", text: GREETING };
-      setMessages([greetMsg]);
+      // Use setTimeout to avoid synchronous setState in effect body
+      const greetTimer = setTimeout(() => {
+        setMessages([greetMsg]);
+      }, 0);
       // Small delay before speaking the greeting
-      const timer = setTimeout(() => {
+      const speakTimer = setTimeout(() => {
         speak(
           GREETING,
           () => setIsSpeaking(true),
           () => setIsSpeaking(false)
         );
       }, 600);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(greetTimer);
+        clearTimeout(speakTimer);
+      };
     }
-  }, [isOpen, hasGreeted]);
+  }, [isOpen]);
 
   // Load voices
   useEffect(() => {
@@ -542,7 +548,7 @@ export default function ProfessorGuide() {
                 <div className="text-xs font-serif font-bold tracking-wide text-gold">
                   Professor Alignment
                 </div>
-                <div className="text-[10px] text-parchment/60 tracking-wider uppercase">
+                <div className="text-[10px] text-parchment/80 tracking-wider uppercase">
                   AI Campus Guide
                 </div>
               </div>
@@ -565,7 +571,7 @@ export default function ProfessorGuide() {
                     window.speechSynthesis.cancel();
                   }
                 }}
-                className="ml-2 text-parchment/60 hover:text-gold transition-colors text-lg leading-none"
+                className="ml-2 text-parchment/80 hover:text-gold transition-colors text-lg leading-none"
                 aria-label="Close guide"
               >
                 ×
@@ -577,7 +583,7 @@ export default function ProfessorGuide() {
           <div className="h-[160px] bg-gradient-to-b from-navy/10 to-parchment border-b border-gold/20">
             <Suspense
               fallback={
-                <div className="flex items-center justify-center h-full text-stone/40 text-xs">
+                <div className="flex items-center justify-center h-full text-stone/70 text-xs">
                   Loading Professor...
                 </div>
               }

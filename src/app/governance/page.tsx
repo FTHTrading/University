@@ -357,7 +357,7 @@ export default function GovernancePage() {
         <div className="max-w-3xl mx-auto space-y-6">
           {charterArticles.map((a) => (
             <div key={a.number} className="flex gap-6 items-start border-l-2 border-gold pl-6">
-              <span className="font-serif text-3xl font-bold text-gold/40 flex-shrink-0">
+              <span className="font-serif text-3xl font-bold text-gold/60 flex-shrink-0">
                 {a.number}
               </span>
               <div>
@@ -380,22 +380,22 @@ export default function GovernancePage() {
             {
               title: "Heritage Charter (1783)",
               desc: "The original founding document of Fitzherbert University. Establishes the institutional mandate, academic freedom protections, and the principle of Veritas per Disciplina.",
-              href: "/University/documents/fitzherbert-university-charter.pdf",
+              href: "/documents/university-charter-1783.pdf",
             },
             {
               title: "Rechartering Protocol (2025)",
               desc: "The instrument by which the University was rechartered as an AI-native institution. Establishes epoch-based governance, the four-gate framework, and the alignment supremacy principle.",
-              href: "/University/documents/fitzherbert-university-constitution.pdf",
+              href: "/documents/senate-standing-orders.pdf",
             },
             {
               title: "Strategic Plan 2025–2030",
               desc: "The institutional roadmap across twelve capability epochs. Covers academic expansion, infrastructure development, governance evolution, and alignment infrastructure.",
-              href: "/University/documents/fitzherbert-university-strategic-plan.pdf",
+              href: "/documents/investment-policy-statement.pdf",
             },
             {
               title: "Annual Report 2024–2025",
               desc: "The first annual report of the rechartered University. Documents Year One output, governance decisions, and capability assessments.",
-              href: "/University/documents/fitzherbert-university-annual-report.pdf",
+              href: "/documents/annual-governance-report-fy-2025.pdf",
             },
           ].map((doc) => (
             <a

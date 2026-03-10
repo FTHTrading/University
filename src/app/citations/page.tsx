@@ -61,8 +61,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://fitzherbert.university" },
-    { "@type": "ListItem", position: 2, name: "Citation Index", item: "https://fitzherbert.university/citations" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://university.xxxiii.io" },
+    { "@type": "ListItem", position: 2, name: "Citation Index", item: "https://university.xxxiii.io/citations" },
   ],
 };
 
@@ -72,7 +72,7 @@ export default function CitationsPageRoute() {
   const collectionJsonLd = {
     "@context": "https://schema.org",
     "@type": "Collection",
-    "@id": "https://fitzherbert.university/citations",
+    "@id": "https://university.xxxiii.io/citations",
     name: "Fitzherbert University Citation Index",
     description:
       "Aggregated citation index from all University Record publications.",
@@ -80,7 +80,7 @@ export default function CitationsPageRoute() {
     provider: {
       "@type": "CollegeOrUniversity",
       name: "Fitzherbert University",
-      url: "https://fitzherbert.university",
+      url: "https://university.xxxiii.io",
     },
   };
 

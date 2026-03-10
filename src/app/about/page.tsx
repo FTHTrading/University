@@ -135,7 +135,7 @@ export default function AboutPage() {
             responsibility — guided the institution through industrial revolutions,
             scientific transformations, and the rise of digital infrastructure. Or so
             the charter claims. The historical record between 1784 and 2024 is, the
-            University concedes, 'characteristically sparse.'
+            University concedes, &lsquo;characteristically sparse.&rsquo;
           </p>
           <p className="text-lg leading-relaxed text-stone">
             In 2025, the University reached another inflection point. Not the replacement

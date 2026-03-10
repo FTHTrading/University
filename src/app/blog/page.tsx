@@ -127,7 +127,7 @@ export default function BlogPage() {
 
       {/* ── Latin Footer ─────────────────────────────── */}
       <section className="py-16 text-center">
-        <p className="latin-inscription text-gold/40 text-sm tracking-[0.3em] italic">
+        <p className="latin-inscription text-gold/60 text-sm tracking-[0.3em] italic">
           Scripta manent — What is written endures
         </p>
       </section>

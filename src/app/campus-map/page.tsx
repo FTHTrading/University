@@ -15,6 +15,7 @@ import { Suspense, useState, useRef, useEffect, useCallback } from "react";
 import { Canvas, useFrame, useThree, ThreeEvent } from "@react-three/fiber";
 import { OrbitControls, PointerLockControls, Text, Html } from "@react-three/drei";
 import * as THREE from "three";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import Link from "next/link";
 
 // ── Building data ────────────────────────────────────────────────
@@ -698,18 +699,27 @@ function FirstPersonController() {
       if (!isInsideBuilding(newX, newZ)) {
         // Bounds check
         if (newX > -14 && newX < 14 && newZ > -12 && newZ < 12) {
-          camera.position.x = newX;
-          camera.position.z = newZ;
+          camera.position.set(newX, camera.position.y, newZ);
         }
       }
     }
 
     // Keep at human height
-    camera.position.y = 1.6;
+    camera.position.set(camera.position.x, 1.6, camera.position.z);
   });
 
   return null;
 }
+
+// ── Pre-computed star positions (module-level, avoids impure calls during render) ──
+const STAR_DATA = Array.from({ length: 80 }, () => ({
+  pos: [
+    (Math.random() - 0.5) * 60,
+    15 + Math.random() * 20,
+    (Math.random() - 0.5) * 60,
+  ] as [number, number, number],
+  size: 0.04 + Math.random() * 0.03,
+}));
 
 // ── Scene ────────────────────────────────────────────────────────
 
@@ -752,16 +762,9 @@ function CampusScene({
       {/* Stars at night */}
       {timeOfDay === "night" && (
         <group>
-          {Array.from({ length: 80 }).map((_, i) => (
-            <mesh
-              key={`star-${i}`}
-              position={[
-                (Math.random() - 0.5) * 60,
-                15 + Math.random() * 20,
-                (Math.random() - 0.5) * 60,
-              ]}
-            >
-              <sphereGeometry args={[0.04 + Math.random() * 0.03, 4, 4]} />
+          {STAR_DATA.map((star, i) => (
+            <mesh key={`star-${i}`} position={star.pos}>
+              <sphereGeometry args={[star.size, 4, 4]} />
               <meshBasicMaterial color="#FFFFFF" />
             </mesh>
           ))}
@@ -921,9 +924,17 @@ export default function CampusMapPage() {
             background: `linear-gradient(to bottom, ${lighting.skyTop}, ${lighting.skyBottom})`,
           }}
         >
+        <ErrorBoundary
+            fallback={
+              <div className="flex flex-col items-center justify-center h-full text-center px-4">
+                <p className="font-serif text-lg text-maroon mb-2">3D rendering unavailable</p>
+                <p className="text-stone text-sm">Your browser may not support WebGL. Try a different browser or device.</p>
+              </div>
+            }
+          >
           <Suspense
             fallback={
-              <div className="flex items-center justify-center h-full text-navy/40 font-serif">
+              <div className="flex items-center justify-center h-full text-navy/70 font-serif">
                 Rendering campus...
               </div>
             }
@@ -941,6 +952,7 @@ export default function CampusMapPage() {
               />
             </Canvas>
           </Suspense>
+          </ErrorBoundary>
         </div>
 
         {/* Walk mode HUD overlay */}
@@ -966,7 +978,7 @@ export default function CampusMapPage() {
               </div>
               <button
                 onClick={() => setSelected(null)}
-                className="text-stone/50 hover:text-navy text-lg leading-none"
+                className="text-stone/80 hover:text-navy text-lg leading-none"
               >
                 ×
               </button>
@@ -994,11 +1006,11 @@ export default function CampusMapPage() {
                 <h3 className="font-serif text-lg font-bold text-navy">
                   {selectedProfessor.name}
                 </h3>
-                <p className="text-xs text-stone/60 italic">{selectedProfessor.title}</p>
+                <p className="text-xs text-stone/80 italic">{selectedProfessor.title}</p>
               </div>
               <button
                 onClick={() => setSelectedProfessor(null)}
-                className="text-stone/50 hover:text-navy text-lg leading-none"
+                className="text-stone/80 hover:text-navy text-lg leading-none"
               >
                 ×
               </button>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
 
@@ -29,7 +30,7 @@ export default function AdmissionsPage() {
               that treated knowledge as stable, disciplines as bounded, and institutional change
               as slow. That model served well — not because it was perfect, but because nobody
               had yet invented a machine that could make the entire curriculum obsolete during
-              freshers' week.
+              freshers&apos; week.
             </p>
             <p>
               That condition no longer holds.
@@ -147,7 +148,7 @@ export default function AdmissionsPage() {
               },
             ].map((pillar) => (
               <div key={pillar.num} className="flex gap-6 items-start border-l-2 border-gold pl-6">
-                <span className="font-serif text-3xl font-bold text-gold/40 flex-shrink-0">{pillar.num}</span>
+                <span className="font-serif text-3xl font-bold text-gold/60 flex-shrink-0">{pillar.num}</span>
                 <div>
                   <h3 className="font-serif text-lg font-bold mb-2">{pillar.title}</h3>
                   <p className="text-stone text-sm leading-relaxed">{pillar.text}</p>
@@ -197,7 +198,7 @@ export default function AdmissionsPage() {
 
           <div className="mt-8 text-center">
             <a
-              href="/University/student-economics/"
+              href="/student-economics/"
               className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
             >
               How Student Economics Works →
@@ -327,7 +328,7 @@ export default function AdmissionsPage() {
               },
             ].map((s) => (
               <div key={s.step} className="text-center border border-gold/20 bg-ivory p-8">
-                <span className="font-serif text-4xl font-bold text-gold/30">{s.step}</span>
+                <span className="font-serif text-4xl font-bold text-gold/60">{s.step}</span>
                 <h3 className="font-serif text-lg font-bold mt-3 mb-3">{s.title}</h3>
                 <p className="text-stone text-sm leading-relaxed">{s.desc}</p>
               </div>
@@ -345,12 +346,12 @@ export default function AdmissionsPage() {
               >
                 Begin Application
               </a>
-              <a
-                href="/University/academics/"
+              <Link
+                href="/academics/"
                 className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
               >
                 View Programmes
-              </a>
+              </Link>
             </div>
           </div>
         </div>

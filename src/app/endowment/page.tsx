@@ -25,18 +25,18 @@ export default function EndowmentPage() {
           />
           <div className="space-y-6 text-stone leading-relaxed">
             <p className="drop-cap">
-              The endowment exists for one purpose: to guarantee the University's independence.
+              The endowment exists for one purpose: to guarantee the University&apos;s independence.
               Since 1783, the endowment has ensured that Fitzherbert University is beholden to
               no government, no corporation, and no transient interest. The fact that the
               endowment balance between 1784 and 2024 appears nowhere in the historical record
-              has been described by the Finance Committee as 'consistent with pre-digital
-              stewardship norms.'
+              has been described by the Finance Committee as &lsquo;consistent with pre-digital
+              stewardship norms.&rsquo;
             </p>
             <p>
               In 2025, the mandate expanded — the endowment now sustains not only the heritage
               campus and faculty but the computational infrastructure, governance architecture,
-              and research institutes that define the AI-native institution. The endowment's
-              precise composition is, the Chancellor notes, 'a matter of fiduciary confidence,'
+              and research institutes that define the AI-native institution. The endowment&apos;s
+              precise composition is, the Chancellor notes, &lsquo;a matter of fiduciary confidence,&rsquo;
               which is a phrase that means approximately nothing but sounds reassuring.
             </p>
           </div>
@@ -178,7 +178,7 @@ export default function EndowmentPage() {
         </div>
         <div className="text-center mt-8">
           <a
-            href="/University/student-economics/"
+            href="/student-economics/"
             className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
           >
             Full Student Economics Model →
@@ -216,7 +216,7 @@ export default function EndowmentPage() {
             },
           ].map((p) => (
             <div key={p.num} className="flex gap-6 items-start border-l-2 border-gold pl-6">
-              <span className="font-serif text-3xl font-bold text-gold/40 flex-shrink-0">{p.num}</span>
+              <span className="font-serif text-3xl font-bold text-gold/60 flex-shrink-0">{p.num}</span>
               <div>
                 <h3 className="font-serif text-lg font-bold mb-2">{p.title}</h3>
                 <p className="text-stone text-sm leading-relaxed">{p.text}</p>
@@ -286,17 +286,17 @@ export default function EndowmentPage() {
             {
               title: "Annual Report 2024–2025",
               desc: "Comprehensive report on the endowment's performance, allocation decisions, and institutional impact in the first year of the rechartered University.",
-              href: "/University/documents/fitzherbert-university-annual-report.pdf",
+              href: "/documents/annual-stewardship-report-fy-2025.pdf",
             },
             {
               title: "Financial Statements 2024–2025",
               desc: "Audited financial statements covering income, expenditure, endowment value, and investment performance.",
-              href: "/University/documents/fitzherbert-university-financial-statements.pdf",
+              href: "/documents/endowment-ten-year-performance-review.pdf",
             },
             {
               title: "Strategic Plan 2025–2030",
               desc: "The institutional roadmap including financial projections, infrastructure investment plans, and endowment growth targets across twelve capability epochs.",
-              href: "/University/documents/fitzherbert-university-strategic-plan.pdf",
+              href: "/documents/investment-policy-statement.pdf",
             },
           ].map((doc) => (
             <a
@@ -323,10 +323,10 @@ export default function EndowmentPage() {
         <div className="max-w-2xl mx-auto text-center">
           <h3 className="font-serif text-2xl font-bold mb-4">Support the University</h3>
           <p className="text-stone text-sm leading-relaxed mb-8">
-            Gifts to the endowment sustain the University's independence, protect its heritage,
+            Gifts to the endowment sustain the University&apos;s independence, protect its heritage,
             and power the intelligence infrastructure that defines its mission. All contributions
             are allocated according to the four-pillar framework and verified through the
-            University's canonical registry.
+            University&apos;s canonical registry.
           </p>
           <a
             href="mailto:stewardship@fitzherbert.edu"

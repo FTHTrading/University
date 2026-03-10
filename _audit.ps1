@@ -6,7 +6,7 @@ foreach($f in $rootFiles) { if(Test-Path $f) { $allFiles += Get-Item $f } }
 $results = $allFiles | ForEach-Object { Select-String -Path $_.FullName -Pattern 'FTHTrading' -CaseSensitive -AllMatches -ErrorAction SilentlyContinue }
 $grouped = $results | Group-Object Path
 foreach($g in $grouped) {
-    $rel = $g.Name.Replace('C:\Users\Kevan\fth-university\','')
+    $rel = $g.Name.Replace("$PWD\",'')
     $total = ($g.Group | ForEach-Object { $_.Matches.Count } | Measure-Object -Sum).Sum
     Write-Output "FILE: $rel ($total occ)"
     foreach($r in $g.Group) {

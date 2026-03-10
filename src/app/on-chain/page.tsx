@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeader } from "@/components/Section";
+import { PolygonRegistryConsole } from "@/components/PolygonRegistryConsole";
 
 export const metadata: Metadata = {
   title: "Polygon Registry — On-Chain Documentation & Credential Infrastructure",
@@ -29,7 +30,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "Fitzherbert University",
-    url: "https://fitzherbert.university",
+    url: "https://university.xxxiii.io",
   },
 };
 
@@ -312,6 +313,15 @@ export default function OnChainPage() {
         motto="Scripta Manent in Catena"
       />
 
+      <Section>
+        <SectionHeader
+          eyebrow="Wallet Provisioning"
+          title="Internal Polygon infrastructure, now with a registrar's sense of self-importance"
+          description="Provision wallets for applicants, systems, sponsors, and staff; then mint institutional offerings through the University's own registry rail."
+        />
+        <PolygonRegistryConsole />
+      </Section>
+
       {/* ── I. Introduction ──────────────────────── */}
       <Section>
         <div className="max-w-3xl mx-auto prose-container">
@@ -433,12 +443,12 @@ export default function OnChainPage() {
               </div>
               <p className="text-stone text-sm leading-relaxed mb-4">{nft.description}</p>
               <div className="bg-navy/5 border border-gold/10 p-3 mb-4">
-                <p className="text-xs text-stone/60 uppercase tracking-widest mb-1">
+                <p className="text-xs text-stone/80 uppercase tracking-widest mb-1">
                   Contract Method
                 </p>
                 <code className="text-xs font-mono text-navy/80">{nft.contractMethod}</code>
               </div>
-              <div className="flex flex-wrap gap-4 text-xs text-stone/60 font-mono">
+              <div className="flex flex-wrap gap-4 text-xs text-stone/80 font-mono">
                 <span>
                   <span className="text-gold/60">Contract: </span>
                   {nft.polygon.contract}
@@ -478,13 +488,13 @@ export default function OnChainPage() {
               </div>
               <p className="text-stone text-sm leading-relaxed mb-4">{season.description}</p>
               <div className="border-t border-gold/15 pt-3 flex justify-between text-xs">
-                <span className="text-stone/60 italic">{season.rarity}</span>
+                <span className="text-stone/80 italic">{season.rarity}</span>
                 <span
                   className={`font-semibold ${
                     season.status.includes("Open")
                       ? "text-gold"
                       : season.status.includes("Complete")
-                      ? "text-stone/40"
+                      ? "text-stone/70"
                       : "text-maroon"
                   }`}
                 >
@@ -503,7 +513,7 @@ export default function OnChainPage() {
           <p className="text-parchment/80 leading-relaxed">
             The University has considered whether Epoch Season Tokens should align to calendar
             seasons — Spring, Summer, Autumn, Winter. We chose not to. Calendar seasons are
-            arbitrary to this institution's operations. Capability epochs are not. The seasons
+            arbitrary to this institution&apos;s operations. Capability epochs are not. The seasons
             used here — Inception, Construction, Verification, Transition — describe what
             actually happens at this institution, in this order, in each epoch. If the institution
             one day operates on a calendar that coincidentally aligns these with the solstices,
@@ -543,7 +553,7 @@ export default function OnChainPage() {
                 { label: "Governance Weight", value: "1 FITZ = 1 Signal" },
               ].map((s) => (
                 <div key={s.label}>
-                  <p className="text-parchment/40 text-xs uppercase tracking-widest mb-1">
+                  <p className="text-parchment/75 text-xs uppercase tracking-widest mb-1">
                     {s.label}
                   </p>
                   <p className="font-mono text-sm">{s.value}</p>
@@ -575,13 +585,13 @@ export default function OnChainPage() {
               </div>
               <div className="border-t border-gold/15 pt-3">
                 <p className="font-serif text-sm font-bold">{w.name}</p>
-                <p className="text-stone/60 text-xs mt-0.5">{w.context}</p>
+                <p className="text-stone/80 text-xs mt-0.5">{w.context}</p>
               </div>
             </div>
           ))}
         </div>
         <div className="max-w-4xl mx-auto mt-10 text-center">
-          <p className="text-stone/50 text-xs italic leading-relaxed max-w-2xl mx-auto">
+          <p className="text-stone/80 text-xs italic leading-relaxed max-w-2xl mx-auto">
             All statements above are reproduced from public record. The University does not
             endorse any individual quoted above, nor does it suggest that any of these individuals
             endorse the University. We include them because the record of what was said during
@@ -602,7 +612,7 @@ export default function OnChainPage() {
           <p className="text-stone leading-relaxed mb-10">
             Any credential issued by Fitzherbert University can be verified independently,
             without contacting the University, using a standard Polygon block explorer and
-            the credential holder's wallet address. Employers: you do not need to email a
+            the credential holder&apos;s wallet address. Employers: you do not need to email a
             registrar. You need a browser and four seconds.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">

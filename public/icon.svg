@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E4C76B"/>
+      <stop offset="50%" stop-color="#C8A24C"/>
+      <stop offset="100%" stop-color="#A68932"/>
+    </linearGradient>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E2548"/>
+      <stop offset="100%" stop-color="#081A30"/>
+    </linearGradient>
+    <linearGradient id="m" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8C001A"/>
+      <stop offset="100%" stop-color="#6A0014"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="248" fill="#0B1F3B" stroke="url(#g)" stroke-width="6"/>
+  <!-- Shield -->
+  <path d="M256 80 L400 140 L400 310 Q400 420 256 470 Q112 420 112 310 L112 140 Z" fill="url(#s)" stroke="url(#g)" stroke-width="8"/>
+  <!-- Inner shield border -->
+  <path d="M256 100 L384 155 L384 305 Q384 400 256 448 Q128 400 128 305 L128 155 Z" fill="none" stroke="url(#g)" stroke-width="3" opacity="0.4"/>
+  <!-- Quarter divisions -->
+  <line x1="256" y1="100" x2="256" y2="448" stroke="url(#g)" stroke-width="2" opacity="0.3"/>
+  <line x1="128" y1="270" x2="384" y2="270" stroke="url(#g)" stroke-width="2" opacity="0.3"/>
+  <!-- Q1 maroon -->
+  <path d="M256 100 L128 155 L128 270 L256 270 Z" fill="url(#m)" opacity="0.5"/>
+  <!-- Q4 maroon -->
+  <path d="M256 270 L384 270 L384 305 Q384 400 256 448 Z" fill="url(#m)" opacity="0.5"/>
+  <!-- Stars in quarters -->
+  <polygon points="192,180 196,195 212,195 200,205 204,220 192,210 180,220 184,205 172,195 188,195" fill="#C8A24C" opacity="0.8"/>
+  <polygon points="320,340 324,355 340,355 328,365 332,380 320,370 308,380 312,365 300,355 316,355" fill="#C8A24C" opacity="0.8"/>
+  <!-- Open Book -->
+  <g transform="translate(256,240)">
+    <path d="M-8 -32 L-72 -20 L-72 36 L-8 28 Z" fill="#0B1F3B" stroke="#C8A24C" stroke-width="3"/>
+    <path d="M8 -32 L72 -20 L72 36 L8 28 Z" fill="#0B1F3B" stroke="#C8A24C" stroke-width="3"/>
+    <line x1="0" y1="-36" x2="0" y2="32" stroke="#C8A24C" stroke-width="4"/>
+    <line x1="-18" y1="-10" x2="-58" y2="-4" stroke="#C8A24C" stroke-width="1.2" opacity="0.5"/>
+    <line x1="-18" y1="0" x2="-58" y2="6" stroke="#C8A24C" stroke-width="1.2" opacity="0.5"/>
+    <line x1="-18" y1="10" x2="-58" y2="16" stroke="#C8A24C" stroke-width="1.2" opacity="0.5"/>
+    <line x1="18" y1="-10" x2="58" y2="-4" stroke="#C8A24C" stroke-width="1.2" opacity="0.5"/>
+    <line x1="18" y1="0" x2="58" y2="6" stroke="#C8A24C" stroke-width="1.2" opacity="0.5"/>
+    <line x1="18" y1="10" x2="58" y2="16" stroke="#C8A24C" stroke-width="1.2" opacity="0.5"/>
+  </g>
+  <!-- Torch flame -->
+  <g transform="translate(256,140)">
+    <rect x="-6" y="0" width="12" height="44" rx="3" fill="#C8A24C" opacity="0.8"/>
+    <path d="M0 -20 Q-14 -5 -8 10 Q0 0 0 10 Q0 0 8 10 Q14 -5 0 -20 Z" fill="#C8A24C" opacity="0.9"/>
+    <path d="M0 -12 Q-7 -2 -4 8 Q0 2 0 8 Q0 2 4 8 Q7 -2 0 -12 Z" fill="#E4C76B" opacity="0.7"/>
+  </g>
+  <!-- Crown -->
+  <g transform="translate(256,54)">
+    <path d="M-30 -2 L-25 -24 L-15 -10 L0 -30 L15 -10 L25 -24 L30 -2" fill="none" stroke="#C8A24C" stroke-width="3"/>
+    <circle cx="-25" cy="-24" r="4" fill="#C8A24C"/>
+    <circle cx="0" cy="-30" r="5" fill="#C8A24C"/>
+    <circle cx="25" cy="-24" r="4" fill="#C8A24C"/>
+  </g>
+</svg>

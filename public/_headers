@@ -1,0 +1,34 @@
+# Fitzherbert University — Custom Headers (Cloudflare Pages)
+# https://university.xxxiii.io
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  X-XSS-Protection: 1; mode=block
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://university.xxxiii.io https://api.cloudflare.com; frame-src https://challenges.cloudflare.com; worker-src 'self' blob:;
+
+# Cache static assets aggressively
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/documents/*
+  Cache-Control: public, max-age=604800
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# SEO & crawl headers
+/sitemap.xml
+  Content-Type: application/xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Content-Type: text/plain
+  Cache-Control: public, max-age=86400
+
+/blog/rss.xml
+  Content-Type: application/rss+xml
+  Cache-Control: public, max-age=3600

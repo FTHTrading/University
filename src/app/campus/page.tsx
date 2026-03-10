@@ -139,8 +139,8 @@ export default function CampusPage() {
               Around it, the computational infrastructure of the rechartered University has been
               built: computing centres, governance laboratories, cryptographic research facilities,
               and deterministic publishing labs. The juxtaposition of eighteenth-century stonework
-              and server racks has been described by the Heritage Steward as 'architecturally
-              courageous' and by the fire marshal as 'concerning.'
+              and server racks has been described by the Heritage Steward as &lsquo;architecturally
+              courageous&rsquo; and by the fire marshal as &lsquo;concerning.&rsquo;
             </p>
             <p>
               The architecture is deliberate. Heritage buildings house governance, ceremony, and
@@ -265,7 +265,7 @@ export default function CampusPage() {
           <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-6 py-4">
             <div className="text-gold/70 text-xs tracking-widest uppercase mb-1">Human Continuity Programme</div>
             <div className="text-parchment font-serif text-base font-bold">Manual Cognition Drill — Mandatory Annual Exercise, 2025</div>
-            <div className="text-parchment/60 text-xs mt-1">All Fitzherbert University students are required to complete the annual Manual Cognition Drill, demonstrating the capacity to perform institutional functions without AI assistance. Photograph: Office of Institutional Archive.</div>
+            <div className="text-parchment/80 text-xs mt-1">All Fitzherbert University students are required to complete the annual Manual Cognition Drill, demonstrating the capacity to perform institutional functions without AI assistance. Photograph: Office of Institutional Archive.</div>
           </div>
         </div>
 
@@ -378,13 +378,13 @@ export default function CampusPage() {
           <div className="border-l-2 border-gold pl-6">
             <h3 className="font-serif text-lg font-bold mb-3">Digital Infrastructure</h3>
             <p className="text-stone text-sm leading-relaxed mb-4">
-              The University's computational infrastructure is accessible remotely via
+              The University&apos;s computational infrastructure is accessible remotely via
               sovereign network connections. All students and faculty receive authenticated
               access to computing resources, the canonical registry, and governance systems.
             </p>
             <p className="text-stone text-sm leading-relaxed">
               Remote access operates on the same security protocols as on-campus systems,
-              verified through the University's identity infrastructure.
+              verified through the University&apos;s identity infrastructure.
             </p>
           </div>
         </div>

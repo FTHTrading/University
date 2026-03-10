@@ -27,7 +27,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "Fitzherbert University",
-    url: "https://fitzherbert.university",
+    url: "https://university.xxxiii.io",
   },
 };
 
@@ -35,12 +35,12 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://fitzherbert.university" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://university.xxxiii.io" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Sovereign Systems",
-      item: "https://fitzherbert.university/sovereign-systems",
+      item: "https://university.xxxiii.io/sovereign-systems",
     },
   ],
 };
@@ -196,21 +196,21 @@ export default function SovereignSystemsPage() {
           />
           <div className="space-y-6 text-stone leading-relaxed">
             <p className="drop-cap">
-              A university that runs its AI governance on a vendor's cloud, publishes its canonical
+              A university that runs its AI governance on a vendor&apos;s cloud, publishes its canonical
               research to a third-party platform, and issues its credentials through an external
               identity provider is not a sovereign institution. It is a tenant. And tenants can be
               evicted.
             </p>
             <p>
               Fitzherbert University was rechartered in 2025 with one architectural principle that
-              precedes all others: <strong>the institution's operations must not depend on the
+              precedes all others: <strong>the institution&apos;s operations must not depend on the
               goodwill, continued operation, or continued pricing of any external entity.</strong>
               This is not anti-cloud ideology. It is the recognition that institutional authority
               derives from institutional control — and control requires ownership of the
               infrastructure through which authority is exercised.
             </p>
             <p>
-              The Sovereign Systems Office maintains the University's infrastructure independence
+              The Sovereign Systems Office maintains the University&apos;s infrastructure independence
               across five architectural layers: compute, publishing, identity, governance, and AI
               models. Each layer is described below, with its operational status, specifications,
               and sovereign architecture rationale.
@@ -302,7 +302,7 @@ export default function SovereignSystemsPage() {
                 </p>
                 <p
                   className={`text-xs mb-6 ${
-                    idx === 1 ? "text-parchment/50" : "text-stone/50"
+                    idx === 1 ? "text-parchment/80" : "text-stone/80"
                   }`}
                 >
                   {tier.duration}
@@ -349,7 +349,7 @@ export default function SovereignSystemsPage() {
             <div key={stat.label} className="border border-gold/20 bg-ivory p-6 text-center">
               <p className="engraved text-gold text-xs mb-2">{stat.label}</p>
               <p className="font-serif text-3xl font-bold mb-1">{stat.value}</p>
-              <p className="text-stone/60 text-xs">{stat.note}</p>
+              <p className="text-stone/80 text-xs">{stat.note}</p>
             </div>
           ))}
         </div>

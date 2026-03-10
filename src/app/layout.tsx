@@ -20,7 +20,7 @@ const baskerville = Libre_Baskerville({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fitzherbert.university"),
+  metadataBase: new URL("https://university.xxxiii.io"),
   title: {
     default: "Fitzherbert University — Chartered 1783 · Rechartered 2025",
     template: "%s | Fitzherbert University",
@@ -55,7 +55,13 @@ export const metadata: Metadata = {
     title: "Fitzherbert University — Chartered 1783 · Rechartered 2025",
     description:
       "An AI-native institution operating on intelligence-doubling timelines. Chartered 1783. Rechartered 2025. Six epoch-based colleges, five research institutes.",
-    url: "https://fitzherbert.university",
+    url: "https://university.xxxiii.io",
+    images: [
+      {
+        url: "/images/university.png",
+        alt: "Fitzherbert University — AI degrees, AI certificates, and Polygon credential infrastructure.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -63,6 +69,8 @@ export const metadata: Metadata = {
     description:
       "An AI-native institution operating on intelligence-doubling timelines. Chartered 1783. Rechartered 2025. Six epoch-based colleges, five research institutes.",
     site: "@FitzherbertUniv",
+    creator: "@FitzherbertUniv",
+    images: ["/images/university.png"],
   },
   robots: {
     index: true,
@@ -76,8 +84,14 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico" },
+    ],
+    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon.svg"],
   },
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({
@@ -95,22 +109,22 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": ["CollegeOrUniversity", "EducationalOrganization"],
-              "@id": "https://fitzherbert.university/#organization",
+              "@id": "https://university.xxxiii.io/#organization",
               name: "Fitzherbert University",
               alternateName: ["FTHU", "Fitzherbert University"],
               legalName: "The President and Fellows of Fitzherbert University",
               foundingDate: "1783",
               description:
                 "Chartered 1783. Rechartered 2025. An AI-native institution operating on intelligence-doubling timelines. Six epoch-based colleges, five research institutes, and governance designed for acceleration.",
-              url: "https://fitzherbert.university",
+              url: "https://university.xxxiii.io",
               motto: "Veritas per Disciplina",
               logo: {
                 "@type": "ImageObject",
-                url: "https://fitzherbert.university/crest.svg",
+                url: "https://university.xxxiii.io/crest.svg",
                 width: 512,
                 height: 512,
               },
-              image: "https://fitzherbert.university/crest.svg",
+              image: "https://university.xxxiii.io/crest.svg",
               telephone: "+1-800-555-1783",
               email: "chancellor@fitzherbert.university",
               contactPoint: [
@@ -131,16 +145,16 @@ export default function RootLayout({
               ],
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "1 University Place",
-                addressLocality: "Cambridge",
-                addressRegion: "MA",
-                postalCode: "02138",
+                streetAddress: "5655 Peachtree Pkwy",
+                addressLocality: "Norcross",
+                addressRegion: "GA",
+                postalCode: "30092",
                 addressCountry: "US",
               },
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: 42.3736,
-                longitude: -71.1097,
+                latitude: 33.9685,
+                longitude: -84.2200,
               },
               hasCredential: [
                 {
@@ -228,6 +242,79 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* Structured Data — LocalBusiness & Place Schema (Geo/SEO) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Place",
+              "@id": "https://university.xxxiii.io/#campus",
+              name: "Fitzherbert University — Main Campus",
+              description:
+                "The operational headquarters and primary campus of Fitzherbert University, an AI-native institution rechartered in 2025.",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "5655 Peachtree Pkwy",
+                addressLocality: "Norcross",
+                addressRegion: "GA",
+                postalCode: "30092",
+                addressCountry: "US",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 33.9685,
+                longitude: -84.22,
+              },
+              hasMap:
+                "https://www.google.com/maps/place/5655+Peachtree+Pkwy,+Norcross,+GA+30092",
+              isAccessibleForFree: true,
+              publicAccess: true,
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                ],
+                opens: "08:00",
+                closes: "18:00",
+              },
+            }),
+          }}
+        />
+        {/* Structured Data — WebSite & SearchAction (SEO) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://university.xxxiii.io/#website",
+              name: "Fitzherbert University",
+              url: "https://university.xxxiii.io",
+              publisher: {
+                "@id": "https://university.xxxiii.io/#organization",
+              },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate:
+                    "https://university.xxxiii.io/search?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
+        {/* Geo meta tags */}
+        <meta name="geo.region" content="US-GA" />
+        <meta name="geo.placename" content="Norcross, Georgia" />
+        <meta name="geo.position" content="33.9685;-84.2200" />
+        <meta name="ICBM" content="33.9685, -84.2200" />
       </head>
       <body
         className={`${playfair.variable} ${baskerville.variable} antialiased parchment-overlay`}
@@ -235,7 +322,7 @@ export default function RootLayout({
         {/* Skip to content — accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-navy focus:text-gold focus:px-4 focus:py-2 focus:text-sm focus:font-serif"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-navy focus:text-gold focus:px-4 focus:py-2 focus:text-sm focus:font-serif"
         >
           Skip to main content
         </a>

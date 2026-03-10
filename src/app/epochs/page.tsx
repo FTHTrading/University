@@ -75,13 +75,13 @@ export default function EpochsRoute() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://fitzherbert.university",
+        item: "https://university.xxxiii.io",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Epoch History",
-        item: "https://fitzherbert.university/epochs",
+        item: "https://university.xxxiii.io/epochs",
       },
     ],
   };

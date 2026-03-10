@@ -111,6 +111,11 @@ Core Identity:
 | `Section` / `SectionHeader` | Reusable content wrapper with stone texture and alternate backgrounds |
 | `Timeline` | Scroll-triggered interactive vertical timeline (1783–2026) |
 | `CollegeCard` | Animated card with hover scale for college listings |
+| `ErrorBoundary` | Heritage-styled React error boundary (wraps 3D canvas) |
+| `ProfessorGuide` | AI professor chatbot — text + voice input, TTS output, streaming responses |
+| `ProfessorGuideLoader` | Dynamic `next/dynamic` loader for ProfessorGuide (SSR-safe) |
+| `WalkingProfessor` | Animated 3D NPC professors for the campus map |
+| `PolygonRegistryConsole` | Polygon blockchain credential verification console |
 
 ---
 
@@ -208,11 +213,15 @@ Includes:
 | Layer | Technology |
 | --- | --- |
 | Framework | Next.js 16.1.6 (App Router, Turbopack) |
-| Language | TypeScript (strict) |
+| Language | TypeScript 5.9 (strict) |
 | Styling | Tailwind CSS v4 (CSS-first `@theme inline`) |
 | Animation | Framer Motion (useScroll, useTransform) |
+| 3D Engine | React Three Fiber + Drei + Three.js |
 | Typography | Playfair Display + Libre Baskerville (`next/font/google`) |
-| Deployment | Static export (`output: "export"`) |
+| AI Worker | Cloudflare Workers AI (Llama 3.3) |
+| Deployment | Cloudflare Pages (static export) + Workers |
+| Documents | PDFKit (build-time PDF generation) |
+| Integrity | SHA-256 · CIDv1 · Binary Merkle Trees |
 
 ### Architecture
 
@@ -221,9 +230,12 @@ src/
 ├── app/
 │   ├── globals.css              # Heritage design system (270+ lines)
 │   ├── layout.tsx               # Root layout, JSON-LD (Org + Edu), metadata, skip-link
+│   ├── manifest.ts              # PWA web manifest
 │   ├── page.tsx                 # Homepage
 │   ├── about/page.tsx           # History, Timeline, Charter, Values
-│   ├── academics/page.tsx       # Colleges, Faculty, Alumni, Calendar
+│   ├── academics/
+│   │   ├── page.tsx             # Colleges, Faculty, Alumni, Calendar
+│   │   └── [slug]/page.tsx      # Individual college detail (SSG)
 │   ├── admissions/page.tsx      # Class Profile, Tuition, Scholarships
 │   ├── athletics/page.tsx       # Varsity, Esports, Facilities
 │   ├── blog/
@@ -235,17 +247,22 @@ src/
 │   ├── archive/
 │   │   ├── page.tsx             # Canonical archive (Collection + BreadcrumbList JSON-LD)
 │   │   └── ArchivePage.tsx      # Archive UI: epoch root, SHA-256, CIDv1 per article
+│   ├── campus/page.tsx          # Named Halls, Residential Colleges, Traditions
+│   ├── campus-map/page.tsx      # Interactive 3D campus (React Three Fiber, walk mode, NPCs)
+│   ├── citations/
+│   │   ├── page.tsx             # Aggregated citation index (Collection JSON-LD)
+│   │   └── CitationsPage.tsx    # Citations UI with search and filters
+│   ├── credentials/page.tsx     # Verifiable credential viewer + validator
+│   ├── documents/
+│   │   ├── page.tsx             # Document catalogue (25 PDFs)
+│   │   └── [slug]/page.tsx      # Individual document detail (SSG)
+│   ├── endowment/page.tsx       # Allocation, Growth, Distribution, Reports
 │   ├── epochs/
 │   │   ├── page.tsx             # Epoch history index (ItemList + BreadcrumbList JSON-LD)
 │   │   ├── EpochsPage.tsx       # Epoch timeline UI + immutability declaration
 │   │   └── [version]/
 │   │       ├── page.tsx          # Epoch detail SSG (Dataset + BreadcrumbList JSON-LD)
 │   │       └── EpochDetailPage.tsx # Epoch detail UI: articles, diff, Merkle proof
-│   ├── campus/page.tsx          # Named Halls, Residential Colleges, Traditions
-│   ├── citations/
-│   │   ├── page.tsx             # Aggregated citation index (Collection JSON-LD)
-│   │   └── CitationsPage.tsx    # Citations UI with search and filters
-│   ├── endowment/page.tsx       # Allocation, Growth, Distribution, Reports
 │   ├── faq/
 │   │   ├── page.tsx             # 27 FAQs, 7 categories (FAQPage JSON-LD)
 │   │   └── FAQPage.tsx          # FAQ accordion UI with category filters
@@ -253,44 +270,80 @@ src/
 │   │   ├── page.tsx             # 33 terms, 5 domains (DefinedTermSet JSON-LD)
 │   │   └── GlossaryPage.tsx     # Glossary UI with search and alphabetical grouping
 │   ├── governance/page.tsx      # Charter, Amendments, Senate, Archive
+│   ├── human-continuity/page.tsx        # Human oversight & continuity framework
+│   ├── institutional-architecture/page.tsx # Architectural design philosophy
+│   ├── legal-intelligence/page.tsx      # AI-assisted legal research systems
+│   ├── on-chain/page.tsx        # On-chain governance & smart contracts
+│   ├── partnerships/page.tsx    # Strategic partnership network
 │   ├── research/page.tsx        # Institutes, Impact, White Papers, Labs
-│   └── timeline/
-│       ├── page.tsx             # 20 events (Event ItemList JSON-LD)
-│       └── TimelinePage.tsx     # Interactive timeline with era filters
+│   ├── skills/page.tsx          # AI skills programme & competency framework
+│   ├── sovereign-systems/page.tsx       # Autonomous institutional systems
+│   ├── sponsor/page.tsx         # Sponsorship & patronage tiers
+│   ├── student-economics/page.tsx       # FITZ token & student economic model
+│   ├── timeline/
+│   │   ├── page.tsx             # 20 events (Event ItemList JSON-LD)
+│   │   └── TimelinePage.tsx     # Interactive timeline with era filters
+│   └── visiting-intelligences/page.tsx  # Visiting AI fellowship programme
 ├── components/
-│   ├── CollegeCard.tsx
+│   ├── CollegeCard.tsx          # Animated card with hover scale
 │   ├── Crest.tsx                # Full heraldic SVG (200×240 viewBox)
+│   ├── ErrorBoundary.tsx        # Heritage-styled error boundary for 3D canvas
 │   ├── Footer.tsx               # 6-column footer with Reference section
 │   ├── Header.tsx               # Heritage nav with 10 links + action bar
 │   ├── Hero.tsx                 # Parallax hero with vignette
-│   ├── Section.tsx
-│   └── Timeline.tsx
+│   ├── PolygonRegistryConsole.tsx # Polygon blockchain credential console
+│   ├── ProfessorGuide.tsx       # AI professor chatbot (voice + text, TTS)
+│   ├── ProfessorGuideLoader.tsx # Dynamic loader for ProfessorGuide
+│   ├── Section.tsx              # Reusable content wrapper
+│   ├── Timeline.tsx             # Scroll-triggered vertical timeline
+│   └── WalkingProfessor.tsx     # Animated 3D NPC for campus map
 ├── lib/
+│   ├── academics-data.ts        # College/programme data definitions
+│   ├── ai-professor-client.ts   # Client for AI professor Cloudflare Worker
 │   ├── articles.ts              # 15 articles, types, query functions
 │   ├── authors.ts               # 5 author profiles
 │   ├── canonical.ts             # SHA-256 hashing, CIDv1 generation, Merkle tree
+│   ├── document-catalog.ts      # 25-document PDF catalogue metadata
+│   ├── epoch-history.ts         # Sealed epoch snapshots (immutable history store)
 │   ├── epochs.ts                # Epoch versioning types + diff engine
-│   └── epoch-history.ts         # Sealed epoch snapshots (immutable history store)
+│   ├── polygon-registry-client.ts # Polygon blockchain registry client
+│   ├── professor-knowledge.ts   # AI professor knowledge base & system prompt
+│   └── quest-system.ts          # Gamified learning quest definitions
 scripts/
+├── canonical-publish.ts         # Build-time SHA-256 + CIDv1 + Merkle epoch pipeline
+├── document-content.ts          # PDF content definitions (25 documents)
+├── generate-documents.ts        # PDFKit PDF generator (25 institutional PDFs)
 ├── generate-rss.ts              # Build-time RSS generator (15 articles)
-└── canonical-publish.ts         # Build-time SHA-256 + CIDv1 + Merkle epoch pipeline
+├── ipfs-client.ts               # IPFS pinning + retrieval client
+├── ipfs-local-setup.ps1         # Local IPFS node setup script
+├── issue-credential.ts          # Verifiable credential issuance (W3C VC)
+└── validate-integrity.ts        # SHA-256 + CIDv1 integrity validation
+workers/
+└── ai-professor/
+    └── src/index.ts             # Cloudflare Worker: Llama 3.3 AI professor API
 public/
 ├── blog/rss.xml                 # Generated RSS 2.0 feed
 ├── canonical-registry.json      # Generated canonical registry (machine-readable)
+├── documents/                   # 25 generated institutional PDFs
 ├── robots.txt
-└── sitemap.xml                  # 30 URLs
+└── sitemap.xml
 ```
 
-### Routes (30+ statically pre-rendered)
+### Routes (81 statically pre-rendered)
 
 | Route | Content |
 | --- | --- |
 | `/` | Homepage — Hero, Chancellor's Message, Colleges, Research, Athletics, News, Endowment |
 | `/about` | Founding History, Interactive Timeline, Charter, Values, Governance Overview |
 | `/academics` | 6 Colleges, Departments, Faculty Spotlights, Alumni, Calendar |
+| `/academics/[slug]` | Individual college detail pages (6 SSG routes) |
 | `/admissions` | Class Profile (SAT/GPA), Tuition ($87,700), Scholarships, Financial Aid |
 | `/athletics` | 24 Varsity Teams, Esports, Facilities, Analytics |
 | `/campus` | 8 Named Halls, 6 Residential Colleges, 3 Libraries, 7 Traditions, Gardens |
+| `/campus-map` | Interactive 3D campus — React Three Fiber, walk mode, day/night cycle, NPC professors |
+| `/credentials` | Verifiable credential viewer and W3C VC validator |
+| `/documents` | Institutional document catalogue (25 PDFs) |
+| `/documents/[slug]` | Individual document detail pages (25 SSG routes) |
 | `/endowment` | Founders Circle, Allocation Bars, Growth Timeline, Distribution, Reports |
 | `/governance` | 12 Charter Articles, 7 Amendments, 8 Senators, 6 Committees, Archive |
 | `/research` | 6 Institutes, Impact Metrics, 6 White Papers, 6 Key Facilities |
@@ -298,6 +351,21 @@ public/
 | `/blog/[slug]` | 15 dynamic article pages with ScholarlyArticle, FAQPage, BreadcrumbList schema |
 | `/timeline` | Interactive 1783–2026 timeline, 20 events, 4 eras, Event JSON-LD |
 | `/faq` | Institutional FAQ hub — 27 FAQs, 7 categories, FAQPage JSON-LD |
+| `/glossary` | 33 defined terms, 5 domains, DefinedTermSet JSON-LD |
+| `/archive` | Canonical Archive — SHA-256 hashes, CIDv1 identifiers, Merkle epoch root |
+| `/epochs` | Epoch History — version timeline, immutability declaration, ItemList JSON-LD |
+| `/epochs/[version]` | Epoch detail — article registry, changelog diff, Merkle proof, Dataset JSON-LD |
+| `/citations` | Aggregated citation index from all publications, Collection JSON-LD |
+| `/human-continuity` | Human oversight framework — governance continuity principles |
+| `/institutional-architecture` | Architectural design philosophy & campus planning |
+| `/legal-intelligence` | AI-assisted legal research & constitutional analysis systems |
+| `/on-chain` | On-chain governance — smart contracts, DAO structure, token voting |
+| `/partnerships` | Strategic partnership network & institutional alliances |
+| `/skills` | AI skills programme — competency framework & certification paths |
+| `/sovereign-systems` | Autonomous institutional infrastructure & self-governing systems |
+| `/sponsor` | Patronage & sponsorship tiers with benefits |
+| `/student-economics` | FITZ token utility model, student economic participation |
+| `/visiting-intelligences` | Visiting AI fellowship programme |
 | `/glossary` | 33 defined terms, 5 domains, DefinedTermSet JSON-LD |
 | `/archive` | Canonical Archive — SHA-256 hashes, CIDv1 identifiers, Merkle epoch root |
 | `/epochs` | Epoch History — version timeline, immutability declaration, ItemList JSON-LD |
@@ -320,7 +388,7 @@ public/
 - OpenGraph + Twitter Card metadata on all routes
 - Canonical URL tags
 - Epoch Versioning System (sealed snapshots, diff engine, Merkle proof explorer)
-- Static `sitemap.xml` (32 URLs)
+- Static `sitemap.xml`
 - RSS feed (`/blog/rss.xml`) with Atom namespace
 - Canonical registry (`/canonical-registry.json`) with SHA-256 hashes + CIDv1 identifiers
 - `robots.txt` with sitemap reference
@@ -356,9 +424,18 @@ npm run build
 
 | Platform | Configuration |
 | --- | --- |
-| **Vercel** | Push to GitHub, zero-config |
-| **Netlify** | Build: `npm run build`, Publish: `out` |
-| **GitHub Pages** | Use `out/` with Actions workflow |
+| **Cloudflare Pages** | `npm run deploy:pages` — static export to Cloudflare Pages |
+| **Cloudflare Workers** | `npm run deploy:worker` — AI Professor API |
+| **Full Deploy** | `npm run deploy` — Pages + Worker in sequence |
+
+```bash
+# Deploy everything
+npm run deploy
+
+# Or individually
+npm run deploy:pages    # Static site → Cloudflare Pages
+npm run deploy:worker   # AI Professor → Cloudflare Workers
+```
 
 ---
 
@@ -407,6 +484,23 @@ npm run build
 - [x] Epoch Versioning System (sealed snapshots, diff changelog, Merkle proof explorer)
 - [x] /epochs index + /epochs/[version] detail SSG pages
 - [x] Immutability declaration + version selector UI
+- [x] Interactive 3D Campus Map (React Three Fiber, walk mode, day/night cycle)
+- [x] AI Professor chatbot (Cloudflare Workers AI, Llama 3.3, voice + TTS)
+- [x] Verifiable credentials (W3C VC, SHA-256 attestation)
+- [x] 25 institutional PDFs (PDFKit build-time generation)
+- [x] Individual college detail pages (SSG)
+- [x] Document catalogue with individual document pages (SSG)
+- [x] Polygon registry console (on-chain credential verification)
+- [x] Student economics & FITZ token utility model
+- [x] Strategic partnerships network
+- [x] Sponsorship & patronage tiers
+- [x] Sovereign systems architecture
+- [x] Human continuity framework
+- [x] Legal intelligence systems
+- [x] Visiting AI fellowship programme
+- [x] AI skills programme & competency framework
+- [x] Error boundary for 3D canvas
+- [x] PWA web manifest
 
 ### Planned Enhancements
 
@@ -414,13 +508,9 @@ npm run build
 - [ ] Endowment annual report microsite
 - [ ] Research database searchable index
 - [ ] Custom self-hosted serif typeface
-- [ ] Stylised SVG campus map
 - [ ] Seasonal campus imagery toggle
 - [ ] Institutional Data Transparency dashboard
 - [ ] Governance Dashboard preview
-- [x] ~~IPFS canonical publishing layer~~ (v1.1.0)
-- [x] ~~Epoch Versioning System~~ (v1.2.0)
-- [ ] Web3 governance integration
 - [ ] Autonomous RAG agent for institutional knowledge
 
 ---

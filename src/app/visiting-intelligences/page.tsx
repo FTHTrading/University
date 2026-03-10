@@ -28,7 +28,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "Fitzherbert University",
-    url: "https://fitzherbert.university",
+    url: "https://university.xxxiii.io",
   },
 };
 
@@ -36,12 +36,12 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://fitzherbert.university" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://university.xxxiii.io" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Visiting Intelligences",
-      item: "https://fitzherbert.university/visiting-intelligences",
+      item: "https://university.xxxiii.io/visiting-intelligences",
     },
   ],
 };
@@ -228,7 +228,7 @@ export default function VisitingIntelligencesPage() {
             <div className="text-parchment font-serif text-base font-bold">
               Epoch Council in Joint Session with the Visiting Intelligence Governance Board
             </div>
-            <div className="text-parchment/60 text-xs mt-1">
+            <div className="text-parchment/80 text-xs mt-1">
               Constitutional Chamber, Trinity Term 2025. The first such joint session in the University&apos;s history.
               Minutes and recordings are registered in the canonical archive under VIFP-SESSION-001.
             </div>
@@ -263,9 +263,9 @@ export default function VisitingIntelligencesPage() {
                       {fellow.status}
                     </span>
                   </div>
-                  <p className="text-xs text-stone/60 italic mb-1">{fellow.classification}</p>
+                  <p className="text-xs text-stone/80 italic mb-1">{fellow.classification}</p>
                   <p className="text-maroon text-sm font-semibold">{fellow.fellowship}</p>
-                  <p className="text-stone/60 text-sm">Term: {fellow.term}</p>
+                  <p className="text-stone/80 text-sm">Term: {fellow.term}</p>
                 </div>
               </div>
 
@@ -290,7 +290,7 @@ export default function VisitingIntelligencesPage() {
                     Supervising Fellow
                   </h4>
                   <p className="text-stone text-sm font-semibold">{fellow.supervisingFellow}</p>
-                  <p className="text-stone/60 text-sm mt-2">
+                  <p className="text-stone/80 text-sm mt-2">
                     All outputs co-signed. All mandate deviations reported directly to the
                     Alignment Review Committee.
                   </p>
@@ -333,7 +333,7 @@ export default function VisitingIntelligencesPage() {
               key={principle.number}
               className="flex gap-6 items-start border-b border-gold/15 pb-6"
             >
-              <span className="font-serif text-3xl font-bold text-gold/40 min-w-[2.5rem]">
+              <span className="font-serif text-3xl font-bold text-gold/60 min-w-[2.5rem]">
                 {principle.number}
               </span>
               <div>
@@ -381,7 +381,7 @@ export default function VisitingIntelligencesPage() {
               <div key={stat.label} className="border border-gold/20 p-6">
                 <p className="engraved text-gold text-xs mb-1">{stat.label}</p>
                 <p className="font-serif text-xl font-bold mb-1">{stat.value}</p>
-                <p className="text-stone/60 text-xs">{stat.note}</p>
+                <p className="text-stone/80 text-xs">{stat.note}</p>
               </div>
             ))}
           </div>

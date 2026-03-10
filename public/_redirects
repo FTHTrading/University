@@ -1,0 +1,5 @@
+# Fitzherbert University — Redirects (Cloudflare Pages)
+# Redirect old GitHub Pages paths if anyone bookmarked them
+
+/University/*  /:splat  301
+/University    /        301

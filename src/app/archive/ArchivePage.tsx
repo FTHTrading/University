@@ -68,7 +68,7 @@ export function ArchivePage({
 
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <p className="text-xs text-parchment/50 uppercase tracking-widest mb-1">
+              <p className="text-xs text-parchment/80 uppercase tracking-widest mb-1">
                 Merkle Root (SHA-256)
               </p>
               <button
@@ -85,7 +85,7 @@ export function ArchivePage({
 
             <div className="space-y-3">
               <div>
-                <p className="text-xs text-parchment/50 uppercase tracking-widest mb-1">
+                <p className="text-xs text-parchment/80 uppercase tracking-widest mb-1">
                   Protocol
                 </p>
                 <p className="text-sm text-parchment/80">
@@ -94,26 +94,26 @@ export function ArchivePage({
               </div>
               <div className="flex gap-8">
                 <div>
-                  <p className="text-xs text-parchment/50 uppercase tracking-widest mb-1">
+                  <p className="text-xs text-parchment/80 uppercase tracking-widest mb-1">
                     Articles
                   </p>
                   <p className="text-sm text-parchment/80">{articleCount}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-parchment/50 uppercase tracking-widest mb-1">
+                  <p className="text-xs text-parchment/80 uppercase tracking-widest mb-1">
                     Tree Type
                   </p>
                   <p className="text-sm text-parchment/80">Binary Merkle</p>
                 </div>
                 <div>
-                  <p className="text-xs text-parchment/50 uppercase tracking-widest mb-1">
+                  <p className="text-xs text-parchment/80 uppercase tracking-widest mb-1">
                     Hash
                   </p>
                   <p className="text-sm text-parchment/80">SHA-256</p>
                 </div>
               </div>
               <div>
-                <p className="text-xs text-parchment/50 uppercase tracking-widest mb-1">
+                <p className="text-xs text-parchment/80 uppercase tracking-widest mb-1">
                   Generated
                 </p>
                 <p className="text-sm text-parchment/80">
@@ -134,7 +134,7 @@ export function ArchivePage({
           </div>
 
           <div className="mt-6 pt-4 border-t border-gold/10">
-            <p className="text-xs text-parchment/40 leading-relaxed">
+            <p className="text-xs text-parchment/75 leading-relaxed">
               The epoch root is the Merkle tree root hash computed from all
               article content hashes. Any modification to any article will
               produce a different root, enabling cryptographic verification of
@@ -326,7 +326,7 @@ export function ArchivePage({
 
       {/* ── Latin Footer ─────────────────────────────── */}
       <section className="py-12 text-center">
-        <p className="latin-inscription text-gold/40 text-sm tracking-[0.3em] italic">
+        <p className="latin-inscription text-gold/60 text-sm tracking-[0.3em] italic">
           Quod scripsi, scripsi — What I have written, I have written
         </p>
       </section>

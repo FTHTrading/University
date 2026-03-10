@@ -28,7 +28,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "Fitzherbert University",
-    url: "https://fitzherbert.university",
+    url: "https://university.xxxiii.io",
   },
 };
 
@@ -36,12 +36,12 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://fitzherbert.university" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://university.xxxiii.io" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Legal Intelligence",
-      item: "https://fitzherbert.university/legal-intelligence",
+      item: "https://university.xxxiii.io/legal-intelligence",
     },
   ],
 };
@@ -291,12 +291,12 @@ export default function LegalIntelligencePage() {
               <h3 className="font-serif text-2xl font-bold mb-1">
                 {tier.name}
               </h3>
-              <p className={`text-sm mb-4 ${tier.highlight ? "text-parchment/70" : "text-stone/60"}`}>
+              <p className={`text-sm mb-4 ${tier.highlight ? "text-parchment/70" : "text-stone/80"}`}>
                 {tier.subtitle}
               </p>
               <div className="mb-6">
                 <span className="font-serif text-3xl font-bold">{tier.price}</span>
-                <span className={`text-sm ml-1 ${tier.highlight ? "text-parchment/60" : "text-stone/60"}`}>
+                <span className={`text-sm ml-1 ${tier.highlight ? "text-parchment/80" : "text-stone/80"}`}>
                   {tier.period}
                 </span>
               </div>

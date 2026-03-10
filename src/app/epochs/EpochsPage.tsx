@@ -183,7 +183,7 @@ export function EpochsPage({ epochs, currentVersion }: EpochsPageProps) {
             epoch would produce a different Merkle root, making tampering
             independently detectable.
           </p>
-          <p className="text-sm text-parchment/60 leading-relaxed">
+          <p className="text-sm text-parchment/80 leading-relaxed">
             Fitzherbert University commits to the principle of archival
             immutability: sealed epochs represent the permanent historical
             record of institutional scholarship. New content or corrections are
@@ -195,7 +195,7 @@ export function EpochsPage({ epochs, currentVersion }: EpochsPageProps) {
 
       {/* ── Latin Footer ─────────────────────────────── */}
       <section className="py-12 text-center">
-        <p className="latin-inscription text-gold/40 text-sm tracking-[0.3em] italic">
+        <p className="latin-inscription text-gold/60 text-sm tracking-[0.3em] italic">
           Tempus edax rerum — Time, devourer of all things
         </p>
       </section>

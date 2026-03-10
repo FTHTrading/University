@@ -136,7 +136,7 @@ export default function SponsorPage() {
               You are not buying goodwill. You are investing in a workforce pipeline where every
               output is provable, every student is building, and every penny can be traced to
               measurable human development. No sponsor has yet tested this claim, but the
-              infrastructure to prove it is, the University insists, 'architecturally complete.'
+              infrastructure to prove it is, the University insists, &lsquo;architecturally complete.&rsquo;
             </p>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function SponsorPage() {
                 ))}
               </ul>
               <a
-                href="/University/partnerships/"
+                href="/partnerships/"
                 className={`mt-8 block text-center font-serif text-sm px-6 py-3 tracking-wide transition-colors ${
                   tier.highlight
                     ? "bg-maroon text-white hover:bg-maroon/90"
@@ -242,7 +242,7 @@ export default function SponsorPage() {
         <div className="max-w-3xl mx-auto space-y-8">
           {processSteps.map((step) => (
             <div key={step.num} className="flex gap-6 items-start border-l-2 border-gold pl-6">
-              <span className="font-serif text-3xl font-bold text-gold/40 flex-shrink-0">
+              <span className="font-serif text-3xl font-bold text-gold/60 flex-shrink-0">
                 {step.num}
               </span>
               <div>
@@ -345,13 +345,13 @@ export default function SponsorPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/University/partnerships/"
+              href="/partnerships/"
               className="inline-block bg-maroon text-white font-serif text-sm px-8 py-3 tracking-wide hover:bg-maroon/90 transition-colors"
             >
               Start a Conversation
             </a>
             <a
-              href="/University/student-economics/"
+              href="/student-economics/"
               className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
             >
               How Students Get Paid

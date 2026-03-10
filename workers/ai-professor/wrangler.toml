@@ -1,0 +1,35 @@
+name = "university-ai-professor"
+main = "src/index.ts"
+compatibility_date = "2025-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# ── Workers AI binding ───────────────────────────────────
+[ai]
+binding = "AI"
+
+# ── KV Namespace for caching ────────────────────────────
+[[kv_namespaces]]
+binding = "KV_CACHE"
+id = "3de94962d339493e81530a6b8fd30315"  # KV_CACHE namespace
+
+# ── Vectorize index for semantic search ─────────────────
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "university-knowledge"
+
+# ── Environment variables ───────────────────────────────
+[vars]
+ENVIRONMENT = "production"
+AI_GATEWAY_SLUG = "university-ai-gateway"
+SAFE_TREASURY_ADDRESS = "0xF17E000000000000000000000000000000SAFE01"
+SAFE_TX_SERVICE_URL = "https://safe-transaction-polygon.safe.global"
+
+# ── Custom domain route ─────────────────────────────────
+# Routes the worker to handle /api/ai/* on the main domain
+[[routes]]
+pattern = "university.xxxiii.io/api/ai/*"
+zone_name = "xxxiii.io"
+
+[[routes]]
+pattern = "university.xxxiii.io/api/chain/*"
+zone_name = "xxxiii.io"

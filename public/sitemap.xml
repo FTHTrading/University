@@ -1,277 +1,277 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.fitzherbert.edu/</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://university.xxxiii.io/</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/about</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/about/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/academics</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/academics/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/campus</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/campus/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/campus-map</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/campus-map/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/athletics</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/athletics/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/research</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/research/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/governance</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/governance/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/admissions</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/admissions/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/endowment</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/endowment/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- University Record (Blog) -->
   <url>
-    <loc>https://www.fitzherbert.edu/blog</loc>
-    <lastmod>2026-02-14</lastmod>
+    <loc>https://university.xxxiii.io/blog/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/constitutional-precedent-digital-governance</loc>
+    <loc>https://university.xxxiii.io/blog/constitutional-precedent-digital-governance/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/future-of-ai-governed-institutions</loc>
+    <loc>https://university.xxxiii.io/blog/future-of-ai-governed-institutions/</loc>
     <lastmod>2026-02-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/fiduciary-duty-in-perpetuity</loc>
+    <loc>https://university.xxxiii.io/blog/fiduciary-duty-in-perpetuity/</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/agentic-rag-institutional-memory</loc>
+    <loc>https://university.xxxiii.io/blog/agentic-rag-institutional-memory/</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/game-theory-competitive-strategy-collegiate-systems</loc>
+    <loc>https://university.xxxiii.io/blog/game-theory-competitive-strategy-collegiate-systems/</loc>
     <lastmod>2026-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/simulation-driven-recruitment-strategy</loc>
+    <loc>https://university.xxxiii.io/blog/simulation-driven-recruitment-strategy/</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/opponent-modeling-modern-esports</loc>
+    <loc>https://university.xxxiii.io/blog/opponent-modeling-modern-esports/</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/endowment-stewardship-age-of-volatility</loc>
+    <loc>https://university.xxxiii.io/blog/endowment-stewardship-age-of-volatility/</loc>
     <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/knowledge-graphs-institutional-intelligence</loc>
+    <loc>https://university.xxxiii.io/blog/knowledge-graphs-institutional-intelligence/</loc>
     <lastmod>2025-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/ethics-of-predictive-analytics-admissions</loc>
+    <loc>https://university.xxxiii.io/blog/ethics-of-predictive-analytics-admissions/</loc>
     <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/biomechanical-modelling-injury-prevention</loc>
+    <loc>https://university.xxxiii.io/blog/biomechanical-modelling-injury-prevention/</loc>
     <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/academic-freedom-age-of-algorithms</loc>
+    <loc>https://university.xxxiii.io/blog/academic-freedom-age-of-algorithms/</loc>
     <lastmod>2025-12-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/transfer-portal-economics</loc>
+    <loc>https://university.xxxiii.io/blog/transfer-portal-economics/</loc>
     <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/vector-databases-institutional-memory</loc>
+    <loc>https://university.xxxiii.io/blog/vector-databases-institutional-memory/</loc>
     <lastmod>2025-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/blog/institutional-resilience-through-governance-design</loc>
+    <loc>https://university.xxxiii.io/blog/institutional-resilience-through-governance-design/</loc>
     <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Reference Pages -->
   <url>
-    <loc>https://www.fitzherbert.edu/epochs</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/epochs/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/epochs/1.0.0</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/epochs/1.0.0/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/archive</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/archive/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/timeline</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/timeline/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/faq</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/faq/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/glossary</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/glossary/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/citations</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/citations/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- AI Skills Programme & Credentials -->
   <url>
-    <loc>https://www.fitzherbert.edu/skills</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/skills/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/credentials</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/credentials/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Specialist Divisions -->
   <url>
-    <loc>https://www.fitzherbert.edu/visiting-intelligences</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/visiting-intelligences/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/legal-intelligence</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/legal-intelligence/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/human-continuity</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/human-continuity/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/sovereign-systems</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/sovereign-systems/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/institutional-architecture</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/institutional-architecture/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Additional Pages -->
   <url>
-    <loc>https://www.fitzherbert.edu/on-chain</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/on-chain/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/documents</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/documents/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/partnerships</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/partnerships/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/sponsor</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/sponsor/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fitzherbert.edu/student-economics</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://university.xxxiii.io/student-economics/</loc>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

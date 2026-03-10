@@ -27,20 +27,13 @@
   --font-sans:     "Inter", system-ui, sans-serif;
 }
 
-/* ── Dark-mode campus aesthetic ───────────────────── */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-parchment:      #1A1D23;
-    --color-parchment-dark: #14161A;
-    --color-ivory:          #0F1115;
-    --color-ink:            #E8E3D8;
-    --color-stone:          #A0A0A0;
-    --color-stone-light:    #CCCCCC;
-    --color-navy:           #C8D6E8;
-    --color-maroon:         #D4788E;
-    --color-gold-text:      #D4B76A;
-  }
-}
+/* ── Force light mode ──────────────────────────────
+   The heritage design system is built for light mode.
+   Tailwind v4 compiles utilities to hardcoded hex values
+   so dark-mode variable overrides cause mismatched
+   contrast (dark text on dark backgrounds). We force
+   light to keep the design consistent for all users.
+   ──────────────────────────────────────────────────── */
 
 /* ── Base styles ──────────────────────────────────── */
 *,
@@ -50,6 +43,7 @@
 }
 
 html {
+  color-scheme: light;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -60,23 +54,24 @@ body {
   background-color: var(--color-parchment);
   color: var(--color-ink);
   font-family: var(--font-body);
-  line-height: 1.8;
-  font-size: 1.0625rem;
+  line-height: 1.85;
+  font-size: 1.125rem;
+  letter-spacing: 0.005em;
 }
 
 /* ── Heading hierarchy ────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: 0.02em;
   color: var(--color-navy);
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.25rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.375rem; }
+h1 { font-size: 3.25rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.875rem; }
+h4 { font-size: 1.5rem; }
 
 /* ── Gold divider ─────────────────────────────────── */
 .gold-divider {
@@ -316,8 +311,8 @@ a {
 
 .prose-institutional p {
   margin-bottom: 1.25rem;
-  font-size: 1.0625rem;
-  line-height: 1.9;
+  font-size: 1.125rem;
+  line-height: 1.95;
   color: var(--color-ink);
 }
 

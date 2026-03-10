@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E4C76B"/>
+      <stop offset="50%" stop-color="#C8A24C"/>
+      <stop offset="100%" stop-color="#A68932"/>
+    </linearGradient>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E2548"/>
+      <stop offset="100%" stop-color="#081A30"/>
+    </linearGradient>
+    <linearGradient id="m" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8C001A"/>
+      <stop offset="100%" stop-color="#6A0014"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="20" fill="#0B1F3B"/>
+  <!-- Shield -->
+  <path d="M90 28 L142 50 L142 110 Q142 148 90 165 Q38 148 38 110 L38 50 Z" fill="url(#s)" stroke="url(#g)" stroke-width="3"/>
+  <!-- Quarter divisions -->
+  <line x1="90" y1="35" x2="90" y2="160" stroke="url(#g)" stroke-width="1" opacity="0.3"/>
+  <line x1="42" y1="96" x2="138" y2="96" stroke="url(#g)" stroke-width="1" opacity="0.3"/>
+  <!-- Q1 maroon -->
+  <path d="M90 35 L42 53 L42 96 L90 96 Z" fill="url(#m)" opacity="0.5"/>
+  <!-- Q4 maroon -->
+  <path d="M90 96 L138 96 L138 110 Q138 148 90 160 Z" fill="url(#m)" opacity="0.5"/>
+  <!-- Stars -->
+  <polygon points="66,65 68,71 74,71 69,75 71,81 66,77 61,81 63,75 58,71 64,71" fill="#C8A24C" opacity="0.8"/>
+  <polygon points="114,120 116,126 122,126 117,130 119,136 114,132 109,136 111,130 106,126 112,126" fill="#C8A24C" opacity="0.8"/>
+  <!-- Book -->
+  <g transform="translate(90,86)">
+    <path d="M-3 -10 L-24 -7 L-24 13 L-3 10 Z" fill="#0B1F3B" stroke="#C8A24C" stroke-width="1"/>
+    <path d="M3 -10 L24 -7 L24 13 L3 10 Z" fill="#0B1F3B" stroke="#C8A24C" stroke-width="1"/>
+    <line x1="0" y1="-12" x2="0" y2="12" stroke="#C8A24C" stroke-width="1.5"/>
+  </g>
+  <!-- Torch -->
+  <g transform="translate(90,48)">
+    <rect x="-2" y="0" width="4" height="14" rx="1" fill="#C8A24C" opacity="0.8"/>
+    <path d="M0 -6 Q-4 -2 -3 3 Q0 0 0 3 Q0 0 3 3 Q4 -2 0 -6 Z" fill="#C8A24C" opacity="0.9"/>
+  </g>
+</svg>

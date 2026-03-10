@@ -28,7 +28,7 @@ const studentEconomicsJsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "Fitzherbert University",
-    url: "https://fitzherbert.university",
+    url: "https://university.xxxiii.io",
   },
 };
 
@@ -36,8 +36,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://fitzherbert.university" },
-    { "@type": "ListItem", position: 2, name: "Student Economics", item: "https://fitzherbert.university/student-economics" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://university.xxxiii.io" },
+    { "@type": "ListItem", position: 2, name: "Student Economics", item: "https://university.xxxiii.io/student-economics" },
   ],
 };
 
@@ -79,8 +79,8 @@ export default function StudentEconomicsPage() {
               Every protocol designed, every governance framework tested, every research output
               verified through the Legitimacy Engine is real work with real economic value.
               The University does not charge for this. It pays for it. The students are,
-              technically, employees. The University prefers the term 'scholars with
-              compensation alignment.'
+              technically, employees. The University prefers the term &lsquo;scholars with
+              compensation alignment.&rsquo;
             </p>
             <p>
               No student at Fitzherbert University pays tuition. Every enrolled student receives
@@ -265,7 +265,7 @@ export default function StudentEconomicsPage() {
               },
             ].map((pillar) => (
               <div key={pillar.num} className="flex gap-6 items-start border-l-2 border-gold pl-6">
-                <span className="font-serif text-3xl font-bold text-gold/40 flex-shrink-0">{pillar.num}</span>
+                <span className="font-serif text-3xl font-bold text-gold/60 flex-shrink-0">{pillar.num}</span>
                 <div>
                   <h3 className="font-serif text-lg font-bold mb-2">{pillar.title}</h3>
                   <p className="text-stone text-sm leading-relaxed">{pillar.text}</p>
@@ -288,7 +288,7 @@ export default function StudentEconomicsPage() {
               This is not a promise — it is an economic architecture. Seven revenue streams
               fund the student stipend programme. Each is structural, meaning it grows as the
               University grows. At present, it has not yet grown, but the architecture is, the
-              Bursar assures, 'structurally patient.'
+              Bursar assures, &lsquo;structurally patient.&rsquo;
             </p>
           </div>
 
@@ -391,7 +391,7 @@ export default function StudentEconomicsPage() {
 
           <div className="mt-8 text-center">
             <a
-              href="/University/sponsor/"
+              href="/sponsor/"
               className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
             >
               See How Sponsors Fund This Model →
@@ -519,7 +519,7 @@ export default function StudentEconomicsPage() {
               traditional university bonds backed by tuition revenue (which requires extracting
               from students), SIBs are backed by the growing value of the University&rsquo;s
               protocol portfolio. No SIBs have been issued to date. The instrument is described
-              internally as 'pre-mature,' a term the Bursar chose carefully and the Chancellor
+              internally as &lsquo;pre-mature,&rsquo; a term the Bursar chose carefully and the Chancellor
               pretended not to hear.
             </p>
             <p>
@@ -580,8 +580,8 @@ export default function StudentEconomicsPage() {
               <strong> infrastructure students help build</strong>. The economic model is inverted:
               students are an investment, not a revenue source. The better the students,
               the more valuable the infrastructure, the more sustainable the institution.
-              Traditional universities have described this logic as 'theoretically interesting,'
-              which is academic language for 'threatening.'
+              Traditional universities have described this logic as &lsquo;theoretically interesting,&rsquo;
+              which is academic language for &lsquo;threatening.&rsquo;
             </p>
           </div>
         </div>
@@ -681,7 +681,7 @@ export default function StudentEconomicsPage() {
               Every claim this page makes is either already verified through the University&rsquo;s
               Legitimacy Engine or in the process of being built into verifiable infrastructure.
               This is the difference between a promise and a protocol. The University acknowledges
-              that most entries below currently read 'in development,' and considers this evidence
+              that most entries below currently read &lsquo;in development,&rsquo; and considers this evidence
               of transparency rather than incompleteness.
             </p>
           </div>
@@ -755,13 +755,13 @@ export default function StudentEconomicsPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/University/admissions/"
+              href="/admissions/"
               className="inline-block bg-maroon text-white font-serif text-sm px-8 py-3 tracking-wide hover:bg-maroon/90 transition-colors"
             >
               Apply Now
             </a>
             <a
-              href="/University/endowment/"
+              href="/endowment/"
               className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
             >
               View Endowment

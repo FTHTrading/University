@@ -25,7 +25,7 @@ const partnershipTypes = [
     icon: "◈",
     desc: "Fund students through skills tracks, project-based learning, and custom curriculum. Receive verified outcomes, hiring priority, and real-time progress dashboards.",
     tiers: "Bronze (£50K) · Silver (£150K) · Gold (£500K)",
-    href: "/University/sponsor/",
+    href: "/sponsor/",
     cta: "View Sponsorship Tiers",
   },
   {
@@ -33,7 +33,7 @@ const partnershipTypes = [
     icon: "⬢",
     desc: "Subscribe to CISSS — the Centre for Intelligence in Sport, Strategy & Scouting. Strategy analytics, scouting optimisation, and NIL readiness delivered by student analysts.",
     tiers: "Team (£25K) · Programme (£75K) · Enterprise (£250K)",
-    href: "/University/athletics/",
+    href: "/athletics/",
     cta: "View CISSS Subscriptions",
   },
   {
@@ -41,7 +41,7 @@ const partnershipTypes = [
     icon: "◇",
     desc: "Commission student teams to build real deliverables — audit reports, analytics dashboards, protocol implementations, and governance frameworks. Structured, mentored, and verified.",
     tiers: "Audit (£15K) · Build (£40K) · Analytics (£30K) · RWA (£75K)",
-    href: "/University/partnerships/",
+    href: "/partnerships/",
     cta: "Commission a Project",
   },
   {
@@ -49,7 +49,7 @@ const partnershipTypes = [
     icon: "⬡",
     desc: "License the University's Four-Gate Validation protocols, alignment verification frameworks, and constitutional governance models for your organisation.",
     tiers: "Contact Partnership Office for licensing terms",
-    href: "/University/partnerships/",
+    href: "/partnerships/",
     cta: "Enquire About Licensing",
   },
 ];
@@ -143,8 +143,8 @@ export default function PartnershipsPage() {
               months of committee review, and opaque decision-making that exhausts everyone
               involved. Fitzherbert University operates differently. The Partnership Office
               is staffed, the door is open, and the process is transparent. The fact that
-              nobody has yet walked through the door is, the Office maintains, 'a reflection
-              of the market\'s readiness, not ours.'
+              nobody has yet walked through the door is, the Office maintains, &lsquo;a reflection
+              of the market&apos;s readiness, not ours.&rsquo;
             </p>
             <p>
               The Partnership Office is a single point of contact for every external engagement —
@@ -223,7 +223,7 @@ export default function PartnershipsPage() {
         <div className="max-w-3xl mx-auto space-y-8">
           {processSteps.map((step) => (
             <div key={step.num} className="flex gap-6 items-start border-l-2 border-gold pl-6">
-              <span className="font-serif text-3xl font-bold text-gold/40 flex-shrink-0">
+              <span className="font-serif text-3xl font-bold text-gold/60 flex-shrink-0">
                 {step.num}
               </span>
               <div>
@@ -354,7 +354,7 @@ export default function PartnershipsPage() {
               Email Partnership Office
             </a>
             <a
-              href="/University/sponsor/"
+              href="/sponsor/"
               className="inline-block border border-gold text-gold font-serif text-sm px-8 py-3 tracking-wide hover:bg-gold/10 transition-colors"
             >
               View Sponsorship Tiers

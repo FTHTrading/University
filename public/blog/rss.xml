@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>University Record — Fitzherbert University</title>
-    <link>https://fitzherbert.university/blog</link>
+    <link>https://university.xxxiii.io/blog</link>
     <description>Original scholarship from the faculties, centres, and institutes of Fitzherbert University — advancing the discourse on institutional governance, competitive strategy, and technological sovereignty.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Feb 2026 09:50:04 GMT</lastBuildDate>
-    <managingEditor>chancellor@fitzherbert.university (Office of the Chancellor)</managingEditor>
-    <webMaster>webmaster@fitzherbert.university (University Web Services)</webMaster>
+    <lastBuildDate>Tue, 10 Mar 2026 07:39:46 GMT</lastBuildDate>
+    <managingEditor>chancellor@university.xxxiii.io (Office of the Chancellor)</managingEditor>
+    <webMaster>webmaster@university.xxxiii.io (University Web Services)</webMaster>
     <copyright>© 2026 Fitzherbert University. Established 1783. All rights reserved.</copyright>
-    <atom:link href="https://fitzherbert.university/blog/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://university.xxxiii.io/blog/rss.xml" rel="self" type="application/rss+xml" />
     <image>
-      <url>https://fitzherbert.university/crest.svg</url>
+      <url>https://university.xxxiii.io/crest.svg</url>
       <title>Fitzherbert University</title>
-      <link>https://fitzherbert.university</link>
+      <link>https://university.xxxiii.io</link>
     </image>
     <item>
       <title>Constitutional Precedent in Digital Governance</title>
-      <link>https://fitzherbert.university/blog/constitutional-precedent-digital-governance</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/constitutional-precedent-digital-governance</guid>
+      <link>https://university.xxxiii.io/blog/constitutional-precedent-digital-governance</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/constitutional-precedent-digital-governance</guid>
       <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <description>The principles embedded in Fitzherbert University&apos;s 1783 Charter — separation of powers, transparency mandates, and procedural due process — provide a surprisingly robust framework for governing digital systems.</description>
       <author>Professor Victoria Langford</author>
@@ -26,8 +26,8 @@
     </item>
     <item>
       <title>The Future of AI-Governed Institutions</title>
-      <link>https://fitzherbert.university/blog/future-of-ai-governed-institutions</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/future-of-ai-governed-institutions</guid>
+      <link>https://university.xxxiii.io/blog/future-of-ai-governed-institutions</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/future-of-ai-governed-institutions</guid>
       <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
       <description>As artificial intelligence systems assume greater roles in institutional decision-making, universities must develop constitutional frameworks that preserve academic sovereignty while enabling responsible automation.</description>
       <author>Professor Margaret Sinclair</author>
@@ -35,8 +35,8 @@
     </item>
     <item>
       <title>Fiduciary Duty in Perpetuity</title>
-      <link>https://fitzherbert.university/blog/fiduciary-duty-in-perpetuity</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/fiduciary-duty-in-perpetuity</guid>
+      <link>https://university.xxxiii.io/blog/fiduciary-duty-in-perpetuity</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/fiduciary-duty-in-perpetuity</guid>
       <pubDate>Sat, 07 Feb 2026 00:00:00 GMT</pubDate>
       <description>Managing a $14.2 billion endowment with an infinite time horizon imposes unique fiduciary obligations — obligations that extend beyond financial returns to encompass ethical stewardship and intergenerational equity.</description>
       <author>Professor Richard Pemberton</author>
@@ -44,8 +44,8 @@
     </item>
     <item>
       <title>Agentic RAG for Institutional Memory</title>
-      <link>https://fitzherbert.university/blog/agentic-rag-institutional-memory</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/agentic-rag-institutional-memory</guid>
+      <link>https://university.xxxiii.io/blog/agentic-rag-institutional-memory</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/agentic-rag-institutional-memory</guid>
       <pubDate>Tue, 03 Feb 2026 00:00:00 GMT</pubDate>
       <description>Retrieval-augmented generation, deployed within a governed agent framework, enables institutions to build compounding knowledge systems — living memories that grow more authoritative with every interaction.</description>
       <author>Professor Margaret Sinclair</author>
@@ -53,8 +53,8 @@
     </item>
     <item>
       <title>Game Theory and Competitive Strategy in Collegiate Systems</title>
-      <link>https://fitzherbert.university/blog/game-theory-competitive-strategy-collegiate-systems</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/game-theory-competitive-strategy-collegiate-systems</guid>
+      <link>https://university.xxxiii.io/blog/game-theory-competitive-strategy-collegiate-systems</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/game-theory-competitive-strategy-collegiate-systems</guid>
       <pubDate>Wed, 28 Jan 2026 00:00:00 GMT</pubDate>
       <description>Collegiate athletics operates within a complex strategic landscape where game-theoretic principles — dominant strategies, Nash equilibria, and information asymmetry — determine competitive advantage as decisively as raw athletic talent.</description>
       <author>Professor Richard Pemberton</author>
@@ -62,8 +62,8 @@
     </item>
     <item>
       <title>Simulation-Driven Recruitment Strategy</title>
-      <link>https://fitzherbert.university/blog/simulation-driven-recruitment-strategy</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/simulation-driven-recruitment-strategy</guid>
+      <link>https://university.xxxiii.io/blog/simulation-driven-recruitment-strategy</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/simulation-driven-recruitment-strategy</guid>
       <pubDate>Sun, 25 Jan 2026 00:00:00 GMT</pubDate>
       <description>Monte Carlo simulation enables athletics programmes to model thousands of potential recruitment scenarios, quantifying risk and optimising scholarship allocation under uncertainty.</description>
       <author>Professor James Harrington</author>
@@ -71,8 +71,8 @@
     </item>
     <item>
       <title>Opponent Modeling in Modern Esports</title>
-      <link>https://fitzherbert.university/blog/opponent-modeling-modern-esports</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/opponent-modeling-modern-esports</guid>
+      <link>https://university.xxxiii.io/blog/opponent-modeling-modern-esports</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/opponent-modeling-modern-esports</guid>
       <pubDate>Tue, 20 Jan 2026 00:00:00 GMT</pubDate>
       <description>Esports competitors generate thousands of observable decisions per match. Systematic opponent modelling — using Bayesian inference, behavioural clustering, and real-time adaptation — transforms this data into decisive strategic advantage.</description>
       <author>Professor James Harrington</author>
@@ -80,8 +80,8 @@
     </item>
     <item>
       <title>Endowment Stewardship in the Age of Volatility</title>
-      <link>https://fitzherbert.university/blog/endowment-stewardship-age-of-volatility</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/endowment-stewardship-age-of-volatility</guid>
+      <link>https://university.xxxiii.io/blog/endowment-stewardship-age-of-volatility</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/endowment-stewardship-age-of-volatility</guid>
       <pubDate>Thu, 15 Jan 2026 00:00:00 GMT</pubDate>
       <description>With $14.2 billion under stewardship, Fitzherbert University&apos;s endowment represents a covenant between generations. This article examines how institutional investors maintain disciplined strategies across centuries of market uncertainty.</description>
       <author>The Editorial Board</author>
@@ -89,8 +89,8 @@
     </item>
     <item>
       <title>Knowledge Graphs for Institutional Intelligence</title>
-      <link>https://fitzherbert.university/blog/knowledge-graphs-institutional-intelligence</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/knowledge-graphs-institutional-intelligence</guid>
+      <link>https://university.xxxiii.io/blog/knowledge-graphs-institutional-intelligence</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/knowledge-graphs-institutional-intelligence</guid>
       <pubDate>Sat, 20 Dec 2025 00:00:00 GMT</pubDate>
       <description>Knowledge graphs provide the semantic infrastructure that connects institutional data — research outputs, governance decisions, financial records, and personnel — into a queryable, machine-readable intelligence layer.</description>
       <author>Professor Margaret Sinclair</author>
@@ -98,8 +98,8 @@
     </item>
     <item>
       <title>The Ethics of Predictive Analytics in Admissions</title>
-      <link>https://fitzherbert.university/blog/ethics-of-predictive-analytics-admissions</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/ethics-of-predictive-analytics-admissions</guid>
+      <link>https://university.xxxiii.io/blog/ethics-of-predictive-analytics-admissions</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/ethics-of-predictive-analytics-admissions</guid>
       <pubDate>Mon, 15 Dec 2025 00:00:00 GMT</pubDate>
       <description>Universities increasingly deploy predictive analytics in admissions. This article examines the ethical frameworks necessary to ensure that algorithmic efficiency does not compromise fairness, diversity, or the holistic evaluation of human potential.</description>
       <author>Professor Victoria Langford</author>
@@ -107,8 +107,8 @@
     </item>
     <item>
       <title>Biomechanical Modelling for Injury Prevention</title>
-      <link>https://fitzherbert.university/blog/biomechanical-modelling-injury-prevention</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/biomechanical-modelling-injury-prevention</guid>
+      <link>https://university.xxxiii.io/blog/biomechanical-modelling-injury-prevention</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/biomechanical-modelling-injury-prevention</guid>
       <pubDate>Wed, 10 Dec 2025 00:00:00 GMT</pubDate>
       <description>Finite element analysis and musculoskeletal simulation enable sports medicine teams to predict injury risk, optimise training loads, and design personalised prevention programmes for collegiate athletes.</description>
       <author>Professor James Harrington</author>
@@ -116,8 +116,8 @@
     </item>
     <item>
       <title>Academic Freedom in the Age of Algorithms</title>
-      <link>https://fitzherbert.university/blog/academic-freedom-age-of-algorithms</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/academic-freedom-age-of-algorithms</guid>
+      <link>https://university.xxxiii.io/blog/academic-freedom-age-of-algorithms</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/academic-freedom-age-of-algorithms</guid>
       <pubDate>Fri, 05 Dec 2025 00:00:00 GMT</pubDate>
       <description>As AI systems increasingly mediate access to knowledge — through search ranking, content recommendation, and information filtering — universities must actively defend academic freedom against algorithmic constraints on inquiry.</description>
       <author>Professor Victoria Langford</author>
@@ -125,8 +125,8 @@
     </item>
     <item>
       <title>Transfer Portal Economics</title>
-      <link>https://fitzherbert.university/blog/transfer-portal-economics</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/transfer-portal-economics</guid>
+      <link>https://university.xxxiii.io/blog/transfer-portal-economics</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/transfer-portal-economics</guid>
       <pubDate>Fri, 28 Nov 2025 00:00:00 GMT</pubDate>
       <description>The transfer portal has transformed collegiate athletics into a functioning labour market with pricing signals, information asymmetry, and strategic arbitrage opportunities — demanding economic literacy from coaching staffs.</description>
       <author>Professor Richard Pemberton</author>
@@ -134,8 +134,8 @@
     </item>
     <item>
       <title>Vector Databases for Institutional Memory</title>
-      <link>https://fitzherbert.university/blog/vector-databases-institutional-memory</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/vector-databases-institutional-memory</guid>
+      <link>https://university.xxxiii.io/blog/vector-databases-institutional-memory</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/vector-databases-institutional-memory</guid>
       <pubDate>Thu, 20 Nov 2025 00:00:00 GMT</pubDate>
       <description>Vector databases transform institutional documents — governance records, research papers, policy documents — into high-dimensional embeddings that enable semantic search, intelligent retrieval, and knowledge discovery across centuries of institutional output.</description>
       <author>Professor Margaret Sinclair</author>
@@ -143,8 +143,8 @@
     </item>
     <item>
       <title>Institutional Resilience Through Governance Design</title>
-      <link>https://fitzherbert.university/blog/institutional-resilience-through-governance-design</link>
-      <guid isPermaLink="true">https://fitzherbert.university/blog/institutional-resilience-through-governance-design</guid>
+      <link>https://university.xxxiii.io/blog/institutional-resilience-through-governance-design</link>
+      <guid isPermaLink="true">https://university.xxxiii.io/blog/institutional-resilience-through-governance-design</guid>
       <pubDate>Sat, 15 Nov 2025 00:00:00 GMT</pubDate>
       <description>Institutional resilience is not accidental. It is the product of governance design — constitutional structures that enable adaptation while preserving identity, balancing innovation with continuity across centuries of environmental change.</description>
       <author>The Editorial Board</author>

@@ -3,7 +3,7 @@
  * Validates the 5 critical checks for the canonical publishing pipeline
  */
 
-import { computeMerkleRoot, sha256, serializeArticleContent, hexToCidV1 } from "../src/lib/canonical";
+import { computeMerkleRoot, sha256, serializeArticleContent } from "../src/lib/canonical";
 import { getAllArticles } from "../src/lib/articles";
 
 const articles = getAllArticles();

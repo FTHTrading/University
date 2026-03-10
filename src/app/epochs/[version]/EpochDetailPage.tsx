@@ -168,14 +168,14 @@ export function EpochDetailPage({
             <h2 className="font-serif text-lg tracking-wider uppercase text-gold">
               Sealed Epoch
             </h2>
-            <span className="px-2 py-0.5 text-[10px] font-mono text-parchment/50 border border-gold/10 rounded-full">
+            <span className="px-2 py-0.5 text-[10px] font-mono text-parchment/80 border border-gold/10 rounded-full">
               {epoch.tag}
             </span>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <p className="text-xs text-parchment/50 uppercase tracking-widest mb-1">
+              <p className="text-xs text-parchment/80 uppercase tracking-widest mb-1">
                 Merkle Root ({epoch.hashAlgorithm})
               </p>
               <button
@@ -195,7 +195,7 @@ export function EpochDetailPage({
             <div className="space-y-3">
               <div className="flex gap-8">
                 <div>
-                  <p className="text-xs text-parchment/50 uppercase tracking-widest mb-1">
+                  <p className="text-xs text-parchment/80 uppercase tracking-widest mb-1">
                     Articles
                   </p>
                   <p className="text-sm text-parchment/80">
@@ -203,7 +203,7 @@ export function EpochDetailPage({
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs text-parchment/50 uppercase tracking-widest mb-1">
+                  <p className="text-xs text-parchment/80 uppercase tracking-widest mb-1">
                     Tree Type
                   </p>
                   <p className="text-sm text-parchment/80">
@@ -211,7 +211,7 @@ export function EpochDetailPage({
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs text-parchment/50 uppercase tracking-widest mb-1">
+                  <p className="text-xs text-parchment/80 uppercase tracking-widest mb-1">
                     Sealed
                   </p>
                   <p className="text-sm text-parchment/80">
@@ -541,7 +541,7 @@ export function EpochDetailPage({
 
       {/* ── Latin Footer ─────────────────────────────── */}
       <section className="py-12 text-center">
-        <p className="latin-inscription text-gold/40 text-sm tracking-[0.3em] italic">
+        <p className="latin-inscription text-gold/60 text-sm tracking-[0.3em] italic">
           Quod erat demonstrandum — That which was to be demonstrated
         </p>
       </section>

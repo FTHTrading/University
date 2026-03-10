@@ -28,7 +28,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "Fitzherbert University",
-    url: "https://fitzherbert.university",
+    url: "https://university.xxxiii.io",
   },
 };
 
@@ -36,12 +36,12 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://fitzherbert.university" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://university.xxxiii.io" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Human Continuity",
-      item: "https://fitzherbert.university/human-continuity",
+      item: "https://university.xxxiii.io/human-continuity",
     },
   ],
 };
@@ -277,7 +277,7 @@ export default function HumanContinuityPage() {
                   </div>
                   <p
                     className={`text-sm ${
-                      track.mandatory ? "text-parchment/60" : "text-stone/60"
+                      track.mandatory ? "text-parchment/80" : "text-stone/80"
                     }`}
                   >
                     {track.duration}
@@ -343,7 +343,7 @@ export default function HumanContinuityPage() {
             <div key={m.label} className="border border-gold/20 bg-ivory p-6">
               <p className="engraved text-gold text-xs mb-2">{m.label}</p>
               <p className="font-serif text-2xl font-bold mb-1">{m.value}</p>
-              <p className="text-stone/60 text-xs">{m.note}</p>
+              <p className="text-stone/80 text-xs">{m.note}</p>
             </div>
           ))}
         </div>

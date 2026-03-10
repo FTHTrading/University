@@ -9,8 +9,9 @@
  */
 
 import PDFDocument from "pdfkit";
-import { createWriteStream, mkdirSync, existsSync } from "fs";
+import { createWriteStream, mkdirSync, existsSync, statSync } from "fs";
 import { join } from "path";
+import { DOCUMENT_CHAPTERS } from "./document-content";
 
 // ── Document Definitions ─────────────────────────────────────────────────────
 
@@ -316,7 +317,62 @@ const GOLD = "#C8A24C";
 const PARCHMENT = "#F4F1EA";
 const STONE = "#4A4A4A";
 
+function countWords(text: string) {
+  return text
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+}
+
+function estimateDocumentPages(
+  abstract: string,
+  chapters: Array<{ title: string; paragraphs: string[] }>
+) {
+  const abstractWords = countWords(abstract);
+  const chapterWords = chapters.reduce(
+    (sum, chapter) =>
+      sum + countWords(chapter.title) + chapter.paragraphs.reduce((pSum, para) => pSum + countWords(para), 0),
+    0
+  );
+  return Math.max(6, Math.ceil((abstractWords + chapterWords) / 425) + 3);
+}
+
+function estimateChapterStartPages(chapters: Array<{ title: string; paragraphs: string[] }>) {
+  const starts: number[] = [];
+  let currentPage = 3;
+
+  for (const chapter of chapters) {
+    starts.push(currentPage);
+    const words = countWords(chapter.title) + chapter.paragraphs.reduce((sum, para) => sum + countWords(para), 0);
+    const estimatedSpan = Math.max(1, Math.ceil(words / 475));
+    currentPage += estimatedSpan;
+  }
+
+  return starts;
+}
+
 // ── PDF Generation ───────────────────────────────────────────────────────────
+
+function renderPageHeader(pdf: InstanceType<typeof PDFDocument>, doc: InstitutionalDocument) {
+  const pageWidth = pdf.page.width;
+  pdf.rect(0, 0, pageWidth, 4).fill(NAVY);
+  pdf.rect(0, 4, pageWidth, 1.5).fill(GOLD);
+  pdf.fontSize(7).fillColor(STONE).font("Helvetica");
+  pdf.text(doc.title, 72, 16, { align: "left", width: pageWidth - 200 });
+  pdf.text("Fitzherbert University", pageWidth - 200, 16, { align: "right", width: 128 });
+}
+
+function renderPageFooter(pdf: InstanceType<typeof PDFDocument>, pageNum: number) {
+  const pageWidth = pdf.page.width;
+  const pageHeight = pdf.page.height;
+  pdf.rect(0, pageHeight - 6, pageWidth, 1.5).fill(GOLD);
+  pdf.rect(0, pageHeight - 4.5, pageWidth, 4.5).fill(NAVY);
+  pdf.fontSize(8).fillColor(STONE).font("Helvetica");
+  pdf.text(`— ${pageNum} —`, 72, pageHeight - 24, {
+    align: "center",
+    width: pageWidth - 144,
+  });
+}
 
 function generateDocument(doc: InstitutionalDocument, outDir: string): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -336,11 +392,20 @@ function generateDocument(doc: InstitutionalDocument, outDir: string): Promise<v
     const stream = createWriteStream(filePath);
     pdf.pipe(stream);
 
+    const pageWidth = pdf.page.width;
+    const contentWidth = pageWidth - 144;
+    const chapters = DOCUMENT_CHAPTERS[doc.filename] || [];
+    const estimatedPages = estimateDocumentPages(doc.abstract, chapters);
+    const chapterStartPages = estimateChapterStartPages(chapters);
+
+    // ═════════════════════════════════════════════════════════════════════════
+    // PAGE 1 — COVER PAGE (unchanged)
+    // ═════════════════════════════════════════════════════════════════════════
+
     // ── Page background
-    pdf.rect(0, 0, pdf.page.width, pdf.page.height).fill(PARCHMENT);
+    pdf.rect(0, 0, pageWidth, pdf.page.height).fill(PARCHMENT);
 
     // ── Top border ornament
-    const pageWidth = pdf.page.width;
     pdf.rect(0, 0, pageWidth, 8).fill(NAVY);
     pdf.rect(0, 8, pageWidth, 3).fill(GOLD);
 
@@ -348,14 +413,14 @@ function generateDocument(doc: InstitutionalDocument, outDir: string): Promise<v
     pdf.fontSize(11).fillColor(NAVY).font("Helvetica");
     pdf.text("FITZHERBERT UNIVERSITY", 72, 48, {
       align: "center",
-      characterSpacing: 6,
+      characterSpacing: 1.2,
     });
 
     // ── Established line
     pdf.fontSize(8).fillColor(STONE).font("Helvetica");
     pdf.text("Established 1783  ·  Veritas per Verificationem", 72, 68, {
       align: "center",
-      characterSpacing: 2,
+      characterSpacing: 0.6,
     });
 
     // ── Seal circle (stylised)
@@ -375,23 +440,23 @@ function generateDocument(doc: InstitutionalDocument, outDir: string): Promise<v
     // ── Document title
     let y = 230;
     pdf.fontSize(24).fillColor(NAVY).font("Helvetica-Bold");
-    pdf.text(doc.title, 72, y, { align: "center", width: pageWidth - 144 });
-    y += pdf.heightOfString(doc.title, { width: pageWidth - 144 }) + 8;
+    pdf.text(doc.title, 72, y, { align: "center", width: contentWidth });
+    y += pdf.heightOfString(doc.title, { width: contentWidth }) + 8;
 
     if (doc.subtitle) {
       pdf.fontSize(16).fillColor(MAROON).font("Helvetica");
-      pdf.text(doc.subtitle, 72, y, { align: "center", width: pageWidth - 144 });
+      pdf.text(doc.subtitle, 72, y, { align: "center", width: contentWidth });
       y += 28;
     }
 
     // ── Department / Author
     y += 16;
     pdf.fontSize(10).fillColor(STONE).font("Helvetica");
-    pdf.text(doc.department, 72, y, { align: "center", width: pageWidth - 144 });
+    pdf.text(doc.department, 72, y, { align: "center", width: contentWidth });
     y += 16;
     pdf.text(`Fitzherbert University  ·  ${doc.year}`, 72, y, {
       align: "center",
-      width: pageWidth - 144,
+      width: contentWidth,
     });
 
     // ── Gold separator
@@ -401,7 +466,7 @@ function generateDocument(doc: InstitutionalDocument, outDir: string): Promise<v
     // ── Abstract
     y += 24;
     pdf.fontSize(9).fillColor(NAVY).font("Helvetica-Bold");
-    pdf.text("ABSTRACT", 72, y, { align: "center", width: pageWidth - 144 });
+    pdf.text("ABSTRACT", 72, y, { align: "center", width: contentWidth });
     y += 18;
     pdf.fontSize(10).fillColor(STONE).font("Helvetica");
     pdf.text(doc.abstract, 96, y, {
@@ -414,7 +479,7 @@ function generateDocument(doc: InstitutionalDocument, outDir: string): Promise<v
     // ── Document metadata
     const metaItems = [
       ["Classification", doc.classification],
-      ["Pages", doc.pages],
+      ["Edition", `${estimatedPages} page institutional edition (approx.)`],
       ["Published", doc.year],
       ["Archive", "Fitzherbert University Institutional Repository"],
     ];
@@ -436,14 +501,156 @@ function generateDocument(doc: InstitutionalDocument, outDir: string): Promise<v
       "This document is published by Fitzherbert University in accordance with the Transparency Mandate of 2003.",
       72,
       pageHeight - 32,
-      { align: "center", width: pageWidth - 144 }
+      { align: "center", width: contentWidth }
     );
+
+    // ═════════════════════════════════════════════════════════════════════════
+    // PAGE 2 — TABLE OF CONTENTS (if chapters exist)
+    // ═════════════════════════════════════════════════════════════════════════
+
+    if (chapters.length > 0) {
+      pdf.addPage();
+      pdf.rect(0, 0, pageWidth, pdf.page.height).fill(PARCHMENT);
+      renderPageHeader(pdf, doc);
+      renderPageFooter(pdf, 2);
+
+      let tocY = 60;
+      pdf.fontSize(18).fillColor(NAVY).font("Helvetica-Bold");
+      pdf.text("Table of Contents", 72, tocY, { align: "center", width: contentWidth });
+      tocY += 40;
+
+      pdf.moveTo(72, tocY).lineTo(pageWidth - 72, tocY).lineWidth(0.5).strokeColor(GOLD).stroke();
+      tocY += 20;
+
+      for (let i = 0; i < chapters.length; i++) {
+        const chapter = chapters[i];
+        pdf.fontSize(11).fillColor(NAVY).font("Helvetica-Bold");
+        pdf.text(chapter.title, 96, tocY, { width: contentWidth - 150 });
+        pdf.fontSize(10).fillColor(STONE).font("Helvetica");
+        pdf.text(String(chapterStartPages[i] ?? i + 3), pageWidth - 108, tocY, {
+          align: "right",
+          width: 36,
+        });
+        tocY += pdf.heightOfString(chapter.title, { width: contentWidth - 100 }) + 4;
+
+        // Show first sentence of first paragraph as preview
+        const preview = chapter.paragraphs[0].split(".")[0] + ".";
+        pdf.fontSize(9).fillColor(STONE).font("Helvetica");
+        pdf.text(preview, 112, tocY, {
+          width: contentWidth - 80,
+          lineGap: 2,
+        });
+        tocY += pdf.heightOfString(preview, { width: contentWidth - 80, lineGap: 2 }) + 12;
+
+        if (i < chapters.length - 1) {
+          pdf.moveTo(120, tocY - 4).lineTo(pageWidth - 120, tocY - 4).lineWidth(0.25).strokeColor(GOLD).stroke();
+          tocY += 8;
+        }
+      }
+    }
+
+    // ═════════════════════════════════════════════════════════════════════════
+    // PAGES 3+ — CHAPTER CONTENT
+    // ═════════════════════════════════════════════════════════════════════════
+
+    let currentPage = chapters.length > 0 ? 3 : 2;
+
+    for (const chapter of chapters) {
+      pdf.addPage();
+      pdf.rect(0, 0, pageWidth, pdf.page.height).fill(PARCHMENT);
+      renderPageHeader(pdf, doc);
+      renderPageFooter(pdf, currentPage);
+
+      let cY = 56;
+
+      // ── Chapter title
+      pdf.fontSize(18).fillColor(NAVY).font("Helvetica-Bold");
+      pdf.text(chapter.title, 72, cY, { width: contentWidth });
+      cY += pdf.heightOfString(chapter.title, { width: contentWidth }) + 8;
+
+      // ── Gold rule under title
+      pdf.moveTo(72, cY).lineTo(pageWidth - 72, cY).lineWidth(1).strokeColor(GOLD).stroke();
+      cY += 20;
+
+      // ── Paragraphs
+      for (const para of chapter.paragraphs) {
+        // Check if we need a new page (leave 120pt margin at bottom for footer)
+        if (cY + pdf.heightOfString(para, { width: contentWidth, lineGap: 5 }) > pdf.page.height - 120) {
+          currentPage++;
+          pdf.addPage();
+          pdf.rect(0, 0, pageWidth, pdf.page.height).fill(PARCHMENT);
+          renderPageHeader(pdf, doc);
+          renderPageFooter(pdf, currentPage);
+          cY = 56;
+
+          // Continuation header
+          pdf.fontSize(9).fillColor(STONE).font("Helvetica");
+          pdf.text(`${chapter.title} (continued)`, 72, cY, { width: contentWidth });
+          cY += 20;
+        }
+
+        pdf.fontSize(10.5).fillColor(STONE).font("Helvetica");
+        pdf.text(para, 72, cY, {
+          align: "justify",
+          width: contentWidth,
+          lineGap: 5,
+          paragraphGap: 4,
+        });
+        cY += pdf.heightOfString(para, { width: contentWidth, lineGap: 5, paragraphGap: 4 }) + 14;
+      }
+
+      currentPage++;
+    }
+
+    // ═════════════════════════════════════════════════════════════════════════
+    // FINAL PAGE — INSTITUTIONAL NOTICE
+    // ═════════════════════════════════════════════════════════════════════════
+
+    if (chapters.length > 0) {
+      pdf.addPage();
+      pdf.rect(0, 0, pageWidth, pdf.page.height).fill(PARCHMENT);
+      renderPageHeader(pdf, doc);
+
+      let nY = 200;
+      pdf.circle(cx, 140, 30).lineWidth(1.5).strokeColor(GOLD).stroke();
+      pdf.circle(cx, 140, 26).lineWidth(0.5).strokeColor(GOLD).stroke();
+      pdf.fontSize(6).fillColor(GOLD).font("Helvetica");
+      pdf.text("SIGILLUM", cx - 18, 131, { width: 36, align: "center" });
+      pdf.text("UNIVERSITATIS", cx - 26, 138, { width: 52, align: "center" });
+      pdf.text("FITZHERBERT", cx - 26, 145, { width: 52, align: "center" });
+
+      pdf.fontSize(11).fillColor(NAVY).font("Helvetica-Bold");
+      pdf.text("INSTITUTIONAL NOTICE", 72, nY, { align: "center", width: contentWidth });
+      nY += 30;
+
+      pdf.fontSize(9.5).fillColor(STONE).font("Helvetica");
+      const notice = [
+        "This document is published by Fitzherbert University and archived in the Institutional Repository in accordance with the Transparency Mandate of 2003 (Charter Amendment IV).",
+        "All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form without the prior written permission of the Office of the Chancellor, except for brief quotations in academic reviews and scholarly articles.",
+        `A cryptographic hash of this document is registered on the Fitzherbert Canonical Registry. The SHA-256 hash and associated metadata are available at the University's canonical verification endpoint.`,
+        "Fitzherbert University  ·  Established 1783  ·  Veritas per Verificationem",
+      ];
+      for (const line of notice) {
+        pdf.text(line, 96, nY, {
+          align: "center",
+          width: contentWidth - 48,
+          lineGap: 4,
+        });
+        nY += pdf.heightOfString(line, { width: contentWidth - 48, lineGap: 4 }) + 12;
+      }
+
+      // ── Bottom border
+      const pHeight = pdf.page.height;
+      pdf.rect(0, pHeight - 11, pageWidth, 3).fill(GOLD);
+      pdf.rect(0, pHeight - 8, pageWidth, 8).fill(NAVY);
+    }
 
     pdf.end();
     stream.on("finish", () => {
-      const stats = require("fs").statSync(filePath);
+      const stats = statSync(filePath);
       const sizeKB = Math.round(stats.size / 1024);
-      console.log(`  ✓ ${doc.filename} (${sizeKB} KB)`);
+      const totalPages = chapters.length > 0 ? currentPage : 1;
+      console.log(`  ✓ ${doc.filename} (${sizeKB} KB, ${totalPages} pages)`);
       resolve();
     });
     stream.on("error", reject);
